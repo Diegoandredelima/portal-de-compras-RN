@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Portal de Compras Governamentais - RN
 
 Este é o repositório do Portal de Compras Governamentais do Estado do Rio Grande do Norte, desenvolvido para fornecer informações e serviços relacionados às compras governamentais.
@@ -76,3 +77,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## Contato
 
 Para mais informações, entre em contato através do email: contato@rn.gov.br 
+=======
+# portal-de-compras-RN
+>>>>>>> 31528f1a9757dc742eaaab1711e78d4a76d193d0
