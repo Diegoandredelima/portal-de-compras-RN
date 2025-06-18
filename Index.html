@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Compras Governamentais - RN</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white">
+    <!-- Top Header -->
+    <header class="header-bg py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <!-- COMPR Logo -->
+                <img src="img/compr-logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
+                <!-- Rio Grande do Norte Logo -->
+                <img src="img/rn-governo-logo.png" alt="Governo do Rio Grande do Norte" class="h-12">
+            </div>
+            <div class="flex items-center space-x-4 text-sm">
+                <a href="#" class="text-gray-600 hover:text-gray-900">Órgãos do Governo</a>
+                <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
+                <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
+                <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
+                <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
+                <div class="dropdown">
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
+                </div>
+                <div class="flex items-center space-x-2 ml-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Colored Bar -->
+    <div class="color-bar w-full"></div>
+
+    <!-- Sticky Header with Menu -->
+    <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <a href="index.html" class="text-xl font-medium">Central de Compras</a>
+            </div>
+            <div class="relative w-1/3">
+                <input type="text" placeholder="O que você procura?" class="search-input w-full py-2 px-4 pl-10">
+                <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Off-canvas Menu -->
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="p-4 border-b flex justify-between items-center">
+            <h2 class="text-lg font-bold">Menu</h2>
+            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-4">
+            <ul class="space-y-4">
+                <li>
+                    <a href="index.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-home nav-icon"></i>
+                        <span>Início</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/fornecedor.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-user-tie nav-icon"></i>
+                        <span>Fornecedor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/servidor.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-user nav-icon"></i>
+                        <span>Servidor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/cidadao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-users nav-icon"></i>
+                        <span>Cidadão</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/capacite-se.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-graduation-cap nav-icon"></i>
+                        <span>Capacite-se</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/legislacao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-gavel nav-icon"></i>
+                        <span>Legislação</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/acesso-sistema.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-sign-in-alt nav-icon"></i>
+                        <span>Acesso ao Sistema</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/oportunidades.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-search-dollar nav-icon"></i>
+                        <span>Oportunidades</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/manuais.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-book nav-icon"></i>
+                        <span>Manuais</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-6 px-4">
+        <!-- Navigation with Icons -->
+        <div class="container-box mb-6">
+            <div class="flex justify-between flex-wrap">
+                <a href="pages/fornecedor.html" class="flex items-center mb-4 mr-4">
+                    <i class="fas fa-user-tie nav-icon"></i>
+                    <span>Fornecedor</span>
+                </a>
+                <a href="pages/servidor.html" class="flex items-center mb-4 mr-4">
+                    <i class="fas fa-user nav-icon"></i>
+                    <span>Servidor</span>
+                </a>
+                <a href="pages/cidadao.html" class="flex items-center mb-4 mr-4">
+                    <i class="fas fa-users nav-icon"></i>
+                    <span>Cidadão</span>
+                </a>
+                <a href="pages/capacite-se.html" class="flex items-center mb-4 mr-4">
+                    <i class="fas fa-graduation-cap nav-icon"></i>
+                    <span>Capacite-se</span>
+                </a>
+                <a href="pages/legislacao.html" class="flex items-center mb-4 mr-4">
+                    <i class="fas fa-gavel nav-icon"></i>
+                    <span>Legislação</span>
+                </a>
+                <a href="pages/acesso-sistema.html" class="flex items-center mb-4">
+                    <i class="fas fa-sign-in-alt nav-icon"></i>
+                    <span>Acesso ao Sistema</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Carousel -->
+        <div class="carousel mb-6 flex items-center justify-center">
+            <div class="text-center">
+                <h3 class="text-xl font-bold mb-2">Carrossel de Notícias</h3>
+                <p class="text-gray-600">Últimas notícias e destaques sobre Compras Governamentais</p>
+            </div>
+        </div>
+
+        <!-- Manuals & Links Section -->
+        <div class="mb-6">
+            <h3 class="section-title text-xl font-bold">Links Rápidos</h3>
+            <div class="my-4">
+                <a href="pages/manuais.html" class="link-button"><i class="fas fa-book mr-2"></i> Manuais</a>
+                <a href="pages/legislacao.html" class="link-button"><i class="fas fa-gavel mr-2"></i> Legislação</a>
+                <a href="pages/artigos.html" class="link-button"><i class="fas fa-file-alt mr-2"></i> Artigos</a>
+                <a href="pages/oportunidades.html" class="link-button"><i class="fas fa-search-dollar mr-2"></i> Oportunidades</a>
+            </div>
+        </div>
+
+        <!-- Approved Purchases -->
+        <div class="mb-6">
+            <h3 class="section-title text-xl font-bold">Compras Homologadas em 2024</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                <div class="card p-4">
+                    <h4 class="text-sm text-gray-600">Valor Homologado</h4>
+                    <p class="text-2xl font-bold text-blue-700">R$ 46.546,00</p>
+                </div>
+                <div class="card p-4">
+                    <h4 class="text-sm text-gray-600">Compras ME/EPP</h4>
+                    <p class="text-2xl font-bold text-blue-700">R$ 54.649.646,00</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card p-4">
+                    <h4 class="text-sm text-gray-600">Quantidade de Compras</h4>
+                    <p class="text-2xl font-bold text-blue-700">56.564.546</p>
+                </div>
+                <div class="card p-4">
+                    <h4 class="text-sm text-gray-600">Quantidade de Fornecedores</h4>
+                    <p class="text-2xl font-bold text-blue-700">900</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Serviços SEAD -->
+        <section class="servicos-section">
+            <div class="container">
+                <h2 class="section-title">Serviços SEAD</h2>
+
+                <div class="servicos-grid">
+                    <!-- Escola de Governo -->
+                    <a href="https://escoladegoverno.rn.gov.br" class="servico-card" target="_blank">
+                        <img src="assets/images/escola-governo.png" alt="Escola de Governo" class="servico-icon">
+                        <h3 class="servico-title">Escola de Governo</h3>
+                        <p class="servico-description">Portal de capacitação dos servidores públicos do RN</p>
+                    </a>
+
+                    <!-- Carta de Serviços -->
+                    <a href="https://cartadeservicos.rn.gov.br" class="servico-card" target="_blank">
+                        <img src="assets/images/carta-servicos.png" alt="Carta de Serviços" class="servico-icon">
+                        <h3 class="servico-title">Carta de Serviços</h3>
+                        <p class="servico-description">Catálogo de serviços públicos do Estado</p>
+                    </a>
+
+                    <!-- Portal de Compras -->
+                    <a href="https://compras.rn.gov.br" class="servico-card" target="_blank">
+                        <img src="assets/images/portal-compras.png" alt="Portal de Compras" class="servico-icon">
+                        <h3 class="servico-title">Portal de Compras</h3>
+                        <p class="servico-description">Sistema de compras governamentais do RN</p>
+                    </a>
+
+                    <!-- RN Consig -->
+                    <a href="https://rnconsig.rn.gov.br" class="servico-card" target="_blank">
+                        <img src="assets/images/rn-consig.png" alt="RN Consig" class="servico-icon">
+                        <h3 class="servico-title">RN Consig</h3>
+                        <p class="servico-description">Portal de consignações do servidor</p>
+                    </a>
+
+                    <!-- SEI RN -->
+                    <a href="https://sei.rn.gov.br" class="servico-card" target="_blank">
+                        <img src="assets/images/sei-rn.png" alt="SEI RN" class="servico-icon">
+                        <h3 class="servico-title">SEI! RN</h3>
+                        <p class="servico-description">Sistema Eletrônico de Informações</p>
+                    </a>
+
+                    <!-- SUAP -->
+                    <a href="https://suap.rn.gov.br" class="servico-card" target="_blank">
+                        <img src="assets/images/suap.png" alt="SUAP" class="servico-icon">
+                        <h3 class="servico-title">SUAP</h3>
+                        <p class="servico-description">Sistema Unificado de Administração Pública</p>
+                    </a>
+
+                    <!-- SIPAC -->
+                    <a href="https://sipac.rn.gov.br" class="servico-card" target="_blank">
+                        <img src="assets/images/sipac.png" alt="SIPAC" class="servico-icon">
+                        <h3 class="servico-title">SIPAC</h3>
+                        <p class="servico-description">Sistema Integrado de Patrimônio, Administração e Contratos</p>
+                    </a>
+
+                    <!-- SIPAT -->
+                    <a href="https://sipat.rn.gov.br" class="servico-card" target="_blank">
+                        <img src="assets/images/sipat.png" alt="SIPAT" class="servico-icon">
+                        <h3 class="servico-title">SIPAT</h3>
+                        <p class="servico-description">Sistema de Patrimônio</p>
+                    </a>
+
+                    <!-- Boletins Administrativos -->
+                    <a href="https://boletins.rn.gov.br" class="servico-card" target="_blank">
+                        <img src="assets/images/boletins.png" alt="Boletins Administrativos" class="servico-icon">
+                        <h3 class="servico-title">Boletins Administrativos</h3>
+                        <p class="servico-description">Portal de boletins administrativos do Estado</p>
+                    </a>
+
+                    <!-- Correio RN -->
+                    <a href="https://correio.rn.gov.br" class="servico-card" target="_blank">
+                        <img src="assets/images/correio-rn.png" alt="Correio RN" class="servico-icon">
+                        <h3 class="servico-title">Correio RN</h3>
+                        <p class="servico-description">Sistema de correio eletrônico institucional</p>
+                    </a>
+
+                    <!-- Inova RN -->
+                    <a href="https://inova.rn.gov.br" class="servico-card" target="_blank">
+                        <img src="assets/images/inova-rn.png" alt="Inova RN" class="servico-icon">
+                        <h3 class="servico-title">Inova RN</h3>
+                        <p class="servico-description">Portal de inovação do Estado</p>
+                    </a>
+
+                    <!-- Programa de Estágios -->
+                    <a href="https://estagios.rn.gov.br" class="servico-card" target="_blank">
+                        <img src="assets/images/estagios.png" alt="Programa de Estágios" class="servico-icon">
+                        <h3 class="servico-title">Programa de Estágios</h3>
+                        <p class="servico-description">Portal do programa de estágios do Estado</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer with Site Map -->
+    <footer class="footer py-6 px-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Mapa do Site -->
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Início</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
+                        <li><a href="pages/oportunidades.html" class="text-gray-300 hover:text-white">Oportunidades</a></li>
+                        <li><a href="pages/manuais.html" class="text-gray-300 hover:text-white">Manuais</a></li>
+                        <li><a href="pages/artigos.html" class="text-gray-300 hover:text-white">Artigos</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Perfis de Acesso</h4>
+                    <ul class="space-y-2">
+                        <li><a href="pages/fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
+                        <li><a href="pages/servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
+                        <li><a href="pages/cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
+                        <li><a href="pages/acesso-sistema.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Conhecimento</h4>
+                    <ul class="space-y-2">
+                        <li><a href="pages/capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
+                        <li><a href="pages/legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
+                        <li><a href="pages/manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Central de Atendimento:</li>
+                        <li>(84) 3232-1000</li>
+                        <li>Email:</li>
+                        <li>contato@rn.gov.br</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Direitos Reservados -->
+            <div class="border-t border-gray-700 pt-6 mt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <img src="img/rn-governo-logo.png" alt="Governo do Rio Grande do Norte" class="h-12 brightness-0 invert mr-4">
+                    </div>
+                    <div class="text-center md:text-right">
+                        <p class="text-sm text-blue-200">© 2024 Governo do Rio Grande do Norte</p>
+                        <p class="text-sm text-blue-200">Todos os direitos reservados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

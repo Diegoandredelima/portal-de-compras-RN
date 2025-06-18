@@ -1,0 +1,293 @@
+/* Estilos globais */
+body {
+    font-family: 'Rawline', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Barra colorida no estilo do Gov.br */
+.color-bar {
+    height: 4px;
+    background: linear-gradient(90deg, 
+        #FF6B35 0%, #FF6B35 25%, 
+        #5EA51D 25%, #5EA51D 50%, 
+        #FFCD07 50%, #FFCD07 75%, 
+        #3498db 75%, #3498db 100%);
+}
+
+/* Background do cabeçalho */
+.header-bg {
+    background-color: #f8f9fa;
+}
+
+/* Campo de busca estilizado */
+.search-input {
+    background-color: #f5f5f5;
+    border-radius: 20px;
+}
+
+/* Menu dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    z-index: 100;
+    min-width: 200px;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.menu-container {
+    position: relative;
+}
+
+/* Componentes do layout */
+.carousel {
+    background-color: #f5f5f5;
+    height: 300px;
+}
+.card {
+    border: 1px solid #e9e9e9;
+    border-radius: 5px;
+}
+.footer {
+    background-color: #071D41;
+    color: white;
+}
+.container-box {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Botões estilizados */
+.btn-primary {
+    background-color: #1351B4;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+.btn-primary:hover {
+    background-color: #0d3d8b;
+}
+.btn-outline {
+    border: 1px solid #1351B4;
+    color: #1351B4;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    transition: all 0.3s;
+}
+.btn-outline:hover {
+    background-color: #1351B4;
+    color: white;
+}
+
+/* Ícones de navegação */
+.nav-icon {
+    color: #1351B4;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+/* Estilos de títulos e navegação */
+.section-title {
+    border-bottom: 2px solid #1351B4;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+.page {
+    display: none;
+}
+.page.active {
+    display: block;
+}
+.tab-active {
+    color: #1351B4;
+    font-weight: bold;
+    border-bottom: 2px solid #1351B4;
+}
+.grey-box {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para os cards de serviços */
+.service-card {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.3s;
+    height: 100%;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+}
+.service-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+.service-card-title {
+    font-weight: 600;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+}
+.service-card-border {
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.border-blue {
+    background-color: #0E76A8;
+}
+.border-orange {
+    background-color: #FF6B35;
+}
+.border-green {
+    background-color: #5EA51D;
+}
+.border-yellow {
+    background-color: #FFCD07;
+}
+
+/* Sticky Header */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Menu off-canvas (lateral) */
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    z-index: 2000;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+}
+.offcanvas-menu.active {
+    left: 0;
+}
+.offcanvas-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1999;
+    display: none;
+}
+.offcanvas-backdrop.active {
+    display: block;
+}
+
+/* Botões estilizados como links */
+.link-button {
+    display: inline-block;
+    background-color: #f5f5f5;
+    color: #1351B4;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+.link-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Cards de manuais */
+.manual-card {
+    background-color: white;
+    border: 1px solid #e9e9e9;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.manual-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.manual-card-icon {
+    font-size: 2.5rem;
+    color: #1351B4;
+    margin-bottom: 15px;
+}
+.manual-card-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.manual-card-description {
+    color: #666;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Breadcrumbs (navegação hierárquica) */
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+.breadcrumbs a {
+    color: #1351B4;
+}
+.breadcrumbs .separator {
+    margin: 0 8px;
+    color: #666;
+}
+
+/* Estilos do mapa do site */
+.sitemap-section {
+    margin-bottom: 20px;
+}
+.sitemap-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+.sitemap-list {
+    list-style: none;
+    padding-left: 0;
+}
+.sitemap-list li {
+    margin-bottom: 5px;
+}
+.sitemap-list a {
+    color: #1351B4;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.sitemap-list a:hover {
+    color: #0d3d8b;
+    text-decoration: underline;
+}

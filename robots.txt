@@ -1,0 +1,36 @@
+# robots.txt para o Portal de Compras Governamentais - RN
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /pages/
+Allow: /css/
+Allow: /js/
+Allow: /img/
+
+# Bloquear acesso a arquivos de configuração
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /.env.*
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /yarn.lock
+Disallow: /.npmrc
+Disallow: /.eslintrc.json
+Disallow: /.prettierrc
+Disallow: /.editorconfig
+Disallow: /.gitignore
+Disallow: /.gitattributes
+
+# Bloquear acesso a arquivos de documentação
+Disallow: /README.md
+Disallow: /CONTRIBUTING.md
+Disallow: /CODE_OF_CONDUCT.md
+Disallow: /CHANGELOG.md
+Disallow: /SECURITY.md
+Disallow: /LICENSE
+
+# Sitemap
+Sitemap: https://compras.rn.gov.br/sitemap.xml

@@ -1,0 +1,41 @@
+{
+  "name": "Portal de Compras Governamentais - RN",
+  "short_name": "Compras RN",
+  "description": "Portal de Compras Governamentais do Estado do Rio Grande do Norte",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1351B4",
+  "icons": [
+    {
+      "src": "/img/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "orientation": "portrait",
+  "categories": ["government", "business", "shopping"],
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "screenshots": [
+    {
+      "src": "/img/screenshot-1.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/screenshot-2.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ]
+}

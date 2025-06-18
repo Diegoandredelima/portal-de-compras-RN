@@ -1,0 +1,42 @@
+{
+  "site": {
+    "name": "Portal de Compras Governamentais - RN",
+    "description": "Portal oficial de compras governamentais do Estado do Rio Grande do Norte",
+    "url": "https://compras.rn.gov.br",
+    "version": "1.0.0",
+    "language": "pt-BR"
+  },
+  "contact": {
+    "phone": "(84) 3232-1000",
+    "email": "contato@rn.gov.br",
+    "address": "Palácio Potengi, Av. Junqueira Ayres, 1500, Lagoa Nova, Natal/RN"
+  },
+  "social": {
+    "twitter": "https://twitter.com/governorn",
+    "facebook": "https://facebook.com/governorn",
+    "instagram": "https://instagram.com/governorn",
+    "youtube": "https://youtube.com/governorn"
+  },
+  "links": {
+    "transparencia": "http://www.transparencia.rn.gov.br/",
+    "ouvidoria": "https://falabr.cgu.gov.br/web/home",
+    "assedio": "https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false",
+    "sic": "https://www.sic.rn.gov.br/",
+    "poli": "https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9"
+  },
+  "colors": {
+    "primary": "#1351B4",
+    "secondary": "#FF6B35",
+    "success": "#5EA51D",
+    "warning": "#FFCD07",
+    "info": "#3498db",
+    "dark": "#071D41"
+  },
+  "features": {
+    "search": true,
+    "notifications": true,
+    "offline": true,
+    "pwa": true,
+    "darkMode": true
+  }
+}
