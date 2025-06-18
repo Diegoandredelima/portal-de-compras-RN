@@ -1,1 +1,5 @@
-# portal-de-compras-RN
+<<<<<<< HEAD
+Seu código local
+=======
+Código do repositório remoto
+>>>>>>> main
