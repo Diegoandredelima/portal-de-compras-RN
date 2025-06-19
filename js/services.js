@@ -1,7 +1,23 @@
 // Serviços para o Portal de Compras Governamentais
 
 // Configuração base da API
-const API_BASE_URL = 'https://api.compras.rn.gov.br/v1';
+// Attempt to get API_BASE_URL from a global config object (e.g., injected by a build process or a script tag in HTML)
+// This allows for different URLs in development, staging, and production environments.
+// Example: window.APP_CONFIG = { API_BASE_URL: 'http://localhost:3001/api/v1' };
+const hardcodedApiBaseUrl = 'https://api.compras.rn.gov.br/v1'; // Fallback URL
+
+const API_BASE_URL =
+  window.APP_CONFIG && window.APP_CONFIG.API_BASE_URL
+    ? window.APP_CONFIG.API_BASE_URL
+    : hardcodedApiBaseUrl;
+
+if (API_BASE_URL === hardcodedApiBaseUrl) {
+  console.warn(
+    'API_BASE_URL is using the hardcoded fallback. For production/staging, ensure window.APP_CONFIG.API_BASE_URL is set.',
+  );
+} else {
+  console.info(`API_BASE_URL is set to: ${API_BASE_URL}`);
+}
 
 // Função para fazer requisições à API
 const fetchAPI = async (endpoint, options = {}) => {
@@ -10,7 +26,7 @@ const fetchAPI = async (endpoint, options = {}) => {
       ...options,
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
+        Accept: 'application/json',
         ...options.headers,
       },
     });
@@ -44,7 +60,7 @@ export const authService = {
   },
 
   // Recuperar senha
-  recoverPassword: async (email) => {
+  recoverPassword: async email => {
     return fetchAPI('/auth/recover-password', {
       method: 'POST',
       body: JSON.stringify({ email }),
@@ -52,7 +68,7 @@ export const authService = {
   },
 
   // Verificar token
-  verifyToken: async (token) => {
+  verifyToken: async token => {
     return fetchAPI('/auth/verify-token', {
       method: 'POST',
       body: JSON.stringify({ token }),
@@ -69,12 +85,12 @@ export const licitacaoService = {
   },
 
   // Obter detalhes de uma licitação
-  getById: async (id) => {
+  getById: async id => {
     return fetchAPI(`/licitacoes/${id}`);
   },
 
   // Criar nova licitação
-  create: async (data) => {
+  create: async data => {
     return fetchAPI('/licitacoes', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -90,7 +106,7 @@ export const licitacaoService = {
   },
 
   // Excluir licitação
-  delete: async (id) => {
+  delete: async id => {
     return fetchAPI(`/licitacoes/${id}`, {
       method: 'DELETE',
     });
@@ -106,12 +122,12 @@ export const contratoService = {
   },
 
   // Obter detalhes de um contrato
-  getById: async (id) => {
+  getById: async id => {
     return fetchAPI(`/contratos/${id}`);
   },
 
   // Criar novo contrato
-  create: async (data) => {
+  create: async data => {
     return fetchAPI('/contratos', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -127,7 +143,7 @@ export const contratoService = {
   },
 
   // Excluir contrato
-  delete: async (id) => {
+  delete: async id => {
     return fetchAPI(`/contratos/${id}`, {
       method: 'DELETE',
     });
@@ -143,12 +159,12 @@ export const fornecedorService = {
   },
 
   // Obter detalhes de um fornecedor
-  getById: async (id) => {
+  getById: async id => {
     return fetchAPI(`/fornecedores/${id}`);
   },
 
   // Criar novo fornecedor
-  create: async (data) => {
+  create: async data => {
     return fetchAPI('/fornecedores', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -164,7 +180,7 @@ export const fornecedorService = {
   },
 
   // Excluir fornecedor
-  delete: async (id) => {
+  delete: async id => {
     return fetchAPI(`/fornecedores/${id}`, {
       method: 'DELETE',
     });
@@ -180,12 +196,12 @@ export const userService = {
   },
 
   // Obter detalhes de um usuário
-  getById: async (id) => {
+  getById: async id => {
     return fetchAPI(`/usuarios/${id}`);
   },
 
   // Criar novo usuário
-  create: async (data) => {
+  create: async data => {
     return fetchAPI('/usuarios', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -201,7 +217,7 @@ export const userService = {
   },
 
   // Excluir usuário
-  delete: async (id) => {
+  delete: async id => {
     return fetchAPI(`/usuarios/${id}`, {
       method: 'DELETE',
     });
@@ -217,7 +233,7 @@ export const notificationService = {
   },
 
   // Marcar notificação como lida
-  markAsRead: async (id) => {
+  markAsRead: async id => {
     return fetchAPI(`/notificacoes/${id}/read`, {
       method: 'PUT',
     });
@@ -231,7 +247,7 @@ export const notificationService = {
   },
 
   // Excluir notificação
-  delete: async (id) => {
+  delete: async id => {
     return fetchAPI(`/notificacoes/${id}`, {
       method: 'DELETE',
     });
