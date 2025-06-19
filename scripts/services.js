@@ -6,6 +6,7 @@
 // Example: window.APP_CONFIG = { API_BASE_URL: 'http://localhost:3001/api/v1' };
 const hardcodedApiBaseUrl = 'https://api.compras.rn.gov.br/v1'; // Fallback URL
 
+// In a future WordPress integration, this API_BASE_URL would typically point to the WordPress REST API endpoint (e.g., 'https://yourdomain.com/wp-json/').
 const API_BASE_URL =
   window.APP_CONFIG && window.APP_CONFIG.API_BASE_URL
     ? window.APP_CONFIG.API_BASE_URL
