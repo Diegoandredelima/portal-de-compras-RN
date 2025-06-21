@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Compras Governamentais - RN - Acesso ao Sistema</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="bg-white">
+    <!-- Cabeçalho Superior -->
+    <header class="header-bg py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
+            <div class="flex items-center space-x-4">
+                <img src="images/logos/variação logo COMPR_cores.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
+                <img src="images/logos/SEAD-01_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
+            </div>
+            <div class="flex items-center space-x-4 text-sm flex-wrap mt-2 md:mt-0">
+                <a href="#" class="text-gray-600 hover:text-gray-900">Órgãos do Governo</a>
+                <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
+                <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
+                <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
+                <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
+                <div class="dropdown">
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
+                </div>
+                <div class="flex items-center space-x-2 ml-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Barra colorida -->
+    <div class="color-bar w-full"></div>
+
+    <!-- Cabeçalho fixo com menu -->
+    <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <a href="../index.html" class="text-xl font-medium">Central de Compras</a>
+            </div>
+            <div class="relative w-1/3 hidden md:block">
+                <input type="text" placeholder="O que você procura?" class="search-input w-full py-2 px-4 pl-10">
+                <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu lateral (off-canvas) -->
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="p-4 border-b flex justify-between items-center">
+            <h2 class="text-lg font-bold">Menu</h2>
+            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-4">
+            <ul class="space-y-4">
+                <li><a href="../index.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-home nav-icon"></i><span>Início</span></a></li>
+                <li><a href="fornecedor.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-user-tie nav-icon"></i><span>Fornecedor</span></a></li>
+                <li><a href="servidor.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-user nav-icon"></i><span>Servidor</span></a></li>
+                <li><a href="cidadao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-users nav-icon"></i><span>Cidadão</span></a></li>
+                <li><a href="capacite-se.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-graduation-cap nav-icon"></i><span>Capacite-se</span></a></li>
+                <li><a href="legislacao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-gavel nav-icon"></i><span>Legislação</span></a></li>
+                <li><a href="acesso-sistema.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-sign-in-alt nav-icon"></i><span>Acesso ao Sistema</span></a></li>
+                <li><a href="oportunidades.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-search-dollar nav-icon"></i><span>Oportunidades</span></a></li>
+                <li><a href="manuais.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-book nav-icon"></i><span>Manuais</span></a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Pano de fundo do menu lateral -->
+    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
+
+    <!-- Conteúdo principal -->
+    <main class="container mx-auto py-6 px-4">
+        <!-- Breadcrumbs do Acesso ao Sistema -->
+        <div class="breadcrumbs">
+            <a href="../index.html">Início</

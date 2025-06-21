@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Compras Governamentais - RN - Manuais</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="bg-white">
+    <!-- Cabeçalho Superior -->
+    <header class="header-bg py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
+            <div class="flex items-center space-x-4">
+                <img src="images/logos/variação logo COMPR_cores.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
+                <img src="images/logos/SEAD-01_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
+            </div>
+            <div class="flex items-center space-x-4 text-sm flex-wrap mt-2 md:mt-0">
+                <a href="#" class="text-gray-600 hover:text-gray-900">Órgãos do Governo</a>
+                <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
+                <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
+                <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
+                <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
+                <div class="dropdown">
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
+                </div>
+                <div class="flex items-center space-x-2 ml-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Barra colorida -->
+    <div class="color-bar w-full"></div>
+
+    <!-- Cabeçalho fixo com menu -->
+    <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <a href="index.html" class="text-xl font-medium">Central de Compras</a>
+            </div>
+            <div class="relative w-1/3 hidden md:block">
+                <input type="text" placeholder="O que você procura?" class="search-input w-full py-2 px-4 pl-10">
+                <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu lateral (off-canvas) -->
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="p-4 border-b flex justify-between items-center">
+            <h2 class="text-lg font-bold">Menu</h2>
+            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-4">
+            <ul class="space-y-4">
+                <li><a href="index.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-home nav-icon"></i><span>Início</span></a></li>
+                <li><a href="fornecedor.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-user-tie nav-icon"></i><span>Fornecedor</span></a></li>
+                <li><a href="servidor.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-user nav-icon"></i><span>Servidor</span></a></li>
+                <li><a href="cidadao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-users nav-icon"></i><span>Cidadão</span></a></li>
+                <li><a href="capacite-se.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-graduation-cap nav-icon"></i><span>Capacite-se</span></a></li>
+                <li><a href="legislacao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-gavel nav-icon"></i><span>Legislação</span></a></li>
+                <li><a href="acesso-sistema.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-sign-in-alt nav-icon"></i><span>Acesso ao Sistema</span></a></li>
+                <li><a href="oportunidades.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-search-dollar nav-icon"></i><span>Oportunidades</span></a></li>
+                <li><a href="manuais.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-book nav-icon"></i><span>Manuais</span></a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Pano de fundo do menu lateral -->
+    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
+
+    <!-- Conteúdo principal -->
+    <main class="container mx-auto py-6 px-4">
+        <!-- Breadcrumbs dos Manuais -->
+        <div class="breadcrumbs">
+            <a href="index.html">Início</a>
+            <span class="separator">/</span>
+            <span>Manuais</span>
+        </div>
+        
+        <!-- Links rápidos -->
+        <div class="container-box mb-6">
+            <div class="flex justify-between flex-wrap">
+                <a href="fornecedor.html" class="flex items-center mb-4 mr-4">
+                    <i class="fas fa-user-tie nav-icon"></i>
+                    <span>Fornecedor</span>
+                </a>
+                <a href="servidor.html" class="flex items-center mb-4 mr-4">
+                    <i class="fas fa-user nav-icon"></i>
+                    <span>Servidor</span>
+                </a>
+                <a href="capacite-se.html" class="flex items-center mb-4">
+                    <i class="fas fa-graduation-cap nav-icon"></i>
+                    <span>Capacite-se</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Carrossel de notícias -->
+        <div class="carousel mb-6 flex items-center justify-center">
+            <div class="text-center">
+                <h3 class="text-xl font-bold">Carrossel de Notícias</h3>
+            </div>
+        </div>
+
+        <!-- Manuais -->
+        <div class="mb-6">
+            <h3 class="text-xl font-bold mb-4">Manuais</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="manual-card">
+                    <i class="fas fa-file-pdf manual-card-icon"></i>
+                    <h4 class="manual-card-title">Manual do Fornecedor</h4>
+                    <p class="manual-card-description">Guia completo para fornecedores participarem de licitações.</p>
+                    <a href="#" class="btn-outline">Download</a>
+                </div>
+                <div class="manual-card">
+                    <i class="fas fa-file-pdf manual-card-icon"></i>
+                    <h4 class="manual-card-title">Manual do Servidor</h4>
+                    <p class="manual-card-description">Instruções para servidores sobre processos de compras.</p>
+                    <a href="#" class="btn-outline">Download</a>
+                </div>
+                <div class="manual-card">
+                    <i class="fas fa-file-pdf manual-card-icon"></i>
+                    <h4 class="manual-card-title">Manual de Boas Práticas</h4>
+                    <p class="manual-card-description">Boas práticas para gestão de compras públicas.</p>
+                    <a href="#" class="btn-outline">Download</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mapa do Site e Rodapé -->
+    <div class="py-6 px-4 border-t mt-8 bg-gray-100">
+        <div class="container mx-auto">
+            <h3 class="text-lg font-medium mb-4">Mapa do Site</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="sitemap-section">
+                    <h4 class="sitemap-title">Início</h4>
+                    <ul class="sitemap-list">
+                        <li><a href="index.html">Página Principal</a></li>
+                        <li><a href="oportunidades.html">Oportunidades</a></li>
+                        <li><a href="manuais.html">Manuais</a></li>
+                        <li><a href="artigos.html">Artigos</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-section">
+                    <h4 class="sitemap-title">Perfis de Acesso</h4>
+                    <ul class="sitemap-list">
+                        <li><a href="fornecedor.html">Fornecedor</a></li>
+                        <li><a href="servidor.html">Servidor</a></li>
+                        <li><a href="cidadao.html">Cidadão</a></li>
+                        <li><a href="acesso-sistema.html">Acesso ao Sistema</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-section">
+                    <h4 class="sitemap-title">Conhecimento</h4>
+                    <ul class="sitemap-list">
+                        <li><a href="capacite-se.html">Capacite-se</a></li>
+                        <li><a href="legislacao.html">Legislação</a></li>
+                        <li><a href="manuais.html">Manuais e Tutoriais</a></li>
+                        <li><a href="#">Vídeos</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-section">
+                    <h4 class="sitemap-title">Serviços</h4>
+                    <ul class="sitemap-list">
+                        <li><a href="oportunidades.html">Consulta de UASGs</a></li>
+                        <li><a href="#">Portal de Compras</a></li>
+                        <li><a href="#">Escola de Governo</a></li>
+                        <li><a href="#">Transparência</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer py-6 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div>
+                    <img src="images/logos/SEAD-01_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12 mb-3 brightness-0 invert">
+                    <p class="text-sm"> 2024 Governo do Rio Grande do Norte</p>
+                    <p class="text-sm">Todos os direitos reservados</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-2">Contato</h4>
+                    <p class="text-sm mb-1">Central de Atendimento: (84) 3232-1000</p>
+                    <p class="text-sm">Email: contato@sead.rn.gov.br</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
