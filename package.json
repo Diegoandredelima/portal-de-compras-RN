@@ -35,5 +35,8 @@
   },
   "engines": {
     "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "@govbr-ds/core": "3.6.2"
   }
 }
