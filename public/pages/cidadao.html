@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class="bg-white">
-    <!-- Cabeçalho Superior -->
-    <header class="header-bg py-2 px-4">
+     <!-- Cabeçalho Superior -->
+     <header class="header-bg py-2 px-4">
         <div class="container mx-auto flex justify-between items-center flex-wrap">
             <div class="flex items-center space-x-4">
-                <img src="images/logos/variação logo COMPR_cores.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
-                <img src="images/logos/SEAD-01_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
+                <img src="../images/logos/COMPR_logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
+                <img src="../images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
             </div>
             <div class="flex items-center space-x-4 text-sm flex-wrap mt-2 md:mt-0">
                 <a href="#" class="text-gray-600 hover:text-gray-900">Órgãos do Governo</a>
@@ -35,8 +35,8 @@
             </div>
         </div>
     </header>
-    
-    <!-- Barra colorida -->
+
+    <!-- Barra Colorida -->
     <div class="color-bar w-full"></div>
 
     <!-- Cabeçalho fixo com menu -->
@@ -55,8 +55,141 @@
         </div>
     </div>
 
-    <!-- Menu lateral (off-canvas) -->
-    <div class="offcanvas-menu" id="offcanvas-menu">
+     <!-- Menu Lateral -->
+     <div class="offcanvas-menu" id="offcanvas-menu">
         <div class="p-4 border-b flex justify-between items-center">
             <h2 class="text-lg font-bold">Menu</h2>
-            <button id="close-menu" class="text-gray-700" aria
+            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-4">
+            <ul class="space-y-4">
+                <li>
+                                        <a href="../index.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-home nav-icon"></i>
+                        <span>Início</span>
+                    </a>
+                </li>
+                <li>
+                                        <a href="fornecedor.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-user-tie nav-icon"></i>
+                        <span>Fornecedor</span>
+                    </a>
+                </li>
+                <li>
+                                        <a href="servidor.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-user nav-icon"></i>
+                        <span>Servidor</span>
+                    </a>
+                </li>
+                <li>
+                                        <a href="cidadao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-users nav-icon"></i>
+                        <span>Cidadão</span>
+                    </a>
+                </li>
+                <li>
+                                        <a href="capacite-se.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-graduation-cap nav-icon"></i>
+                        <span>Capacite-se</span>
+                    </a>
+                </li>
+                <li>
+                                        <a href="legislacao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-gavel nav-icon"></i>
+                        <span>Legislação</span>
+                    </a>
+                </li>
+                <li>
+                                        <a href="em-construcao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-sign-in-alt nav-icon"></i>
+                        <span>Acesso ao Sistema</span>
+                    </a>
+                </li>
+                <li>
+                                        <a href="oportunidades.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-search-dollar nav-icon"></i>
+                        <span>Oportunidades</span>
+                    </a>
+                </li>
+                <li>
+                                        <a href="manuais.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-book nav-icon"></i>
+                        <span>Manuais</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
+
+    <main class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4">Página do Cidadão</h1>
+        <p>Conteúdo da página em construção.</p>
+    </main>
+
+    <footer class="footer py-6 px-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Mapa do Site -->
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Início</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
+                        <li><a href="oportunidades.html" class="text-gray-300 hover:text-white">Oportunidades</a></li>
+                        <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais</a></li>
+                        <li><a href="artigos.html" class="text-gray-300 hover:text-white">Artigos</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Perfis de Acesso</h4>
+                    <ul class="space-y-2">
+                        <li><a href="fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
+                        <li><a href="servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
+                        <li><a href="cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
+                        <li><a href="em-construcao.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Conhecimento</h4>
+                    <ul class="space-y-2">
+                        <li><a href="capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
+                        <li><a href="legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
+                        <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Central de Atendimento:</li>
+                        <li>(84) 3232-1000</li>
+                        <li>Email:</li>
+                        <li>contato@rn.gov.br</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Direitos Reservados -->
+            <div class="border-t border-gray-700 pt-6 mt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <img src="../images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12 brightness-0 invert mr-4">
+                    </div>
+                    <div class="text-center md:text-right">
+                        <p class="text-sm text-blue-200"> 2024 Governo do Rio Grande do Norte</p>
+                        <p class="text-sm text-blue-200">Todos os direitos reservados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

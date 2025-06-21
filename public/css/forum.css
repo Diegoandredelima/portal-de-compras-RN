@@ -1,0 +1,288 @@
+/* Estilos específicos do Fórum */
+
+/* Layout principal do grid do fórum */
+.forum-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Padrão mobile: uma coluna */
+    gap: 2rem; /* Espaçamento entre as colunas */
+}
+
+@media (min-width: 1024px) { /* Em telas maiores que 1024px (lg breakpoint) */
+    .forum-grid {
+        grid-template-columns: 3fr 1fr; /* Conteúdo principal (3 partes) e sidebar (1 parte) */
+    }
+}
+
+/* Título da página do fórum */
+.forum-title {
+    color: var(--dark-blue); /* Usando a variável de cor definida em main.css */
+}
+
+/* Seções e cartões */
+.forum-intro,
+.create-topic-form {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+}
+
+.forum-intro h2,
+.create-topic-form h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Estilo para os cartões de tópico */
+.topic-card {
+    background-color: white;
+    padding: 1.25rem; /* p-5 */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* shadow-md */
+    margin-bottom: 1rem;
+    border: 1px solid var(--gray-dark); /* Borda sutil */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.topic-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.topic-card h3 {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.topic-card h3:hover {
+    text-decoration: underline;
+}
+
+.topic-interactions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* space-x-3 */
+}
+
+.topic-interactions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem; /* Ícones um pouco maiores */
+    color: var(--gray-600); /* Cor padrão dos ícones */
+    transition: color 0.2s ease;
+}
+
+.topic-interactions button:hover {
+    color: var(--primary-color); /* Cor de hover genérica */
+}
+
+.topic-interactions .like-button:hover { color: var(--secondary-color); } /* Verde */
+.topic-interactions .dislike-button:hover { color: var(--accent-color); } /* Vermelho/Laranja */
+
+.topic-interactions .total-interactions {
+    font-size: 1.5rem; /* text-lg */
+    font-weight: bold;
+    color: var(--dark-blue);
+    margin-left: 0.5rem;
+}
+
+/* Formulário de Criação de Tópico */
+.create-topic-form label {
+    font-weight: bold;
+    color: var(--gray-700);
+}
+
+.create-topic-form input[type="text"],
+.create-topic-form input[type="email"],
+.create-topic-form textarea {
+    width: 100%;
+    padding: 0.75rem; /* p-3 */
+    border: 1px solid var(--gray-300); /* border-gray-300 */
+    border-radius: 0.375rem; /* rounded-md */
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.create-topic-form input:focus,
+.create-topic-form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2); /* ring-primary-color com opacidade */
+}
+
+.create-topic-form button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1rem; /* py-3 px-4 */
+    border-radius: 0.375rem; /* rounded-md */
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.create-topic-form button[type="submit"]:hover {
+    background-color: #2a7bb8; /* Um tom mais escuro do primary-color */
+}
+
+/* Modal de Detalhes do Tópico */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Acima de tudo */
+    visibility: hidden; /* Oculto por padrão */
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh; /* Altura máxima para rolagem */
+    overflow-y: auto; /* Permite rolagem interna */
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.75rem; /* rounded-lg */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* shadow-xl */
+    transform: translateY(20px); /* Pequeno deslocamento para animação */
+    transition: transform 0.3s ease-out;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem; /* text-2xl */
+    color: var(--gray-600);
+    transition: color 0.2s ease;
+}
+
+.modal-close-button:hover {
+    color: var(--gray-900);
+}
+
+.qa-section h3 {
+    color: var(--dark-blue);
+}
+
+.qa-item {
+    background-color: var(--gray-50); /* bg-gray-50 */
+    padding: 1rem; /* p-4 */
+    border-radius: 0.375rem; /* rounded-md */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow-sm */
+    border: 1px solid var(--gray-200);
+}
+
+.qa-item .text-gray-800 {
+    color: #2d3748; /* Cor de texto mais escura para clareza */
+}
+
+.qa-item .text-sm a {
+    color: var(--primary-color);
+}
+
+.response-interactions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--gray-500);
+    transition: color 0.2s ease;
+}
+
+.response-interactions button:hover {
+    color: var(--primary-color);
+}
+
+.response-interactions .like-button-response:hover { color: var(--secondary-color); }
+.response-interactions .dislike-button-response:hover { color: var(--accent-color); }
+
+.add-response h4 {
+    color: var(--dark-blue);
+}
+
+.add-response textarea,
+.add-response input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 0.375rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-response textarea:focus,
+.add-response input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.add-response button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.625rem 1rem; /* py-2 px-4 */
+    border-radius: 0.375rem; /* rounded-md */
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.add-response button:hover {
+    background-color: #4a8d16; /* Um tom mais escuro do secondary-color */
+}
+
+
+/* ------------------------
+    Responsividade
+------------------------- */
+@media (max-width: 768px) {
+    .forum-main-content,
+    .forum-sidebar {
+        padding: 1rem; /* Ajusta padding para telas menores */
+    }
+
+    .topic-card {
+        flex-direction: column; /* Empilha o conteúdo do card em telas pequenas */
+        align-items: flex-start;
+    }
+
+    .topic-interactions {
+        width: 100%; /* Ocupa a largura total */
+        justify-content: flex-end; /* Alinha interações à direita */
+        margin-top: 1rem;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+        width: 95%; /* Ocupa mais largura em telas pequenas */
+    }
+
+    .construction-title {
+        font-size: 2rem;
+    }
+    .construction-message {
+        font-size: 1rem;
+    }
+    .action-buttons {
+        flex-direction: column;
+    }
+    .action-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
