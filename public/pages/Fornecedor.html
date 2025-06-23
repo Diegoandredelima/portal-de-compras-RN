@@ -9,17 +9,14 @@
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class="bg-white">
-    <!-- Top Header -->
-    <header class="header-bg py-2 px-4">
-        <div class="container mx-auto flex justify-between items-center">
+     <!-- Cabeçalho Superior -->
+     <header class="header-bg py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
             <div class="flex items-center space-x-4">
-                <!-- COMPR Logo -->
-                <img src="images/logos/variação logo COMPR_cores.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
-                <!-- Rio Grande do Norte Logo -->
-                <img src="images/logos/SEAD-01_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
+                <img src="../images/logos/COMPR_logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
+                <img src="../images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
             </div>
             <div class="flex items-center space-x-4 text-sm">
-                <a href="#" class="text-gray-600 hover:text-gray-900">Órgãos do Governo</a>
                 <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
                 <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
                 <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
@@ -38,17 +35,17 @@
         </div>
     </header>
 
-    <!-- Colored Bar -->
+    <!-- Barra Colorida -->
     <div class="color-bar w-full"></div>
 
-    <!-- Sticky Header with Menu -->
+    <!-- Cabeçalho Fixo com Menu -->
     <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
                 <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
-                <a href="index.html" class="text-xl font-medium">Central de Compras</a>
+                <a href="../index.html" class="text-xl font-medium">Central de Compras</a>
             </div>
             <div class="relative w-1/3">
                 <input type="text" placeholder="O que você procura?" class="search-input w-full py-2 px-4 pl-10">
@@ -57,7 +54,7 @@
         </div>
     </div>
 
-    <!-- Off-canvas Menu -->
+    <!-- Menu Lateral -->
     <div class="offcanvas-menu" id="offcanvas-menu">
         <div class="p-4 border-b flex justify-between items-center">
             <h2 class="text-lg font-bold">Menu</h2>
@@ -68,7 +65,7 @@
         <div class="p-4">
             <ul class="space-y-4">
                 <li>
-                    <a href="index.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                    <a href="../index.html" class="flex items-center p-2 rounded hover:bg-gray-100">
                         <i class="fas fa-home nav-icon"></i>
                         <span>Início</span>
                     </a>
@@ -104,7 +101,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="acesso-sistema.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                    <a href="em-construcao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
                         <i class="fas fa-sign-in-alt nav-icon"></i>
                         <span>Acesso ao Sistema</span>
                     </a>
@@ -127,16 +124,16 @@
 
     <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
 
-    <!-- Main Content -->
+    <!-- Conteúdo Principal -->
     <main class="container mx-auto py-6 px-4">
-        <!-- Breadcrumbs -->
+        <!-- Navegação (Breadcrumbs) -->
         <div class="breadcrumbs">
-            <a href="index.html">Início</a>
+            <a href="../index.html">Início</a>
             <span class="separator">/</span>
             <span>Fornecedor</span>
         </div>
 
-        <!-- Quick Links Box -->
+        <!-- Botões de Acesso Rápido -->
         <div class="container-box mb-6">
             <div class="flex justify-between flex-wrap">
                 <a href="capacite-se.html" class="flex items-center mb-4 mr-4">
@@ -161,7 +158,8 @@
             </div>
         </div>
 
-        <!-- Selling to the Government -->
+        <!-- Venda para o Governo -->
+        <!-- Venda para o Governo -->
         <div class="mb-6">
             <h3 class="text-xl font-bold mb-4">Comece a vender para o governo</h3>
             <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -172,68 +170,66 @@
         </div>
     </main>
 
-    <!-- Site Map & Footer -->
-    <div class="py-6 px-4 border-t mt-8 bg-gray-100">
+    <footer class="footer py-6 px-4">
         <div class="container mx-auto">
-            <h3 class="text-lg font-medium mb-4">Mapa do Site</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Mapa do Site -->
                 <div class="sitemap-section">
-                    <h4 class="sitemap-title">Início</h4>
-                    <ul class="sitemap-list">
-                        <li><a href="index.html">Página Principal</a></li>
-                        <li><a href="oportunidades.html">Oportunidades</a></li>
-                        <li><a href="manuais.html">Manuais</a></li>
-                        <li><a href="artigos.html">Artigos</a></li>
+                    <h4 class="text-white font-bold mb-4">Início</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
+                        <li><a href="oportunidades.html" class="text-gray-300 hover:text-white">Oportunidades</a></li>
+                        <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais</a></li>
+                        <li><a href="artigos.html" class="text-gray-300 hover:text-white">Artigos</a></li>
                     </ul>
                 </div>
+
                 <div class="sitemap-section">
-                    <h4 class="sitemap-title">Perfis de Acesso</h4>
-                    <ul class="sitemap-list">
-                        <li><a href="fornecedor.html">Fornecedor</a></li>
-                        <li><a href="servidor.html">Servidor</a></li>
-                        <li><a href="cidadao.html">Cidadão</a></li>
-                        <li><a href="acesso-sistema.html">Acesso ao Sistema</a></li>
+                    <h4 class="text-white font-bold mb-4">Perfis de Acesso</h4>
+                    <ul class="space-y-2">
+                        <li><a href="fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
+                        <li><a href="servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
+                        <li><a href="cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
+                        <li><a href="em-construcao.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
                     </ul>
                 </div>
+
                 <div class="sitemap-section">
-                    <h4 class="sitemap-title">Conhecimento</h4>
-                    <ul class="sitemap-list">
-                        <li><a href="capacite-se.html">Capacite-se</a></li>
-                        <li><a href="legislacao.html">Legislação</a></li>
-                        <li><a href="manuais.html">Manuais e Tutoriais</a></li>
-                        <li><a href="#">Vídeos</a></li>
+                    <h4 class="text-white font-bold mb-4">Conhecimento</h4>
+                    <ul class="space-y-2">
+                        <li><a href="capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
+                        <li><a href="legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
+                        <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
                     </ul>
                 </div>
+
                 <div class="sitemap-section">
-                    <h4 class="sitemap-title">Serviços</h4>
-                    <ul class="sitemap-list">
-                        <li><a href="oportunidades.html">Consulta de UASGs</a></li>
-                        <li><a href="#">Portal de Compras</a></li>
-                        <li><a href="#">Escola de Governo</a></li>
-                        <li><a href="#">Transparência</a></li>
+                    <h4 class="text-white font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Central de Atendimento:</li>
+                        <li>(84) 3232-1000</li>
+                        <li>Email:</li>
+                        <li>contato@rn.gov.br</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <footer class="footer py-6 px-4">
-        <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row justify-between">
-                <div>
-                    <img src="images/logos/SEAD-01_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12 mb-3 brightness-0 invert">
-                    <p class="text-sm"> 2024 Governo do Rio Grande do Norte</p>
-                    <p class="text-sm">Todos os direitos reservados</p>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-2">Contato</h4>
-                    <p class="text-sm mb-1">Central de Atendimento: (84) 3232-1000</p>
-                    <p class="text-sm">Email: contato@rn.gov.br</p>
+            <!-- Direitos Reservados -->
+            <div class="border-t border-gray-700 pt-6 mt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <img src="../images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12 brightness-0 invert mr-4">
+                    </div>
+                    <div class="text-center md:text-right">
+                        <p class="text-sm text-blue-200"> 2024 Governo do Rio Grande do Norte</p>
+                        <p class="text-sm text-blue-200">Todos os direitos reservados</p>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/scripts.js"></script>
+    <script src="../js/scripts.js"></script>
 </body>
 </html>

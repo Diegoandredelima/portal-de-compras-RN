@@ -6,20 +6,20 @@
     <title>Portal de Compras Governamentais - RN</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="node_modules/@govbr-ds/core/dist/core.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="bg-white">
-    <!-- Top Header -->
+    <!-- Barra Superior -->
     <header class="header-bg py-2 px-4">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-4">
-                <!-- COMPR Logo -->
-                <img src="images/compr-logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
-                <!-- Rio Grande do Norte Logo -->
-                <img src="images/SEAD_logo.png" alt="Governo do Rio Grande do Norte" class="h-12">
+                <!-- Logotipo da COMPR -->
+                <img src="images/logos/COMPR_logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
+                <!-- Logotipo do Rio Grande do Norte -->
+                <img src="images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
             </div>
             <div class="flex items-center space-x-4 text-sm">
-                <a href="#" class="text-gray-600 hover:text-gray-900">Órgãos do Governo</a>
                 <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
                 <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
                 <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
@@ -38,10 +38,10 @@
         </div>
     </header>
 
-    <!-- Colored Bar -->
+    <!-- Barra Colorida -->
     <div class="color-bar w-full"></div>
 
-    <!-- Sticky Header with Menu -->
+    <!-- Cabeçalho Fixo com Menu -->
     <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
@@ -51,13 +51,18 @@
                 <a href="index.html" class="text-xl font-medium">Central de Compras</a>
             </div>
             <div class="relative w-1/3">
-                <input type="text" placeholder="O que você procura?" class="search-input w-full py-2 px-4 pl-10">
+                <input type="text" id="search-input-field" placeholder="O que você procura?" class="search-input w-full">
                 <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
             </div>
         </div>
     </div>
 
-    <!-- Off-canvas Menu -->
+    </div>
+
+    <!-- Container para Resultados da Busca -->
+    <div id="search-results-container" class="container mx-auto my-4 px-4"></div>
+
+    <!-- Menu Lateral -->
     <div class="offcanvas-menu" id="offcanvas-menu">
         <div class="p-4 border-b flex justify-between items-center">
             <h2 class="text-lg font-bold">Menu</h2>
@@ -104,7 +109,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="pages/acesso-sistema.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                    <a href="pages/em-construcao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
                         <i class="fas fa-sign-in-alt nav-icon"></i>
                         <span>Acesso ao Sistema</span>
                     </a>
@@ -127,7 +132,7 @@
 
     <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
 
-    <!-- Main Content -->
+    <!-- Conteúdo Principal -->
     <main class="container mx-auto py-6 px-4">
         <!-- Navigation with Icons -->
         <div class="container-box mb-6">
@@ -152,25 +157,59 @@
                     <i class="fas fa-gavel nav-icon"></i>
                     <span>Legislação</span>
                 </a>
-                <a href="pages/acesso-sistema.html" class="flex items-center mb-4">
+                <a href="pages/em-construcao.html" class="flex items-center mb-4">
                     <i class="fas fa-sign-in-alt nav-icon"></i>
                     <span>Acesso ao Sistema</span>
                 </a>
             </div>
         </div>
 
-        <!-- Carousel -->
-        <div class="carousel mb-6 flex items-center justify-center">
-            <div class="text-center">
-                <h3 class="text-xl font-bold mb-2">Carrossel de Notícias</h3>
-                <p class="text-gray-600">Últimas notícias e destaques sobre Compras Governamentais</p>
+        <!-- Carousel de Notícias com Imagens -->
+        <div class="carousel-container mb-6 relative w-full overflow-hidden rounded-lg shadow-lg">
+            <div id="image-carousel" class="carousel-images flex transition-transform duration-500 ease-in-out">
+                <!-- Imagem 1 -->
+                <a href="pages/em-construcao.html" class="carousel-item flex-shrink-0 w-full relative block">
+                    <img src="images/imagem-noticia/Capa-1500x1000-7.png" alt="Notícia 1 sobre Compras Governamentais" class="w-full h-auto object-cover rounded-lg">
+                    <div class="carousel-caption absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-4 rounded-b-lg">
+                        <h3 class="text-xl font-bold mb-1">Saiba como as gestões municipais podem aderir ao RN+Inclusivo</h3>
+                        <p class="text-sm">Projeto do Governo do Estado viabiliza capacitações aos servidores públicos municipais</p>
+                    </div>
+                </a>
+                <!-- Imagem 2 -->
+                <a href="pages/em-construcao.html" class="carousel-item flex-shrink-0 w-full relative block">
+                    <img src="images/imagem-noticia/Central-de-Compras-51-Ft-Aldecy-Junior.png" alt="Capacitação para Servidores" class="w-full h-auto object-cover rounded-lg">
+                    <div class="carousel-caption absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-4 rounded-b-lg">
+                        <h3 class="text-xl font-bold mb-1">Governo do Estado adere Contrata+Brasil no RN em julho com apresentação aos municípios</h3>
+                        <p class="text-sm">Evento de adesão à plataforma do Governo Federal visa facilitar contratações públicas com MEIs, fortalecendo a economia local..</p>
+                    </div>
+                </a>
+                <!-- Imagem 3 -->
+                <a href="pages/em-construcao.html" class="carousel-item flex-shrink-0 w-full relative block">
+                    <img src="images/imagem-noticia/contrata-mais-brasil.png" alt="Novas Oportunidades de Compras" class="w-full h-auto object-cover rounded-lg">
+                    <div class="carousel-caption absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-4 rounded-b-lg">
+                        <h3 class="text-xl font-bold mb-1">Oportunidades de Negócio para Fornecedores</h3>
+                        <p class="text-sm">Fique por dentro dos próximos editais e das melhores chances para sua empresa no mercado público.</p>
+                    </div>
+                </a>
             </div>
+
+            <!-- Botões de Navegação -->
+            <button id="carousel-prev" class="carousel-button absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-gray-800 p-3 rounded-full shadow-lg transition-all focus:outline-none">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="carousel-next" class="carousel-button absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-gray-800 p-3 rounded-full shadow-lg transition-all focus:outline-none">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Indicadores de Slides -->
+            <div id="carousel-indicators" class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2"></div>
         </div>
 
-        <!-- Manuals & Links Section -->
+        <!-- Seção de Manuais e Links -->
         <div class="mb-6">
             <h3 class="section-title text-xl font-bold">Links Rápidos</h3>
             <div class="my-4">
+                <a href="pages/forum.html" class="link-button"><i class="fas fa-comments mr-2"></i> Fórum</a>
                 <a href="pages/manuais.html" class="link-button"><i class="fas fa-book mr-2"></i> Manuais</a>
                 <a href="pages/legislacao.html" class="link-button"><i class="fas fa-gavel mr-2"></i> Legislação</a>
                 <a href="pages/artigos.html" class="link-button"><i class="fas fa-file-alt mr-2"></i> Artigos</a>
@@ -178,7 +217,7 @@
             </div>
         </div>
 
-        <!-- Approved Purchases -->
+        <!-- Compras Homologadas -->
         <div class="mb-6">
             <h3 class="section-title text-xl font-bold">Compras Homologadas em 2024</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
@@ -218,70 +257,70 @@
 
                     <!-- Carta de Serviços -->
                     <a href="https://cartadeservicos.rn.gov.br" class="servico-card" target="_blank">
-                        <img src="images/carta-servicos.png" alt="Carta de Serviços" class="servico-icon">
+                        <img src="images/servicos/carta-servicos.png" alt="Carta de Serviços" class="servico-icon">
                         <h3 class="servico-title">Carta de Serviços</h3>
                         <p class="servico-description">Catálogo de serviços públicos do Estado</p>
                     </a>
 
                     <!-- Portal de Compras -->
                     <a href="https://compras.rn.gov.br" class="servico-card" target="_blank">
-                        <img src="images/portal-compras.png" alt="Portal de Compras" class="servico-icon">
+                        <img src="images/servicos/portal-compras.png" alt="Portal de Compras" class="servico-icon">
                         <h3 class="servico-title">Portal de Compras</h3>
                         <p class="servico-description">Sistema de compras governamentais do RN</p>
                     </a>
 
                     <!-- RN Consig -->
                     <a href="https://rnconsig.rn.gov.br" class="servico-card" target="_blank">
-                        <img src="images/rn-consig.png" alt="RN Consig" class="servico-icon">
+                        <img src="images/servicos/rn-consig.png" alt="RN Consig" class="servico-icon">
                         <h3 class="servico-title">RN Consig</h3>
                         <p class="servico-description">Portal de consignações do servidor</p>
                     </a>
 
                     <!-- SEI RN -->
                     <a href="https://sei.rn.gov.br" class="servico-card" target="_blank">
-                        <img src="images/sei-rn.png" alt="SEI RN" class="servico-icon">
+                        <img src="images/servicos/sei-rn.png" alt="SEI RN" class="servico-icon">
                         <h3 class="servico-title">SEI! RN</h3>
                         <p class="servico-description">Sistema Eletrônico de Informações</p>
                     </a>
 
                     <!-- SUAP -->
                     <a href="https://suap.rn.gov.br" class="servico-card" target="_blank">
-                        <img src="images/suap.png" alt="SUAP" class="servico-icon">
+                        <img src="images/servicos/suap.png" alt="SUAP" class="servico-icon">
                         <h3 class="servico-title">SUAP</h3>
                         <p class="servico-description">Sistema Unificado de Administração Pública</p>
                     </a>
 
                     <!-- SIPAC -->
                     <a href="https://sipac.rn.gov.br" class="servico-card" target="_blank">
-                        <img src="images/sipac.png" alt="SIPAC" class="servico-icon">
+                        <img src="images/servicos/sipac.png" alt="SIPAC" class="servico-icon">
                         <h3 class="servico-title">SIPAC</h3>
                         <p class="servico-description">Sistema Integrado de Patrimônio, Administração e Contratos</p>
                     </a>
 
                     <!-- SIPAT -->
                     <a href="https://sipat.rn.gov.br" class="servico-card" target="_blank">
-                        <img src="images/sipat.png" alt="SIPAT" class="servico-icon">
+                        <img src="images/servicos/sipat.png" alt="SIPAT" class="servico-icon">
                         <h3 class="servico-title">SIPAT</h3>
                         <p class="servico-description">Sistema de Patrimônio</p>
                     </a>
 
                     <!-- Boletins Administrativos -->
                     <a href="https://boletins.rn.gov.br" class="servico-card" target="_blank">
-                        <img src="images/boletins.png" alt="Boletins Administrativos" class="servico-icon">
+                        <img src="images/servicos/boletins.png" alt="Boletins Administrativos" class="servico-icon">
                         <h3 class="servico-title">Boletins Administrativos</h3>
                         <p class="servico-description">Portal de boletins administrativos do Estado</p>
                     </a>
 
                     <!-- Correio RN -->
                     <a href="https://correio.rn.gov.br" class="servico-card" target="_blank">
-                        <img src="images/correio-rn.png" alt="Correio RN" class="servico-icon">
+                        <img src="images/servicos/correio-rn.png" alt="Correio RN" class="servico-icon">
                         <h3 class="servico-title">Correio RN</h3>
                         <p class="servico-description">Sistema de correio eletrônico institucional</p>
                     </a>
 
                     <!-- Inova RN -->
                     <a href="https://inova.rn.gov.br" class="servico-card" target="_blank">
-                        <img src="images/inova-rn.png" alt="Inova RN" class="servico-icon">
+                        <img src="images/servicos/inova-rn.png" alt="Inova RN" class="servico-icon">
                         <h3 class="servico-title">Inova RN</h3>
                         <p class="servico-description">Portal de inovação do Estado</p>
                     </a>
@@ -297,7 +336,7 @@
         </section>
     </main>
 
-    <!-- Footer with Site Map -->
+    <!-- Rodapé com Mapa do Site -->
     <footer class="footer py-6 px-4">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -318,14 +357,14 @@
                         <li><a href="pages/fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
                         <li><a href="pages/servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
                         <li><a href="pages/cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
-                        <li><a href="pages/acesso-sistema.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
+                        <li><a href="pages/em-construcao.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
                     </ul>
                 </div>
 
                 <div class="sitemap-section">
                     <h4 class="text-white font-bold mb-4">Conhecimento</h4>
                     <ul class="space-y-2">
-                        <li><a href="pages/capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
+                                                <li><a href="pages/capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
                         <li><a href="pages/legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
                         <li><a href="pages/manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
@@ -347,10 +386,10 @@
             <div class="border-t border-gray-700 pt-6 mt-6">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <div class="flex items-center mb-4 md:mb-0">
-                        <img src="images/logos/SEAD-01_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12 brightness-0 invert mr-4">
+                        <img src="images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12 brightness-0 invert mr-4">
                     </div>
                     <div class="text-center md:text-right">
-                        <p class="text-sm text-blue-200">© 2024 Governo do Rio Grande do Norte</p>
+                        <p class="text-sm text-blue-200"> 2025 Governo do Rio Grande do Norte</p>
                         <p class="text-sm text-blue-200">Todos os direitos reservados</p>
                     </div>
                 </div>
@@ -359,5 +398,6 @@
     </footer>
 
     <script src="js/scripts.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>
