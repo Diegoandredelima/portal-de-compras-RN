@@ -60,9 +60,65 @@ body {
 /* ------------------------
     Componentes
 ------------------------- */
-/* Barra colorida no estilo Gov.br */
+
+/* Estilos do Carrossel */
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    border: none;
+}
+
+.carousel-indicator.active {
+    opacity: 1;
+}
+
+.carousel-indicator:hover {
+    opacity: 0.8;
+}
+.carousel-container {
+    max-height: 400px;
+}
+
+.carousel-images {
+    height: 400px;
+}
+
+.carousel-item {
+    height: 100%;
+}
+
+.carousel-item img {
+    height: 90%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+.carousel-caption h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.carousel-caption p {
+    font-size: 0.875rem;
+}
+
+/* ------------------------
+    Componentes
+------------------------- */
+/* Barra colorida*/
 .color-bar {
-    height: 4px;
+    height: 7px;
     background: linear-gradient(90deg,
         var(--accent-color) 0%, var(--accent-color) 25%,
         var(--secondary-color) 25%, var(--secondary-color) 50%,
@@ -88,7 +144,7 @@ body {
 .search-input {
     background-color: var(--gray-medium);
     border-radius: 20px;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem 0.5rem 2.5rem; /* Adicionado padding à esquerda para o ícone */
     border: 1px solid var(--gray-dark);
 }
 
@@ -144,7 +200,7 @@ body {
 }
 
 .link-button:hover {
-    background-color: #2a7bb8; /* Um tom mais escuro do primary-color */
+    background-color: #3A6A85; /* Um tom mais escuro do primary-color */
 }
 
 /* Estilo para ícones de navegação (geral) */
@@ -270,7 +326,7 @@ body {
     background-color: white;
     border: 1px solid var(--gray-dark);
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 1rem; /* Reduced padding */
     text-align: center;
     text-decoration: none;
     color: #333;
@@ -279,8 +335,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 220px; /* Altura mínima para cards */
+    justify-content: center; /* Center content */
+    height: 160px; /* Fixed, shorter height */
 }
 
 .servico-card:hover {
@@ -289,22 +345,21 @@ body {
 }
 
 .servico-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1rem;
-    object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+    width: 48px; /* Smaller icon */
+    height: 48px;
+    margin-bottom: 0.75rem; /* Reduced margin */
+    object-fit: contain;
 }
 
 .servico-title {
-    font-size: 1.25rem;
+    font-size: 1.1rem; /* Smaller font */
     font-weight: 600;
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
 }
 
 .servico-description {
-    font-size: 0.9rem;
-    color: #666;
+    display: none; /* Descriptions remain hidden */
 }
 
 /* ------------------------
@@ -347,7 +402,7 @@ body {
         align-items: flex-start;
     }
 
-    .sticky-header .relative.w-1\\/3 {
+    .sticky-header .relative.w-1\/3 {
         width: 100%;
     }
 
@@ -362,4 +417,14 @@ body {
         width: 100%;
         margin-right: 0;
     }
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%; /* Garante que o carrossel ocupe a largura total */
+    max-width: 1200px; /* Limita a largura máxima para design */
+    margin: 0 auto 1.5rem auto; /* Centraliza e adiciona margem inferior */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra suave */
+    border-radius: 0.5rem; /* Cantos arredondados */
+    overflow: hidden; /* Esconde conteúdo que transborda */
 }

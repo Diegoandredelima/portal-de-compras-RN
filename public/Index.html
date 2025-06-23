@@ -6,6 +6,7 @@
     <title>Portal de Compras Governamentais - RN</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="node_modules/@govbr-ds/core/dist/core.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="bg-white">
@@ -14,12 +15,11 @@
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-4">
                 <!-- Logotipo da COMPR -->
-                <img src="../images/logos/COMPR_logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
+                <img src="images/logos/COMPR_logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
                 <!-- Logotipo do Rio Grande do Norte -->
-                <img src="../images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
+                <img src="images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
             </div>
             <div class="flex items-center space-x-4 text-sm">
-                <a href="#" class="text-gray-600 hover:text-gray-900">Órgãos do Governo</a>
                 <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
                 <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
                 <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
@@ -51,11 +51,16 @@
                 <a href="index.html" class="text-xl font-medium">Central de Compras</a>
             </div>
             <div class="relative w-1/3">
-                <input type="text" placeholder="O que você procura?" class="search-input w-full py-2 px-4 pl-10">
+                <input type="text" id="search-input-field" placeholder="O que você procura?" class="search-input w-full">
                 <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
             </div>
         </div>
     </div>
+
+    </div>
+
+    <!-- Container para Resultados da Busca -->
+    <div id="search-results-container" class="container mx-auto my-4 px-4"></div>
 
     <!-- Menu Lateral -->
     <div class="offcanvas-menu" id="offcanvas-menu">
@@ -159,12 +164,45 @@
             </div>
         </div>
 
-        <!-- Carrossel -->
-        <div class="carousel mb-6 flex items-center justify-center">
-            <div class="text-center">
-                <h3 class="text-xl font-bold mb-2">Carrossel de Notícias</h3>
-                <p class="text-gray-600">Últimas notícias e destaques sobre Compras Governamentais</p>
+        <!-- Carousel de Notícias com Imagens -->
+        <div class="carousel-container mb-6 relative w-full overflow-hidden rounded-lg shadow-lg">
+            <div id="image-carousel" class="carousel-images flex transition-transform duration-500 ease-in-out">
+                <!-- Imagem 1 -->
+                <a href="pages/em-construcao.html" class="carousel-item flex-shrink-0 w-full relative block">
+                    <img src="images/imagem-noticia/Capa-1500x1000-7.png" alt="Notícia 1 sobre Compras Governamentais" class="w-full h-auto object-cover rounded-lg">
+                    <div class="carousel-caption absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-4 rounded-b-lg">
+                        <h3 class="text-xl font-bold mb-1">Saiba como as gestões municipais podem aderir ao RN+Inclusivo</h3>
+                        <p class="text-sm">Projeto do Governo do Estado viabiliza capacitações aos servidores públicos municipais</p>
+                    </div>
+                </a>
+                <!-- Imagem 2 -->
+                <a href="pages/em-construcao.html" class="carousel-item flex-shrink-0 w-full relative block">
+                    <img src="images/imagem-noticia/Central-de-Compras-51-Ft-Aldecy-Junior.png" alt="Capacitação para Servidores" class="w-full h-auto object-cover rounded-lg">
+                    <div class="carousel-caption absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-4 rounded-b-lg">
+                        <h3 class="text-xl font-bold mb-1">Governo do Estado adere Contrata+Brasil no RN em julho com apresentação aos municípios</h3>
+                        <p class="text-sm">Evento de adesão à plataforma do Governo Federal visa facilitar contratações públicas com MEIs, fortalecendo a economia local..</p>
+                    </div>
+                </a>
+                <!-- Imagem 3 -->
+                <a href="pages/em-construcao.html" class="carousel-item flex-shrink-0 w-full relative block">
+                    <img src="images/imagem-noticia/contrata-mais-brasil.png" alt="Novas Oportunidades de Compras" class="w-full h-auto object-cover rounded-lg">
+                    <div class="carousel-caption absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-4 rounded-b-lg">
+                        <h3 class="text-xl font-bold mb-1">Oportunidades de Negócio para Fornecedores</h3>
+                        <p class="text-sm">Fique por dentro dos próximos editais e das melhores chances para sua empresa no mercado público.</p>
+                    </div>
+                </a>
             </div>
+
+            <!-- Botões de Navegação -->
+            <button id="carousel-prev" class="carousel-button absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-gray-800 p-3 rounded-full shadow-lg transition-all focus:outline-none">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="carousel-next" class="carousel-button absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-gray-800 p-3 rounded-full shadow-lg transition-all focus:outline-none">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Indicadores de Slides -->
+            <div id="carousel-indicators" class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2"></div>
         </div>
 
         <!-- Seção de Manuais e Links -->
@@ -360,5 +398,6 @@
     </footer>
 
     <script src="js/scripts.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>

@@ -1,4 +1,106 @@
-// Função para mostrar páginas
+document.addEventListener('DOMContentLoaded', function () {
+    // Lógica para o menu off-canvas
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeMenu = document.getElementById('close-menu');
+    const offcanvasMenu = document.getElementById('offcanvas-menu');
+    const offcanvasBackdrop = document.getElementById('offcanvas-backdrop');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            offcanvasMenu.classList.add('active');
+            offcanvasBackdrop.classList.add('active');
+        });
+    }
+
+    if (closeMenu) {
+        closeMenu.addEventListener('click', () => {
+            offcanvasMenu.classList.remove('active');
+            offcanvasBackdrop.classList.remove('active');
+        });
+    }
+
+    if (offcanvasBackdrop) {
+        offcanvasBackdrop.addEventListener('click', () => {
+            offcanvasMenu.classList.remove('active');
+            offcanvasBackdrop.classList.remove('active');
+        });
+    }
+
+    // Lógica do Carrossel
+    const carousel = document.getElementById('image-carousel');
+    const prevButton = document.getElementById('carousel-prev');
+    const nextButton = document.getElementById('carousel-next');
+    const indicatorsContainer = document.getElementById('carousel-indicators');
+
+    if (carousel) {
+        const items = carousel.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+        let currentIndex = 0;
+        let intervalId;
+
+        // Criar indicadores
+        for (let i = 0; i < totalItems; i++) {
+            const button = document.createElement('button');
+            button.classList.add('carousel-indicator');
+            if (i === 0) button.classList.add('active');
+            button.setAttribute('data-index', i);
+            button.addEventListener('click', (e) => {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                goToSlide(index);
+            });
+            indicatorsContainer.appendChild(button);
+        }
+        const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
+
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+            resetInterval();
+        }
+
+        function showNext() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        }
+
+        function showPrev() {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateCarousel();
+        }
+
+        function startInterval() {
+            intervalId = setInterval(showNext, 5000); // Muda a cada 5 segundos
+        }
+
+        function resetInterval() {
+            clearInterval(intervalId);
+            startInterval();
+        }
+
+        if (prevButton) {
+            prevButton.addEventListener('click', () => {
+                showPrev();
+                resetInterval();
+            });
+        }
+
+        if (nextButton) {
+            nextButton.addEventListener('click', () => {
+                showNext();
+                resetInterval();
+            });
+        }
+
+        startInterval();
+    }
+});
 function showPage(pageId) {
   // Esconde todas as páginas
   document.querySelectorAll('.page').forEach(page => {
@@ -85,7 +187,17 @@ document.addEventListener('DOMContentLoaded', function() {
           link.addEventListener('click', closeOffcanvasMenu);
       });
   }
-
+// Instanciação do Carrossel do Gov.br Design System
+    // Garanta que 'core.min.js' seja carregado antes deste script.
+    if (typeof core !== 'undefined' && typeof core.BRCarousel !== 'undefined') {
+      const carouselList = [];
+      for (const brCarousel of window.document.querySelectorAll('.br-carousel')) {
+          carouselList.push(new core.BRCarousel('br-carousel', brCarousel));
+      }
+      console.log("Carrossel do Gov.br Design System instanciado.");
+  } else {
+      console.warn("Objeto 'core' ou 'BRCarousel' não encontrado. Verifique a importação de core.min.js.");
+  }
   // Outras inicializações
   initCarousel();
   initSearch(); // Garante que a função de busca seja inicializada
