@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const offcanvasMenu = document.getElementById('offcanvas-menu');
     const offcanvasBackdrop = document.getElementById('offcanvas-backdrop');
 
+<<<<<<< HEAD
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
             offcanvasMenu.classList.add('active');
@@ -27,6 +28,32 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Lógica do Carrossel
+=======
+    if (menuToggle && closeMenu && offcanvasMenu && offcanvasBackdrop) {
+        menuToggle.addEventListener('click', function() {
+            offcanvasMenu.classList.add('active');
+            offcanvasBackdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        function closeOffcanvasMenu() {
+            offcanvasMenu.classList.remove('active');
+            offcanvasBackdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        closeMenu.addEventListener('click', closeOffcanvasMenu);
+        offcanvasBackdrop.addEventListener('click', closeOffcanvasMenu);
+
+        // Fecha o menu ao clicar em um link
+        const menuLinks = offcanvasMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', closeOffcanvasMenu);
+        });
+    }
+
+    // Lógica do Carrossel Customizado
+>>>>>>> 6b12443 (adiciona novos arquivos não rastreado ao projeto)
     const carousel = document.getElementById('image-carousel');
     const prevButton = document.getElementById('carousel-prev');
     const nextButton = document.getElementById('carousel-next');
@@ -39,6 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
         let intervalId;
 
         // Criar indicadores
+<<<<<<< HEAD
+=======
+        indicatorsContainer.innerHTML = '';
+>>>>>>> 6b12443 (adiciona novos arquivos não rastreado ao projeto)
         for (let i = 0; i < totalItems; i++) {
             const button = document.createElement('button');
             button.classList.add('carousel-indicator');
@@ -100,7 +131,51 @@ document.addEventListener('DOMContentLoaded', function () {
 
         startInterval();
     }
+<<<<<<< HEAD
 });
+=======
+
+    // Instanciação do Carrossel do Gov.br Design System (opcional, não interfere no customizado)
+    if (typeof core !== 'undefined' && typeof core.BRCarousel !== 'undefined') {
+        const carouselList = [];
+        for (const brCarousel of window.document.querySelectorAll('.br-carousel')) {
+            carouselList.push(new core.BRCarousel('br-carousel', brCarousel));
+        }
+        console.log("Carrossel do Gov.br Design System instanciado.");
+    } else {
+        console.warn("Objeto 'core' ou 'BRCarousel' não encontrado. Verifique a importação de core.min.js.");
+    }
+
+    // Inicialização da busca
+    const searchInput = document.querySelector('.search-input');
+    const servicoCards = document.querySelectorAll('.servico-card');
+    if (searchInput && servicoCards.length > 0) {
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            servicoCards.forEach(card => {
+                const titleElement = card.querySelector('.servico-title');
+                const descriptionElement = card.querySelector('.servico-description');
+                if (titleElement && descriptionElement) {
+                    const cardTitle = titleElement.textContent.toLowerCase();
+                    const cardDescription = descriptionElement.textContent.toLowerCase();
+                    if (searchTerm === '') {
+                        card.style.display = 'flex';
+                    } else {
+                        if (cardTitle.includes(searchTerm) || cardDescription.includes(searchTerm)) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                }
+            });
+        });
+    } else {
+        console.warn("Input de busca ou cartões de serviço não encontrados para inicializar a busca.");
+    }
+});
+
+>>>>>>> 6b12443 (adiciona novos arquivos não rastreado ao projeto)
 function showPage(pageId) {
   // Esconde todas as páginas
   document.querySelectorAll('.page').forEach(page => {
@@ -187,6 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
           link.addEventListener('click', closeOffcanvasMenu);
       });
   }
+<<<<<<< HEAD
 // Instanciação do Carrossel do Gov.br Design System
     // Garanta que 'core.min.js' seja carregado antes deste script.
     if (typeof core !== 'undefined' && typeof core.BRCarousel !== 'undefined') {
@@ -198,6 +274,8 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
       console.warn("Objeto 'core' ou 'BRCarousel' não encontrado. Verifique a importação de core.min.js.");
   }
+=======
+>>>>>>> 6b12443 (adiciona novos arquivos não rastreado ao projeto)
   // Outras inicializações
   initCarousel();
   initSearch(); // Garante que a função de busca seja inicializada

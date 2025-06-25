@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Compras Governamentais - RN</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Rawline', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .color-bar {
+            height: 4px;
+            background: linear-gradient(90deg, 
+                #FF6B35 0%, #FF6B35 25%, 
+                #5EA51D 25%, #5EA51D 50%, 
+                #FFCD07 50%, #FFCD07 75%, 
+                #3498db 75%, #3498db 100%);
+        }
+        .header-bg {
+            background-color: #f8f9fa;
+        }
+        .search-input {
+            background-color: #f5f5f5;
+            border-radius: 20px;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            z-index: 100;
+            min-width: 200px;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .menu-container {
+            position: relative;
+        }
+        .carousel {
+            background-color: #f5f5f5;
+            height: 300px;
+        }
+        .card {
+            border: 1px solid #e9e9e9;
+            border-radius: 5px;
+        }
+        .footer {
+            background-color: #071D41;
+            color: white;
+        }
+        .container-box {
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background-color: #1351B4;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #0d3d8b;
+        }
+        .btn-outline {
+            border: 1px solid #1351B4;
+            color: #1351B4;
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .btn-outline:hover {
+            background-color: #1351B4;
+            color: white;
+        }
+        .nav-icon {
+            color: #1351B4;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .section-title {
+            border-bottom: 2px solid #1351B4;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .tab-active {
+            color: #1351B4;
+            font-weight: bold;
+            border-bottom: 2px solid #1351B4;
+        }
+        .grey-box {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        /* Estilos para os cards de serviços */
+        .service-card {
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .service-card-title {
+            font-weight: 600;
+            text-align: center;
+            font-size: 1rem;
+            color: #333;
+        }
+        
+        .service-card-border {
+            height: 4px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .border-blue {
+            background-color: #0E76A8;
+        }
+        
+        .border-orange {
+            background-color: #FF6B35;
+        }
+        
+        .border-green {
+            background-color: #5EA51D;
+        }
+        
+        .border-yellow {
+            background-color: #FFCD07;
+        }
+
+        /* Sticky Header */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Off-canvas Menu */
+        .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            z-index: 2000;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+        }
+        
+        .offcanvas-menu.active {
+            left: 0;
+        }
+        
+        .offcanvas-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1999;
+            display: none;
+        }
+        
+        .offcanvas-backdrop.active {
+            display: block;
+        }
+
+        /* Buttons styled as links */
+        .link-button {
+            display: inline-block;
+            background-color: #f5f5f5;
+            color: #1351B4;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        
+        .link-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Manual section cards */
+        .manual-card {
+            background-color: white;
+            border: 1px solid #e9e9e9;
+            border-radius: 5px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .manual-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .manual-card-icon {
+            font-size: 2.5rem;
+            color: #1351B4;
+            margin-bottom: 15px;
+        }
+        
+        .manual-card-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .manual-card-description {
+            color: #666;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumbs a {
+            color: #1351B4;
+        }
+
+        .breadcrumbs .separator {
+            margin: 0 8px;
+            color: #666;
+        }
+
+        /* Sitemap styles */
+        .sitemap-section {
+            margin-bottom: 20px;
+        }
+
+        .sitemap-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .sitemap-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sitemap-list li {
+            margin-bottom: 5px;
+        }
+
+        .sitemap-list a {
+            color: #1351B4;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .sitemap-list a:hover {
+            color: #0d3d8b;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Top Header -->
+    <header class="header-bg py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <!-- COMPR Logo -->
+                <img src="https://i.ibb.co/LJpvrJ5/compr-logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
+                <!-- Rio Grande do Norte Logo -->
+                <img src="https://i.ibb.co/b1RM8Zm/rn-governo-logo.png" alt="Governo do Rio Grande do Norte" class="h-12">
+            </div>
+            <div class="flex items-center space-x-4 text-sm">
+                <a href="#" class="text-gray-600 hover:text-gray-900">Órgãos do Governo</a>
+                <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
+                <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
+                <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
+                <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
+                <div class="dropdown">
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
+                </div>
+                <div class="flex items-center space-x-2 ml-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Colored Bar -->
+    <div class="color-bar w-full"></div>
+
+    <!-- Sticky Header with Menu -->
+    <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <button class="mr-4 text-gray-700" id="menu-toggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <a href="#" onclick="showPage('page-content')" class="text-xl font-medium">Central de Compras</a>
+            </div>
+            <div class="relative w-1/3">
+                <input type="text" placeholder="O que você procura?" class="search-input w-full py-2 px-4 pl-10">
+                <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Off-canvas Menu -->
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="p-4 border-b flex justify-between items-center">
+            <h2 class="text-lg font-bold">Menu</h2>
+            <button id="close-menu" class="text-gray-700">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-4">
+            <ul class="space-y-4">
+                <li>
+                    <a href="#" onclick="showPage('page-content')" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-home nav-icon"></i>
+                        <span>Início</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showPage('page2')" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-user-tie nav-icon"></i>
+                        <span>Fornecedor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showPage('page3')" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-user nav-icon"></i>
+                        <span>Servidor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showPage('page4')" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-users nav-icon"></i>
+                        <span>Cidadão</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showPage('page5')" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-graduation-cap nav-icon"></i>
+                        <span>Capacite-se</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showPage('page6')" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-gavel nav-icon"></i>
+                        <span>Legislação</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showPage('page7')" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-sign-in-alt nav-icon"></i>
+                        <span>Acesso ao Sistema</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showPage('page8')" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-search-dollar nav-icon"></i>
+                        <span>Oportunidades</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showPage('page9')" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-book nav-icon"></i>
+                        <span>Manuais</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-6 px-4">
+        <!-- Navigation with Icons -->
+        <div class="container-box mb-6">
+            <div class="flex justify-between flex-wrap">
+                <a href="#" onclick="showPage('page2')" class="flex items-center mb-4 mr-4">
+                    <i class="fas fa-user-tie nav-icon"></i>
+                    <span>Fornecedor</span>
+                </a>
+                <a href="#" onclick="showPage('page3')" class="flex items-center mb-4 mr-4">
+                    <i class="fas fa-user nav-icon"></i>
+                    <span>Servidor</span>
+                </a>
+                <a href="#" onclick="showPage('page4')" class="flex items-center mb-4 mr-4">
+                    <i class="fas fa-users nav-icon"></i>
+                    <span>Cidadão</span>
+                </a>
+                <a href="#" onclick="showPage('page5')" class="flex items-center mb-4 mr-4">
+                    <i class="fas fa-graduation-cap nav-icon"></i>
+                    <span>Capacite-se</span>
+                </a>
+                <a href="#" onclick="showPage('page6')" class="flex items-center mb-4 mr-4">
+                    <i class="fas fa-gavel nav-icon"></i>
+                    <span>Legislação</span>
+                </a>
+                <a href="#" onclick="showPage('page7')" class="flex items-center mb-4">
+                    <i class="fas fa-sign-in-alt nav-icon"></i>
+                    <span>Acesso ao Sistema</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content" class="page active">
+            <!-- Carousel -->
+            <div class="carousel mb-6 flex items-center justify-center">
+                <div class="text-center">
+                    <h3 class="text-xl font-bold mb-2">Carrossel de Notícias</h3>
+                    <p class="text-gray-600">Últimas notícias e destaques sobre Compras Governamentais</p>
+                </div>
+            </div>
+
+            <!-- Manuals & Links Section - Updated with styled buttons -->
+            <div class="mb-6">
+                <h3 class="section-title text-xl font-bold">Links Rápidos</h3>
+                <div class="my-4">
+                    <a href="#" onclick="showPage('page9')" class="link-button"><i class="fas fa-book mr-2"></i> Manuais</a>
+                    <a href="#" onclick="showPage('page6')" class="link-button"><i class="fas fa-gavel mr-2"></i> Legislação</a>
+                    <a href="#" onclick="showPage('page-artigos')" class="link-button"><i class="fas fa-file-alt mr-2"></i> Artigos</a>
+                    <a href="#" onclick="showPage('page8')" class="link-button"><i class="fas fa-search-dollar mr-2"></i> Oportunidades</a>
+                </div>
+            </div>
+
+            <!-- Services -->
+            <div class="mb-6">
+                <h3 class="section-title text-xl font-bold">Serviços SEAD</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- Card 1: Escola de Governo -->
+                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
+                        <div class="service-card">
+                            <i class="fas fa-graduation-cap service-card-icon text-blue-600"></i>
+                            <h4 class="service-card-title">Escola de Governo</h4>
+                        </div>
+                        <div class="service-card-border border-blue"></div>
+                    </div>
+                    
+                    <!-- Card 2: Carta de Serviços -->
+                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
+                        <div class="service-card">
+                            <i class="fas fa-file-contract service-card-icon text-gray-700"></i>
+                            <h4 class="service-card-title">Carta de Serviços</h4>
+                        </div>
+                        <div class="service-card-border border-yellow"></div>
+                    </div>
+                    
+                    <!-- Card 3: Portal de Compras -->
+                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
+                        <div class="service-card">
+                            <i class="fas fa-shopping-cart service-card-icon text-gray-700"></i>
+                            <h4 class="service-card-title">Portal de Compras</h4>
+                        </div>
+                        <div class="service-card-border border-yellow"></div>
+                    </div>
+                    
+                    <!-- Card 4: RN Consig -->
+                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
+                        <div class="service-card">
+                            <i class="fas fa-money-check-alt service-card-icon text-green-600"></i>
+                            <h4 class="service-card-title">RN Consig</h4>
+                        </div>
+                        <div class="service-card-border border-yellow"></div>
+                    </div>
+                    
+                    <!-- Row 2 -->
+                    <!-- Card 5: SEI! RN -->
+                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
+                        <div class="service-card">
+                            <i class="fas fa-file-alt service-card-icon text-blue-500"></i>
+                            <h4 class="service-card-title">SEI! RN</h4>
+                        </div>
+                        <div class="service-card-border border-blue"></div>
+                    </div>
+                    
+                    <!-- Card 6: SUAP -->
+                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
+                        <div class="service-card">
+                            <i class="fas fa-cogs service-card-icon text-gray-700"></i>
+                            <h4 class="service-card-title">SUAP</h4>
+                        </div>
+                        <div class="service-card-border border-blue"></div>
+                    </div>
+                    
+                    <!-- Card 7: SIPAC -->
+                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
+                        <div class="service-card">
+                            <i class="fas fa-home service-card-icon text-gray-700"></i>
+                            <h4 class="service-card-title">SIPAC</h4>
+                        </div>
+                        <div class="service-card-border border-orange"></div>
+                    </div>
+                    
+                    <!-- Card 8: SIPAT -->
+                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
+                        <div class="service-card">
+                            <i class="fas fa-map-marker-alt service-card-icon text-gray-700"></i>
+                            <h4 class="service-card-title">SIPAT</h4>
+                        </div>
+                        <div class="service-card-border border-orange"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Approved Purchases -->
+            <div class="mb-6">
+                <h3 class="section-title text-xl font-bold">Compras Homologadas em 2024</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                    <div class="card p-4">
+                        <h4 class="text-sm text-gray-600">Valor Homologado</h4>
+                        <p class="text-2xl font-bold text-blue-700">R$ 46.546,00</p>
+                    </div>
+                    <div class="card p-4">
+                        <h4 class="text-sm text-gray-600">Compras ME/EPP</h4>
+                        <p class="text-2xl font-bold text-blue-700">R$ 54.649.646,00</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="card p-4">
+                        <h4 class="text-sm text-gray-600">Quantidade de Compras</h4>
+                        <p class="text-2xl font-bold text-blue-700">56.564.546</p>
+                    </div>
+                    <div class="card p-4">
+                        <h4 class="text-sm text-gray-600">Quantidade de Fornecedores</h4>
+                        <p class="text-2xl font-bold text-blue-700">900</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pages for on-page navigation -->
+        <div id="page2" class="page">
+            <!-- Fornecedor content -->
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <span>Fornecedor</span>
+            </div>
+            
+            <!-- Quick Links Box -->
+            <div class="container-box mb-6">
+                <div class="flex justify-between flex-wrap">
+                    <a href="#" onclick="showPage('page5')" class="flex items-center mb-4 mr-4">
+                        <i class="fas fa-graduation-cap nav-icon"></i>
+                        <span>Capacite-se</span>
+                    </a>
+                    <a href="#" onclick="showPage('page6')" class="flex items-center mb-4 mr-4">
+                        <i class="fas fa-gavel nav-icon"></i>
+                        <span>Legislação</span>
+                    </a>
+                    <a href="#" class="flex items-center mb-4">
+                        <i class="fas fa-building nav-icon"></i>
+                        <span>ME/EPP</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Banner -->
+            <div class="carousel mb-6 flex items-center justify-center">
+                <div class="text-center">
+                    <h3 class="text-xl font-bold">Banner</h3>
+                </div>
+            </div>
+
+            <!-- Selling to the Government -->
+            <div class="mb-6">
+                <h3 class="text-xl font-bold mb-4">Comece a vender para o governo</h3>
+                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="btn-primary">Passo a Passo</a>
+                    <a href="#" class="btn-outline">Cadastre-se</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="page3" class="page">
+            <!-- Servidor content -->
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <span>Servidor</span>
+            </div>
+            
+            <!-- Quick Links Box -->
+            <div class="container-box mb-6">
+                <div class="flex justify-between flex-wrap">
+                    <a href="#" onclick="showPage('page5')" class="flex items-center mb-4 mr-4">
+                        <i class="fas fa-graduation-cap nav-icon"></i>
+                        <span>Capacite-se</span>
+                    </a>
+                    <a href="#" onclick="showPage('page6')" class="flex items-center mb-4 mr-4">
+                        <i class="fas fa-gavel nav-icon"></i>
+                        <span>Legislação</span>
+                    </a>
+                    <a href="#" onclick="showPage('page7')" class="flex items-center mb-4">
+                        <i class="fas fa-sign-in-alt nav-icon"></i>
+                        <span>Acesso ao Sistema</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Carousel -->
+            <div class="carousel mb-6 flex items-center justify-center">
+                <div class="text-center">
+                    <h3 class="text-xl font-bold">Carrossel de Notícias</h3>
+                </div>
+            </div>
+
+            <!-- Tools and Resources -->
+            <div class="mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <a href="#" class="card p-4 text-center hover:shadow-lg transition-shadow">
+                        <i class="fas fa-file-word text-4xl text-blue-600 mb-2"></i>
+                        <h4 class="font-bold">Modelos de Documentos</h4>
+                    </a>
+                    <a href="#" class="card p-4 text-center hover:shadow-lg transition-shadow">
+                        <i class="fas fa-check-circle text-4xl text-blue-600 mb-2"></i>
+                        <h4 class="font-bold">Boas Práticas</h4>
+                    </a>
+                    <a href="#" onclick="showPage('page9')" class="card p-4 text-center hover:shadow-lg transition-shadow">
+                        <i class="fas fa-book text-4xl text-blue-600 mb-2"></i>
+                        <h4 class="font-bold">Manuais</h4>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="#" class="card p-4 text-center hover:shadow-lg transition-shadow">
+                        <i class="fas fa-bullhorn text-4xl text-blue-600 mb-2"></i>
+                        <h4 class="font-bold">Comunicados</h4>
+                    </a>
+                    <a href="#" class="card p-4 text-center hover:shadow-lg transition-shadow">
+                        <i class="fas fa-robot text-4xl text-blue-600 mb-2"></i>
+                        <h4 class="font-bold">COMPR IA</h4>
+                    </a>
+                    <a href="#" class="card p-4 text-center hover:shadow-lg transition-shadow">
+                        <i class="fas fa-database text-4xl text-blue-600 mb-2"></i>
+                        <h4 class="font-bold">Acesso a dados compras</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="page4" class="page">
+            <!-- Cidadão content -->
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <span>Cidadão</span>
+            </div>
+            
+            <!-- Quick Links Box -->
+            <div class="container-box mb-6">
+                <div class="flex justify-between flex-wrap">
+                    <a href="#" onclick="showPage('page5')" class="flex items-center mb-4 mr-4">
+                        <i class="fas fa-graduation-cap nav-icon"></i>
+                        <span>Capacite-se</span>
+                    </a>
+                    <a href="#" onclick="showPage('page6')" class="flex items-center mb-4 mr-4">
+                        <i class="fas fa-gavel nav-icon"></i>
+                        <span>Legislação</span>
+                    </a>
+                    <a href="#" class="flex items-center mb-4">
+                        <i class="fas fa-building nav-icon"></i>
+                        <span>ME/EPP</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Banner -->
+            <div class="carousel mb-6 flex items-center justify-center">
+                <div class="text-center">
+                    <h3 class="text-xl font-bold">Banner</h3>
+                </div>
+            </div>
+
+            <!-- Transparency -->
+            <div class="mb-6">
+                <h3 class="text-xl font-bold mb-4">Transparência compras SEAD-RN</h3>
+                <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <a href="#" class="card p-4 hover:shadow-lg transition-shadow">
+                        <div class="flex items-start">
+                            <div class="mr-4 p-2 bg-gray-100 rounded">
+                                <i class="fas fa-calendar-alt text-2xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Plano Anual de Contratações</h4>
+                                <p class="text-sm text-gray-600">Breve explicação sobre o plano anual</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="card p-4 hover:shadow-lg transition-shadow">
+                        <div class="flex items-start">
+                            <div class="mr-4 p-2 bg-gray-100 rounded">
+                                <i class="fas fa-chart-bar text-2xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Painel A</h4>
+                                <p class="text-sm text-gray-600">Explicação do painel com dados e estatísticas</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="#" class="card p-4 hover:shadow-lg transition-shadow">
+                        <div class="flex items-start">
+                            <div class="mr-4 p-2 bg-gray-100 rounded">
+                                <i class="fas fa-chart-pie text-2xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Painel B</h4>
+                                <p class="text-sm text-gray-600">Explicação do painel com dados e estatísticas</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="card p-4 hover:shadow-lg transition-shadow">
+                        <div class="flex items-start">
+                            <div class="mr-4 p-2 bg-gray-100 rounded">
+                                <i class="fas fa-chart-line text-2xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Painel C</h4>
+                                <p class="text-sm text-gray-600">Explicação do painel com dados e estatísticas</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="page5" class="page">
+            <!-- Capacite-se content -->
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <span>Capacite-se</span>
+            </div>
+            
+            <h3 class="text-xl font-bold mb-6">Capacite-se</h3>
+            
+            <div class="container-box mb-6">
+                <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                
+                <div class="mb-4">
+                    <h4 class="font-bold mb-2">Cursos oferecidos na escola de governo:</h4>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li class="mb-1">Formação em Licitações e Contratos</li>
+                        <li class="mb-1">Nova Lei de Licitações (Lei 14.133/2021)</li>
+                        <li class="mb-1">Pregão Eletrônico</li>
+                        <li class="mb-1">Gestão e Fiscalização de Contratos</li>
+                    </ul>
+                </div>
+                
+                <div class="flex flex-wrap space-x-0 md:space-x-4 space-y-2 md:space-y-0">
+                    <a href="#" class="btn-primary flex items-center mb-2 md:mb-0">
+                        <i class="fab fa-youtube mr-2"></i>
+                        Playlist com vídeos
+                    </a>
+                    <a href="#" class="btn-primary flex items-center">
+                        <i class="fas fa-chalkboard-teacher mr-2"></i>
+                        Treinamentos
+                    </a>
+                    <a href="#" class="btn-primary flex items-center">
+                        <i class="fas fa-school mr-2"></i>
+                        Escola de Governo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="page6" class="page">
+            <!-- Legislação content -->
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <span>Legislação</span>
+            </div>
+            
+            <h3 class="text-xl font-bold mb-6">Legislação</h3>
+            
+            <div class="container-box mb-6">
+                <p class="mb-6">Nesta página encontra-se legislação do interesse dos cidadãos, agentes públicos e fornecedores.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="#" class="card p-4 flex flex-col items-center hover:shadow-lg transition-shadow">
+                        <div class="w-full h-32 bg-gray-200 flex items-center justify-center mb-4">
+                            <i class="fas fa-file-pdf text-4xl text-red-600"></i>
+                        </div>
+                        <h4 class="font-bold text-center">Lei 14.133/2021</h4>
+                        <p class="text-sm text-gray-600 text-center">Nova Lei de Licitações e Contratos</p>
+                    </a>
+                    <a href="#" class="card p-4 flex flex-col items-center hover:shadow-lg transition-shadow">
+                        <div class="w-full h-32 bg-gray-200 flex items-center justify-center mb-4">
+                            <i class="fas fa-file-pdf text-4xl text-red-600"></i>
+                        </div>
+                        <h4 class="font-bold text-center">Decreto 10.024/2019</h4>
+                        <p class="text-sm text-gray-600 text-center">Pregão Eletrônico</p>
+                    </a>
+                    <a href="#" class="card p-4 flex flex-col items-center hover:shadow-lg transition-shadow">
+                        <div class="w-full h-32 bg-gray-200 flex items-center justify-center mb-4">
+                            <i class="fas fa-file-pdf text-4xl text-red-600"></i>
+                        </div>
+                        <h4 class="font-bold text-center">Lei Complementar 123/2006</h4>
+                        <p class="text-sm text-gray-600 text-center">Tratamento diferenciado ME/EPP</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="page7" class="page">
+            <!-- Acesso ao Sistema content -->
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <span>Acesso ao Sistema</span>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <!-- Banner on Left -->
+                <div class="w-full md:w-1/2 px-4 mb-4 md:mb-0">
+                    <div class="grey-box h-96 flex items-center justify-center">
+                        <h3 class="text-xl font-bold">Banner</h3>
+                    </div>
+                </div>
+                
+                <!-- Login Form on Right -->
+                <div class="w-full md:w-1/2 px-4">
+                    <div class="grey-box">
+                        <h3 class="text-xl font-bold mb-4">Entre no Sistema</h3>
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" class="w-full border rounded px-3 py-2" placeholder="Digite seu email">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2">Senha</label>
+                            <input type="password" class="w-full border rounded px-3 py-2" placeholder="Digite sua senha">
+                        </div>
+                        
+                        <button class="btn-primary w-full mb-4">Continuar</button>
+                        
+                        <div class="flex justify-between text-sm">
+                            <a href="#" class="text-blue-600 hover:underline">Criar conta</a>
+                            <a href="#" class="text-blue-600 hover:underline">Esqueceu senha</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New page: Oportunidades -->
+        <div id="page8" class="page">
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <span>Oportunidades</span>
+            </div>
+            
+            <h3 class="text-xl font-bold mb-6">Contratações Públicas do Estado do Rio Grande do Norte</h3>
+            
+            <div class="container-box mb-6">
+                <p class="mb-6">Nesta seção, você encontrará a lista de UASGs (Unidades Administrativas de Serviços Gerais) vinculadas às secretarias e órgãos do Governo do Estado do Rio Grande do Norte. Cada UASG representa uma unidade responsável por realizar compras e contratações públicas.</p>
+                
+                <div class="mb-6">
+                    <h4 class="font-bold mb-2">Etapas para consulta:</h4>
+                    <ol class="list-decimal pl-6 mb-4">
+                        <li class="mb-1">Identifique a UASG da secretaria ou órgão desejado na lista abaixo.</li>
+                        <li class="mb-1">Clique no link do Portal Nacional de Contratações Públicas (PNCP).</li>
+                        <li class="mb-1">Insira o número da UASG no campo de busca para visualizar as contratações ativas, concluídas ou em andamento.</li>
+                    </ol>
+                </div>
+                
+                <div class="mb-6">
+                    <a href="https://cnetmobile.estaleiro.serpro.gov.br/comprasnet-web/public/compras" target="_blank" class="btn-primary">
+                        <i class="fas fa-external-link-alt mr-2"></i>
+                        Portal Nacional de Contratações Públicas
+                    </a>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="py-2 px-4 border text-left">Secretaria/Órgão</th>
+                                <th class="py-2 px-4 border text-left">UASG</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border">SECRETARIA DE ESTADO DA SAÚDE PÚBLICA</td>
+                                <td class="py-2 px-4 border">925550</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-2 px-4 border">SECRETARIA DE ESTADO DA EDUCAÇÃO E DA CULTURA</td>
+                                <td class="py-2 px-4 border">925377</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">SECRETARIA DE ESTADO DO TRABALHO, HABITAÇÃO E ASSISTÊNCIA SOCIAL</td>
+                                <td class="py-2 px-4 border">925557</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-2 px-4 border">SECRETARIA DE ESTADO DA INFRAESTRUTURA RN</td>
+                                <td class="py-2 px-4 border">928338</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">FUNDAÇÃO UNIVERSIDADE DO ESTADO DO RN (UERN)</td>
+                                <td class="py-2 px-4 border">925543</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-2 px-4 border">FUNDAÇÃO JOSÉ AUGUSTO</td>
+                                <td class="py-2 px-4 border">925637</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">INSTITUTO DE DESENVOLVIMENTO SUSTENTÁVEL E MEIO AMBIENTE (IDEMA)</td>
+                                <td class="py-2 px-4 border">927214</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-2 px-4 border">SECRETARIA DA AGRICULTURA, PECUÁRIA E PESCA DO RN</td>
+                                <td class="py-2 px-4 border">929448</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">SECRETARIA DA SEGURANÇA PÚBLICA E DA DEFESA SOCIAL</td>
+                                <td class="py-2 px-4 border">925535</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-2 px-4 border">INSTITUTO TÉCNICO-CIENTÍFICO DE POLÍCIA (ITEP)</td>
+                                <td class="py-2 px-4 border">925544</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">POLÍCIA MILITAR DO ESTADO DO RIO GRANDE DO NORTE</td>
+                                <td class="py-2 px-4 border">927056</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-2 px-4 border">POLÍCIA CIVIL DO RIO GRANDE DO NORTE</td>
+                                <td class="py-2 px-4 border">925546</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">CORPO DE BOMBEIROS MILITAR DO RN</td>
+                                <td class="py-2 px-4 border">925541</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-2 px-4 border">DIRETORIA DE SAÚDE DA POLÍCIA MILITAR DO RN</td>
+                                <td class="py-2 px-4 border">456546</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">FUNDAÇÃO ESTADUAL DA CRIANÇA E DO ADOLESCENTE</td>
+                                <td class="py-2 px-4 border">453719</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-2 px-4 border">GABINETE CIVIL DO GOVERNADOR DO ESTADO DO RN</td>
+                                <td class="py-2 px-4 border">927019</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">SECRETARIA DE ESTADO DA ADMINISTRAÇÃO</td>
+                                <td class="py-2 px-4 border">925538</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-2 px-4 border">PROCURADORIA GERAL DO ESTADO DO RN</td>
+                                <td class="py-2 px-4 border">925774</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">AGÊNCIA REGULADORA DE SERVIÇOS PÚBLICOS DO RN (ARSEP)</td>
+                                <td class="py-2 px-4 border">925995</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-2 px-4 border">DEPARTAMENTO ESTADUAL DE IMPRENSA DO RN</td>
+                                <td class="py-2 px-4 border">931136</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">DEPARTAMENTO ESTADUAL DE TRÂNSITO (DETRAN-RN)</td>
+                                <td class="py-2 px-4 border">925545</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-2 px-4 border">INSTITUTO DE GESTÃO DAS ÁGUAS DO ESTADO DO RN (IGARN)</td>
+                                <td class="py-2 px-4 border">928736</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">SECRETARIA DE ESTADO DO TURISMO DO RN</td>
+                                <td class="py-2 px-4 border">925902</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-2 px-4 border">SECRETARIA DE ESTADO DAS MULHERES, JUVENTUDE, IGUALDADE RACIAL E DIREITOS HUMANOS</td>
+                                <td class="py-2 px-4 border">463304</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">SECRETARIA DE ESTADO DO DESENVOLVIMENTO ECONÔMICO</td>
+                                <td class="py-2 px-4 border">926383</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- New page: Manuais -->
+        <div id="page9" class="page">
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <span>Manuais</span>
+            </div>
+            
+            <h3 class="text-xl font-bold mb-6">Manuais, Tutoriais e Boas Práticas</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- Manual Card 1 -->
+                <div class="manual-card">
+                    <div class="manual-card-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h4 class="manual-card-title">Guia para Consulta de UASGs</h4>
+                    <p class="manual-card-description">Um guia completo sobre como consultar e utilizar o sistema de UASGs para acompanhamento de licitações e contratos.</p>
+                    <a href="#" class="btn-primary">Acessar</a>
+                </div>
+                
+                <!-- Manual Card 2 -->
+                <div class="manual-card">
+                    <div class="manual-card-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h4 class="manual-card-title">Elaboração de Termos de Referência</h4>
+                    <p class="manual-card-description">Aprenda como elaborar Termos de Referência completos e adequados para processos de compras governamentais.</p>
+                    <a href="#" class="btn-primary">Acessar</a>
+                </div>
+                
+                <!-- Manual Card 3 -->
+                <div class="manual-card">
+                    <div class="manual-card-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h4 class="manual-card-title">Manual de Pesquisa de Preços</h4>
+                    <p class="manual-card-description">Conheça as melhores práticas e metodologias para realização de pesquisas de preços eficientes.</p>
+                    <a href="#" class="btn-primary">Acessar</a>
+                </div>
+                
+                <!-- Manual Card 4 -->
+                <div class="manual-card">
+                    <div class="manual-card-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h4 class="manual-card-title">Gestão de Contratos</h4>
+                    <p class="manual-card-description">Guia completo sobre gestão e fiscalização de contratos administrativos conforme a Lei 14.133/2021.</p>
+                    <a href="#" class="btn-primary">Acessar</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Placeholder for Artigos page -->
+        <div id="page-artigos" class="page">
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <span>Artigos</span>
+            </div>
+            
+            <h3 class="text-xl font-bold mb-6">Artigos e Publicações</h3>
+            
+            <div class="container-box mb-6">
+                <p class="mb-6">Esta seção contém artigos técnicos e publicações relevantes sobre compras governamentais, legislação e boas práticas.</p>
+                
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="card p-4">
+                        <h4 class="font-bold mb-2">A Nova Lei de Licitações e seus Impactos</h4>
+                        <p class="text-sm text-gray-600 mb-2">Publicado em: 15/03/2024</p>
+                        <p class="mb-2">Este artigo analisa os principais impactos da Lei 14.133/2021 nas compras governamentais do estado do Rio Grande do Norte.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Ler mais</a>
+                    </div>
+                    
+                    <div class="card p-4">
+                        <h4 class="font-bold mb-2">Compras Sustentáveis: Um Novo Paradigma</h4>
+                        <p class="text-sm text-gray-600 mb-2">Publicado em: 05/02/2024</p>
+                        <p class="mb-2">Como implementar critérios de sustentabilidade nas compras governamentais e seus benefícios a médio e longo prazo.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Ler mais</a>
+                    </div>
+                    
+                    <div class="card p-4">
+                        <h4 class="font-bold mb-2">O Uso da Tecnologia nas Contratações Públicas</h4>
+                        <p class="text-sm text-gray-600 mb-2">Publicado em: 20/01/2024</p>
+                        <p class="mb-2">Transformação digital nos processos de compras governamentais e seu impacto na eficiência e transparência.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Ler mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Site Map & Footer -->
+    <div class="py-6 px-4 border-t mt-8 bg-gray-100">
+        <div class="container mx-auto">
+            <h3 class="text-lg font-medium mb-4">Mapa do Site</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="sitemap-section">
+                    <h4 class="sitemap-title">Início</h4>
+                    <ul class="sitemap-list">
+                        <li><a href="#" onclick="showPage('page-content')">Página Principal</a></li>
+                        <li><a href="#" onclick="showPage('page8')">Oportunidades</a></li>
+                        <li><a href="#" onclick="showPage('page9')">Manuais</a></li>
+                        <li><a href="#" onclick="showPage('page-artigos')">Artigos</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-section">
+                    <h4 class="sitemap-title">Perfis de Acesso</h4>
+                    <ul class="sitemap-list">
+                        <li><a href="#" onclick="showPage('page2')">Fornecedor</a></li>
+                        <li><a href="#" onclick="showPage('page3')">Servidor</a></li>
+                        <li><a href="#" onclick="showPage('page4')">Cidadão</a></li>
+                        <li><a href="#" onclick="showPage('page7')">Acesso ao Sistema</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-section">
+                    <h4 class="sitemap-title">Conhecimento</h4>
+                    <ul class="sitemap-list">
+                        <li><a href="#" onclick="showPage('page5')">Capacite-se</a></li>
+                        <li><a href="#" onclick="showPage('page6')">Legislação</a></li>
+                        <li><a href="#" onclick="showPage('page9')">Manuais e Tutoriais</a></li>
+                        <li><a href="#">Vídeos</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-section">
+                    <h4 class="sitemap-title">Serviços</h4>
+                    <ul class="sitemap-list">
+                        <li><a href="#" onclick="showPage('page8')">Consulta de UASGs</a></li>
+                        <li><a href="#">Portal de Compras</a></li>
+                        <li><a href="#">Escola de Governo</a></li>
+                        <li><a href="#">Transparência</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer py-6 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div>
+                    <img src="https://i.ibb.co/b1RM8Zm/rn-governo-logo.png" alt="Governo do Rio Grande do Norte" class="h-12 mb-3 brightness-0 invert">
+                    <p class="text-sm">© 2024 Governo do Rio Grande do Norte</p>
+                    <p class="text-sm">Todos os direitos reservados</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-2">Contato</h4>
+                    <p class="text-sm mb-1">Central de Atendimento: (84) 3232-1000</p>
+                    <p class="text-sm">Email: contato@rn.gov.br</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Function to show pages
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Off-canvas menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const closeMenu = document.getElementById('close-menu');
+            const offcanvasMenu = document.getElementById('offcanvas-menu');
+            const offcanvasBackdrop = document.getElementById('offcanvas-backdrop');
+            
+            menuToggle.addEventListener('click', function() {
+                offcanvasMenu.classList.add('active');
+                offcanvasBackdrop.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            function closeOffcanvasMenu() {
+                offcanvasMenu.classList.remove('active');
+                offcanvasBackdrop.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            closeMenu.addEventListener('click', closeOffcanvasMenu);
+            offcanvasBackdrop.addEventListener('click', closeOffcanvasMenu);
+            
+            // Close menu when clicking a link in the menu
+            const menuLinks = offcanvasMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', closeOffcanvasMenu);
+            });
+        });
+    </script>
+</body>
+</html>

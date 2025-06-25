@@ -345,9 +345,15 @@ body {
 }
 
 .servico-icon {
+<<<<<<< HEAD
     width: 48px; /* Smaller icon */
     height: 48px;
     margin-bottom: 0.75rem; /* Reduced margin */
+=======
+    width: 160px;
+    height: 160px;
+    margin-bottom: 0.75rem;
+>>>>>>> 6b12443 (adiciona novos arquivos não rastreado ao projeto)
     object-fit: contain;
 }
 
