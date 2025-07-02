@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de Compras Governamentais - RN - Cidadão</title>
+    <title>Fórum de Discussão - Central de Compras RN</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/@govbr-ds/core/dist/core.min.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/forum.css">
 </head>
-<body class="bg-white">
-     <!-- Cabeçalho Superior -->
-     <header class="header-bg py-2 px-4">
-        <div class="container mx-auto flex justify-between items-center flex-wrap">
+<body class="bg-white font-sans">
+    <header class="header-bg py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-4">
                 <img src="../images/logos/COMPR_logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
                 <img src="../images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
             </div>
-            <div class="flex items-center space-x-4 text-sm flex-wrap mt-2 md:mt-0">
+            <div class="flex items-center space-x-4 text-sm">
                 <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
                 <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
                 <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
@@ -27,262 +27,232 @@
                     <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
                 </div>
                 <div class="flex items-center space-x-2 ml-4">
-                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-red-600"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
     </header>
-
-    <!-- Barra colorida -->
     <div class="color-bar w-full"></div>
-
-    <!-- Cabeçalho fixo com menu -->
     <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-                <a href="../index.html" class="text-xl font-medium">Central de Compras</a>
+                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu"><i class="fas fa-bars text-2xl"></i></button>
+                <a href="../Index.html" class="text-xl font-medium">Central de Compras</a>
             </div>
-            <div class="relative w-1/3 hidden md:block">
-                <input type="text" placeholder="O que você procura?" class="search-input w-full py-2 px-4 pl-10">
+            <div class="relative w-1/3">
+                <input type="text" id="search-input-field" placeholder="O que você procura?" class="search-input w-full">
                 <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
             </div>
         </div>
     </div>
-
-     <!-- Off-canvas Menu -->
-     <div class="offcanvas-menu" id="offcanvas-menu">
+    <div class="offcanvas-menu" id="offcanvas-menu">
         <div class="p-4 border-b flex justify-between items-center">
             <h2 class="text-lg font-bold">Menu</h2>
-            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
+            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu"><i class="fas fa-times text-2xl"></i></button>
         </div>
         <div class="p-4">
             <ul class="space-y-4">
-                <li>
-                                        <a href="../index.html" class="flex items-center p-2 rounded hover:bg-gray-100">
-                        <i class="fas fa-home nav-icon"></i>
-                        <span>Início</span>
-                    </a>
-                </li>
-                <li>
-                                        <a href="fornecedor.html" class="flex items-center p-2 rounded hover:bg-gray-100">
-                        <i class="fas fa-user-tie nav-icon"></i>
-                        <span>Fornecedor</span>
-                    </a>
-                </li>
-                <li>
-                                        <a href="servidor.html" class="flex items-center p-2 rounded hover:bg-gray-100">
-                        <i class="fas fa-user nav-icon"></i>
-                        <span>Servidor</span>
-                    </a>
-                </li>
-                <li>
-                                        <a href="cidadao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
-                        <i class="fas fa-users nav-icon"></i>
-                        <span>Cidadão</span>
-                    </a>
-                </li>
-                <li>
-                                        <a href="capacite-se.html" class="flex items-center p-2 rounded hover:bg-gray-100">
-                        <i class="fas fa-graduation-cap nav-icon"></i>
-                        <span>Capacite-se</span>
-                    </a>
-                </li>
-                <li>
-                                        <a href="legislacao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
-                        <i class="fas fa-gavel nav-icon"></i>
-                        <span>Legislação</span>
-                    </a>
-                </li>
-                <li>
-                                        <a href="em-construcao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
-                        <i class="fas fa-sign-in-alt nav-icon"></i>
-                        <span>Acesso ao Sistema</span>
-                    </a>
-                </li>
-                <li>
-                                        <a href="oportunidades.html" class="flex items-center p-2 rounded hover:bg-gray-100">
-                        <i class="fas fa-search-dollar nav-icon"></i>
-                        <span>Oportunidades</span>
-                    </a>
-                </li>
-                <li>
-                                        <a href="manuais.html" class="flex items-center p-2 rounded hover:bg-gray-100">
-                        <i class="fas fa-book nav-icon"></i>
-                        <span>Manuais</span>
-                    </a>
-                </li>
+                <li><a href="../Index.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-home nav-icon"></i><span>Início</span></a></li>
+                <li><a href="Fornecedor.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-user-tie nav-icon"></i><span>Fornecedor</span></a></li>
+                <li><a href="Servidor.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-user nav-icon"></i><span>Servidor</span></a></li>
+                <li><a href="Cidadao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-users nav-icon"></i><span>Cidadão</span></a></li>
+                <li><a href="Capacite-se.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-graduation-cap nav-icon"></i><span>Capacite-se</span></a></li>
+                <li><a href="legislacao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-gavel nav-icon"></i><span>Legislação</span></a></li>
+                <li><a href="em-construcao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-sign-in-alt nav-icon"></i><span>Acesso ao Sistema</span></a></li>
+                <li><a href="oportunidades.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-search-dollar nav-icon"></i><span>Oportunidades</span></a></li>
+                <li><a href="manuais.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-book nav-icon"></i><span>Manuais</span></a></li>
+                <li><a href="forum.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-comments nav-icon"></i><span>Fórum</span></a></li>
             </ul>
         </div>
     </div>
-
-
     <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
-
-    <!-- Main Content for Forum -->
     <main class="container mx-auto py-6 px-4">
-        <h1 class="forum-title text-4xl font-extrabold text-dark-blue mb-8 text-center">Fórum de Discussão</h1>
-
-        <div class="forum-grid">
-            <!-- Coluna Principal do Fórum -->
-            <div class="forum-main-content">
-                <section class="forum-intro bg-white p-6 rounded-lg shadow-md mb-6">
-                    <h2 class="text-2xl font-bold text-primary-color mb-4">Bem-vindo ao nosso Fórum de Discussão!</h2>
-                    <p class="text-gray-700 leading-relaxed">
-                        Este é um espaço dedicado à troca de ideias, dúvidas e experiências relacionadas a compras governamentais, legislação, capacitação e muito mais. Sinta-se à vontade para explorar os tópicos existentes, participar das discussões e criar seus próprios tópicos. Sua contribuição é muito valiosa para a nossa comunidade!
-                    </p>
-                </section>
-
-                <section class="discussion-topics">
-                    <h2 class="text-2xl font-bold text-dark-blue mb-5">Tópicos em Destaque</h2>
-                    <div id="topic-list" class="space-y-4">
-                        <!-- Tópicos de exemplo serão injetados aqui via JS ou podem ser estáticos inicialmente -->
-                        <div class="topic-card bg-white p-5 rounded-lg shadow-md flex items-center justify-between">
-                            <div>
-                                <h3 class="text-xl font-semibold text-primary-color cursor-pointer hover:underline" data-topic-id="1">Como a Nova Lei de Licitações impacta pequenas empresas?</h3>
-                                <p class="text-sm text-gray-600 mt-1">por <span class="font-medium">João Silva</span> em 15/05/2024</p>
-                                <p class="text-gray-700 text-sm mt-2">Dúvidas sobre os requisitos e oportunidades para MEIs e EPPs.</p>
+        <!-- Botão de acesso ao sistema -->
+        <div class="flex justify-center mb-6">
+            <a href="em-construcao.html" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg flex items-center gap-2 shadow-lg transition" aria-label="Acessar o sistema para participar do fórum">
+                <i class="fas fa-sign-in-alt"></i>
+                Acessar o Sistema para Participar
+            </a>
+        </div>
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a href="../Index.html">Início</a>
+            <span class="separator">/</span>
+            <span>Fórum</span>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <div class="lg:col-span-1">
+                <div class="sticky-filters">
+                    <div id="create-topic-section" class="create-topic-form rounded-lg p-6 mb-6 hidden">
+                        <h3 class="text-lg font-bold mb-4" style="color: var(--primary-color);">
+                            <i class="fas fa-plus-circle mr-2"></i>Criar Novo Tópico
+                        </h3>
+                        <form id="new-topic-form">
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Título</label>
+                                <input type="text" id="topic-title" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Digite o título do tópico" required>
                             </div>
-                            <div class="topic-interactions flex items-center space-x-4">
-                                <button class="like-button text-gray-500 hover:text-green-600 transition-colors" data-topic-id="1" aria-label="Curtir"><i class="fas fa-thumbs-up"></i> <span class="like-count">120</span></button>
-                                <button class="dislike-button text-gray-500 hover:text-red-600 transition-colors" data-topic-id="1" aria-label="Não curtir"><i class="fas fa-thumbs-down"></i> <span class="dislike-count">5</span></button>
-                                <span class="total-interactions text-lg font-bold text-dark-blue">125</span>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Categoria</label>
+                                <select id="topic-category" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="geral">Geral</option>
+                                    <option value="legislacao">Legislação</option>
+                                    <option value="capacitacao">Capacitação</option>
+                                    <option value="tecnologia">Tecnologia</option>
+                                    <option value="duvidas">Dúvidas</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Descrição</label>
+                                <textarea id="topic-description" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Descreva seu tópico..." required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition">
+                                <i class="fas fa-paper-plane mr-2"></i>Publicar Tópico
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                        <h3 class="text-lg font-bold mb-4" style="color: var(--primary-color);">
+                            <i class="fas fa-filter mr-2"></i>Filtros
+                        </h3>
+
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Buscar</label>
+                            <div class="relative">
+                                <input type="text" id="search-input" class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Buscar tópicos...">
+                                <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
                             </div>
                         </div>
 
-                        <div class="topic-card bg-white p-5 rounded-lg shadow-md flex items-center justify-between">
-                            <div>
-                                <h3 class="text-xl font-semibold text-primary-color cursor-pointer hover:underline" data-topic-id="2">Ferramentas de IA para otimização de processos de compra</h3>
-                                <p class="text-sm text-gray-600 mt-1">por <span class="font-medium">Maria Souza</span> em 10/05/2024</p>
-                                <p class="text-gray-700 text-sm mt-2">Quais IAs podem ajudar na análise de propostas e gestão de contratos?</p>
-                            </div>
-                            <div class="topic-interactions flex items-center space-x-4">
-                                <button class="like-button text-gray-500 hover:text-green-600 transition-colors" data-topic-id="2" aria-label="Curtir"><i class="fas fa-thumbs-up"></i> <span class="like-count">85</span></button>
-                                <button class="dislike-button text-gray-500 hover:text-red-600 transition-colors" data-topic-id="2" aria-label="Não curtir"><i class="fas fa-thumbs-down"></i> <span class="dislike-count">2</span></button>
-                                <span class="total-interactions text-lg font-bold text-dark-blue">87</span>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Categoria</label>
+                            <select id="filter-category" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Todas</option>
+                                <option value="geral">Geral</option>
+                                <option value="legislacao">Legislação</option>
+                                <option value="capacitacao">Capacitação</option>
+                                <option value="tecnologia">Tecnologia</option>
+                                <option value="duvidas">Dúvidas</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Ordenar por</label>
+                            <div class="space-y-2">
+                                <button class="sort-btn filter-active w-full text-left px-3 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition" data-sort="recent">
+                                    <i class="fas fa-clock mr-2"></i>Mais Recentes
+                                </button>
+                                <button class="sort-btn w-full text-left px-3 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition" data-sort="popular">
+                                    <i class="fas fa-fire mr-2"></i>Mais Populares
+                                </button>
+                                <button class="sort-btn w-full text-left px-3 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition" data-sort="answered">
+                                    <i class="fas fa-check-circle mr-2"></i>Mais Respondidos
+                                </button>
                             </div>
                         </div>
 
-                        <div class="topic-card bg-white p-5 rounded-lg shadow-md flex items-center justify-between">
-                            <div>
-                                <h3 class="text-xl font-semibold text-primary-color cursor-pointer hover:underline" data-topic-id="3">Dicas para servidores: como se capacitar em gestão de contratos?</h3>
-                                <p class="text-sm text-gray-600 mt-1">por <span class="font-medium">Pedro Costa</span> em 01/05/2024</p>
-                                <p class="text-gray-700 text-sm mt-2">Cursos, manuais e melhores práticas para aperfeiçoamento profissional.</p>
+                        <button id="clear-filters" class="w-full bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 transition">
+                            <i class="fas fa-times mr-2"></i>Limpar Filtros
+                        </button>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-lg font-bold mb-4" style="color: var(--primary-color);">
+                            <i class="fas fa-chart-bar mr-2"></i>Estatísticas
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Total de Tópicos:</span>
+                                <span class="font-bold" id="total-topics">156</span>
                             </div>
-                            <div class="topic-interactions flex items-center space-x-4">
-                                <button class="like-button text-gray-500 hover:text-green-600 transition-colors" data-topic-id="3" aria-label="Curtir"><i class="fas fa-thumbs-up"></i> <span class="like-count">60</span></button>
-                                <button class="dislike-button text-gray-500 hover:text-red-600 transition-colors" data-topic-id="3" aria-label="Não curtir"><i class="fas fa-thumbs-down"></i> <span class="dislike-count">0</span></button>
-                                <span class="total-interactions text-lg font-bold text-dark-blue">60</span>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Respostas:</span>
+                                <span class="font-bold" id="total-responses">1,247</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Usuários Ativos:</span>
+                                <span class="font-bold" id="active-users">89</span>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
 
-            <!-- Barra Lateral Direita -->
-            <aside class="forum-sidebar">
-                <section class="create-topic-form bg-white p-6 rounded-lg shadow-md">
-                    <h2 class="text-2xl font-bold text-dark-blue mb-4">Criar Novo Tópico</h2>
-                    <form id="new-topic-form" class="space-y-4">
+            <div class="lg:col-span-3">
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <div class="flex justify-between items-center mb-4">
                         <div>
-                            <label for="user-name" class="block text-gray-700 text-sm font-bold mb-2">Seu Nome Completo:</label>
-                            <input type="text" id="user-name" name="userName" class="w-full p-3 border border-gray-300 rounded-md focus:ring-primary-color focus:border-primary-color" placeholder="Seu nome" required>
+                            <h2 class="text-2xl font-bold" style="color: var(--primary-color);">
+                                <i class="fas fa-comments mr-3"></i>Fórum de Discussão
+                            </h2>
+                            <p class="text-gray-600 mt-2">Espaço para troca de ideias sobre compras governamentais, legislação e capacitação.</p>
                         </div>
-                        <div>
-                            <label for="user-email" class="block text-gray-700 text-sm font-bold mb-2">Seu Email:</label>
-                            <input type="email" id="user-email" name="userEmail" class="w-full p-3 border border-gray-300 rounded-md focus:ring-primary-color focus:border-primary-color" placeholder="seu.email@example.com" required>
-                        </div>
-                        <div>
-                            <label for="topic-title" class="block text-gray-700 text-sm font-bold mb-2">Título do Tópico:</label>
-                            <input type="text" id="topic-title" name="topicTitle" class="w-full p-3 border border-gray-300 rounded-md focus:ring-primary-color focus:border-primary-color" placeholder="Ex: Dúvida sobre Pregão Eletrônico" required>
-                        </div>
-                        <div>
-                            <label for="topic-description" class="block text-gray-700 text-sm font-bold mb-2">Descrição:</label>
-                            <textarea id="topic-description" name="topicDescription" rows="5" class="w-full p-3 border border-gray-300 rounded-md focus:ring-primary-color focus:border-primary-color" placeholder="Descreva sua dúvida ou ideia com detalhes..." required></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-primary-color text-white py-3 px-4 rounded-md font-bold hover:bg-blue-700 transition-colors">
-                            <i class="fas fa-plus-circle mr-2"></i> Criar Tópico
+                        <button id="new-topic-btn" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition hidden">
+                            <i class="fas fa-plus mr-2"></i>Novo Tópico
                         </button>
-                    </form>
-                </section>
-            </aside>
-        </div>
-    </main>
+                    </div>
 
-    <!-- Modal de Detalhes do Tópico (inicialmente oculto) -->
-    <div id="topic-detail-modal" class="modal-overlay">
-        <div class="modal-content bg-white p-8 rounded-lg shadow-xl">
-            <button class="modal-close-button text-gray-600 hover:text-gray-900 absolute top-4 right-4" aria-label="Fechar"><i class="fas fa-times text-2xl"></i></button>
-            <h2 id="modal-topic-title" class="text-3xl font-bold text-dark-blue mb-4"></h2>
-            <p id="modal-topic-meta" class="text-sm text-gray-600 mb-6"></p>
-            <p id="modal-topic-description" class="text-gray-800 leading-relaxed mb-8"></p>
-
-            <section class="qa-section border-t border-gray-200 pt-6 mt-6">
-                <h3 class="text-2xl font-bold text-dark-blue mb-4">Perguntas e Respostas</h3>
-                <div id="qa-list" class="space-y-4">
-                    <!-- Respostas e links serão injetados aqui -->
-                    <div class="qa-item bg-gray-50 p-4 rounded-md shadow-sm">
-                        <p class="text-gray-800 mb-2">"Ótima pergunta! A nova lei foca na transparência e planejamento. Para MEIs, o sistema agora permite participação mais simplificada em alguns tipos de licitação."</p>
-                        <p class="text-sm text-gray-600">Resposta de: <span class="font-medium">Servidor Público</span> - <a href="https://www.gov.br/compras" target="_blank" class="text-primary-color hover:underline">Link útil</a></p>
-                        <div class="response-interactions flex items-center space-x-3 mt-3">
-                            <button class="like-button-response text-gray-500 hover:text-green-600 transition-colors"><i class="fas fa-thumbs-up"></i> <span>5</span></button>
-                            <button class="dislike-button-response text-gray-500 hover:text-red-600 transition-colors"><i class="fas fa-thumbs-down"></i> <span>0</span></button>
+                    <div id="login-message" class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-info-circle text-blue-500 mr-3"></i>
+                            <div>
+                                <p class="text-blue-800 font-medium">Faça login para participar das discussões</p>
+                                <p class="text-blue-600 text-sm">Você pode criar tópicos, responder e interagir com a comunidade.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="add-response mt-6">
-                    <h4 class="text-xl font-bold text-dark-blue mb-3">Adicionar Resposta/Link</h4>
-                    <textarea id="new-response-text" rows="3" class="w-full p-3 border border-gray-300 rounded-md focus:ring-primary-color focus:border-primary-color mb-3" placeholder="Sua resposta..."></textarea>
-                    <input type="text" id="new-response-link" class="w-full p-3 border border-gray-300 rounded-md focus:ring-primary-color focus:border-primary-color mb-3" placeholder="Link relevante (opcional)">
-                    <button id="submit-response" class="bg-secondary-color text-white py-2 px-4 rounded-md font-bold hover:bg-green-700 transition-colors">
-                        <i class="fas fa-paper-plane mr-2"></i> Enviar Resposta
+
+                <div id="topics-container">
+                    </div>
+
+                <div id="pagination" class="flex justify-center items-center space-x-2 mt-8">
+                    <button class="pagination-btn px-3 py-2 border border-gray-300 rounded-lg" data-page="prev" aria-label="Página anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div id="page-numbers" class="flex space-x-1">
+                        </div>
+                    <button class="pagination-btn px-3 py-2 border border-gray-300 rounded-lg" data-page="next" aria-label="Próxima página">
+                        <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
-            </section>
+            </div>
         </div>
-    </div>
-
+    </main>
     <footer class="footer py-6 px-4">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <!-- Mapa do Site -->
                 <div class="sitemap-section">
                     <h4 class="text-white font-bold mb-4">Início</h4>
                     <ul class="space-y-2">
-                        <li><a href="../index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
+                        <li><a href="../Index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
                         <li><a href="oportunidades.html" class="text-gray-300 hover:text-white">Oportunidades</a></li>
                         <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais</a></li>
                         <li><a href="artigos.html" class="text-gray-300 hover:text-white">Artigos</a></li>
                     </ul>
                 </div>
-
                 <div class="sitemap-section">
                     <h4 class="text-white font-bold mb-4">Perfis de Acesso</h4>
                     <ul class="space-y-2">
-                        <li><a href="fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
-                        <li><a href="servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
-                        <li><a href="cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
+                        <li><a href="Fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
+                        <li><a href="Servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
+                        <li><a href="Cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
                         <li><a href="em-construcao.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
                     </ul>
                 </div>
-
                 <div class="sitemap-section">
                     <h4 class="text-white font-bold mb-4">Conhecimento</h4>
                     <ul class="space-y-2">
-                        <li><a href="capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
+                        <li><a href="Capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
                         <li><a href="legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
                         <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
                     </ul>
                 </div>
-
                 <div class="sitemap-section">
                     <h4 class="text-white font-bold mb-4">Contato</h4>
                     <ul class="space-y-2 text-gray-300">
@@ -293,24 +263,37 @@
                     </ul>
                 </div>
             </div>
-
-            <!-- Direitos Reservados -->
             <div class="border-t border-gray-700 pt-6 mt-6">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <div class="flex items-center mb-4 md:mb-0">
                         <img src="../images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12 brightness-0 invert mr-4">
                     </div>
                     <div class="text-center md:text-right">
-                        <p class="text-sm text-blue-200"> 2024 Governo do Rio Grande do Norte</p>
+                        <p class="text-sm text-blue-200"> 2025 Governo do Rio Grande do Norte</p>
                         <p class="text-sm text-blue-200">Todos os direitos reservados</p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- Scripts principais e do fórum -->
     <script src="../js/scripts.js"></script>
+    <script src="../js/search.js"></script>
     <script src="../js/forum.js"></script>
+    <div id="topic-detail-modal" class="topic-detail-modal fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+            <div class="p-6 border-b border-gray-200">
+                <div class="flex justify-between items-start">
+                    <div class="flex-1">
+                        <h3 id="modal-topic-title" class="text-2xl font-bold mb-2" style="color: var(--primary-color);">Título do tópico</h3>
+                        <div id="modal-topic-meta" class="text-sm text-gray-600 mb-4"></div>
+                        <div id="modal-topic-description" class="text-gray-800"></div>
+                    </div>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700 ml-4" aria-label="Fechar modal">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -70,7 +70,7 @@ portal-de-compras-RN/
 ### Diretrizes
 - **Planejamento**: Utilize o quadro de requisitos no workspace para gerenciar tarefas
 - **Design**: Consulte wireframes e protótipos no quadro de Design e Prototipação
-- **Desenvolvimento**: Divida as tarefas em front-end (HTML/CSS/JS) e back-end (futuras APIs e banco de dados)
+- **Desenvolvimento**: Divida as tarefas em front-end (HTML/CSS/JS) e back-end
 - **Testes**: Registre planos de teste no quadro de Testes e Validação
 - **Documentação**: Armazene manuais e relatórios no quadro de Documentação e Entrega
 
@@ -91,8 +91,7 @@ portal-de-compras-RN/
 5. Abra um Pull Request descrevendo as mudanças
 
 ## Próximos Passos
-- Implementar APIs RESTful para integração com sistemas governamentais
-- Configurar o banco de dados para gerenciar oportunidades e usuários
+
 - Adicionar conteúdo dinâmico à página de "Artigos"
 - Realizar testes de acessibilidade (WCAG 2.1)
 - Criar diagramas UML para processos de compra no workspace
@@ -100,8 +99,8 @@ portal-de-compras-RN/
 ## Contato
 Para dúvidas ou sugestões, entre em contato com a equipe de desenvolvimento:
 
-- **Email:** contato@sead.rn.gov.br
-- **Telefone:** (84) 3232-1000
+- **Email:** 
+- **Telefone:** 
 
 ---
 

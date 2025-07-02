@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legislação - Portal de Compras Governamentais RN</title>
+    <title>Notícias e Comunicados - Portal de Compras Governamentais RN</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/@govbr-ds/core/dist/core.min.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/news.css">
 </head>
-<body>
-    <!-- Header e menu -->
+<body class="bg-white">
     <header class="header-bg py-2 px-4">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-4">
@@ -77,37 +78,44 @@
         <div class="breadcrumbs">
             <a href="../Index.html">Início</a>
             <span class="separator">/</span>
-            <span>Legislação</span>
+            <span>Notícias</span>
         </div>
-        <h3 class="section-title">Legislação</h3>
+        <h1 class="section-title flex items-center gap-2"><i class="fas fa-newspaper"></i> Notícias e Comunicados</h1>
         <div class="container-box mb-6">
-            <p class="mb-6 text-gray-700">Nesta página encontra-se legislação do interesse dos cidadãos, agentes públicos e fornecedores.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <a href="#" class="card p-4 flex flex-col items-center hover:shadow-lg transition-shadow">
-                    <div class="w-full h-32 bg-gray-200 flex items-center justify-center mb-4">
-                        <i class="fas fa-file-pdf text-4xl" style="color: var(--dark-blue);"></i>
-                    </div>
-                    <h4 class="font-bold text-center">Lei nº 14.133/2021</h4>
-                    <p class="text-sm text-gray-600 text-center">Nova Lei de Licitações e Contratos</p>
-                </a>
-                <a href="#" class="card p-4 flex flex-col items-center hover:shadow-lg transition-shadow">
-                    <div class="w-full h-32 bg-gray-200 flex items-center justify-center mb-4">
-                        <i class="fas fa-file-pdf text-4xl" style="color: var(--dark-blue);"></i>
-                    </div>
-                    <h4 class="font-bold text-center">Decreto nº 10.024/2019</h4>
-                    <p class="text-sm text-gray-600 text-center">Pregão Eletrônico</p>
-                </a>
-                <a href="#" class="card p-4 flex flex-col items-center hover:shadow-lg transition-shadow">
-                    <div class="w-full h-32 bg-gray-200 flex items-center justify-center mb-4">
-                        <i class="fas fa-file-pdf text-4xl" style="color: var(--dark-blue);"></i>
-                    </div>
-                    <h4 class="font-bold">Lei Complementar 123/2006</h4>
-                    <p class="text-sm text-gray-600 text-center">Tratamento diferenciado ME/EPP</p>
-                </a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="md:col-span-2">
+                    <label for="search" class="block text-sm font-medium text-gray-700 mb-2">Buscar Notícias</label>
+                    <input type="text" id="search" class="search-input w-full" placeholder="Digite palavras-chave...">
+                </div>
+                <div>
+                    <label for="category" class="block text-sm font-medium text-gray-700 mb-2">Categoria</label>
+                    <select id="category" class="search-input w-full">
+                        <option value="">Todas as categorias</option>
+                        <option value="comunicado">Comunicados</option>
+                        <option value="noticia">Notícias</option>
+                        <option value="evento">Eventos</option>
+                        <option value="legislacao">Legislação</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-between items-center">
+                <button onclick="searchNews()" class="btn-primary">
+                    <i class="fas fa-search mr-2"></i>Buscar
+                </button>
+                <button onclick="clearSearch()" class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-times mr-1"></i>Limpar filtros
+                </button>
             </div>
         </div>
+        <div id="news-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"></div>
+        <div id="pagination" class="flex justify-center items-center space-x-2"></div>
     </main>
-    <!-- Footer -->
+    <div id="newsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()" aria-label="Fechar modal">&times;</span>
+            <div id="modal-content"></div>
+        </div>
+    </div>
     <footer class="footer py-6 px-4">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -162,6 +170,7 @@
         </div>
     </footer>
     <script src="../js/scripts.js"></script>
+    <script src="../js/news-script.js"></script>
     <script src="../js/search.js"></script>
 </body>
 </html>

@@ -7,16 +7,28 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
     <style>
+        /* Variáveis de cor do protótipo */
+        :root {
+            --primary-color: #1351B4;
+            --secondary-color: #FF6B35;
+            --success-color: #5EA51D;
+            --warning-color: #FFCD07;
+            --info-color: #3498db;
+            --dark-blue: #071D41;
+        }
+
+        /* Estilos gerais do protótipo */
         body {
             font-family: 'Rawline', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: #333; /* Cor de texto padrão */
         }
         .color-bar {
             height: 4px;
             background: linear-gradient(90deg, 
-                #FF6B35 0%, #FF6B35 25%, 
-                #5EA51D 25%, #5EA51D 50%, 
-                #FFCD07 50%, #FFCD07 75%, 
-                #3498db 75%, #3498db 100%);
+                #FF6B35 0%, #FF6B35 25%, /* Laranja */
+                #5EA51D 25%, #5EA51D 50%, /* Verde */
+                #FFCD07 50%, #FFCD07 75%, /* Amarelo */
+                #3498db 75%, #3498db 100%); /* Azul Gov.br */
         }
         .header-bg {
             background-color: #f8f9fa;
@@ -41,55 +53,67 @@
             position: relative;
         }
         .carousel {
-            background-color: #f5f5f5;
+            background-color: #AD897C; /* Marrom claro para o carrossel */
             height: 300px;
+            color: #FBFBFB; /* Texto branco no carrossel */
         }
         .card {
             border: 1px solid #e9e9e9;
             border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra suave para os cards */
         }
         .footer {
-            background-color: #071D41;
+            background-color: #3A6A85; /* Azul escuro para o rodapé */
             color: white;
+            padding-top: 24px; /* Adiciona padding-top para o conteúdo do sitemap */
+            padding-bottom: 24px; /* Adiciona padding-bottom para o conteúdo do footer */
         }
         .container-box {
-            background-color: #f5f5f5;
-            border-radius: 5px;
+            background-color: #FBFBFB; /* Cor de fundo para melhor contraste com os ícones */
+            border-radius: 8px;
             padding: 20px;
             margin-bottom: 20px;
+            color: #3A6A85; /* Cor de texto para container-box */
+            border: 1px solid #e9e9e9;
         }
         .btn-primary {
-            background-color: #1351B4;
+            background-color: #D34C2B; /* Laranja escuro para botões primários */
             color: white;
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 20px;
             display: inline-block;
             transition: background-color 0.3s;
+            font-weight: 600;
         }
         .btn-primary:hover {
-            background-color: #0d3d8b;
+            background-color: #B03C1F; /* Tom mais escuro no hover */
         }
         .btn-outline {
-            border: 1px solid #1351B4;
-            color: #1351B4;
-            padding: 8px 16px;
+            border: 2px solid #3A6A85; /* Azul escuro para botões de contorno */
+            color: #3A6A85;
+            padding: 8px 18px;
             border-radius: 20px;
             display: inline-block;
             transition: all 0.3s;
+             font-weight: 600;
         }
         .btn-outline:hover {
-            background-color: #1351B4;
+            background-color: #3A6A85;
             color: white;
         }
         .nav-icon {
-            color: #1351B4;
+            color: #00167C; /* Todos os ícones de navegação em azul mais escuro */
             font-size: 24px;
             margin-right: 10px;
         }
+        
         .section-title {
-            border-bottom: 2px solid #1351B4;
+            border-bottom: 2px solid #3A6A85; /* Azul escuro para sublinhado de títulos de seção */
             padding-bottom: 8px;
             margin-bottom: 20px;
+            color: #3A6A85;
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
         }
         .page {
             display: none;
@@ -98,9 +122,9 @@
             display: block;
         }
         .tab-active {
-            color: #1351B4;
+            color: var(--primary-color);
             font-weight: bold;
-            border-bottom: 2px solid #1351B4;
+            border-bottom: 2px solid var(--primary-color);
         }
         .grey-box {
             background-color: #f0f0f0;
@@ -117,7 +141,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 30px; /* Aumentado o padding para deixar o card maior */
             transition: transform 0.3s;
             height: 100%;
         }
@@ -127,15 +151,15 @@
         }
         
         .service-card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: #333;
+            font-size: 3rem; /* Aumentado o tamanho do ícone */
+            margin-bottom: 20px; /* Aumentado a margem */
+            color: #00167C; /* Todos os ícones de serviço em azul mais escuro */
         }
         
         .service-card-title {
             font-weight: 600;
             text-align: center;
-            font-size: 1rem;
+            font-size: 1.1rem; /* Aumentado o tamanho da fonte */
             color: #333;
         }
         
@@ -155,6 +179,7 @@
             background-color: #FF6B35;
         }
         
+      
         .border-green {
             background-color: #5EA51D;
         }
@@ -205,11 +230,11 @@
             display: block;
         }
 
-        /* Buttons styled as links */
+        /* Buttons styled as links - All orange */
         .link-button {
             display: inline-block;
-            background-color: #f5f5f5;
-            color: #1351B4;
+            background-color: #D34C2B; /* Laranja escuro para todos os link-buttons */
+            color: white; /* Texto branco para todos os link-buttons */
             padding: 10px 20px;
             border-radius: 5px;
             margin-right: 10px;
@@ -220,7 +245,11 @@
         }
         
         .link-button:hover {
-            background-color: #e0e0e0;
+            background-color: #B03C1F; /* Tom mais escuro de laranja no hover */
+        }
+        /* Ícones dentro dos botões de links rápidos herdam a cor do texto do botão (branco) */
+        .link-button .fas {
+            color: inherit; 
         }
 
         /* Manual section cards */
@@ -242,7 +271,7 @@
         
         .manual-card-icon {
             font-size: 2.5rem;
-            color: #1351B4;
+            color: #00167C; /* Azul mais escuro para ícones de manuais */
             margin-bottom: 15px;
         }
         
@@ -268,7 +297,7 @@
         }
 
         .breadcrumbs a {
-            color: #1351B4;
+            color: #3A6A85; /* Azul escuro para links de breadcrumbs */
         }
 
         .breadcrumbs .separator {
@@ -284,7 +313,7 @@
         .sitemap-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #333;
+            color: #FBFBFB; /* Texto branco para títulos do sitemap no rodapé */
         }
 
         .sitemap-list {
@@ -297,42 +326,438 @@
         }
 
         .sitemap-list a {
-            color: #1351B4;
+            color: #FBFBFB; /* Texto branco para links do sitemap no rodapé */
             text-decoration: none;
             transition: color 0.2s;
         }
 
         .sitemap-list a:hover {
-            color: #0d3d8b;
+            color: #e0e0e0;
             text-decoration: underline;
         }
+        /* Estilos para Compras Homologadas (nova seção com cartões) */
+        .approved-purchases-section {
+            padding: 30px 0; /* Padding da seção */
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .approved-purchases-section .section-title {
+            margin-bottom: 30px; /* Mais espaçamento abaixo do título da seção */
+        }
+
+        .metric-card {
+            background-color: #FBFBFB; /* Fundo branco para os cartões */
+            border: 1px solid #e9e9e9;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px; /* Altura mínima para consistência */
+            position: relative;
+            overflow: hidden; /* Para a barra colorida */
+        }
+
+        .metric-card:hover {
+            transform: translateY(-8px); /* Efeito de elevação mais pronunciado */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .metric-value {
+            font-size: 2.8rem; /* Valor grande */
+            font-weight: 800;
+            color: #00167C; /* Azul escuro para os números */
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 0.95rem;
+            color: #666;
+            text-align: center;
+        }
+
+        .metric-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px; /* Barra colorida mais grossa */
+        }
+
+        /* Cores das barras */
+        .metric-bar.blue { background-color: #3498db; }
+        .metric-bar.orange { background-color: #FF6B35; }
+        .metric-bar.green { background-color: #5EA51D; }
+        .metric-bar.yellow { background-color: #FFCD07; }
+
+
+        /* Estilos para os cards de consulta (Contratações e Atas) */
+        .consult-card {
+            background-color: #FBFBFB;
+            border: 1px solid #e9e9e9;
+            border-radius: 8px;
+            padding: 25px; /* Aumenta o padding */
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease-in-out;
+            position: relative; /* Para posicionar o ícone de informação */
+            min-height: 150px; /* Garante uma altura mínima */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .consult-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+
+        .consult-card-icon {
+            font-size: 3.5rem; /* Ícone maior */
+            color: #00167C; /* Azul escuro */
+            margin-bottom: 15px;
+        }
+
+        .consult-card-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.2rem; /* Título maior */
+        }
+
+        .info-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.2rem;
+            color: #00167C; /* Azul escuro */
+        }
+
+        /* Estilos do Fórum */
+        .forum-guidelines {
+            background-color: #eef4ff;
+            border-left: 4px solid #3A6A85;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .forum-topic-card, .featured-topic-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e9e9e9;
+            transition: box-shadow 0.3s;
+        }
+        .forum-topic-card:hover, .featured-topic-card:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .forum-topic-title {
+            font-weight: 600;
+            color: #3A6A85;
+            margin-bottom: 8px;
+        }
+        .forum-topic-meta {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        .forum-post-content {
+            color: #444;
+            line-height: 1.6;
+        }
+        .featured-topic-card .stats {
+            display: flex;
+            gap: 15px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .forum-reply-form {
+            background-color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .forum-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem; /* 24px */
+            margin-top: 1rem; /* 16px */
+            padding-top: 1rem; /* 16px */
+            border-top: 1px solid #e5e7eb; /* Cool Gray 200 */
+        }
+        .action-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #6b7280; /* Cool Gray 500 */
+            display: flex;
+            align-items: center;
+            gap: 0.5rem; /* 8px */
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .action-btn:hover, .action-btn.active {
+            color: #3A6A85; /* Main blue color */
+        }
+        .action-btn.liked {
+            color: #D34C2B; /* Laranja para like */
+        }
+        .action-btn.disliked {
+            color: #888; /* Cinza para dislike */
+        }
+        .action-btn .fas {
+            font-size: 1.1rem;
+        }
+
+        /* Estilos específicos para a página de notícias (RF09) */
+        .news-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e9e9e9; /* Consistente com .card */
+            border-radius: 8px; /* Arredondamento um pouco maior */
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra suave */
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px); /* Elevação no hover */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra mais pronunciada */
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6); /* Fundo mais escuro para o modal */
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto; /* Permite scroll no modal */
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 30px; /* Aumenta padding */
+            border-radius: 8px; /* Arredondamento */
+            width: 95%;
+            max-width: 900px; /* Aumenta largura máxima */
+            max-height: 90vh; /* Ocupa mais altura da tela */
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .close {
+            color: #666;
+            font-size: 36px; /* Ícone de fechar maior */
+            font-weight: bold;
+            position: absolute;
+            right: 20px; /* Posição ajustada */
+            top: 15px; /* Posição ajustada */
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .close:hover {
+            color: #333;
+        }
+        
+        .pagination-btn {
+            padding: 8px 15px; /* Ajusta padding */
+            margin: 0 5px; /* Ajusta margem */
+            border: 1px solid #d1d5db;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 20px; /* Botões mais arredondados */
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: #3A6A85; /* Cor de texto padrão dos botões de contorno */
+        }
+        
+        .pagination-btn:hover {
+            background-color: #3A6A85;
+            color: white;
+        }
+        
+        .pagination-btn.active {
+            background-color: #D34C2B; /* Cor primária do protótipo */
+            color: white;
+            border-color: #D34C2B;
+        }
+        
+        .badge {
+            padding: 4px 10px; /* Ajusta padding */
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase; /* Mais legível para tags */
+        }
+        
+        .badge-info {
+            background-color: #e0f2fe; /* Azul claro */
+            color: #0284c7; /* Azul mais escuro */
+        }
+        
+        .badge-success {
+            background-color: #dcfce7; /* Verde claro */
+            color: #22c55e; /* Verde mais escuro */
+        }
+        
+        .badge-warning {
+            background-color: #fffbeb; /* Amarelo claro */
+            color: #f59e0b; /* Amarelo mais escuro */
+        }
+
+        .prose img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Estilos específicos para o fórum, sobrepondo ou complementando os globais */
+        .sticky-filters {
+            position: sticky;
+            top: 20px; /* Ajuste para ficar abaixo do header sticky */
+            z-index: 10;
+        }
+        .topic-detail-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 5000; /* Mais alto que o offcanvas */
+            align-items: center;
+            justify-content: center;
+            overflow-y: auto;
+        }
+        .topic-detail-modal.active {
+            display: flex;
+        }
+        .topic-detail-modal .bg-white { /* Content of the modal */
+            border-radius: 8px;
+            max-width: 900px;
+            width: 95%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative; /* For closing button */
+        }
+
+        .topic-detail-modal .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .user-badge {
+            background-color: #3A6A85; /* Azul escuro do protótipo */
+            color: white;
+            padding: 6px 12px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        .response-item {
+            border-left: 4px solid #3A6A85; /* Azul escuro do protótipo */
+            background-color: #f9fafb;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .create-topic-form {
+            background-color: #eef4ff; /* Azul claro para o formulário */
+            border: 1px solid #cad9f0;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .filter-active {
+            background-color: #D34C2B !important; /* Laranja escuro do protótipo */
+            color: white !important;
+        }
+
+        /* Estilos para os cards de tópico do fórum */
+        .forum-card {
+            background-color: white;
+            border: 1px solid #e9e9e9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .forum-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+        .forum-card .text-lg.font-bold {
+            color: #3A6A85; /* Cor para títulos de tópico */
+        }
+        .forum-card .text-blue-100 { /* Badge de categoria */
+            background-color: #e0f2fe; /* Azul claro */
+            color: #0284c7; /* Azul mais escuro */
+        }
+
+        /* COMPR IA specific styles */
+        .gradient-bg-compria {
+            background: linear-gradient(135deg, #00167C 0%, #3498db 100%); /* Azul escuro para azul gov.br */
+        }
+        .compria-card-hover {
+            transition: all 0.3s ease;
+        }
+        .compria-card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        .feature-icon-gradient {
+            background: linear-gradient(45deg, #FF6B35, #FFCD07); /* Laranja para Amarelo */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 3rem; /* Tamanho maior para ícones na hero section */
+        }
+        .ai-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
     </style>
 </head>
 <body class="bg-white">
     <!-- Top Header -->
     <header class="header-bg py-2 px-4">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <!-- COMPR Logo -->
-                <img src="https://i.ibb.co/LJpvrJ5/compr-logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
-                <!-- Rio Grande do Norte Logo -->
-                <img src="https://i.ibb.co/b1RM8Zm/rn-governo-logo.png" alt="Governo do Rio Grande do Norte" class="h-12">
+            <div class="flex items-center">
+                <!-- Rio Grande do Norte Logo com link para o site oficial -->
+                <a href="https://www.rn.gov.br/" target="_blank" class="flex items-center pr-4">
+                    <img src="https://placehold.co/100x48/F8F9FA/333333?text=RN+Gov" alt="Governo do Rio Grande do Norte" class="h-12">
+                </a>
             </div>
-            <div class="flex items-center space-x-4 text-sm">
-                <a href="#" class="text-gray-600 hover:text-gray-900">Órgãos do Governo</a>
+            <div class="flex items-center space-x-4 text-sm ml-auto">
                 <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
                 <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
                 <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
                 <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJBZmY2MjQiLCJ0IjoiNzZjN2M3NDEtOTYzZC00MjhmLWE5MTEtMDBkNzJlNWQ2NDVjIn0%3D" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
                 <div class="dropdown">
                     <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
-                </div>
-                <div class="flex items-center space-x-2 ml-4">
-                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-red-600"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -348,11 +773,15 @@
                 <button class="mr-4 text-gray-700" id="menu-toggle">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
-                <a href="#" onclick="showPage('page-content')" class="text-xl font-medium">Central de Compras</a>
+                <a href="#" onclick="showPage('page-content')" class="text-xl font-medium text-3A6A85">Central de Compras</a>
             </div>
-            <div class="relative w-1/3">
+            <div class="relative flex items-center w-full md:w-1/2 lg:w-2/5">
                 <input type="text" placeholder="O que você procura?" class="search-input w-full py-2 px-4 pl-10">
                 <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
+                <a href="#" onclick="showPage('page7')" class="ml-4 px-4 py-2 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition-colors duration-200 text-sm whitespace-nowrap flex items-center justify-center">
+                    <i class="fas fa-sign-in-alt mr-2"></i>
+                    Acesso ao Sistema
+                </a>
             </div>
         </div>
     </div>
@@ -392,15 +821,21 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" onclick="showPage('page5')" class="flex items-center p-2 rounded hover:bg-gray-100">
-                        <i class="fas fa-graduation-cap nav-icon"></i>
-                        <span>Capacite-se</span>
-                    </a>
-                </li>
-                <li>
                     <a href="#" onclick="showPage('page6')" class="flex items-center p-2 rounded hover:bg-gray-100">
                         <i class="fas fa-gavel nav-icon"></i>
                         <span>Legislação</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showPage('page-forum')" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-comments nav-icon"></i>
+                        <span>Fórum</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showPage('page-institucional')" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-building nav-icon"></i>
+                        <span>Institucional</span>
                     </a>
                 </li>
                 <li>
@@ -410,15 +845,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" onclick="showPage('page8')" class="flex items-center p-2 rounded hover:bg-gray-100">
-                        <i class="fas fa-search-dollar nav-icon"></i>
-                        <span>Oportunidades</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" onclick="showPage('page9')" class="flex items-center p-2 rounded hover:bg-gray-100">
-                        <i class="fas fa-book nav-icon"></i>
-                        <span>Manuais</span>
+                    <a href="#" onclick="showPage('page-compr-ia')" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-microchip nav-icon"></i>
+                        <span>COMPR IA</span>
                     </a>
                 </li>
             </ul>
@@ -431,163 +860,170 @@
     <main class="container mx-auto py-6 px-4">
         <!-- Navigation with Icons -->
         <div class="container-box mb-6">
-            <div class="flex justify-between flex-wrap">
-                <a href="#" onclick="showPage('page2')" class="flex items-center mb-4 mr-4">
+            <div class="flex justify-around flex-wrap">
+                <a href="#" onclick="showPage('page2')" class="flex items-center mb-4 mr-4 text-3A6A85 hover:text-D34C2B transition-colors">
                     <i class="fas fa-user-tie nav-icon"></i>
                     <span>Fornecedor</span>
                 </a>
-                <a href="#" onclick="showPage('page3')" class="flex items-center mb-4 mr-4">
+                <a href="#" onclick="showPage('page3')" class="flex items-center mb-4 mr-4 text-3A6A85 hover:text-D34C2B transition-colors">
                     <i class="fas fa-user nav-icon"></i>
                     <span>Servidor</span>
                 </a>
-                <a href="#" onclick="showPage('page4')" class="flex items-center mb-4 mr-4">
+                <a href="#" onclick="showPage('page4')" class="flex items-center mb-4 mr-4 text-3A6A85 hover:text-D34C2B transition-colors">
                     <i class="fas fa-users nav-icon"></i>
                     <span>Cidadão</span>
                 </a>
-                <a href="#" onclick="showPage('page5')" class="flex items-center mb-4 mr-4">
+                <a href="#" onclick="showPage('page5')" class="flex items-center mb-4 mr-4 text-3A6A85 hover:text-D34C2B transition-colors">
                     <i class="fas fa-graduation-cap nav-icon"></i>
                     <span>Capacite-se</span>
                 </a>
-                <a href="#" onclick="showPage('page6')" class="flex items-center mb-4 mr-4">
+                <a href="#" onclick="showPage('page6')" class="flex items-center mb-4 mr-4 text-3A6A85 hover:text-D34C2B transition-colors">
                     <i class="fas fa-gavel nav-icon"></i>
                     <span>Legislação</span>
-                </a>
-                <a href="#" onclick="showPage('page7')" class="flex items-center mb-4">
-                    <i class="fas fa-sign-in-alt nav-icon"></i>
-                    <span>Acesso ao Sistema</span>
                 </a>
             </div>
         </div>
 
-        <!-- Page Content -->
+        <!-- Page Content - Início -->
         <div id="page-content" class="page active">
-            <!-- Carousel -->
-            <div class="carousel mb-6 flex items-center justify-center">
+            <!-- Carrossel de Notícias -->
+            <div class="carousel mb-6 flex items-center justify-center rounded-lg">
                 <div class="text-center">
-                    <h3 class="text-xl font-bold mb-2">Carrossel de Notícias</h3>
-                    <p class="text-gray-600">Últimas notícias e destaques sobre Compras Governamentais</p>
+                    <h3 class="text-2xl font-bold mb-2">Carrossel de Notícias</h3>
+                    <p class="text-gray-200">Últimas notícias e destaques sobre Compras Governamentais</p>
                 </div>
             </div>
 
-            <!-- Manuals & Links Section - Updated with styled buttons -->
+            <!-- Manuais & Links Section - Updated with styled buttons -->
             <div class="mb-6">
-                <h3 class="section-title text-xl font-bold">Links Rápidos</h3>
-                <div class="my-4">
-                    <a href="#" onclick="showPage('page9')" class="link-button"><i class="fas fa-book mr-2"></i> Manuais</a>
+                <h3 class="section-title">Links Rápidos</h3>
+                <div class="my-4 flex flex-wrap gap-3">
+                    <a href="#" onclick="showPage('page-forum')" class="link-button"><i class="fas fa-comments mr-2"></i> Fórum</a>
                     <a href="#" onclick="showPage('page6')" class="link-button"><i class="fas fa-gavel mr-2"></i> Legislação</a>
-                    <a href="#" onclick="showPage('page-artigos')" class="link-button"><i class="fas fa-file-alt mr-2"></i> Artigos</a>
                     <a href="#" onclick="showPage('page8')" class="link-button"><i class="fas fa-search-dollar mr-2"></i> Oportunidades</a>
+                    <a href="#" onclick="showPage('page-noticias')" class="link-button"><i class="fas fa-newspaper mr-2"></i> Notícias</a>
+                    <a href="#" onclick="showPage('page-artigos')" class="link-button"><i class="fas fa-file-alt mr-2"></i> Artigos</a>
+                    <a href="#" onclick="showPage('page9')" class="link-button"><i class="fas fa-book mr-2"></i> Manuais</a>
+                    <a href="#" onclick="showPage('page-institucional')" class="link-button"><i class="fas fa-building mr-2"></i> Institucional</a>
+                    <a href="#" onclick="showPage('page-compr-ia')" class="link-button"><i class="fas fa-microchip mr-2"></i> COMPR IA</a>
                 </div>
             </div>
 
+            <!-- Nova Área: Consultar Oportunidades -->
+            <div class="mb-6">
+                <h3 class="section-title">Consultar Oportunidades</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                    <!-- Card: Contratações -->
+                    <a href="http://servicos.searh.rn.gov.br/searh/Licitacao" target="_blank" rel="noopener noreferrer" class="consult-card">
+                        <i class="fas fa-shopping-cart consult-card-icon"></i>
+                        <h4 class="consult-card-title">Contratações</h4>
+                        <i class="fas fa-info-circle info-icon"></i>
+                    </a>
+                    <!-- Card: Atas de Registro de Preço -->
+                    <a href="http://servicos.searh.rn.gov.br/searh/Licitacao/RegistroPreco" target="_blank" rel="noopener noreferrer" class="consult-card">
+                        <i class="fas fa-file-invoice-dollar consult-card-icon"></i>
+                        <h4 class="consult-card-title">Atas de Registro de Preço</h4>
+                        <i class="fas fa-info-circle info-icon"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Compras Homologadas em 2024 - Design Autoral -->
+            <div class="approved-purchases-section">
+                <h3 class="section-title">Compras Homologadas em 2024</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Card de Métrica: Valor Homologado -->
+                    <div class="metric-card">
+                        <div class="metric-value currency">R$ 31.4bi</div>
+                        <div class="metric-label">Valor Homologado em Compras</div>
+                        <div class="metric-bar blue"></div>
+                    </div>
+                    <!-- Card de Métrica: Valor Homologado para ME/EPP -->
+                    <div class="metric-card">
+                        <div class="metric-value currency">R$ 7bi</div>
+                        <div class="metric-label">Valor Homologado em Compras para ME/EPP</div>
+                        <div class="metric-bar orange"></div>
+                    </div>
+                    <!-- Card de Métrica: Processos Homologados -->
+                    <div class="metric-card">
+                        <div class="metric-value">11mil</div>
+                        <div class="metric-label">Processos de Compras Homologados</div>
+                        <div class="metric-bar green"></div>
+                    </div>
+                    <!-- Card de Métrica: Fornecedores Participantes -->
+                    <div class="metric-card">
+                        <div class="metric-value">900</div>
+                        <div class="metric-label">Fornecedores Participantes</div>
+                        <div class="metric-bar yellow"></div>
+                    </div>
+                </div>
+            </div>
+            
             <!-- Services -->
             <div class="mb-6">
-                <h3 class="section-title text-xl font-bold">Serviços SEAD</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <h3 class="section-title">Serviços SEAD</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Card 1: Escola de Governo -->
                     <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
                         <div class="service-card">
-                            <i class="fas fa-graduation-cap service-card-icon text-blue-600"></i>
+                            <i class="fas fa-graduation-cap service-card-icon"></i>
                             <h4 class="service-card-title">Escola de Governo</h4>
                         </div>
                         <div class="service-card-border border-blue"></div>
                     </div>
                     
-                    <!-- Card 2: Carta de Serviços -->
+                    <!-- Card 2: RN Consig -->
                     <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
                         <div class="service-card">
-                            <i class="fas fa-file-contract service-card-icon text-gray-700"></i>
-                            <h4 class="service-card-title">Carta de Serviços</h4>
-                        </div>
-                        <div class="service-card-border border-yellow"></div>
-                    </div>
-                    
-                    <!-- Card 3: Portal de Compras -->
-                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
-                        <div class="service-card">
-                            <i class="fas fa-shopping-cart service-card-icon text-gray-700"></i>
-                            <h4 class="service-card-title">Portal de Compras</h4>
-                        </div>
-                        <div class="service-card-border border-yellow"></div>
-                    </div>
-                    
-                    <!-- Card 4: RN Consig -->
-                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
-                        <div class="service-card">
-                            <i class="fas fa-money-check-alt service-card-icon text-green-600"></i>
+                            <i class="fas fa-money-check-alt service-card-icon"></i>
                             <h4 class="service-card-title">RN Consig</h4>
-                        </div>
-                        <div class="service-card-border border-yellow"></div>
-                    </div>
-                    
-                    <!-- Row 2 -->
-                    <!-- Card 5: SEI! RN -->
-                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
-                        <div class="service-card">
-                            <i class="fas fa-file-alt service-card-icon text-blue-500"></i>
-                            <h4 class="service-card-title">SEI! RN</h4>
-                        </div>
-                        <div class="service-card-border border-blue"></div>
-                    </div>
-                    
-                    <!-- Card 6: SUAP -->
-                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
-                        <div class="service-card">
-                            <i class="fas fa-cogs service-card-icon text-gray-700"></i>
-                            <h4 class="service-card-title">SUAP</h4>
-                        </div>
-                        <div class="service-card-border border-blue"></div>
-                    </div>
-                    
-                    <!-- Card 7: SIPAC -->
-                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
-                        <div class="service-card">
-                            <i class="fas fa-home service-card-icon text-gray-700"></i>
-                            <h4 class="service-card-title">SIPAC</h4>
                         </div>
                         <div class="service-card-border border-orange"></div>
                     </div>
                     
-                    <!-- Card 8: SIPAT -->
+                    <!-- Card 3: SEI! RN -->
                     <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
                         <div class="service-card">
-                            <i class="fas fa-map-marker-alt service-card-icon text-gray-700"></i>
+                            <i class="fas fa-file-alt service-card-icon"></i>
+                            <h4 class="service-card-title">SEI! RN</h4>
+                        </div>
+                        <div class="service-card-border border-green"></div>
+                    </div>
+                    
+                    <!-- Card 4: SUAP -->
+                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
+                        <div class="service-card">
+                            <i class="fas fa-cogs service-card-icon"></i>
+                            <h4 class="service-card-title">SUAP</h4>
+                        </div>
+                        <div class="service-card-border border-yellow"></div>
+                    </div>
+                    
+                    <!-- Card 5: SIPAC -->
+                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
+                        <div class="service-card">
+                            <i class="fas fa-home service-card-icon"></i>
+                            <h4 class="service-card-title">SIPAC</h4>
+                        </div>
+                        <div class="service-card-border border-blue"></div>
+                    </div>
+                    
+                    <!-- Card 6: SIPAT -->
+                    <div class="relative overflow-hidden bg-white shadow-sm rounded-md">
+                        <div class="service-card">
+                            <i class="fas fa-map-marker-alt service-card-icon"></i>
                             <h4 class="service-card-title">SIPAT</h4>
                         </div>
                         <div class="service-card-border border-orange"></div>
                     </div>
                 </div>
             </div>
-
-            <!-- Approved Purchases -->
-            <div class="mb-6">
-                <h3 class="section-title text-xl font-bold">Compras Homologadas em 2024</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-                    <div class="card p-4">
-                        <h4 class="text-sm text-gray-600">Valor Homologado</h4>
-                        <p class="text-2xl font-bold text-blue-700">R$ 46.546,00</p>
-                    </div>
-                    <div class="card p-4">
-                        <h4 class="text-sm text-gray-600">Compras ME/EPP</h4>
-                        <p class="text-2xl font-bold text-blue-700">R$ 54.649.646,00</p>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="card p-4">
-                        <h4 class="text-sm text-gray-600">Quantidade de Compras</h4>
-                        <p class="text-2xl font-bold text-blue-700">56.564.546</p>
-                    </div>
-                    <div class="card p-4">
-                        <h4 class="text-sm text-gray-600">Quantidade de Fornecedores</h4>
-                        <p class="text-2xl font-bold text-blue-700">900</p>
-                    </div>
-                </div>
-            </div>
         </div>
 
-        <!-- Pages for on-page navigation -->
+        <!-- Páginas para navegação on-page -->
+        <!-- Página: Fornecedor -->
         <div id="page2" class="page">
-            <!-- Fornecedor content -->
+            <!-- Breadcrumbs -->
             <div class="breadcrumbs">
                 <a href="#" onclick="showPage('page-content')">Início</a>
                 <span class="separator">/</span>
@@ -596,33 +1032,33 @@
             
             <!-- Quick Links Box -->
             <div class="container-box mb-6">
-                <div class="flex justify-between flex-wrap">
-                    <a href="#" onclick="showPage('page5')" class="flex items-center mb-4 mr-4">
+                <div class="flex justify-around flex-wrap">
+                    <a href="#" onclick="showPage('page5')" class="flex items-center mb-4 mr-4 text-3A6A85">
                         <i class="fas fa-graduation-cap nav-icon"></i>
                         <span>Capacite-se</span>
                     </a>
-                    <a href="#" onclick="showPage('page6')" class="flex items-center mb-4 mr-4">
+                    <a href="#" onclick="showPage('page6')" class="flex items-center mb-4 mr-4 text-3A6A85">
                         <i class="fas fa-gavel nav-icon"></i>
                         <span>Legislação</span>
                     </a>
-                    <a href="#" class="flex items-center mb-4">
+                    <a href="#" onclick="showPage('page-institucional')" class="flex items-center mb-4 text-3A6A85">
                         <i class="fas fa-building nav-icon"></i>
-                        <span>ME/EPP</span>
+                        <span>Institucional</span>
                     </a>
                 </div>
             </div>
 
             <!-- Banner -->
-            <div class="carousel mb-6 flex items-center justify-center">
+            <div class="carousel mb-6 flex items-center justify-center" style="background-color: #AD897C;">
                 <div class="text-center">
-                    <h3 class="text-xl font-bold">Banner</h3>
+                    <h3 class="text-xl font-bold text-FBFBFB">Banner para Fornecedor</h3>
                 </div>
             </div>
 
             <!-- Selling to the Government -->
             <div class="mb-6">
-                <h3 class="text-xl font-bold mb-4">Comece a vender para o governo</h3>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h3 class="section-title">Comece a vender para o governo</h3>
+                <p class="mb-4 text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <div class="flex space-x-4">
                     <a href="#" class="btn-primary">Passo a Passo</a>
                     <a href="#" class="btn-outline">Cadastre-se</a>
@@ -630,8 +1066,9 @@
             </div>
         </div>
 
+        <!-- Página: Servidor -->
         <div id="page3" class="page">
-            <!-- Servidor content -->
+            <!-- Breadcrumbs -->
             <div class="breadcrumbs">
                 <a href="#" onclick="showPage('page-content')">Início</a>
                 <span class="separator">/</span>
@@ -640,64 +1077,65 @@
             
             <!-- Quick Links Box -->
             <div class="container-box mb-6">
-                <div class="flex justify-between flex-wrap">
-                    <a href="#" onclick="showPage('page5')" class="flex items-center mb-4 mr-4">
+                <div class="flex justify-around flex-wrap">
+                    <a href="#" onclick="showPage('page5')" class="flex items-center mb-4 mr-4 text-3A6A85">
                         <i class="fas fa-graduation-cap nav-icon"></i>
                         <span>Capacite-se</span>
                     </a>
-                    <a href="#" onclick="showPage('page6')" class="flex items-center mb-4 mr-4">
+                    <a href="#" onclick="showPage('page6')" class="flex items-center mb-4 mr-4 text-3A6A85">
                         <i class="fas fa-gavel nav-icon"></i>
                         <span>Legislação</span>
                     </a>
-                    <a href="#" onclick="showPage('page7')" class="flex items-center mb-4">
+                    <a href="#" onclick="showPage('page7')" class="flex items-center mb-4 text-3A6A85">
                         <i class="fas fa-sign-in-alt nav-icon"></i>
                         <span>Acesso ao Sistema</span>
                     </a>
                 </div>
             </div>
 
-            <!-- Carousel -->
-            <div class="carousel mb-6 flex items-center justify-center">
+            <!-- Carrossel de Notícias para Servidor -->
+            <div class="carousel mb-6 flex items-center justify-center" style="background-color: #AD897C;">
                 <div class="text-center">
-                    <h3 class="text-xl font-bold">Carrossel de Notícias</h3>
+                    <h3 class="text-xl font-bold text-FBFBFB">Carrossel de Notícias</h3>
                 </div>
             </div>
 
             <!-- Tools and Resources -->
             <div class="mb-6">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                    <a href="#" class="card p-4 text-center hover:shadow-lg transition-shadow">
-                        <i class="fas fa-file-word text-4xl text-blue-600 mb-2"></i>
-                        <h4 class="font-bold">Modelos de Documentos</h4>
+                    <a href="#" onclick="showPage('page-forum')" class="card p-4 text-center hover:shadow-lg transition-shadow">
+                        <i class="fas fa-comments text-4xl text-00167C mb-2"></i>
+                        <h4 class="font-bold">Fórum</h4>
                     </a>
-                    <a href="#" class="card p-4 text-center hover:shadow-lg transition-shadow">
-                        <i class="fas fa-check-circle text-4xl text-blue-600 mb-2"></i>
-                        <h4 class="font-bold">Boas Práticas</h4>
+                    <a href="#" onclick="showPage('page-institucional')" class="card p-4 text-center hover:shadow-lg transition-shadow">
+                        <i class="fas fa-building text-4xl text-00167C mb-2"></i>
+                        <h4 class="font-bold">Institucional</h4>
                     </a>
-                    <a href="#" onclick="showPage('page9')" class="card p-4 text-center hover:shadow-lg transition-shadow">
-                        <i class="fas fa-book text-4xl text-blue-600 mb-2"></i>
-                        <h4 class="font-bold">Manuais</h4>
+                    <a href="#" onclick="showPage('page-compr-ia')" class="card p-4 text-center hover:shadow-lg transition-shadow">
+                        <i class="fas fa-microchip text-4xl text-00167C mb-2"></i>
+                        <h4 class="font-bold">COMPR IA</h4>
                     </a>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <a href="#" class="card p-4 text-center hover:shadow-lg transition-shadow">
-                        <i class="fas fa-bullhorn text-4xl text-blue-600 mb-2"></i>
-                        <h4 class="font-bold">Comunicados</h4>
+                    <a href="#" onclick="showPage('page9')" class="card p-4 text-center hover:shadow-lg transition-shadow">
+                        <i class="fas fa-book text-4xl text-00167C mb-2"></i>
+                        <h4 class="font-bold">Manuais</h4>
                     </a>
                     <a href="#" class="card p-4 text-center hover:shadow-lg transition-shadow">
-                        <i class="fas fa-robot text-4xl text-blue-600 mb-2"></i>
-                        <h4 class="font-bold">COMPR IA</h4>
+                        <i class="fas fa-file-word text-4xl text-00167C mb-2"></i>
+                        <h4 class="font-bold">Modelos de Documentos</h4>
                     </a>
-                    <a href="#" class="card p-4 text-center hover:shadow-lg transition-shadow">
-                        <i class="fas fa-database text-4xl text-blue-600 mb-2"></i>
+                    <a href="#" onclick="showPage('page8')" class="card p-4 text-center hover:shadow-lg transition-shadow">
+                        <i class="fas fa-database text-4xl text-00167C mb-2"></i>
                         <h4 class="font-bold">Acesso a dados compras</h4>
                     </a>
                 </div>
             </div>
         </div>
 
+        <!-- Página: Cidadão -->
         <div id="page4" class="page">
-            <!-- Cidadão content -->
+            <!-- Breadcrumbs -->
             <div class="breadcrumbs">
                 <a href="#" onclick="showPage('page-content')">Início</a>
                 <span class="separator">/</span>
@@ -707,38 +1145,38 @@
             <!-- Quick Links Box -->
             <div class="container-box mb-6">
                 <div class="flex justify-between flex-wrap">
-                    <a href="#" onclick="showPage('page5')" class="flex items-center mb-4 mr-4">
+                    <a href="#" onclick="showPage('page5')" class="flex items-center mb-4 mr-4 text-3A6A85">
                         <i class="fas fa-graduation-cap nav-icon"></i>
                         <span>Capacite-se</span>
                     </a>
-                    <a href="#" onclick="showPage('page6')" class="flex items-center mb-4 mr-4">
+                    <a href="#" onclick="showPage('page6')" class="flex items-center mb-4 mr-4 text-3A6A85">
                         <i class="fas fa-gavel nav-icon"></i>
                         <span>Legislação</span>
                     </a>
-                    <a href="#" class="flex items-center mb-4">
+                    <a href="#" onclick="showPage('page-institucional')" class="flex items-center mb-4 text-3A6A85">
                         <i class="fas fa-building nav-icon"></i>
-                        <span>ME/EPP</span>
+                        <span>Institucional</span>
                     </a>
                 </div>
             </div>
 
             <!-- Banner -->
-            <div class="carousel mb-6 flex items-center justify-center">
+            <div class="carousel mb-6 flex items-center justify-center" style="background-color: #AD897C;">
                 <div class="text-center">
-                    <h3 class="text-xl font-bold">Banner</h3>
+                    <h3 class="text-xl font-bold text-FBFBFB">Banner para Cidadão</h3>
                 </div>
             </div>
 
             <!-- Transparency -->
             <div class="mb-6">
-                <h3 class="text-xl font-bold mb-4">Transparência compras SEAD-RN</h3>
-                <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h3 class="section-title">Transparência compras SEAD-RN</h3>
+                <p class="mb-6 text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <a href="#" class="card p-4 hover:shadow-lg transition-shadow">
                         <div class="flex items-start">
                             <div class="mr-4 p-2 bg-gray-100 rounded">
-                                <i class="fas fa-calendar-alt text-2xl text-blue-600"></i>
+                                <i class="fas fa-calendar-alt text-2xl text-00167C"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold">Plano Anual de Contratações</h4>
@@ -749,7 +1187,7 @@
                     <a href="#" class="card p-4 hover:shadow-lg transition-shadow">
                         <div class="flex items-start">
                             <div class="mr-4 p-2 bg-gray-100 rounded">
-                                <i class="fas fa-chart-bar text-2xl text-blue-600"></i>
+                                <i class="fas fa-chart-bar text-2xl text-00167C"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold">Painel A</h4>
@@ -763,7 +1201,7 @@
                     <a href="#" class="card p-4 hover:shadow-lg transition-shadow">
                         <div class="flex items-start">
                             <div class="mr-4 p-2 bg-gray-100 rounded">
-                                <i class="fas fa-chart-pie text-2xl text-blue-600"></i>
+                                <i class="fas fa-chart-pie text-2xl text-00167C"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold">Painel B</h4>
@@ -774,10 +1212,10 @@
                     <a href="#" class="card p-4 hover:shadow-lg transition-shadow">
                         <div class="flex items-start">
                             <div class="mr-4 p-2 bg-gray-100 rounded">
-                                <i class="fas fa-chart-line text-2xl text-blue-600"></i>
+                                <i class="fas fa-chart-line text-2xl text-00167C"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold">Painel C</h4>
+                                <h4 class="font-bold">Painel C (Exemplo)</h4>
                                 <p class="text-sm text-gray-600">Explicação do painel com dados e estatísticas</p>
                             </div>
                         </div>
@@ -786,24 +1224,25 @@
             </div>
         </div>
 
+        <!-- Página: Capacite-se -->
         <div id="page5" class="page">
-            <!-- Capacite-se content -->
+            <!-- Breadcrumbs -->
             <div class="breadcrumbs">
                 <a href="#" onclick="showPage('page-content')">Início</a>
                 <span class="separator">/</span>
                 <span>Capacite-se</span>
             </div>
             
-            <h3 class="text-xl font-bold mb-6">Capacite-se</h3>
+            <h3 class="section-title">Capacite-se</h3>
             
             <div class="container-box mb-6">
-                <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="mb-6 text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 
                 <div class="mb-4">
                     <h4 class="font-bold mb-2">Cursos oferecidos na escola de governo:</h4>
                     <ul class="list-disc pl-6 mb-4">
                         <li class="mb-1">Formação em Licitações e Contratos</li>
-                        <li class="mb-1">Nova Lei de Licitações (Lei 14.133/2021)</li>
+                        <li class="mb-1">Nova Lei de Licitações (Lei nº 14.133/2021)</li>
                         <li class="mb-1">Pregão Eletrônico</li>
                         <li class="mb-1">Gestão e Fiscalização de Contratos</li>
                     </ul>
@@ -814,11 +1253,11 @@
                         <i class="fab fa-youtube mr-2"></i>
                         Playlist com vídeos
                     </a>
-                    <a href="#" class="btn-primary flex items-center">
+                    <a href="#" class="btn-primary flex items-center" style="background-color: #3A6A85;">
                         <i class="fas fa-chalkboard-teacher mr-2"></i>
                         Treinamentos
                     </a>
-                    <a href="#" class="btn-primary flex items-center">
+                    <a href="#" class="btn-primary flex items-center" style="background-color: #A0AEB1;">
                         <i class="fas fa-school mr-2"></i>
                         Escola de Governo
                     </a>
@@ -826,47 +1265,49 @@
             </div>
         </div>
 
+        <!-- Página: Legislação -->
         <div id="page6" class="page">
-            <!-- Legislação content -->
+            <!-- Breadcrumbs -->
             <div class="breadcrumbs">
                 <a href="#" onclick="showPage('page-content')">Início</a>
                 <span class="separator">/</span>
                 <span>Legislação</span>
             </div>
             
-            <h3 class="text-xl font-bold mb-6">Legislação</h3>
+            <h3 class="section-title">Legislação</h3>
             
             <div class="container-box mb-6">
-                <p class="mb-6">Nesta página encontra-se legislação do interesse dos cidadãos, agentes públicos e fornecedores.</p>
+                <p class="mb-6 text-gray-700">Nesta página encontra-se legislação do interesse dos cidadãos, agentes públicos e fornecedores.</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <a href="#" class="card p-4 flex flex-col items-center hover:shadow-lg transition-shadow">
                         <div class="w-full h-32 bg-gray-200 flex items-center justify-center mb-4">
-                            <i class="fas fa-file-pdf text-4xl text-red-600"></i>
+                            <i class="fas fa-file-pdf text-4xl text-00167C"></i>
                         </div>
-                        <h4 class="font-bold text-center">Lei 14.133/2021</h4>
+                        <h4 class="font-bold text-center">Lei nº 14.133/2021</h4>
                         <p class="text-sm text-gray-600 text-center">Nova Lei de Licitações e Contratos</p>
                     </a>
                     <a href="#" class="card p-4 flex flex-col items-center hover:shadow-lg transition-shadow">
                         <div class="w-full h-32 bg-gray-200 flex items-center justify-center mb-4">
-                            <i class="fas fa-file-pdf text-4xl text-red-600"></i>
+                            <i class="fas fa-file-pdf text-4xl text-00167C"></i>
                         </div>
-                        <h4 class="font-bold text-center">Decreto 10.024/2019</h4>
+                        <h4 class="font-bold text-center">Decreto nº 10.024/2019</h4>
                         <p class="text-sm text-gray-600 text-center">Pregão Eletrônico</p>
                     </a>
                     <a href="#" class="card p-4 flex flex-col items-center hover:shadow-lg transition-shadow">
                         <div class="w-full h-32 bg-gray-200 flex items-center justify-center mb-4">
-                            <i class="fas fa-file-pdf text-4xl text-red-600"></i>
+                            <i class="fas fa-file-pdf text-4xl text-00167C"></i>
                         </div>
-                        <h4 class="font-bold text-center">Lei Complementar 123/2006</h4>
+                        <h4 class="font-bold">Lei Complementar 123/2006</h4>
                         <p class="text-sm text-gray-600 text-center">Tratamento diferenciado ME/EPP</p>
                     </a>
                 </div>
             </div>
         </div>
 
+        <!-- Página: Acesso ao Sistema -->
         <div id="page7" class="page">
-            <!-- Acesso ao Sistema content -->
+            <!-- Breadcrumbs -->
             <div class="breadcrumbs">
                 <a href="#" onclick="showPage('page-content')">Início</a>
                 <span class="separator">/</span>
@@ -876,49 +1317,50 @@
             <div class="flex flex-col md:flex-row">
                 <!-- Banner on Left -->
                 <div class="w-full md:w-1/2 px-4 mb-4 md:mb-0">
-                    <div class="grey-box h-96 flex items-center justify-center">
-                        <h3 class="text-xl font-bold">Banner</h3>
+                    <div class="grey-box h-96 flex items-center justify-center" style="background-color: #AD897C;">
+                        <h3 class="text-xl font-bold text-FBFBFB">Banner para Acesso</h3>
                     </div>
                 </div>
                 
                 <!-- Login Form on Right -->
                 <div class="w-full md:w-1/2 px-4">
                     <div class="grey-box">
-                        <h3 class="text-xl font-bold mb-4">Entre no Sistema</h3>
+                        <h3 class="text-xl font-bold text-3A6A85 mb-4">Entre no Sistema</h3>
                         
                         <div class="mb-4">
                             <label class="block text-gray-700 mb-2">Email</label>
-                            <input type="email" class="w-full border rounded px-3 py-2" placeholder="Digite seu email">
+                            <input type="email" class="w-full border rounded px-3 py-2" style="border-color: #A0AEB1;" placeholder="Digite seu email">
                         </div>
                         
                         <div class="mb-4">
                             <label class="block text-gray-700 mb-2">Senha</label>
-                            <input type="password" class="w-full border rounded px-3 py-2" placeholder="Digite sua senha">
+                            <input type="password" class="w-full border rounded px-3 py-2" style="border-color: #A0AEB1;" placeholder="Digite sua senha">
                         </div>
                         
                         <button class="btn-primary w-full mb-4">Continuar</button>
                         
                         <div class="flex justify-between text-sm">
-                            <a href="#" class="text-blue-600 hover:underline">Criar conta</a>
-                            <a href="#" class="text-blue-600 hover:underline">Esqueceu senha</a>
+                            <a href="#" class="text-3A6A85 hover:underline">Criar conta</a>
+                            <a href="#" class="text-3A6A85 hover:underline">Esqueceu senha</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- New page: Oportunidades -->
+        <!-- Página: Oportunidades -->
         <div id="page8" class="page">
+            <!-- Breadcrumbs -->
             <div class="breadcrumbs">
                 <a href="#" onclick="showPage('page-content')">Início</a>
                 <span class="separator">/</span>
                 <span>Oportunidades</span>
             </div>
             
-            <h3 class="text-xl font-bold mb-6">Contratações Públicas do Estado do Rio Grande do Norte</h3>
+            <h3 class="section-title">Contratações Públicas do Estado do Rio Grande do Norte</h3>
             
             <div class="container-box mb-6">
-                <p class="mb-6">Nesta seção, você encontrará a lista de UASGs (Unidades Administrativas de Serviços Gerais) vinculadas às secretarias e órgãos do Governo do Estado do Rio Grande do Norte. Cada UASG representa uma unidade responsável por realizar compras e contratações públicas.</p>
+                <p class="mb-6 text-gray-700">Nesta seção, você encontrará a lista de UASGs (Unidades Administrativas de Serviços Gerais) vinculadas às secretarias e órgãos do Governo do Estado do Rio Grande do Norte. Cada UASG representa uma unidade responsável por realizar compras e contratações públicas.</p>
                 
                 <div class="mb-6">
                     <h4 class="font-bold mb-2">Etapas para consulta:</h4>
@@ -954,6 +1396,7 @@
                                 <td class="py-2 px-4 border">925377</td>
                             </tr>
                             <tr>
+
                                 <td class="py-2 px-4 border">SECRETARIA DE ESTADO DO TRABALHO, HABITAÇÃO E ASSISTÊNCIA SOCIAL</td>
                                 <td class="py-2 px-4 border">925557</td>
                             </tr>
@@ -1051,15 +1494,16 @@
             </div>
         </div>
 
-        <!-- New page: Manuais -->
+        <!-- Página: Manuais -->
         <div id="page9" class="page">
+            <!-- Breadcrumbs -->
             <div class="breadcrumbs">
                 <a href="#" onclick="showPage('page-content')">Início</a>
                 <span class="separator">/</span>
                 <span>Manuais</span>
             </div>
             
-            <h3 class="text-xl font-bold mb-6">Manuais, Tutoriais e Boas Práticas</h3>
+            <h3 class="section-title">Manuais, Tutoriais e Boas Práticas</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <!-- Manual Card 1 -->
@@ -1098,7 +1542,7 @@
                         <i class="fas fa-file-contract"></i>
                     </div>
                     <h4 class="manual-card-title">Gestão de Contratos</h4>
-                    <p class="manual-card-description">Guia completo sobre gestão e fiscalização de contratos administrativos conforme a Lei 14.133/2021.</p>
+                    <p class="manual-card-description">Guia completo sobre gestão e fiscalização de contratos administrativos conforme a Lei nº 14.133/2021.</p>
                     <a href="#" class="btn-primary">Acessar</a>
                 </div>
             </div>
@@ -1106,22 +1550,23 @@
 
         <!-- Placeholder for Artigos page -->
         <div id="page-artigos" class="page">
+            <!-- Breadcrumbs -->
             <div class="breadcrumbs">
                 <a href="#" onclick="showPage('page-content')">Início</a>
                 <span class="separator">/</span>
                 <span>Artigos</span>
             </div>
             
-            <h3 class="text-xl font-bold mb-6">Artigos e Publicações</h3>
+            <h3 class="section-title">Artigos e Publicações</h3>
             
             <div class="container-box mb-6">
-                <p class="mb-6">Esta seção contém artigos técnicos e publicações relevantes sobre compras governamentais, legislação e boas práticas.</p>
+                <p class="mb-6 text-gray-700">Esta seção contém artigos técnicos e publicações relevantes sobre compras governamentais, legislação e boas práticas.</p>
                 
                 <div class="grid grid-cols-1 gap-4">
                     <div class="card p-4">
                         <h4 class="font-bold mb-2">A Nova Lei de Licitações e seus Impactos</h4>
                         <p class="text-sm text-gray-600 mb-2">Publicado em: 15/03/2024</p>
-                        <p class="mb-2">Este artigo analisa os principais impactos da Lei 14.133/2021 nas compras governamentais do estado do Rio Grande do Norte.</p>
+                        <p class="mb-2">Este artigo analisa os principais impactos da Lei nº 14.133/2021 nas compras governamentais do estado do Rio Grande do Norte.</p>
                         <a href="#" class="text-blue-600 hover:underline">Ler mais</a>
                     </div>
                     
@@ -1141,86 +1586,943 @@
                 </div>
             </div>
         </div>
-    </main>
 
-    <!-- Site Map & Footer -->
-    <div class="py-6 px-4 border-t mt-8 bg-gray-100">
-        <div class="container mx-auto">
-            <h3 class="text-lg font-medium mb-4">Mapa do Site</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="sitemap-section">
-                    <h4 class="sitemap-title">Início</h4>
-                    <ul class="sitemap-list">
-                        <li><a href="#" onclick="showPage('page-content')">Página Principal</a></li>
-                        <li><a href="#" onclick="showPage('page8')">Oportunidades</a></li>
-                        <li><a href="#" onclick="showPage('page9')">Manuais</a></li>
-                        <li><a href="#" onclick="showPage('page-artigos')">Artigos</a></li>
-                    </ul>
+        <!-- Nova Página: Notícias (RF09) -->
+        <div id="page-noticias" class="page">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <span>Notícias</span>
+            </div>
+            
+            <h3 class="section-title">Notícias e Comunicados</h3>
+            
+            <div class="container-box mb-6">
+                <div class="mb-4">
+                    <input type="text" placeholder="Buscar notícias..." class="search-input w-full py-2 px-4 pl-10 mb-4" id="news-search-input">
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
                 </div>
-                <div class="sitemap-section">
-                    <h4 class="sitemap-title">Perfis de Acesso</h4>
-                    <ul class="sitemap-list">
-                        <li><a href="#" onclick="showPage('page2')">Fornecedor</a></li>
-                        <li><a href="#" onclick="showPage('page3')">Servidor</a></li>
-                        <li><a href="#" onclick="showPage('page4')">Cidadão</a></li>
-                        <li><a href="#" onclick="showPage('page7')">Acesso ao Sistema</a></li>
-                    </ul>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="news-list-container">
+                    <!-- News items will be dynamically loaded here by JS -->
                 </div>
-                <div class="sitemap-section">
-                    <h4 class="sitemap-title">Conhecimento</h4>
-                    <ul class="sitemap-list">
-                        <li><a href="#" onclick="showPage('page5')">Capacite-se</a></li>
-                        <li><a href="#" onclick="showPage('page6')">Legislação</a></li>
-                        <li><a href="#" onclick="showPage('page9')">Manuais e Tutoriais</a></li>
-                        <li><a href="#">Vídeos</a></li>
-                    </ul>
-                </div>
-                <div class="sitemap-section">
-                    <h4 class="sitemap-title">Serviços</h4>
-                    <ul class="sitemap-list">
-                        <li><a href="#" onclick="showPage('page8')">Consulta de UASGs</a></li>
-                        <li><a href="#">Portal de Compras</a></li>
-                        <li><a href="#">Escola de Governo</a></li>
-                        <li><a href="#">Transparência</a></li>
-                    </ul>
+                
+                <!-- Paginação (exemplo básico) -->
+                <div class="flex justify-center mt-8" id="news-pagination-container">
+                    <!-- Pagination buttons will be dynamically loaded here by JS -->
                 </div>
             </div>
         </div>
-    </div>
 
+        <!-- Detalhes da Notícia (Nova Seção) -->
+        <div id="news-detail-page" class="page">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <a href="#" onclick="showPage('page-noticias')">Notícias</a>
+                <span class="separator">/</span>
+                <span id="news-detail-title-breadcrumb"></span>
+            </div>
+            
+            <h3 class="section-title" id="news-detail-main-title"></h3>
+            
+            <div class="container-box mb-6">
+                <p class="text-sm text-gray-600 mb-4" id="news-detail-date"></p>
+                <div id="news-detail-content" class="prose max-w-none">
+                    <!-- O conteúdo da notícia será carregado aqui dinamicamente -->
+                </div>
+                
+                <div class="mt-8 flex justify-end items-center space-x-4">
+                    <span class="text-gray-700">Compartilhar:</span>
+                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-twitter text-2xl"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-facebook text-2xl"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-instagram text-2xl"></i></a>
+                </div>
+                <button onclick="showPage('page-noticias')" class="btn-outline mt-8"><i class="fas fa-arrow-left mr-2"></i> Voltar para Notícias</button>
+            </div>
+        </div>
+
+
+        <!-- Nova Página: Fórum (RF07) -->
+        <div id="page-forum" class="page">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <span>Fórum</span>
+            </div>
+            
+            <h3 class="section-title">Fórum de Discussão</h3>
+
+            <!-- Boas Práticas e Orientações -->
+            <div class="forum-guidelines">
+                <h4 class="font-bold text-lg text-3A6A85 mb-3">Boas Práticas e Orientações do Fórum</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>Antes de criar um novo tópico, utilize a busca para verificar se o assunto já não está em discussão.</li>
+                    <li>Seja claro e objetivo no título do seu tópico para facilitar a compreensão e a busca.</li>
+                    <li>Mantenha o respeito e a cordialidade em todas as suas interações.</li>
+                    <li>Evite a publicação de informações sensíveis ou pessoais.</li>
+                    <li>Contribua com respostas construtivas e que agreguem valor à discussão.</li>
+                </ul>
+            </div>
+            
+            <div class="container-box mb-6">
+                <div class="flex justify-between items-center mb-6">
+                    <div class="relative w-2/3">
+                        <input type="text" placeholder="Pesquisar tópicos..." class="search-input w-full py-2 px-4 pl-10" id="forum-search-input">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                    <button class="btn-primary" onclick="showPage('page-novo-topico')" id="new-topic-btn-forum"><i class="fas fa-plus mr-2"></i> Novo Tópico</button>
+                </div>
+
+                <!-- Tópicos em Destaque -->
+                <div class="mb-8">
+                    <h4 class="text-xl font-bold text-3A6A85 mb-4">Tópicos em Destaque</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Exemplo de Tópico em Destaque 1 -->
+                        <div class="featured-topic-card cursor-pointer" onclick="showForumTopic('topic-2')">
+                            <h5 class="forum-topic-title">Melhores Práticas para Elaboração de Editais</h5>
+                            <p class="forum-topic-meta">Por: Maria Oliveira | 18/06/2025</p>
+                            <div class="stats mt-3">
+                                <span><i class="fas fa-thumbs-up mr-1"></i> 32</span>
+                                <span><i class="fas fa-comments mr-1"></i> 12</span>
+                            </div>
+                        </div>
+                        <!-- Exemplo de Tópico em Destaque 2 -->
+                        <div class="featured-topic-card cursor-pointer" onclick="showForumTopic('topic-1')">
+                            <h5 class="forum-topic-title">Dúvida sobre a Lei nº 14.133/2021: Casos de Dispensa</h5>
+                            <p class="forum-topic-meta">Por: João Silva | 22/06/2025</p>
+                             <div class="stats mt-3">
+                                <span><i class="fas fa-thumbs-up mr-1"></i> 15</span>
+                                <span><i class="fas fa-comments mr-1"></i> 5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center mb-4">
+                    <h4 class="text-xl font-bold text-3A6A85">Todos os Tópicos</h4>
+                    <div class="flex items-center">
+                        <label for="forum-filter" class="text-gray-700 mr-2">Filtrar por:</label>
+                        <select id="forum-filter" class="border rounded px-3 py-2 bg-white" onchange="filterAndRenderForumTopics()">
+                            <option value="recentes">Mais Recentes</option>
+                            <option value="populares">Mais Populares</option>
+                            <option value="meus-tópicos">Meus Tópicos</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 gap-4" id="forum-topics-container">
+                    <!-- Exemplo de Tópico 1 -->
+                    <div class="forum-topic-card cursor-pointer" onclick="showForumTopic('topic-1')">
+                        <h4 class="forum-topic-title">Dúvida sobre a Lei nº 14.133/2021: Casos de Dispensa</h4>
+                        <p class="forum-topic-meta">Por: João Silva | Última atualização: 22/06/2025 | Respostas: 5</p>
+                        <p class="forum-post-content">Gostaria de esclarecer algumas dúvidas sobre as situações de dispensa de licitação previstas na nova lei...</p>
+                    </div>
+                    <!-- Exemplo de Tópico 2 -->
+                    <div class="forum-topic-card cursor-pointer" onclick="showForumTopic('topic-2')">
+                        <h4 class="forum-topic-title">Melhores Práticas para Elaboração de Editais</h4>
+                        <p class="forum-topic-meta">Por: Maria Oliveira | Última atualização: 18/06/2025 | Respostas: 12</p>
+                        <p class="forum-post-content">Compartilhem suas experiências e dicas para a criação de editais claros e eficientes...</p>
+                    </div>
+                    <!-- Exemplo de Tópico 3 -->
+                    <div class="forum-topic-card cursor-pointer" onclick="showForumTopic('topic-3')">
+                        <h4 class="forum-topic-title">Como Participar de Licitações: Guia para Iniciantes</h4>
+                        <p class="forum-topic-meta">Por: Pedro Santos | Última atualização: 10/06/2025 | Respostas: 8</p>
+                        <p class="forum-post-content">Sou novo no processo de licitações e preciso de um passo a passo para começar a participar...</p>
+                    </div>
+                </div>
+                
+                <!-- Paginação (exemplo básico) -->
+                <div class="flex justify-center mt-8" id="forum-pagination-container">
+                    <button class="btn-outline mx-2" onclick="changeForumPage('prev')">Anterior</button>
+                    <button class="btn-primary mx-2" onclick="changeForumPage(1)">1</button>
+                    <button class="btn-outline mx-2" onclick="changeForumPage(2)">2</button>
+                    <button class="btn-outline mx-2" onclick="changeForumPage('next')">Próximo</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detalhe do Tópico do Fórum (Nova Seção) -->
+        <div id="forum-topic-detail-page" class="page">
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <a href="#" onclick="showPage('page-forum')">Fórum</a>
+                <span class="separator">/</span>
+                <span id="forum-topic-detail-title-breadcrumb"></span>
+            </div>
+            
+            <h3 class="section-title" id="forum-topic-detail-main-title"></h3>
+            
+            <div class="container-box mb-6">
+                <!-- Conteúdo do tópico principal será inserido aqui pelo JS -->
+                <div id="main-topic-content"></div>
+
+                <!-- Respostas ao tópico -->
+                <div id="topic-replies-content"></div>
+
+                <div class="forum-reply-form">
+                    <h4 class="font-bold text-lg text-3A6A85 mb-4">Deixe sua Resposta</h4>
+                    <form id="forum-reply-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label for="reply-name" class="block text-gray-700 font-bold mb-2">Seu Nome:</label>
+                                <input type="text" id="reply-name" name="reply-name" class="w-full border rounded px-3 py-2" style="border-color: #A0AEB1;" placeholder="Nome Completo" required>
+                            </div>
+                             <div>
+                                <label for="reply-email" class="block text-gray-700 font-bold mb-2">Seu E-mail:</label>
+                                <input type="email" id="reply-email" name="reply-email" class="w-full border rounded px-3 py-2" style="border-color: #A0AEB1;" placeholder="seuemail@exemplo.com" required>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="reply-message" class="block text-gray-700 font-bold mb-2">Sua Mensagem:</label>
+                            <textarea id="reply-message" name="reply-message" class="w-full border rounded p-3 mb-4" rows="5" placeholder="Digite sua resposta aqui..." required></textarea>
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" class="btn-primary">Enviar Resposta</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <button onclick="showPage('page-forum')" class="btn-outline mt-8"><i class="fas fa-arrow-left mr-2"></i> Voltar para o Fórum</button>
+            </div>
+        </div>
+        
+        <!-- Nova Página: Criar Novo Tópico (Aprimoramento do Fórum) -->
+        <div id="page-novo-topico" class="page">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <a href="#" onclick="showPage('page-forum')">Fórum</a>
+                <span class="separator">/</span>
+                <span>Novo Tópico</span>
+            </div>
+
+            <h3 class="section-title">Criar Novo Tópico</h3>
+
+            <div class="container-box mb-6">
+                <form id="create-new-forum-topic-form">
+                    <div class="mb-4">
+                        <label for="new-topic-title" class="block text-gray-700 font-bold mb-2">Título do Tópico:</label>
+                        <input type="text" id="new-topic-title" name="new-topic-title" class="w-full border rounded px-3 py-2" style="border-color: #A0AEB1;" placeholder="Seja claro e conciso no título" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="new-topic-category" class="block text-gray-700 font-bold mb-2">Categoria:</label>
+                        <select id="new-topic-category" name="new-topic-category" class="w-full border rounded px-3 py-2 bg-white" style="border-color: #A0AEB1;">
+                            <option value="duvidas-lei">Dúvidas sobre Legislação</option>
+                            <option value="melhores-praticas">Melhores Práticas e Editais</option>
+                            <option value="problemas-tecnicos">Problemas Técnicos no Portal</option>
+                            <option value="sugestoes">Sugestões de Melhoria</option>
+                            <option value="geral">Assuntos Gerais</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="new-topic-message" class="block text-gray-700 font-bold mb-2">Sua Mensagem:</label>
+                        <textarea id="new-topic-message" name="new-topic-message" rows="10" class="w-full border rounded px-3 py-2" style="border-color: #A0AEB1;" placeholder="Descreva sua dúvida ou contribuição em detalhes..." required></textarea>
+                    </div>
+
+                    <div class="flex items-center justify-end space-x-4">
+                        <div class="text-sm text-gray-600 mr-4">
+                            <i class="fas fa-info-circle mr-1"></i>
+                            Seu tópico será enviado para revisão antes de ser publicado.
+                        </div>
+                        <button type="button" class="btn-outline" onclick="showPage('page-forum')">Cancelar</button>
+                        <button type="submit" class="btn-primary">Publicar Tópico</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- Nova Página: Institucional -->
+        <div id="page-institucional" class="page">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <span>Institucional</span>
+            </div>
+            
+            <h3 class="section-title">Institucional da Central de Compras</h3>
+            
+            <div class="container-box mb-6">
+                <h4 class="font-bold mb-3 text-3A6A85">Sobre a Central de Compras</h4>
+                <p class="mb-4 text-gray-700">
+                    A Central de Compras Governamentais do Rio Grande do Norte, vinculada à Secretaria de Estado da Administração (SEAD), é o órgão responsável por centralizar, normatizar e gerenciar os processos de aquisição de bens e serviços para o Governo do Estado. Nossa missão é otimizar a gestão dos recursos públicos, promovendo a eficiência, a transparência e a economicidade em todas as etapas das compras governamentais. Atuamos como um pilar estratégico para o desenvolvimento sustentável e a boa governança.
+                </p>
+
+                <h4 class="font-bold mb-3 text-3A6A85">Atribuições e Responsabilidades</h4>
+                <p class="mb-4 text-gray-700">
+                    Entre as principais atribuições da Central de Compras estão a elaboração de planos anuais de contratações, a condução de processos licitatórios, a gestão de atas de registro de preços, a capacitação de agentes públicos e fornecedores, e a fiscalização da conformidade com a legislação vigente, como a Lei nº 14.133/2021. Buscamos garantir que todas as aquisições atendam às necessidades da administração com a melhor relação custo-benefício.
+                </p>
+
+                <h4 class="font-bold mb-3 text-3A6A85">Responsáveis e Cargos</h4>
+                <p class="mb-4 text-gray-700">
+                    A equipe da Central de Compras é composta por profissionais altamente qualificados e dedicados à gestão pública. Os principais cargos e responsáveis incluem:
+                    <ul class="list-disc list-inside ml-4 mt-2">
+                        <li>**Diretor(a) Geral:** [Nome Fictício do Diretor(a)]</li>
+                        <li>**Coordenador(a) de Licitações:** [Nome Fictício do Coordenador(a)]</li>
+                        <li>**Chefe de Divisão de Contratos:** [Nome Fictício do Chefe de Divisão]</li>
+                    </ul>
+                    Para detalhes sobre toda a equipe e suas respectivas funções, consulte o nosso Organograma.
+                </p>
+
+                <h4 class="font-bold mb-3 text-3A6A85">Decreto Estadual de Formação da Central de Compras</h4>
+                <p class="mb-4 text-gray-700">
+                    A criação e as competências da Central de Compras Governamentais do Rio Grande do Norte estão formalizadas pelo Decreto Estadual nº [Número Fictício do Decreto]/2023, publicado no Diário Oficial do Estado em 15 de agosto de 2023. Este decreto estabelece o marco legal para nossa atuação e define as diretrizes para a modernização das compras públicas estaduais.
+                </p>
+
+                <h4 class="font-bold mb-3 text-3A6A85">Contatos Institucionais</h4>
+                <p class="mb-4 text-gray-700">
+                    Para qualquer dúvida, sugestão ou necessidade de suporte relacionada aos processos de compras governamentais, nossa equipe está à disposição. 
+                    <br>Você pode nos contatar através dos seguintes canais:
+                    <ul class="list-disc list-inside ml-4 mt-2">
+                        <li>**Telefone:** (84) 3232-XXXX (Atendimento de segunda a sexta, das 8h às 17h)</li>
+                        <li>**E-mail:** contato.compras@rn.gov.br</li>
+                        <li>**Endereço:** [Endereço Fictício da Sede da SEAD], Natal/RN</li>
+                    </ul>
+                    Valorizamos a comunicação transparente e estamos prontos para auxiliar fornecedores, servidores e cidadãos.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <a href="#" class="manual-card">
+                        <div class="manual-card-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h4 class="manual-card-title">Organograma da Central de Compras</h4>
+                        <p class="manual-card-description">Visualize a estrutura organizacional da Central de Compras.</p>
+                        <span class="btn-outline">Ver Organograma</span>
+                    </a>
+                    <a href="#" class="manual-card">
+                        <div class="manual-card-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h4 class="manual-card-title">Institucional da SEAD</h4>
+                        <p class="manual-card-description">Conheça mais sobre a Secretaria de Estado da Administração.</p>
+                        <span class="btn-outline">Ver Página</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nova Página: COMPR IA -->
+        <div id="page-compr-ia" class="page">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs">
+                <a href="#" onclick="showPage('page-content')">Início</a>
+                <span class="separator">/</span>
+                <span>COMPR IA</span>
+            </div>
+            
+            <h3 class="section-title">🤖 COMPR IA – Inteligência Artificial Aplicada às Contratações Públicas</h3>
+            
+            <div class="container-box mb-6">
+                <p class="mb-4 text-gray-700">
+                    **COMPR IA** é uma solução de inteligência artificial generativa, desenvolvida para apoiar servidores públicos na fase de planejamento das contratações, com total conformidade à Lei Federal nº 14.133/2021 e ao Decreto Estadual nº 32.449, de 07 de março de 2023, que regulamenta a Nova Lei de Licitações no âmbito do Estado do Rio Grande do Norte.
+                </p>
+                <p class="mb-6 text-gray-700">
+                    Trata-se de um projeto inovador que combina o poder dos Modelos de Linguagem (LLMs) com um ChatGPT personalizado, capaz de compreender o contexto normativo da administração pública e gerar documentos técnicos com agilidade, precisão e segurança jurídica.
+                </p>
+
+                <h4 class="font-bold mb-3 text-3A6A85">📄 O que o COMPR IA faz?</h4>
+                <p class="mb-4 text-gray-700">
+                    O COMPR IA foi desenvolvido para auxiliar na criação, revisão e padronização de documentos técnicos essenciais ao processo de contratação, como:
+                </p>
+                <ul class="list-disc list-inside ml-4 mb-4 text-gray-700">
+                    <li>Documento de Formalização da Demanda (DFD)</li>
+                    <li>Estudo Técnico Preliminar (ETP)</li>
+                    <li>Termo de Referência</li>
+                    <li>Mapa de Riscos</li>
+                </ul>
+                <p class="mb-6 text-gray-700">A solução também:</p>
+                <ul class="list-disc list-inside ml-4 mb-4 text-gray-700">
+                    <li>Responde dúvidas com base na legislação federal e no decreto estadual vigente;</li>
+                    <li>Gera textos fundamentados conforme as exigências legais e boas práticas da gestão pública;</li>
+                    <li>Oferece apoio inteligente à produção documental, com contextualização normativa e técnica.</li>
+                </ul>
+
+                <h4 class="font-bold mb-3 text-3A6A85">🧪 Fase atual: Testes e Validação</h4>
+                <p class="mb-6 text-gray-700">
+                    Atualmente, o COMPR IA está em fase de testes e validação interna em ambientes da administração pública estadual. Nessa etapa, a ferramenta é avaliada por servidores públicos para:
+                </p>
+                <ul class="list-disc list-inside ml-4 mb-4 text-gray-700">
+                    <li>Adequar seu comportamento ao contexto real de uso;</li>
+                    <li>Validar a coerência legal e técnica dos documentos gerados;</li>
+                    <li>Recolher feedbacks com foco na melhoria contínua;</li>
+                    <li>Estabelecer diretrizes para uso ético e responsável da IA no serviço público.</li>
+                </ul>
+
+                <h4 class="font-bold mb-3 text-3A6A85">🎯 Nosso Propósito</h4>
+                <p class="mb-6 text-gray-700">
+                    O COMPR IA foi idealizado com um propósito claro: tornar mais eficiente, segura e padronizada a produção documental da fase de planejamento das contratações públicas, contribuindo diretamente para:
+                </p>
+                <ul class="list-disc list-inside ml-4 mb-4 text-gray-700">
+                    <li>Redução de retrabalho e erros técnicos;</li>
+                    <li>Otimização do tempo dos servidores;</li>
+                    <li>Fortalecimento da conformidade jurídica;</li>
+                    <li>Inovação tecnológica no setor público com responsabilidade.</li>
+                </ul>
+
+                <h4 class="font-bold mb-3 text-3A6A85">✅ Por que adotar o COMPR IA?</h4>
+                <ul class="list-disc list-inside ml-4 mb-6 text-gray-700">
+                    <li>✔️ Automatiza e agiliza a criação de documentos;</li>
+                    <li>✔️ Garante alinhamento com a Lei nº 14.133/2021 e o Decreto nº 32.449/2023;</li>
+                    <li>✔️ Reduz riscos jurídicos e operacionais;</li>
+                    <li>✔️ Funciona como um copiloto inteligente e confiável para os servidores;</li>
+                    <li>✔️ Está em constante evolução com base em experiências reais.</li>
+                </ul>
+
+                <div class="flex flex-wrap space-x-0 md:space-x-4 space-y-2 md:space-y-0 mt-8">
+                    <a href="#" class="btn-primary flex items-center mb-2 md:mb-0">
+                        <i class="fas fa-comments mr-2"></i>
+                        COMPR IA Chatgpt
+                    </a>
+                    <a href="#" class="btn-primary flex items-center" style="background-color: #3A6A85;">
+                        <i class="fas fa-microchip mr-2"></i> <!-- Ícone de microchip (IA) -->
+                        COMPR AI
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Site Map & Footer -->
     <footer class="footer py-6 px-4">
         <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row justify-between">
+            <!-- Sitemap section moved inside footer -->
+            <div class="py-6 px-4">
+                <h3 class="text-lg font-medium mb-4">Mapa do Site</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="sitemap-section">
+                        <h4 class="sitemap-title">Início</h4>
+                        <ul class="sitemap-list">
+                            <li><a href="#" onclick="showPage('page-content')">Página Principal</a></li>
+                            <li><a href="#" onclick="showPage('page8')">Oportunidades</a></li>
+                            <li><a href="#" onclick="showPage('page9')">Manuais</a></li>
+                            <li><a href="#" onclick="showPage('page-artigos')">Artigos</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="sitemap-title">Perfis de Acesso</h4>
+                        <ul class="sitemap-list">
+                            <li><a href="#" onclick="showPage('page2')">Fornecedor</a></li>
+                            <li><a href="#" onclick="showPage('page3')">Servidor</a></li>
+                            <li><a href="#" onclick="showPage('page4')">Cidadão</a></li>
+                            <li><a href="#" onclick="showPage('page7')">Acesso ao Sistema</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="sitemap-title">Conhecimento</h4>
+                        <ul class="sitemap-list">
+                            <li><a href="#" onclick="showPage('page5')">Capacite-se</a></li>
+                            <li><a href="#" onclick="showPage('page6')">Legislação</a></li>
+                            <li><a href="#" onclick="showPage('page9')">Manuais e Tutoriais</a></li>
+                            <li><a href="#" onclick="showPage('page-noticias')">Notícias</a></li>
+                            <li><a href="#" onclick="showPage('page-forum')">Fórum</a></li>
+                            <li><a href="#" onclick="showPage('page-institucional')">Institucional</a></li>
+                            <li><a href="#" onclick="showPage('page-compr-ia')">COMPR IA</a></li>
+                            <li><a href="#">Vídeos</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="sitemap-title">Serviços</h4>
+                        <ul class="sitemap-list">
+                            <li><a href="#" onclick="showPage('page8')">Consulta de UASGs</a></li>
+                            <li><a href="#">Portal de Compras</a></li>
+                            <li><a href="#">Escola de Governo</a></li>
+                            <li><a href="#">Transparência</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Content -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-gray-700">
+                <!-- Column 1: Logo and Copyright -->
                 <div>
-                    <img src="https://i.ibb.co/b1RM8Zm/rn-governo-logo.png" alt="Governo do Rio Grande do Norte" class="h-12 mb-3 brightness-0 invert">
+                    <img src="https://placehold.co/100x48/3A6A85/FFFFFF?text=RN+Gov" alt="Governo do Rio Grande do Norte" class="h-12 mb-3 brightness-0 invert">
                     <p class="text-sm">© 2024 Governo do Rio Grande do Norte</p>
                     <p class="text-sm">Todos os direitos reservados</p>
                 </div>
+                <!-- Column 2: Contact -->
                 <div>
                     <h4 class="font-bold mb-2">Contato</h4>
                     <p class="text-sm mb-1">Central de Atendimento: (84) 3232-1000</p>
                     <p class="text-sm">Email: contato@rn.gov.br</p>
+                </div>
+                <!-- Column 3: Social Media -->
+                <div>
+                    <h4 class="font-bold mb-2">Redes Sociais</h4>
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-x-twitter text-2xl"></i></a>
+                        <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-facebook text-2xl"></i></a>
+                        <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-youtube text-2xl"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Function to show pages
-        function showPage(pageId) {
-            // Hide all pages
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Show selected page
-            document.getElementById(pageId).classList.add('active');
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
+        // Dados de exemplo para as notícias (RF09)
+        const newsData = [
+            {
+                id: 1,
+                title: "Governo do Estado adere Contrata+Brasil no RN em julho",
+                excerpt: "Evento de adesão à plataforma do Governo Federal visa facilitar contratações públicas com MEIs, fortalecendo a economia local.",
+                content: "O Governo do Estado do Rio Grande do Norte oficializou sua adesão ao programa Contrata+Brasil, uma iniciativa do Governo Federal que busca facilitar e ampliar as oportunidades de contratação de Microempreendedores Individuais (MEIs) e micro e pequenas empresas nos processos de compras públicas. A cerimônia de adesão, realizada em Natal no dia 15 de julho de 2024, contou com a presença de autoridades estaduais e federais, além de representantes do setor produtivo. Este movimento estratégico visa desburocratizar o acesso de pequenos negócios às licitações, fomentar a economia local e aumentar a competitividade e a transparência nas contratações. Espera-se que, com a plataforma, haja um aumento significativo na participação de empresas potiguares nos processos licitatórios, impulsionando o desenvolvimento regional.",
+                date: "2024-07-15",
+                category: "noticia",
+                image: "https://placehold.co/800x400/D34C2B/FBFBFB?text=Contrata+Brasil",
+                author: "Assessoria de Comunicação"
+            },
+            {
+                id: 2,
+                title: "Saiba como as gestões municipais podem aderir ao RN+Inclusivo",
+                excerpt: "Projeto do Governo do Estado viabiliza capacitações aos servidores públicos municipais",
+                content: "O programa RN+Inclusivo representa uma importante iniciativa do Governo do Estado para fortalecer a capacitação de servidores públicos municipais em todo o Rio Grande do Norte. Lançado em 10 de julho de 2024, o projeto visa descentralizar o acesso a treinamentos e conhecimentos sobre as novas diretrizes das compras governamentais, com foco na Lei nº 14.133/2021 e nas melhores práticas de gestão. As prefeituras interessadas em aderir ao programa devem manifestar interesse através do portal da SEAD e indicar os servidores que participarão das capacitações. O objetivo é garantir que os municípios estejam aptos a realizar contratações mais eficientes, transparentes e alinhadas com as necessidades de suas comunidades, promovendo o desenvolvimento sustentável em nível local.",
+                date: "2024-07-10",
+                category: "comunicado",
+                image: "https://placehold.co/800x400/3A6A85/FBFBFB?text=RN+Inclusivo",
+                author: "SEAD"
+            },
+            {
+                id: 3,
+                title: "Nova Lei de Licitações: Principais mudanças e impactos",
+                excerpt: "Entenda as principais alterações trazidas pela Lei 14.133/2021 e como elas afetam os processos de compras públicas.",
+                content: "A Lei 14.133/2021, conhecida como Nova Lei de Licitações e Contratos Administrativos, entrou em vigor e trouxe um novo marco legal para as compras públicas no Brasil. As principais mudanças incluem a criação de novas modalidades de licitação (diálogo competitivo), a extinção de outras (convite e tomada de preços), e a priorização da fase de planejamento da contratação. Além disso, a lei reforça a importância da governança e da gestão de riscos, e estimula o uso de tecnologia para aumentar a transparência e a eficiência. Para servidores e fornecedores, é fundamental compreender essas alterações para garantir a conformidade e aproveitar as novas oportunidades que surgem. A Central de Compras do RN tem promovido diversas ações de capacitação para auxiliar na transição e adaptação a este novo cenário.",
+                date: "2024-07-05",
+                category: "legislacao",
+                image: "https://placehold.co/800x400/FF6B35/FBFBFB?text=Nova+Lei+Licitações",
+                author: "Departamento Jurídico"
+            },
+            {
+                id: 4,
+                title: "Workshop sobre Inteligência Artificial em Compras Públicas",
+                excerpt: "Evento presencial discutirá o uso de IA para otimização de processos de compras governamentais.",
+                content: "Nos dias 28 e 29 de junho de 2024, a Central de Compras do Rio Grande do Norte sediará um workshop inovador sobre o impacto da Inteligência Artificial (IA) na otimização dos processos de compras públicas. O evento, que reunirá especialistas, gestores e profissionais da área, abordará como as soluções baseadas em IA podem aprimorar a análise de dados, a identificação de riscos, a elaboração de documentos e a tomada de decisões nas contratações governamentais. Serão apresentados cases de sucesso e discutidos os desafios e oportunidades da implementação dessas tecnologias no setor público, com foco na eficiência, transparência e combate à corrupção. As inscrições são limitadas e devem ser feitas com antecedência.",
+                date: "2024-06-28",
+                category: "evento",
+                image: "https://placehold.co/800x400/5EA51D/FBFBFB?text=IA+Compras+Públicas",
+                author: "Coordenadoria de Compras"
+            },
+            {
+                id: 5,
+                title: "Resultado do Pregão Eletrônico nº 001/2024",
+                excerpt: "Divulgação do resultado da licitação para aquisição de material de escritório.",
+                content: "A Coordenadoria de Compras Governamentais torna público o resultado do Pregão Eletrônico nº 001/2024, referente à aquisição de material de escritório para os diversos órgãos da administração estadual. A empresa vencedora foi 'Papelaria Essencial Ltda.', com o valor total de R$ 150.000,00, apresentando a proposta mais vantajosa e em conformidade com as especificações do edital. O processo transcorreu com total transparência e competitividade, garantindo a economicidade e a qualidade dos itens a serem adquiridos. O extrato completo da ata de homologação pode ser consultado no Diário Oficial do Estado e no Portal Nacional de Contratações Públicas (PNCP), utilizando o número do pregão. Este resultado é mais um exemplo do compromisso da Central de Compras com a eficiência e a boa aplicação dos recursos públicos.",
+                date: "2024-06-25",
+                category: "comunicado",
+                image: "https://placehold.co/800x400/FFCD07/000000?text=Pregão+001-2024",
+                author: "Comissão de Licitação"
+            },
+            {
+                id: 6,
+                title: "Capacitação: Gestão de Contratos Administrativos",
+                excerpt: "Curso online gratuito para servidores públicos sobre gestão e fiscalização de contratos.",
+                content: "A Escola de Governo do Rio Grande do Norte, em parceria com a Central de Compras, está com inscrições abertas para o curso online e gratuito de 'Gestão de Contratos Administrativos'. O objetivo é capacitar servidores públicos estaduais e municipais sobre as melhores práticas e a legislação pertinente à fiscalização e gestão de contratos, com ênfase na Lei nº 14.133/2021. O curso abordará temas essenciais como planejamento, execução, aditivos, reequilíbrio econômico-financeiro e encerramento contratual, visando aprimorar a performance dos gestores e fiscais de contratos. As vagas são limitadas e as inscrições podem ser feitas diretamente pelo site da Escola de Governo. Não perca essa oportunidade de aprimorar suas habilidades e garantir a conformidade dos processos!",
+                date: "2024-06-20",
+                category: "evento",
+                image: "https://placehold.co/800x400/3498db/FBFBFB?text=Capacitação+Contratos",
+                author: "Escola de Governo"
+            },
+            {
+                id: 7,
+                title: "Novo Manual de Boas Práticas para Termos de Referência",
+                excerpt: "Lançamento de guia detalhado para auxiliar na elaboração de Termos de Referência de alta qualidade.",
+                content: "A Central de Compras do RN lançou o 'Manual de Boas Práticas para Elaboração de Termos de Referência', um guia abrangente destinado a servidores e gestores envolvidos na fase de planejamento das contratações públicas. O manual oferece diretrizes claras, exemplos práticos e checklists para garantir que os Termos de Referência sejam completos, objetivos e alinhados com a nova Lei de Licitações (Lei nº 14.133/2021). A publicação visa padronizar e qualificar os documentos de contratação, reduzindo falhas e litígios, e promovendo maior eficiência e segurança jurídica. O material já está disponível para download na seção 'Manuais' do nosso portal e será tema de futuros workshops de capacitação.",
+                date: "2024-06-18",
+                category: "noticia",
+                image: "https://placehold.co/800x400/FF6B35/FBFBFB?text=Manual+Termo+Referência",
+                author: "Equipe Técnica"
+            }
+        ];
+
+        let currentNewsPage = 1;
+        const newsItemsPerPage = 6;
+        let filteredNews = [...newsData];
+
+        function renderNewsCards() {
+            const container = document.getElementById('news-list-container');
+            const startIndex = (currentNewsPage - 1) * newsItemsPerPage;
+            const endIndex = startIndex + newsItemsPerPage;
+            const newsToDisplay = filteredNews.slice(startIndex, endIndex);
+
+            container.innerHTML = newsToDisplay.map(news => `
+                <div class="news-card bg-white rounded-lg overflow-hidden cursor-pointer" onclick="showNewsDetail(${news.id})">
+                    <img src="${news.image}" alt="${news.title}" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="badge ${getCategoryBadgeClass(news.category)}">${getCategoryName(news.category)}</span>
+                            <span class="text-sm text-gray-500">${formatDate(news.date)}</span>
+                        </div>
+                        <h4 class="font-bold text-gray-800 text-lg mb-2 line-clamp-2">${news.title}</h4>
+                        <p class="text-gray-600 text-sm line-clamp-3">${news.excerpt}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            renderNewsPagination();
         }
 
-        // Off-canvas menu toggle
+        function renderNewsPagination() {
+            const totalPages = Math.ceil(filteredNews.length / newsItemsPerPage);
+            const paginationContainer = document.getElementById('news-pagination-container');
+            let paginationHTML = '';
+
+            if (currentNewsPage > 1) {
+                paginationHTML += `<button class="btn-outline mx-2" onclick="changeNewsPage(${currentNewsPage - 1})">Anterior</button>`;
+            }
+
+            for (let i = 1; i <= totalPages; i++) {
+                const activeClass = i === currentNewsPage ? 'btn-primary' : 'btn-outline';
+                paginationHTML += `<button class="${activeClass} mx-2" onclick="changeNewsPage(${i})">${i}</button>`;
+            }
+
+            if (currentNewsPage < totalPages) {
+                paginationHTML += `<button class="btn-outline mx-2" onclick="changeNewsPage(${currentNewsPage + 1})">Próximo</button>`;
+            }
+
+            paginationContainer.innerHTML = paginationHTML;
+        }
+
+        function changeNewsPage(page) {
+            currentNewsPage = page;
+            renderNewsCards();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function filterNews() {
+            const searchTerm = document.getElementById('news-search-input').value.toLowerCase();
+            
+            filteredNews = newsData.filter(news => 
+                news.title.toLowerCase().includes(searchTerm) ||
+                news.excerpt.toLowerCase().includes(searchTerm) ||
+                news.content.toLowerCase().includes(searchTerm)
+            );
+            currentNewsPage = 1;
+            renderNewsCards();
+        }
+
+        // --- News Detail Modal Functions ---
+        function showNewsDetail(newsId) {
+            const news = newsData.find(n => n.id === newsId);
+
+            if (news) {
+                document.getElementById('news-detail-main-title').innerText = news.title;
+                document.getElementById('news-detail-title-breadcrumb').innerText = news.title;
+                document.getElementById('news-detail-date').innerText = `Publicado em: ${formatDate(news.date)} por ${news.author}`;
+                document.getElementById('news-detail-content').innerHTML = `
+                    <img src="${news.image}" alt="${news.title}" class="my-4 rounded-md">
+                    <p>${news.content}</p>
+                `;
+                showPage('news-detail-page'); // Uses the global showPage function
+            } else {
+                console.error('Notícia não encontrada.');
+            }
+        }
+        // End News Detail Modal Functions
+
+        // --- Forum Specific JavaScript ---
+        let isLoggedIn = false;
+        let currentUser = 'Convidado'; // Default user for replies
+        let forumCurrentPage = 1;
+        let forumItemsPerPage = 3; // Smaller for forum topics
+        let forumCurrentSort = 'recentes'; // Default sort for forum
+
+        // Forum Data (separate from newsData)
+        const forumTopicsData = [
+            {
+                id: 'topic-1',
+                title: "Dúvida sobre a Lei nº 14.133/2021: Casos de Dispensa",
+                description: "Gostaria de esclarecer algumas dúvidas sobre as situações de dispensa de licitação previstas na nova lei, especialmente para pequenas contratações e emergências.",
+                author: "João Silva",
+                category: "duvidas-lei",
+                date: "2025-06-22",
+                responsesCount: 5,
+                views: 150,
+                likes: 15,
+                dislikes: 1,
+                lastActivity: "2025-06-22",
+                replies: [
+                    { author: 'Maria Fernanda', date: '2025-06-22, 10:30', text: 'Oi João! A Lei nº 14.133/2021 trouxe algumas mudanças importantes. Os artigos 74 e 75 detalham os casos de inexigibilidade e dispensa, respectivamente. Recomendo a leitura desses artigos e também o manual de licitações da CGU, que tem exemplos práticos.', likes: 10, dislikes: 0 },
+                    { author: 'Carlos Roberto', date: '2025-06-22, 11:00', text: 'Complementando o que a Maria disse, os casos de dispensa mais comuns são para valores pequenos (até R$ 100 mil para obras/serviços de engenharia e R$ 50 mil para outros serviços/compras) e para emergências. É bom sempre consultar o texto da lei e as interpretações mais recentes.', likes: 7, dislikes: 0 },
+                    { author: 'Ana Paula', date: '2025-06-22, 14:15', text: 'Sim, e cuidado para não confundir dispensa com inexigibilidade. A dispensa é quando a licitação seria possível, mas a lei permite não fazê-la. A inexigibilidade é quando a competição é inviável, como um artista renomado ou produto exclusivo.', likes: 5, dislikes: 1 }
+                ]
+            },
+            {
+                id: 'topic-2',
+                title: "Melhores Práticas para Elaboração de Editais",
+                description: "Prezados colegas, estou buscando aprimorar a elaboração dos nossos editais de licitação e gostaria de saber quais são as melhores práticas que vocês utilizam. Quais pontos são cruciais para garantir a clareza, objetividade e conformidade com a legislação? Toda dica é bem-vinda!",
+                author: "Maria Oliveira",
+                category: "melhores-praticas",
+                date: "2025-06-18",
+                responsesCount: 12,
+                views: 320,
+                likes: 32,
+                dislikes: 0,
+                lastActivity: "2025-06-20",
+                replies: [
+                    { author: 'Fernando Costa', date: '2025-06-18, 09:00', text: 'Maria, fundamental é ser o mais específico possível no Termo de Referência, evitando ambiguidade. Use uma linguagem clara e concisa, e inclua todos os anexos necessários. A participação de múltiplos setores na elaboração também ajuda muito.', likes: 12, dislikes: 0 },
+                    { author: 'Sandra Lima', date: '2025-06-18, 10:30', text: 'Faça um checklist! Inclua todos os documentos obrigatórios, prazos, critérios de julgamento bem definidos e regras de desempate. E o mais importante: peça revisão por alguém que não participou da elaboração, para pegar falhas de clareza.', likes: 9, dislikes: 0 }
+                ]
+            },
+            {
+                id: 'topic-3',
+                title: "Como Participar de Licitações: Guia para Iniciantes",
+                description: "Bom dia a todos! Minha empresa é nova no mercado e estamos interessados em começar a participar de licitações governamentais. Por onde devo começar? Quais são os primeiros passos para uma empresa iniciante nesse processo? Qualquer orientação é muito útil!",
+                author: "Pedro Santos",
+                category: "duvidas",
+                date: "2025-06-10",
+                responsesCount: 8,
+                views: 250,
+                likes: 25,
+                dislikes: 2,
+                lastActivity: "2025-06-15",
+                replies: [
+                    { author: 'Gabriela Alves', date: '2025-06-10, 13:00', text: 'Olá Pedro! O primeiro passo é se cadastrar no SICAF (Sistema de Cadastramento Unificado de Fornecedores) ou no Portal de Compras do Governo Federal, dependendo do ente. Verifique a documentação necessária com antecedência, pois é um processo que demanda atenção.', likes: 18, dislikes: 0 },
+                    { author: 'Roberto Pereira', date: '2025-06-10, 14:00', text: 'Recomendo também participar dos cursos da Escola de Governo ou buscar materiais de capacitação, como os manuais disponíveis aqui no portal. Eles explicam muito bem o passo a passo. E comece com licitações menores para pegar experiência!', likes: 15, dislikes: 1 }
+                ]
+            }
+        ];
+
+        let forumFilteredTopics = [...forumTopicsData]; // Initialize filtered topics for forum
+        let currentOpenTopicId = null; // Track currently open topic in modal
+
+        function renderForumTopics() {
+            const container = document.getElementById('forum-topics-container');
+            forumFilteredTopics = filterAndSortForumTopics();
+            const startIndex = (forumCurrentPage - 1) * forumItemsPerPage;
+            const endIndex = startIndex + forumItemsPerPage;
+            const topicsToDisplay = forumFilteredTopics.slice(startIndex, endIndex);
+
+            container.innerHTML = topicsToDisplay.map(topic => `
+                <div class="forum-topic-card cursor-pointer" onclick="showForumTopic('${topic.id}')">
+                    <h4 class="forum-topic-title">${topic.title}</h4>
+                    <p class="forum-topic-meta">Por: ${topic.author} | Última atualização: ${formatDate(topic.lastActivity)} | Respostas: ${topic.responsesCount}</p>
+                    <p class="forum-post-content">${topic.description}</p>
+                </div>
+            `).join('');
+
+            renderForumPagination(forumFilteredTopics.length);
+        }
+
+        function filterAndSortForumTopics() {
+            let filtered = [...forumTopicsData];
+            
+            const searchTerm = document.getElementById('forum-search-input').value.toLowerCase();
+            if (searchTerm) {
+                filtered = filtered.filter(topic => 
+                    topic.title.toLowerCase().includes(searchTerm) || 
+                    topic.description.toLowerCase().includes(searchTerm)
+                );
+            }
+
+            const sortFilter = document.getElementById('forum-filter').value;
+
+            switch (sortFilter) {
+                case 'recentes':
+                    filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    break;
+                case 'populares':
+                    filtered.sort((a, b) => b.views - a.views);
+                    break;
+                case 'meus-tópicos':
+                    if (isLoggedIn) {
+                         filtered = filtered.filter(topic => topic.author === currentUser);
+                    } else {
+                        // If not logged in, "Meus Tópicos" shows nothing or all, depending on desired UX
+                        // For now, it will show all if not logged in, or filtered by user if logged in.
+                        // A more robust solution would require actual user authentication.
+                    }
+                    filtered.sort((a, b) => new Date(b.date) - new Date(a.date)); // Default sort for 'my topics'
+                    break;
+                default: // Default to recent if no specific sort/filter selected
+                    filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    break;
+            }
+
+            return filtered;
+        }
+
+        function renderForumPagination(totalItems) {
+            const totalPages = Math.ceil(totalItems / forumItemsPerPage);
+            const paginationContainer = document.getElementById('forum-pagination-container');
+            let paginationHTML = '';
+
+            if (forumCurrentPage > 1) {
+                paginationHTML += `<button class="btn-outline mx-2" onclick="changeForumPage(${forumCurrentPage - 1})">Anterior</button>`;
+            }
+
+            for (let i = 1; i <= totalPages; i++) {
+                const activeClass = i === forumCurrentPage ? 'btn-primary' : 'btn-outline';
+                paginationHTML += `<button class="${activeClass} mx-2" onclick="changeForumPage(${i})">${i}</button>`;
+            }
+
+            if (forumCurrentPage < totalPages) {
+                paginationHTML += `<button class="btn-outline mx-2" onclick="changeForumPage(${forumCurrentPage + 1})">Próximo</button>`;
+            }
+
+            paginationContainer.innerHTML = paginationHTML;
+        }
+
+        function changeForumPage(page) {
+            if (page === 'prev' && forumCurrentPage > 1) {
+                forumCurrentPage--;
+            } else if (page === 'next') {
+                const totalPages = Math.ceil(forumFilteredTopics.length / forumItemsPerPage);
+                if (forumCurrentPage < totalPages) forumCurrentPage++;
+            } else if (typeof page === 'number') {
+                forumCurrentPage = page;
+            }
+            renderForumTopics();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showForumTopic(topicId) {
+            currentOpenTopicId = topicId;
+            const topic = forumTopicsData.find(t => t.id === topicId);
+
+            if (!topic) {
+                console.error('Tópico não encontrado.');
+                return;
+            }
+
+            document.getElementById('forum-topic-detail-main-title').innerText = topic.title;
+            document.getElementById('forum-topic-detail-title-breadcrumb').innerText = topic.title;
+            
+            // Render main topic content
+            const mainTopicContainer = document.getElementById('main-topic-content');
+            mainTopicContainer.innerHTML = `
+                <p class="text-sm text-gray-600 mb-4">Por: ${topic.author} | Última atualização: ${formatDate(topic.lastActivity)} | Respostas: ${topic.responsesCount}</p>
+                <div class="prose max-w-none">${topic.description}</div>
+                <div class="forum-actions">
+                    <button class="action-btn" onclick="handleVote(this, 'like')">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span>${topic.likes}</span>
+                    </button>
+                    <button class="action-btn" onclick="handleVote(this, 'dislike')">
+                        <i class="fas fa-thumbs-down"></i>
+                        <span>${topic.dislikes}</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Compartilhar</span>
+                    </button>
+                </div>
+            `;
+
+            // Render replies
+            const repliesContainer = document.getElementById('topic-replies-content');
+            let repliesHtml = '';
+            if (topic.replies && topic.replies.length > 0) {
+                repliesHtml += '<h4 class="font-bold text-lg text-3A6A85 mt-8 mb-4">Respostas:</h4>';
+                document.getElementById('responses-count').textContent = topic.replies.length;
+                topic.replies.forEach(reply => {
+                    repliesHtml += `
+                        <div class="response-item bg-gray-50 p-4 rounded-md mb-4">
+                            <p class="text-sm text-gray-700 font-bold">${reply.author} <span class="font-normal text-gray-500">- ${reply.date}</span></p>
+                            <p class="text-gray-800 mt-2">${reply.text}</p>
+                            <div class="forum-actions mt-3 pt-3">
+                                <button class="action-btn" onclick="handleVote(this, 'like')">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>${reply.likes !== undefined ? reply.likes : 0}</span>
+                                </button>
+                                <button class="action-btn" onclick="handleVote(this, 'dislike')">
+                                    <i class="fas fa-thumbs-down"></i>
+                                    <span>${reply.dislikes !== undefined ? reply.dislikes : 0}</span>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+            } else {
+                repliesHtml += '<p class="text-gray-600">Nenhuma resposta ainda. Seja o primeiro a responder!</p>';
+                document.getElementById('responses-count').textContent = 0;
+            }
+            repliesContainer.innerHTML = repliesHtml;
+
+            // Show/hide reply form based on login status
+            if (isLoggedIn) {
+                document.getElementById('forum-reply-form').classList.remove('hidden');
+                document.getElementById('response-login-message').classList.add('hidden');
+            } else {
+                document.getElementById('forum-reply-form').classList.add('hidden');
+                document.getElementById('response-login-message').classList.remove('hidden');
+            }
+
+            showPage('forum-topic-detail-page'); // Uses the global showPage function
+        }
+
+        // --- Global Utility Functions ---
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('pt-BR');
+        }
+
+        function getCategoryBadgeClass(category) {
+            switch(category) {
+                case 'comunicado': return 'badge-info';
+                case 'noticia': return 'badge-success';
+                case 'evento': return 'badge-warning';
+                case 'legislacao': return 'badge-info';
+                case 'duvidas-lei': return 'badge-info'; /* For forum categories */
+                case 'melhores-praticas': return 'badge-success'; /* For forum categories */
+                case 'problemas-tecnicos': return 'badge-warning'; /* For forum categories */
+                case 'sugestoes': return 'badge-info'; /* For forum categories */
+                case 'geral': return 'badge-info'; /* For forum categories */
+                case 'duvidas': return 'badge-info'; /* General forum dúvidas */
+                default: return 'badge-info';
+            }
+        }
+
+        function getCategoryName(category) {
+            switch(category) {
+                case 'comunicado': return 'Comunicado';
+                case 'noticia': return 'Notícia';
+                case 'evento': return 'Evento';
+                case 'legislacao': return 'Legislação';
+                case 'duvidas-lei': return 'Dúvidas Lei';
+                case 'melhores-praticas': return 'Melhores Práticas';
+                case 'problemas-tecnicos': return 'Problemas Técnicos';
+                case 'sugestoes': return 'Sugestões';
+                case 'geral': return 'Geral';
+                case 'duvidas': return 'Dúvidas';
+                default: return 'Geral';
+            }
+        }
+
+        // Function to handle vote clicks (simulation)
+        function handleVote(button, type) {
+            const span = button.querySelector('span');
+            let currentCount = parseInt(span.innerText, 10);
+            
+            if (!button.classList.contains('active')) {
+                span.innerText = currentCount + 1;
+                button.classList.add('active'); 
+                
+                if (type === 'like') {
+                    button.classList.add('liked');
+                } else {
+                     button.classList.add('disliked');
+                }
+            } else {
+                // If already active, deactivate (optional: allow toggling)
+                span.innerText = currentCount - 1;
+                button.classList.remove('active', 'liked', 'disliked');
+            }
+        }
+
+
+        // Off-canvas menu toggle (kept from prototype)
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menu-toggle');
             const closeMenu = document.getElementById('close-menu');
@@ -1247,7 +2549,144 @@
             menuLinks.forEach(link => {
                 link.addEventListener('click', closeOffcanvasMenu);
             });
+
+
+            // --- News specific event listeners and initialization ---
+            document.getElementById('news-search-input').addEventListener('input', filterNews);
+            renderNewsCards(); // Initial render for news page
+
+
+            // --- Forum specific event listeners and initialization ---
+            document.getElementById('forum-search-input').addEventListener('input', () => {
+                forumCurrentPage = 1;
+                renderForumTopics();
+            });
+
+            document.getElementById('forum-filter').addEventListener('change', () => {
+                forumCurrentPage = 1;
+                renderForumTopics();
+            });
+
+            // Note: The previous "sort-btn" selectors are now for the main forum page filter.
+            // Ensure proper IDs are used for different filter sets if they exist on the same page.
+            // For this integrated version, the sort buttons in the "sidebar with filters" section
+            // of the forum page are now handled here:
+            document.querySelectorAll('#page-forum .sort-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('#page-forum .sort-btn').forEach(b => b.classList.remove('filter-active'));
+                    this.classList.add('filter-active');
+                    forumCurrentSort = this.dataset.sort;
+                    forumCurrentPage = 1;
+                    renderForumTopics();
+                });
+            });
+
+            document.getElementById('clear-filters').addEventListener('click', function() {
+                document.getElementById('forum-search-input').value = '';
+                document.getElementById('forum-filter').value = 'recentes'; // Reset to default sort
+                document.querySelectorAll('#page-forum .sort-btn').forEach(b => b.classList.remove('filter-active'));
+                document.querySelector('#page-forum [data-sort="recentes"]').classList.add('filter-active'); // Ensure "Mais Recentes" is active
+                forumCurrentSort = 'recentes';
+                forumCurrentPage = 1;
+                renderForumTopics();
+            });
+
+            // Login/Logout for forum features
+            // This assumes initial state is logged out, and 'login-btn' in main header triggers general login
+            // For the forum page, we'll connect internal forum elements to a simulated login.
+            document.getElementById('new-topic-btn-forum').addEventListener('click', () => {
+                if (!isLoggedIn) {
+                    alert('Por favor, faça login para criar um novo tópico.');
+                    // Optionally direct to login page or open a login modal
+                } else {
+                    showPage('page-novo-topico');
+                }
+            });
+
+            document.getElementById('create-new-forum-topic-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const title = document.getElementById('new-topic-title').value;
+                const category = document.getElementById('new-topic-category').value;
+                const description = document.getElementById('new-topic-message').value;
+
+                const newTopic = {
+                    id: `topic-${forumTopicsData.length + 1}`, // Unique ID
+                    title,
+                    description,
+                    author: currentUser,
+                    category,
+                    date: new Date().toISOString().split('T')[0],
+                    responsesCount: 0,
+                    views: 1,
+                    likes: 0,
+                    dislikes: 0,
+                    lastActivity: new Date().toISOString().split('T')[0],
+                    replies: []
+                };
+
+                forumTopicsData.unshift(newTopic); // Add to the beginning for "most recent" effect
+                this.reset();
+                renderForumTopics();
+                alert('Tópico criado com sucesso e será revisado em breve!');
+                showPage('page-forum'); // Go back to forum list
+            });
+
+            document.getElementById('forum-reply-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (!isLoggedIn || !currentOpenTopicId) {
+                    alert('Por favor, faça login para responder a este tópico.');
+                    return;
+                }
+
+                const replyText = document.getElementById('reply-message').value;
+                const replyName = document.getElementById('reply-name').value; 
+                const replyEmail = document.getElementById('reply-email').value;
+
+                const topic = forumTopicsData.find(t => t.id === currentOpenTopicId);
+
+                if (topic) {
+                    if (!topic.replies) topic.replies = [];
+                    topic.replies.push({
+                        author: replyName, 
+                        date: `${formatDate(new Date().toISOString().split('T')[0])}, ${new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}`,
+                        text: replyText,
+                        likes: 0,
+                        dislikes: 0
+                    });
+                    topic.responsesCount++;
+                    topic.lastActivity = new Date().toISOString().split('T')[0];
+                    
+                    this.reset();
+                    showForumTopic(currentOpenTopicId); 
+                    renderForumTopics(); 
+                } else {
+                    console.error("Tópico não encontrado para adicionar resposta.");
+                }
+            });
+
+            // Initial render for forum page
+            renderForumTopics();
+
+            // Initial page load
+            showPage('page-content'); // Set initial active page to 'Início'
         });
+
+        // Global function to show pages
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageId);
+            if(targetPage) {
+                targetPage.classList.add('active');
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
     </script>
 </body>
 </html>
