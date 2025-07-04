@@ -1,10 +1,11 @@
 {
   "name": "portal-compras-governamentais",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Portal de Compras Governamentais do Estado do Rio Grande do Norte",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve .",
     "lint": "eslint .",
     "format": "prettier --write \"**/*.{js,html,css,md}\""
   },
@@ -29,7 +30,8 @@
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-html": "^7.1.0",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "serve": "^14.2.1"
   },
   "engines": {
     "node": ">=14.0.0"
@@ -38,3 +40,4 @@
     "@govbr-ds/core": "3.6.2"
   }
 }
+

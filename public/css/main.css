@@ -26,232 +26,114 @@
 }
 
 /* ------------------------
-    Estilos Globais
+    Variáveis de Cor
 ------------------------- */
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #5EA51D;
-    --accent-color: #FF6B35;
+    --primary-color: #1351B4;
+    --secondary-color: #FF6B35;
+    --success-color: #5EA51D;
     --warning-color: #FFCD07;
-    --gray-light: #f8f9fa;
-    --gray-medium: #f5f5f5;
-    --gray-dark: #e9e9e9;
-    --dark-blue: #071D41; /* Adicionado para o footer */
+    --info-color: #3498db;
+    --dark-blue: #071D41;
+    --main-blue: #3A6A85;
+    --primary-button: #D34C2B;
+    --orange-hover: #B03C1F;
+    --carousel-bg: #AD897C;
+    --carousel-text: #FBFBFB;
+    --light-grey-bg: #f5f5f5;
+    --lighter-grey-bg: #f8f9fa;
+    --border-grey: #e9e9e9;
+    --font-color: #333;
+    --light-blue-bg: #eef4ff;
+    --light-blue-border: #cad9f0;
 }
 
+/* ------------------------
+    Estilos Globais
+------------------------- */
 body {
     font-family: 'Rawline', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--font-color);
     line-height: 1.6;
-    color: #333;
-    /* Evita scroll lateral quando o menu off-canvas está fechado mas pronto para abrir */
     overflow-x: hidden;
 }
 
 /* ------------------------
-    Layout Básico
+    Cabeçalho
 ------------------------- */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-/* ------------------------
-    Componentes
-------------------------- */
-
-/* Estilos do Carrossel */
-.carousel-indicator {
-    width: 12px;
-    height: 12px;
-    background-color: white;
-    border-radius: 50%;
-    opacity: 0.5;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-    border: none;
-}
-
-.carousel-indicator.active {
-    opacity: 1;
-}
-
-.carousel-indicator:hover {
-    opacity: 0.8;
-}
-.carousel-container {
-    max-height: 400px;
-}
-
-.carousel-images {
-    height: 400px;
-}
-
-.carousel-item {
-    height: 100%;
-}
-
-.carousel-item img {
-    height: 90%;
-    object-fit: cover;
-}
-
-.carousel-caption {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 1rem;
-}
-
-.carousel-caption h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.carousel-caption p {
-    font-size: 0.875rem;
-}
-
-/* ------------------------
-    Componentes
-------------------------- */
-/* Barra colorida*/
-.color-bar {
-    height: 7px;
-    background: linear-gradient(90deg,
-        var(--accent-color) 0%, var(--accent-color) 25%,
-        var(--secondary-color) 25%, var(--secondary-color) 50%,
-        var(--warning-color) 50%, var(--warning-color) 75%,
-        var(--primary-color) 75%, var(--primary-color) 100%);
-}
-
-/* Cabeçalho */
 .header-bg {
-    background-color: var(--gray-light);
+    background-color: var(--lighter-grey-bg);
 }
 
-/* Sticky Header */
+.color-bar {
+    height: 4px;
+    background: linear-gradient(90deg,
+        var(--secondary-color) 0%, var(--secondary-color) 25%,
+        var(--success-color) 25%, var(--success-color) 50%,
+        var(--warning-color) 50%, var(--warning-color) 75%,
+        var(--info-color) 75%, var(--info-color) 100%
+    );
+}
+
 .sticky-header {
-    background-color: white;
     position: sticky;
     top: 0;
-    z-index: 50; /* Garante que fique acima de outros elementos ao rolar */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* Campos e Componentes */
-.search-input {
-    background-color: var(--gray-medium);
-    border-radius: 20px;
-    padding: 0.5rem 1rem 0.5rem 2.5rem; /* Adicionado padding à esquerda para o ícone */
-    border: 1px solid var(--gray-dark);
-}
-
-.container-box {
-    background-color: var(--gray-medium);
-    border-radius: 5px;
-    padding: 1.25rem;
-    margin-bottom: 1.25rem;
-}
-
-/* Cards */
-.card {
-    border: 1px solid var(--gray-dark);
-    border-radius: 8px;
-    padding: 1rem;
-    background: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* Menu Dropdown (para o menu "Ajuda" no cabeçalho) */
-.dropdown-menu {
-    display: none;
-    position: absolute;
+    z-index: 1000;
     background-color: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-radius: 4px;
-    z-index: 100;
-    min-width: 200px;
-    padding: 0.5rem;
 }
 
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.menu-container {
-    position: relative;
-}
-
-/* Link Buttons para a seção "Links Rápidos" */
-.link-button {
-    display: inline-flex;
+.search-access-group {
+    display: flex;
     align-items: center;
-    background-color: var(--primary-color);
+    gap: 0.5rem;
+    position: relative;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.search-input {
+    background-color: var(--light-grey-bg);
+    border-radius: 20px;
+    border: 1px solid var(--border-grey);
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+}
+
+.access-btn {
+    background-color: var(--success-color);
     color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
+    font-weight: 700;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+    white-space: nowrap;
 }
 
-.link-button:hover {
-    background-color: #3A6A85; /* Um tom mais escuro do primary-color */
-}
-
-/* Estilo para ícones de navegação (geral) */
-.nav-icon {
-    margin-right: 0.5rem;
-    color: var(--primary-color);
-    font-size: 1.25rem;
-}
-
-/* Estilo para títulos de seção */
-.section-title {
-    color: var(--dark-blue);
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--gray-dark);
-    padding-bottom: 0.5rem;
-}
-
-/* Footer */
-.footer {
-    background-color: var(--dark-blue); /* Fundo escuro como o Gov.br */
-    color: white;
-}
-
-.footer .sitemap-section ul li a {
-    color: var(--gray-light); /* Cor do texto dos links do sitemap */
-}
-
-.footer .sitemap-section ul li a:hover {
-    color: white;
+.access-btn:hover {
+    background-color: #4a8a17;
 }
 
 /* ------------------------
-    Menu Off-canvas
+    Menu Lateral (Off-canvas)
 ------------------------- */
 .offcanvas-menu {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 280px; /* Largura do menu */
+    left: -300px;
+    width: 300px;
     height: 100%;
     background-color: white;
-    z-index: 1000; /* Acima de tudo */
-    transform: translateX(-100%); /* Escondido por padrão */
-    transition: transform 0.3s ease-in-out;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-    overflow-y: auto; /* Permite rolagem se o conteúdo for muito longo */
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    z-index: 2000;
+    transition: left 0.3s ease;
+    overflow-y: auto;
 }
 
-.offcanvas-menu.active {
-    transform: translateX(0); /* Mostra o menu */
-}
+.offcanvas-menu.active { left: 0; }
 
 .offcanvas-backdrop {
     position: fixed;
@@ -259,127 +141,182 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5); /* Fundo escuro transparente */
-    z-index: 999; /* Abaixo do menu, mas acima do conteúdo */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1999;
+    display: none;
 }
 
-.offcanvas-backdrop.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Estilo para links dentro do menu off-canvas */
-.offcanvas-menu ul li a {
-    display: flex;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    border-radius: 5px;
-    color: #333; /* Cor do texto padrão */
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-}
-
-.offcanvas-menu ul li a:hover {
-    background-color: var(--gray-medium);
-}
-
-.offcanvas-menu ul li a .nav-icon {
-    color: var(--primary-color);
-    margin-right: 1rem;
-    font-size: 1.2rem;
-}
-
+.offcanvas-backdrop.active { display: block; }
 
 /* ------------------------
-    Seção de Serviços SEAD
+    Componentes Gerais
 ------------------------- */
-.servicos-section {
-    padding: 3rem 0;
-    background-color: var(--gray-light);
-    text-align: center;
-}
-
-.servicos-section .section-title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    margin-bottom: 2.5rem;
-    color: var(--dark-blue);
-    display: inline-block; /* Para o border-bottom aparecer corretamente */
-    border-bottom: 3px solid var(--primary-color); /* Linha abaixo do título */
-    padding-bottom: 0.5rem;
-}
-
-.servicos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-    justify-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.servico-card {
-    background-color: white;
-    border: 1px solid var(--gray-dark);
+.container-box {
+    background-color: var(--carousel-text);
     border-radius: 8px;
-    padding: 1rem; /* Reduced padding */
-    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: var(--main-blue);
+    border: 1px solid var(--border-grey);
+}
+
+.section-title {
+    border-bottom: 2px solid var(--main-blue);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    color: var(--main-blue);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.link-button {
+    display: inline-block;
+    background-color: var(--primary-button);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     text-decoration: none;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.link-button:hover {
+    background-color: var(--orange-hover);
+}
+
+.link-button .fas { color: inherit; }
+
+/* ------------------------
+    Carrossel
+------------------------- */
+.carousel {
+    background-color: var(--carousel-bg);
+    min-height: 120px;
+    color: var(--carousel-text);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
     color: #333;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 0.75rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.2s;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+#carousel-prev { left: 1rem; }
+#carousel-next { right: 1rem; }
+
+/* ------------------------
+    Cards
+------------------------- */
+.consult-card, .metric-card, .service-card {
+    background-color: var(--carousel-text);
+    border: 1px solid var(--border-grey);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Center content */
-    height: 160px; /* Fixed, shorter height */
+    justify-content: center;
+    position: relative;
 }
 
-.servico-card:hover {
+.consult-card:hover, .metric-card:hover, .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 
-.servico-icon {
-    width: 48px; /* Smaller icon */
-    height: 48px;
-    margin-bottom: 0.75rem; /* Reduced margin */
-    object-fit: contain;
+.consult-card-icon, .service-card-icon {
+    font-size: 3.5rem;
+    color: var(--dark-blue);
+    margin-bottom: 15px;
 }
 
-.servico-title {
-    font-size: 1.1rem; /* Smaller font */
+.consult-card-title, .service-card-title {
     font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 0;
+    color: var(--font-color);
+    font-size: 1.2rem;
 }
 
-.servico-description {
-    display: none; /* Descriptions remain hidden */
+.info-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.2rem;
+    color: var(--dark-blue);
+}
+
+.metric-card {
+    min-height: 180px;
+    overflow: hidden;
+}
+
+.metric-value {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--dark-blue);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.metric-label {
+    font-size: 0.95rem;
+    color: #666;
+    text-align: center;
+}
+
+.metric-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+}
+
+.metric-bar.blue { background-color: var(--info-color); }
+.metric-bar.orange { background-color: var(--secondary-color); }
+.metric-bar.green { background-color: var(--success-color); }
+.metric-bar.yellow { background-color: var(--warning-color); }
+
+/* ------------------------
+    Rodapé
+------------------------- */
+.footer {
+    background-color: var(--main-blue);
+    color: white;
+}
+
+.sitemap-section h4 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.sitemap-section a {
+    color: #d1d5db; /* gray-300 */
+    transition: color 0.2s;
+}
+
+.sitemap-section a:hover {
+    color: white;
 }
 
 /* ------------------------
     Responsividade
 ------------------------- */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 0.5rem;
-    }
-
-    .container-box {
-        padding: 1rem;
-    }
-
-    .search-input {
-        width: 100%;
-        margin-top: 1rem; /* Adiciona margem no topo em telas menores */
-    }
-
-    /* Ajustes para o cabeçalho em telas menores */
     .header-bg .flex.justify-between {
         flex-direction: column;
         align-items: flex-start;
@@ -387,44 +324,21 @@ body {
 
     .header-bg .flex.items-center.space-x-4.text-sm {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
+        margin-top: 1rem;
+        gap: 0.5rem;
+    }
+
+    .sticky-header .flex-1.flex.justify-end {
+        width: 100%;
         margin-top: 1rem;
     }
+}
 
-    .header-bg .flex.items-center.space-x-4.text-sm > a,
-    .header-bg .flex.items-center.space-x-4.text-sm > div {
-        margin-bottom: 0.5rem;
-        margin-right: 0.5rem;
-    }
-
-    .sticky-header .flex.justify-between {
+@media (max-width: 640px) {
+    .search-access-group {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        gap: 0.5rem;
     }
-
-    .sticky-header .relative.w-1\/3 {
-        width: 100%;
-    }
-
-    /* Ajuste para o grid de serviços em telas menores */
-    .servicos-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .link-button {
-        width: 100%;
-        margin-right: 0;
-    }
-}
-
-.carousel-container {
-    position: relative;
-    width: 100%; /* Garante que o carrossel ocupe a largura total */
-    max-width: 1200px; /* Limita a largura máxima para design */
-    margin: 0 auto 1.5rem auto; /* Centraliza e adiciona margem inferior */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra suave */
-    border-radius: 0.5rem; /* Cantos arredondados */
-    overflow: hidden; /* Esconde conteúdo que transborda */
 }

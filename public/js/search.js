@@ -9,16 +9,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const pagesToSearch = [
         'Index.html',
         'pages/Fornecedor.html',
-        'pages/acesso-sistema.html',
-        'pages/artigos.html',
-        'pages/capacite-se.html',
-        'pages/cidadao.html',
-        'pages/em-construcao.html',
-        'pages/forum.html',
-        'pages/legislacao.html',
-        'pages/manuais.html',
-        'pages/oportunidades.html',
-        'pages/servidor.html'
+        'pages/Servidor.html',
+        'pages/Cidadao.html',
+        'pages/Capacite-se.html',
+        'pages/Legislacao.html',
+        'pages/Manuais.html',
+        'pages/Oportunidades.html',
+        'pages/Artigos.html',
+        'pages/Noticias.html',
+        'pages/Forum.html',
+        'pages/Institucional.html',
+        'pages/Compr-ia.html'
     ];
 
     searchInput.addEventListener('keyup', function (event) {
@@ -54,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     .catch(err => console.error('Failed to fetch page:', pageUrl, err));
             });
 
-            // This timeout is a simple way to wait for fetch requests to complete
             setTimeout(() => {
                 if (!foundResults) {
                     resultsContainer.innerHTML += '<p>Nenhum resultado encontrado.</p>';

@@ -1,0 +1,25 @@
+/* Estilo especifico para a pagina COMPR IA*/
+
+.gradient-bg-compria {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--info-color) 100%); /* Azul escuro para azul gov.br */
+}
+.compria-card-hover {
+    transition: all 0.3s ease;
+}
+.compria-card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.feature-icon-gradient {
+    background: linear-gradient(45deg, var(--secondary-color), var(--warning-color)); /* Laranja para Amarelo */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem; /* Tamanho maior para ícones na hero section */
+}
+.ai-animation {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
