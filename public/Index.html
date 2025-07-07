@@ -81,12 +81,6 @@
         <div class="p-4">
             <ul class="space-y-4">
                 <li>
-                    <a href="index.html" class="flex items-center p-2 rounded hover:bg-gray-100">
-                        <i class="fas fa-home nav-icon"></i>
-                        <span>Início</span>
-                    </a>
-                </li>
-                <li>
                     <a href="pages/fornecedor.html" class="flex items-center p-2 rounded hover:bg-gray-100">
                         <i class="fas fa-user-tie nav-icon"></i>
                         <span>Fornecedor</span>
@@ -122,15 +116,6 @@
                         <span>Acesso ao Sistema</span>
                     </a>
                 </li>
-                <li>
-                    <a href="pages/oportunidades.html" class="flex items-center p-2 rounded hover:bg-gray-100">
-                        <i class="fas fa-search-dollar nav-icon"></i>
-                        <span>Oportunidades</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="pages/manuais.html" class="flex items-center p-2 rounded hover:bg-gray-100">
-                        <i class="fas fa-book nav-icon"></i>
                         <span>Manuais</span>
                     </a>
                 </li>
@@ -169,18 +154,42 @@
         </div>
 
         <!-- Carrossel de Notícias -->
-        <div class="carousel mb-6 flex items-center justify-center rounded-lg relative" style="min-height: 120px;">
-            <div class="text-center w-full">
-                <h3 class="text-2xl font-bold mb-2">Carrossel de Notícias</h3>
-                <p class="text-gray-200">Últimas notícias e destaques sobre Compras Governamentais</p>
+        <div id="news-carousel" class="relative w-full mb-6" data-carousel="slide">
+            <!-- Carousel wrapper -->
+            <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <a href="#"><img src="https://picsum.photos/1200/400?random=1" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Notícia 1"></a>
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <a href="#"><img src="https://picsum.photos/1200/400?random=2" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Notícia 2"></a>
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <a href="#"><img src="https://picsum.photos/1200/400?random=3" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Notícia 3"></a>
+                </div>
+                <!-- Item 4 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <a href="#"><img src="https://picsum.photos/1200/400?random=4" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Notícia 4"></a>
+                </div>
             </div>
-            <button id="carousel-prev" class="carousel-button absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-gray-800 p-3 rounded-full shadow-lg transition-all focus:outline-none z-10" aria-label="Voltar">
-                <i class="fas fa-chevron-left" aria-hidden="true"></i>
-                <span class="sr-only">Anterior</span>
+            <!-- Slider controls -->
+            <button type="button" class="carousel-button absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
             </button>
-            <button id="carousel-next" class="carousel-button absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-gray-800 p-3 rounded-full shadow-lg transition-all focus:outline-none z-10" aria-label="Avançar">
-                <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                <span class="sr-only">Próximo</span>
+            <button type="button" class="carousel-button absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
             </button>
         </div>
 
@@ -188,31 +197,43 @@
         <div class="mb-6">
             <h3 class="section-title">Links Rápidos</h3>
             <div class="my-4 flex flex-wrap gap-3">
-                <a href="pages/Forum.html" class="link-button"><i class="fas fa-comments mr-2"></i> Fórum</a>
-                <a href="pages/Legislacao.html" class="link-button"><i class="fas fa-gavel mr-2"></i> Legislação</a>
-                <a href="pages/Oportunidades.html" class="link-button"><i class="fas fa-search-dollar mr-2"></i> Oportunidades</a>
-                <a href="pages/Noticias.html" class="link-button"><i class="fas fa-newspaper mr-2"></i> Notícias</a>
                 <a href="pages/Artigos.html" class="link-button"><i class="fas fa-file-alt mr-2"></i> Artigos</a>
-                <a href="pages/Manuais.html" class="link-button"><i class="fas fa-book mr-2"></i> Manuais</a>
-                <a href="pages/Institucional.html" class="link-button"><i class="fas fa-building mr-2"></i> Institucional</a>
                 <a href="pages/Compr-ia.html" class="link-button"><i class="fas fa-microchip mr-2"></i> COMPR IA</a>
+                <a href="pages/Forum.html" class="link-button"><i class="fas fa-comments mr-2"></i> Fórum</a>
+                <a href="pages/Institucional.html" class="link-button"><i class="fas fa-building mr-2"></i> Institucional</a>
+                <a href="pages/Legislacao.html" class="link-button"><i class="fas fa-gavel mr-2"></i> Legislação</a>
+                <a href="pages/meepp.html" class="link-button"><i class="fas fa-briefcase mr-2"></i> ME/EPP</a>
+                <a href="pages/Noticias.html" class="link-button"><i class="fas fa-newspaper mr-2"></i> Notícias</a>
+
             </div>
         </div>
 
         <!-- Consultar Oportunidades -->
-        <div class="mb-6">
-            <h3 class="section-title">Consultar Oportunidades</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4 justify-center">
-                <a href="http://servicos.searh.rn.gov.br/searh/Licitacao" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-lg border flex flex-col items-center justify-center transition hover:shadow-xl w-full md:w-96 h-40 p-6 mx-auto">
-                    <i class="fas fa-shopping-cart consult-card-icon text-4xl text-blue-900"></i>
-                    <h4 class="consult-card-title mt-4 text-center font-bold">Contratações</h4>
-                </a>
-                <a href="http://servicos.searh.rn.gov.br/searh/Licitacao/RegistroPreco" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-lg border flex flex-col items-center justify-center transition hover:shadow-xl w-full md:w-96 h-40 p-6 mx-auto">
-                    <i class="fas fa-file-invoice-dollar consult-card-icon text-4xl text-blue-900"></i>
-                    <h4 class="consult-card-title mt-4 text-center font-bold">Atas de Registro de Preço</h4>
-                </a>
+<div class="bg-gray-50 rounded-lg p-6 mb-6">
+    <h3 class="section-title text-center">Consultar Oportunidades</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+        <!-- Card Contratações -->
+        <a href="http://servicos.searh.rn.gov.br/searh/Licitacao" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-xl shadow-md p-6 border border-gray-200 hover:border-blue-500 hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+            <div class="flex items-center">
+                <div class="bg-blue-100 text-blue-800 rounded-full p-3">
+                    <i class="fas fa-shopping-cart text-2xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-800 ml-4">Contratações</h4>
             </div>
-        </div>
+            <p class="text-gray-600 mt-3">Acesse os editais de licitação e acompanhe os processos de contratação em andamento no Estado.</p>
+        </a>
+        <!-- Card Atas de Registro de Preço -->
+        <a href="http://servicos.searh.rn.gov.br/searh/Licitacao/RegistroPreco" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-xl shadow-md p-6 border border-gray-200 hover:border-blue-500 hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+            <div class="flex items-center">
+                <div class="bg-blue-100 text-blue-800 rounded-full p-3">
+                    <i class="fas fa-file-invoice-dollar text-2xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-800 ml-4">Atas de Registro de Preço</h4>
+            </div>
+            <p class="text-gray-600 mt-3">Consulte as Atas de Registro de Preço vigentes e participe das contratações do governo.</p>
+        </a>
+    </div>
+</div>
 
         <!-- Compras Homologadas em 2024 -->
         <div class="approved-purchases-section">
@@ -272,7 +293,49 @@
             </div>
         </div>
     </main>
-
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Suporte e Contato</h2>
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Precisa de Ajuda?</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-phone text-blue-600"></i>
+                                <span class="text-gray-700">(84) 3232-1234</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                                <span class="text-gray-700">suporte.compria@rn.gov.br</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-clock text-blue-600"></i>
+                                <span class="text-gray-700">Seg-Sex: 8h às 18h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Links Úteis</h3>
+                        <div class="space-y-3">
+                            <a href="#" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-book mr-2"></i>Manual do Usuário
+                            </a>
+                            <a href="forum.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-comments mr-2"></i>Fórum de Discussão
+                            </a>
+                            <a href="#" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-video mr-2"></i>Tutoriais em Vídeo
+                            </a>
+                            <a href="#" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-question-circle mr-2"></i>FAQ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Rodapé com Mapa do Site -->
     <footer class="footer py-6 px-4">
         <div class="container mx-auto">
@@ -282,24 +345,32 @@
             </div>
             <!-- Seções do mapa do site -->
             <div class="w-full flex justify-center mt-[-16px] mb-2">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 flex-1 max-w-4xl ml-[-10%]">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 flex-1 max-w-6xl mx-auto">
                     <div class="sitemap-section">
-                        <h4 class="text-white font-bold mb-4">Início</h4>
+                        <h4 class="text-white font-bold mb-4">Institucional</h4>
                         <ul class="space-y-2">
-                            <li><a href="index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
-                            <li><a href="pages/oportunidades.html" class="text-gray-300 hover:text-white">Oportunidades</a></li>
+                            <li><a href="/index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
+                            <li><a href="pages/institucional.html" class="text-gray-300 hover:text-white">Quem Somos</a></li>
                             <li><a href="pages/noticias.html" class="text-gray-300 hover:text-white">Notícias</a></li>
-                            <li><a href="pages/artigos.html" class="text-gray-300 hover:text-white">Artigos</a></li>
+                            <li><a href="pages/manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
                             <li><a href="pages/forum.html" class="text-gray-300 hover:text-white">Fórum</a></li>
                         </ul>
                     </div>
                     <div class="sitemap-section">
-                        <h4 class="text-white font-bold mb-4">Perfis de Acesso</h4>
+                        <h4 class="text-white font-bold mb-4">Acesso</h4>
                         <ul class="space-y-2">
                             <li><a href="pages/fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
                             <li><a href="pages/servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
                             <li><a href="pages/cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
+                            <li><a href="pages/meepp.html" class="text-gray-300 hover:text-white">ME/EPP</a></li>
                             <li><a href="pages/acesso-sistema.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Oportunidades</h4>
+                        <ul class="space-y-2">
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Licitações</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao/RegistroPreco" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Atas de Registro de Preço</a></li>
                         </ul>
                     </div>
                     <div class="sitemap-section">
@@ -308,13 +379,23 @@
                             <li><a href="pages/capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
                             <li><a href="pages/legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
                             <li><a href="pages/manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
-                            <li><a href="pages/institucional.html" class="text-gray-300 hover:text-white">Institucional</a></li>
                             <li><a href="pages/compr-ia.html" class="text-gray-300 hover:text-white">COMPR IA</a></li>
                             <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
                         </ul>
                     </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Serviços SEAD</h4>
+                        <ul class="space-y-2">
+                            <li><a href="https://www.sead.rn.gov.br" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Secretaria de Administração</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/copag/contra_cheque.asp" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Contracheque</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/dirf?escolha=1" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Declaração de Rendimentos</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Protocolo" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Protocolo NET</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Diaria" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Diárias</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
             <hr class="border-white my-4">
             <div class="flex flex-row justify-between items-start max-w-4xl mx-auto gap-16 mb-6">
                 <!-- Informações de contato -->
@@ -352,7 +433,69 @@
     </div>
 <script src="node_modules/@govbr-ds/core/dist/core.min.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="js/search.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.getElementById('news-carousel');
+            const items = carousel.querySelectorAll('[data-carousel-item]');
+            const prevButton = carousel.querySelector('[data-carousel-prev]');
+            const nextButton = carousel.querySelector('[data-carousel-next]');
+            let currentIndex = 0;
+            let interval;
+
+            function showItem(index) {
+                items.forEach((item, i) => {
+                    item.classList.toggle('hidden', i !== index);
+                });
+            }
+
+            function nextItem() {
+                currentIndex = (currentIndex + 1) % items.length;
+                showItem(currentIndex);
+            }
+
+            function prevItem() {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                showItem(currentIndex);
+            }
+
+            function startCarousel() {
+                interval = setInterval(nextItem, 3000); // Change image every 3 seconds
+            }
+
+            function stopCarousel() {
+                clearInterval(interval);
+            }
+
+            if (prevButton && nextButton) {
+              prevButton.addEventListener('click', () => {
+                  stopCarousel();
+                  prevItem();
+                  startCarousel();
+              });
+
+              nextButton.addEventListener('click', () => {
+                  stopCarousel();
+                  nextItem();
+                  startCarousel();
+              });
+            }
+
+            carousel.addEventListener('mouseenter', stopCarousel);
+            carousel.addEventListener('mouseleave', startCarousel);
+
+            showItem(currentIndex);
+            startCarousel();
+        });
+    </script>
+    <style>
+        .carousel-button {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        #news-carousel:hover .carousel-button {
+            opacity: 1;
+        }
+    </style>
 </body>
 </html>
-

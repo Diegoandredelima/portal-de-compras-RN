@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ME/EPP - Micro e Pequenas Empresas | Portal de Compras</title>
+    <meta name="description" content="Oportunidades exclusivas para Micro e Pequenas Empresas. Descubra como sua empresa pode participar de licitações públicas e acessar o mercado governamental.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/@govbr-ds/core/dist/core.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/meepp.css">
+</head>
+<body class="bg-white">
+    <!-- Barra Superior -->
+    <header class="header-bg py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="../images/logos/COMPR_logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
+                <img src="../images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
+            </div>
+            <div class="flex items-center space-x-4 text-sm">
+                <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
+                <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
+                <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
+                <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
+                <div class="dropdown">
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
+                </div>
+                <div class="flex items-center space-x-2 ml-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra Colorida -->
+    <div class="color-bar w-full"></div>
+    <!-- Cabeçalho Fixo com Menu -->
+    <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <a href="../index.html" class="text-xl font-medium">Central de Compras</a>
+            </div>
+            <div class="flex-1 flex justify-end">
+                <div class="search-access-group relative" style="width: 570px; max-width: 100%;">
+                    <div class="relative w-full" style="max-width:100%;">
+                        <input type="text" id="search-input-field" placeholder="O que você procura?" class="search-input w-full">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
+                    </div>
+                    <a href="../pages/acesso-sistema.html" class="access-btn bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-5 rounded-lg text-base flex items-center gap-1 shadow transition" aria-label="Acesso ao Sistema">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span class="hidden sm:inline">Acesso ao Sistema</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Menu Lateral -->
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="p-4 border-b flex justify-between items-center">
+            <h2 class="text-lg font-bold">Menu</h2>
+            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-4">
+            <ul class="space-y-4">
+                
+                <li><a href="servidor.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-user nav-icon"></i><span>Servidor</span></a></li>
+                <li><a href="cidadao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-users nav-icon"></i><span>Cidadão</span></a></li>
+                <li><a href="capacite-se.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-graduation-cap nav-icon"></i><span>Capacite-se</span></a></li>
+                <li><a href="legislacao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-gavel nav-icon"></i><span>Legislação</span></a></li>
+                <li><a href="em-construcao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-sign-in-alt nav-icon"></i><span>Acesso ao Sistema</span></a></li>
+
+                
+            </ul>
+        </div>
+    </div>
+    <!-- Quick Links padrão portal -->
+<div class="container-box mb-6">
+    <div class="flex justify-around flex-wrap">
+        <a href="../pages/capacite-se.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85">
+            <i class="fas fa-graduation-cap nav-icon text-4xl text-blue-900"></i>
+            <span>Capacite-se</span>
+        </a>
+        <a href="../pages/legislacao.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85">
+            <i class="fas fa-gavel nav-icon text-4xl text-blue-900"></i>
+            <span>Legislação</span>
+        </a>
+        <a href="../pages/forum.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85">
+            <i class="fas fa-comments nav-icon text-4xl text-blue-900"></i>
+            <span>Fórum</span>
+        </a>
+
+    </div>
+    </div>
+    </header>
+
+    <!-- Loading Animation -->
+    <div id="loadingScreen" class="loading-screen active">
+        <div class="loading-container">
+            <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <h2 class="loading-title">Carregando Oportunidades para ME/EPP</h2>
+            <p class="loading-subtitle">Preparando as melhores oportunidades para sua empresa...</p>
+            <div class="loading-progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="loading-stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="companiesCount">0</div>
+                    <div class="stat-label">Empresas Cadastradas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="opportunitiesCount">0</div>
+                    <div class="stat-label">Oportunidades Ativas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="valueCount">R$ 0</div>
+                    <div class="stat-label">Valor em Contratos</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container mx-auto px-4 py-16">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+
+                    <div>
+                        <div class="hero-badge">
+                            <i class="fas fa-award"></i>
+                            <span>Oportunidades Exclusivas ME/EPP</span>
+                        </div>
+                        <h1 class="hero-title">
+                            Sua <span class="text-primary">Micro ou Pequena Empresa</span>
+                            no Mercado Público
+                        </h1>
+                        <p class="hero-subtitle">
+                            Descubra como sua empresa pode participar de licitações públicas e acessar
+                            oportunidades exclusivas no maior mercado do país.
+                        </p>
+                        <div class="hero-stats">
+                            <div class="stat-card">
+                                <div class="stat-number">250.594</div>
+                                <div class="stat-label">Pequenos Negócios no RN</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">R$ 54,6 bi</div>
+                                <div class="stat-label">Valor Contratado ME/EPP</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">99%</div>
+                                <div class="stat-label">Das Empresas são ME/EPP</div>
+                            </div>
+                        </div>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary transform transition-transform duration-200 hover:scale-105 hover:shadow-lg" onclick="scrollToSection('benefits')">
+                                <i class="fas fa-rocket"></i>
+                                Descobrir Vantagens
+                            </button>
+                            <button class="btn btn-secondary transform transition-transform duration-200 hover:scale-105 hover:shadow-lg" onclick="scrollToSection('howto')">
+                                <i class="fas fa-play-circle"></i>
+                                Como Participar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="image-container">
+                            <img src="../images/meepp-hero.jpg" alt="Empresários ME/EPP" class="main-image">
+                            <div class="floating-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-chart-line text-success"></i>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-title">Crescimento 2024</div>
+                                    <div class="card-value">+7,5%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="benefits-section">
+            <div class="container mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <h2 class="section-title">Por que Ser ME/EPP é uma Vantagem?</h2>
+                    <p class="section-subtitle">
+                        Descubra os benefícios exclusivos que podem transformar seu negócio
+                    </p>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h3 class="benefit-title">Licitações Exclusivas</h3>
+                        <p class="benefit-description">
+                            Compras de até R$ 80 mil podem ser exclusivas para ME/EPP,
+                            reduzindo a concorrência e aumentando suas chances.
+                        </p>
+                        <div class="benefit-highlight">
+                            <i class="fas fa-check-circle text-success"></i>
+                            <span>Prioridade em empates</span>
+                        </div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <h3 class="benefit-title">Cotas Garantidas</h3>
+                        <p class="benefit-description">
+                            Até 25% das compras em licitações maiores são reservadas
+                            para micro e pequenas empresas.
+                        </p>
+                        <div class="benefit-highlight">
+                            <i class="fas fa-chart-pie text-info"></i>
+                            <span>Participação garantida</span>
+                        </div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="benefit-title">Contrata+Brasil</h3>
+                        <p class="benefit-description">
+                            Plataforma que conecta MEIs diretamente com órgãos públicos,
+                            sem processos licitatórios complexos.
+                        </p>
+                        <div class="benefit-highlight">
+                            <i class="fas fa-lightning-bolt text-warning"></i>
+                            <span>Contratação direta</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="statistics-section">
+            <div class="container mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <h2 class="section-title text-white">ME/EPP em Números</h2>
+                    <p class="section-subtitle text-white opacity-90">
+                        Dados que comprovam a força das micro e pequenas empresas
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="stat-card-dark">
+                        <div class="stat-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="stat-number">23,8 milhões</div>
+                        <div class="stat-label">ME/EPP no Brasil</div>
+                    </div>
+                    <div class="stat-card-dark">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-number">52%</div>
+                        <div class="stat-label">Empregos com Carteira</div>
+                    </div>
+                    <div class="stat-card-dark">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-number">27%</div>
+                        <div class="stat-label">Participação no PIB</div>
+                    </div>
+                    <div class="stat-card-dark">
+                        <div class="stat-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="stat-number">33,4%</div>
+                        <div class="stat-label">Taxa de Empreendedorismo</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Section -->
+        <section id="howto" class="howto-section">
+            <div class="container mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <h2 class="section-title">Como Participar das Oportunidades</h2>
+                    <p class="section-subtitle">
+                        Siga estes passos para começar a participar de licitações públicas
+                    </p>
+                </div>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Regularize sua Empresa</h3>
+                            <p class="step-description">
+                                Certifique-se de que sua empresa está devidamente registrada
+                                como ME ou EPP e possui todas as certidões em dia.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Cadastre-se no Sistema</h3>
+                            <p class="step-description">
+                                Registre sua empresa em nosso portal e mantenha
+                                seus dados sempre atualizados.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Monitore as Oportunidades</h3>
+                            <p class="step-description">
+                                Acompanhe regularmente os editais e oportunidades
+                                disponíveis para ME/EPP.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Participe e Vença</h3>
+                            <p class="step-description">
+                                Prepare sua proposta e participe das licitações
+                                com vantagens exclusivas para ME/EPP.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories Section -->
+        <section class="success-section">
+            <div class="container mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <h2 class="section-title">Histórias de Sucesso</h2>
+                    <p class="section-subtitle">
+                        Conheça empresas que cresceram com o mercado público
+                    </p>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="success-card">
+                        <div class="success-image">
+                            <img src="../images/success-1.jpg" alt="Empresa de Sucesso">
+                        </div>
+                        <div class="success-content">
+                            <h3 class="success-title">Tech Solutions RN</h3>
+                            <p class="success-description">
+                                Microempresa de TI que cresceu 300% em 2 anos participando
+                                de licitações públicas especializadas.
+                            </p>
+                            <div class="success-stats">
+                                <div class="success-stat">
+                                    <span class="stat-value">R$ 2,5M</span>
+                                    <span class="stat-label">Contratos Ganhos</span>
+                                </div>
+                                <div class="success-stat">
+                                    <span class="stat-value">15</span>
+                                    <span class="stat-label">Colaboradores</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="success-card">
+                        <div class="success-image">
+                            <img src="../images/success-2.jpg" alt="Empresa de Sucesso">
+                        </div>
+                        <div class="success-content">
+                            <h3 class="success-title">Construção Segura</h3>
+                            <p class="success-description">
+                                EPP do setor de construção que se especializou em
+                                obras públicas de pequeno porte.
+                            </p>
+                            <div class="success-stats">
+                                <div class="success-stat">
+                                    <span class="stat-value">R$ 5,2M</span>
+                                    <span class="stat-label">Faturamento Anual</span>
+                                </div>
+                                <div class="success-stat">
+                                    <span class="stat-value">25</span>
+                                    <span class="stat-label">Projetos Concluídos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="success-card">
+                        <div class="success-image">
+                            <img src="../images/success-3.jpg" alt="Empresa de Sucesso">
+                        </div>
+                        <div class="success-content">
+                            <h3 class="success-title">Consultoria Potiguar</h3>
+                            <p class="success-description">
+                                ME de consultoria que encontrou no setor público
+                                o mercado ideal para crescer.
+                            </p>
+                            <div class="success-stats">
+                                <div class="success-stat">
+                                    <span class="stat-value">R$ 800K</span>
+                                    <span class="stat-label">Receita Anual</span>
+                                </div>
+                                <div class="success-stat">
+                                    <span class="stat-value">12</span>
+                                    <span class="stat-label">Clientes Ativos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container mx-auto px-4 py-16">
+                <div class="cta-container">
+                    <div class="cta-content">
+                        <h2 class="cta-title">Pronto para Começar?</h2>
+                        <p class="cta-subtitle">
+                            Não perca mais tempo. Cadastre sua empresa agora e comece a
+                            participar das melhores oportunidades do mercado público.
+                        </p>
+                        <div class="cta-actions">
+                            <button class="btn btn-primary btn-lg">
+                                <i class="fas fa-user-plus"></i>
+                                Cadastrar Empresa
+                            </button>
+                            <button class="btn btn-secondary btn-lg">
+                                <i class="fas fa-phone"></i>
+                                Falar com Especialista
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cta-image">
+                        <img src="../images/cta-meepp.jpg" alt="Cadastre sua empresa">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer padrão do portal -->
+    <footer class="footer py-6 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between items-start mb-8" style="padding-top: 4rem;">
+                <img src="../images/logos/NEGATIVO.png" alt="Governo do Rio Grande do Norte" class="h-14 w-auto mb-2" style="height: 101px; transform: translate(0px, -45px);">
+            </div>
+            <div class="w-full flex justify-center mt-[-16px] mb-2">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 flex-1 max-w-4xl ml-[-10%]">
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Início</h4>
+                        <ul class="space-y-2">
+                            <li><a href="../index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
+                            <li><a href="../pages/noticias.html" class="text-gray-300 hover:text-white">Notícias</a></li>
+                            <li><a href="../pages/artigos.html" class="text-gray-300 hover:text-white">Artigos</a></li>
+                            <li><a href="../pages/forum.html" class="text-gray-300 hover:text-white">Fórum</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Perfis de Acesso</h4>
+                        <ul class="space-y-2">
+                            <li><a href="../pages/fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
+                            <li><a href="../pages/servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
+                            <li><a href="../pages/cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
+                            <li><a href="../pages/acesso-sistema.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Conhecimento</h4>
+                        <ul class="space-y-2">
+                            <li><a href="../pages/capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
+                            <li><a href="../pages/legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
+                            <li><a href="../pages/manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
+                            <li><a href="../pages/institucional.html" class="text-gray-300 hover:text-white">Institucional</a></li>
+                            <li><a href="../pages/compr-ia.html" class="text-gray-300 hover:text-white">COMPR IA</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Oportunidades</h4>
+                        <ul class="space-y-2">
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao" class="text-gray-300 hover:text-white">Licitação</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao/RegistroPreco" class="text-gray-300 hover:text-white">Ata de Registro de preço</a></li>
+                            <li><a href="../pages/Fornecedor.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
+                            <li><a href="../pages/em-construcao.html" class="text-gray-300 hover:text-white">ME/EPP</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-white my-4">
+            <div class="flex flex-row justify-between items-start max-w-4xl mx-auto gap-16 mb-6">
+                <div class="text-white text-sm space-y-1 w-1/2 pr-8">
+                    <div class="font-bold text-base mb-1">Contato</div>
+                    <div>Centro Administrativo do Estado</div>
+                    <div>Av. Senador Salgado Filho, s/n, Lagoa Nova - Natal/RN.</div>
+                    <div>CEP: 59064-901</div>
+                    <div><i class="fas fa-phone-alt mr-2"></i>+55 (84) 3232-5240</div>
+                    <div><i class="fas fa-envelope mr-2"></i>contato@rn.gov.br</div>
+                </div>
+                <div class="flex flex-col items-end w-1/2 pl-8">
+                    <div class="font-bold text-base mb-2 text-white">REDES SOCIAIS</div>
+                    <div class="flex items-center gap-4 justify-center">
+                        <a href="https://twitter.com/" target="_blank" class="text-gray-300 hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="https://facebook.com/" target="_blank" class="text-gray-300 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://instagram.com/" target="_blank" class="text-gray-300 hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="https://youtube.com/" target="_blank" class="text-gray-300 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="https://wa.me/5584999999999" target="_blank" class="text-gray-300 hover:text-green-500" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                    <a href="https://www.sic.rn.gov.br/" target="_blank" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-lg font-semibold mt-4 ml-auto" aria-label="Acesso à Informação">
+                        <span class="text-white text-base font-bold">Acesso à Informação</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="w-full bg-blue-900 py-4 flex items-center justify-center m-0">
+        <span class="text-white text-center text-sm font-semibold">
+            2025 © Governo do Estado do Rio Grande do Norte | Desenvolvimento <span class="text-yellow-400 font-bold">Central de compras governamentais</span> | Política de Privacidade
+        </span>
+    </div>
+    <!-- Scripts -->
+    <script src="../js/scripts.js"></script>
+    <script src="../js/meepp.js"></script>
+</body>
+</html>

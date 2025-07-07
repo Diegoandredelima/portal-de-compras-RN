@@ -1,0 +1,114 @@
+/* Importação da fonte e estilos de base do Tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Estilos Globais e Paleta de Cores */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f4f7f6;
+}
+
+/* Estilos da Página Institucional */
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+.card-shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-institutional-primary { color: #3A6A85; }
+.bg-institutional-primary { background-color: #3A6A85; }
+.border-institutional-primary { border-color: #3A6A85; }
+.bg-institutional-success { background-color: #5EA51D; }
+.bg-institutional-warning { background-color: #FFCD07; }
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilos da Linha do Tempo (Timeline) */
+.timeline-item {
+    position: relative;
+    padding-left: 2rem; /* Espaçamento para a linha e o ponto */
+    padding-bottom: 1.5rem; /* Espaçamento entre os itens */
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.25rem; /* Alinhamento vertical do ponto */
+    width: 16px; /* Tamanho do ponto */
+    height: 16px; /* Tamanho do ponto */
+    background-color: #3A6A85;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 7px; /* Centraliza a linha com o ponto */
+    top: 0.25rem;
+    width: 2px;
+    height: 100%;
+    background-color: #e5e7eb; /* Cor da linha vertical */
+}
+
+.timeline-item:last-child::after {
+    display: none; /* Remove a linha do último item */
+}
+
+/* Estilos para o Breadcrumb */
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.breadcrumbs a {
+    color: #3A6A85;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs .separator {
+    margin: 0 0.5rem;
+    color: #666;
+}
