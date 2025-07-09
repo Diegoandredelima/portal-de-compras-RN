@@ -56,11 +56,10 @@ body {
     color: var(--font-color);
     line-height: 1.6;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
-/* ------------------------
-    Cabeçalho
-------------------------- */
 .header-bg {
     background-color: var(--lighter-grey-bg);
 }
@@ -117,9 +116,6 @@ body {
     background-color: #4a8a17;
 }
 
-/* ------------------------
-    Menu Lateral (Off-canvas)
-------------------------- */
 .offcanvas-menu {
     position: fixed;
     top: 0;
@@ -148,9 +144,6 @@ body {
 
 .offcanvas-backdrop.active { display: block; }
 
-/* ------------------------
-    Componentes Gerais
-------------------------- */
 .container-box {
     background-color: var(--carousel-text);
     border-radius: 8px;
@@ -188,38 +181,6 @@ body {
 
 .link-button .fas { color: inherit; }
 
-/* ------------------------
-    Carrossel
-------------------------- */
-.carousel {
-    background-color: var(--carousel-bg);
-    min-height: 120px;
-    color: var(--carousel-text);
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #333;
-    padding: 0.75rem;
-    border-radius: 9999px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: background-color 0.2s;
-    z-index: 10;
-}
-
-.carousel-button:hover {
-    background-color: rgba(255, 255, 255, 0.75);
-}
-
-#carousel-prev { left: 1rem; }
-#carousel-next { right: 1rem; }
-
-/* ------------------------
-    Cards
-------------------------- */
 .consult-card, .metric-card, .service-card {
     background-color: var(--carousel-text);
     border: 1px solid var(--border-grey);
@@ -286,10 +247,33 @@ body {
     height: 6px;
 }
 
+/* Estilos para container 100% preenchido */
+.full-width-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.full-width-header {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 .metric-bar.blue { background-color: var(--info-color); }
 .metric-bar.orange { background-color: var(--secondary-color); }
 .metric-bar.green { background-color: var(--success-color); }
 .metric-bar.yellow { background-color: var(--warning-color); }
+
+/* Banner padrão para todas as páginas */
+.banner-padrao {
+  width: 100%;
+  height: 240px;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
 
 /* ------------------------
     Rodapé

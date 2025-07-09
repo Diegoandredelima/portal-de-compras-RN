@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de Compras Governamentais - RN</title>
+    <title>Cidadão - Portal de Compras Governamentais RN</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="node_modules/@govbr-ds/core/dist/core.min.css">
+    <link rel="stylesheet" href="../node_modules/@govbr-ds/core/dist/core.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/carrossel.css">
 </head>
-<body class="bg-white">
-    <!-- Barra Superior -->
+  <!-- Barra Superior -->
+    
+  <body class="bg-white">
+    <!-- Cabeçalho Superior -->
     <header class="header-bg py-2 px-4">
-        <div class="container mx-auto flex justify-between items-center">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
             <div class="flex items-center space-x-4">
-                <!-- Logotipo da COMPR -->
                 <img src="images/logos/COMPR_logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
-                <!-- Logotipo do Rio Grande do Norte -->
                 <img src="images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
             </div>
             <div class="flex items-center space-x-4 text-sm">
@@ -126,7 +127,7 @@
     <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
 
     <!-- Conteúdo Principal -->
-    <main class="container mx-auto py-6 px-4">
+    <main class="max-w-7xl mx-auto py-6 px-8">
         <!-- Navigation with Icons -->
         <div class="container-box mb-6">
             <div class="flex justify-around flex-wrap">
@@ -154,62 +155,108 @@
         </div>
 
         <!-- Carrossel de Notícias -->
-        <div id="news-carousel" class="relative w-full mb-6" data-carousel="slide">
-            <!-- Carousel wrapper -->
-            <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-                <!-- Item 1 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <a href="#"><img src="https://picsum.photos/1200/400?random=1" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Notícia 1"></a>
+        <div class="max-w-full mx-auto px-0">
+            
+            <div class="br-carousel" id="carousel" role="region" aria-label="Carrossel de notícias">
+                <div class="br-carousel__container">
+                    <div class="br-carousel__stage" id="carousel-stage">
+                        
+                        <!-- Item 1 -->
+                        <div class="br-carousel__item" role="group" aria-roledescription="slide" aria-label="1 de 4">
+                            <img src="images/imagem-noticia/Central-de-Compras-51-Ft-Aldecy-Junior.png" alt="Central de Compras">
+                            <a href="https://www.sead.rn.gov.br/materia/governo-do-rn-realiza-workshop-sobre-central-de-compras-com-foco-na-eficiencia-economicidade-e-transparencia-das-contratacoes-publicas/" class="br-carousel__item-content">
+                                <h3 class="br-carousel__item-title">Governo do RN realiza workshop sobre Central de Compras</h3>
+                                <p class="br-carousel__item-description">Workshop focado na eficiência, economicidade e transparência das contratações públicas.</p>
+                            </a>
+                        </div>
+    
+                        <!-- Item 2 -->
+                        <div class="br-carousel__item" role="group" aria-roledescription="slide" aria-label="2 de 4">
+                            <img src="images/imagem-noticia/Capa-1500x1000-7.png" alt="Modernização Digital">
+                            <a href="#" class="br-carousel__item-content">
+                                <h3 class="br-carousel__item-title">Modernização dos Serviços Digitais</h3>
+                                <p class="br-carousel__item-description">Investimentos em tecnologia para melhorar o atendimento ao cidadão.</p>
+                            </a>
+                        </div>
+    
+                        <!-- Item 3 -->
+                        <div class="br-carousel__item" role="group" aria-roledescription="slide" aria-label="3 de 4">
+                            <img src="images/imagem-noticia/contrata-mais-brasil.png" alt="Contrata Mais Brasil">
+                            <a href="https://www.sead.rn.gov.br/materia/governo-do-rn-adere-plataforma-contratabrasil-para-desburocratizar-e-agilizar-contratacoes-no-servico-publico" class="br-carousel__item-content">
+                                <h3 class="br-carousel__item-title">Governo do RN adere à plataforma Contrata Mais Brasil</h3>
+                                <p class="br-carousel__item-description">Plataforma para desburocratizar e agilizar contratações no serviço público.</p>
+                            </a>
+                        </div>
+    
+                        <!-- Item 4 -->
+                        <div class="br-carousel__item" role="group" aria-roledescription="slide" aria-label="4 de 4">
+                            <img src="images/imagem-noticia/WhatsApp-banner.png" alt="Atendimento WhatsApp">
+                            <a href="#" class="br-carousel__item-content">
+                                <h3 class="br-carousel__item-title">Atendimento via WhatsApp</h3>
+                                <p class="br-carousel__item-description">Novo canal de comunicação para facilitar o acesso aos serviços públicos.</p>
+                            </a>
+                        </div>
+    
+                    </div>
                 </div>
-                <!-- Item 2 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <a href="#"><img src="https://picsum.photos/1200/400?random=2" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Notícia 2"></a>
+    
+                <!-- Controles de navegação -->
+                <button class="br-carousel__btn br-carousel__btn--prev" id="prev-btn" aria-label="Slide anterior">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>
+    
+                <button class="br-carousel__btn br-carousel__btn--next" id="next-btn" aria-label="Próximo slide">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
+    
+                <!-- Controles de reprodução -->
+                <div class="br-carousel__controls">
+                    <button class="br-carousel__control-btn" id="play-pause-btn" aria-label="Pausar reprodução automática">
+                        <svg id="pause-icon" viewBox="0 0 24 24">
+                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                        </svg>
+                        <svg id="play-icon" viewBox="0 0 24 24" style="display: none;">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
                 </div>
-                <!-- Item 3 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <a href="#"><img src="https://picsum.photos/1200/400?random=3" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Notícia 3"></a>
-                </div>
-                <!-- Item 4 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <a href="#"><img src="https://picsum.photos/1200/400?random=4" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Notícia 4"></a>
+    
+                <!-- Indicadores -->
+                <div class="br-carousel__indicators" id="indicators">
+                    <button class="br-carousel__indicator active" data-slide="0" aria-label="Ir para slide 1"></button>
+                    <button class="br-carousel__indicator" data-slide="1" aria-label="Ir para slide 2"></button>
+                    <button class="br-carousel__indicator" data-slide="2" aria-label="Ir para slide 3"></button>
+                    <button class="br-carousel__indicator" data-slide="3" aria-label="Ir para slide 4"></button>
                 </div>
             </div>
-            <!-- Slider controls -->
-            <button type="button" class="carousel-button absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                    </svg>
-                    <span class="sr-only">Previous</span>
-                </span>
-            </button>
-            <button type="button" class="carousel-button absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                    </svg>
-                    <span class="sr-only">Next</span>
-                </span>
-            </button>
         </div>
+        <!-- Fim do Carrossel -->
+        <div class="h-12 bg-white"></div>
 
         <!-- Manuais & Links Section -->
+    <section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
         <div class="mb-6">
             <h3 class="section-title">Links Rápidos</h3>
             <div class="my-4 flex flex-wrap gap-3">
-                <a href="pages/Artigos.html" class="link-button"><i class="fas fa-file-alt mr-2"></i> Artigos</a>
-                <a href="pages/Compr-ia.html" class="link-button"><i class="fas fa-microchip mr-2"></i> COMPR IA</a>
-                <a href="pages/Forum.html" class="link-button"><i class="fas fa-comments mr-2"></i> Fórum</a>
                 <a href="pages/Institucional.html" class="link-button"><i class="fas fa-building mr-2"></i> Institucional</a>
+                <a href="pages/Noticias.html" class="link-button"><i class="fas fa-newspaper mr-2"></i> Notícias</a>
+                <a href="pages/manuais.html" class="link-button"><i class="fas fa-file-alt mr-2"></i> Manuais</a>
+                <a href="pages/Forum.html" class="link-button"><i class="fas fa-comments mr-2"></i> Fórum</a>
                 <a href="pages/Legislacao.html" class="link-button"><i class="fas fa-gavel mr-2"></i> Legislação</a>
                 <a href="pages/meepp.html" class="link-button"><i class="fas fa-briefcase mr-2"></i> ME/EPP</a>
-                <a href="pages/Noticias.html" class="link-button"><i class="fas fa-newspaper mr-2"></i> Notícias</a>
-
+                <a href="pages/Compr-ia.html" class="link-button"><i class="fas fa-microchip mr-2"></i> COMPR IA</a>
+                <a href="pages/FAQs-perguntas.html" class="link-button"><i class="fas fa-question-circle mr-2"></i> FAQs - Perguntas Frequentes</a>
             </div>
         </div>
+    </section>
+    <div class="h-12 bg-white"></div>
 
         <!-- Consultar Oportunidades -->
-<div class="bg-gray-50 rounded-lg p-6 mb-6">
+<div class="bg-gray-50 rounded-lg p-6 mb-6 max-w-7xl mx-auto px-8">
     <h3 class="section-title text-center">Consultar Oportunidades</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
         <!-- Card Contratações -->
@@ -234,8 +281,11 @@
         </a>
     </div>
 </div>
+<div class="h-12 bg-white"></div>
 
         <!-- Compras Homologadas em 2024 -->
+        <section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
+        <div class="mb-6">
         <div class="approved-purchases-section">
             <h3 class="section-title">Compras Homologadas em 2024</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -258,11 +308,15 @@
                     <div class="metric-value">900</div>
                     <div class="metric-label">Fornecedores Participantes</div>
                     <div class="metric-bar yellow"></div>
+        </section>
+        <div class="h-12 bg-white"></div>
+            </div>
                 </div>
             </div>
         </div>
 
         <!-- Serviços SEAD -->
+        <section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
         <div class="mb-6">
             <h3 class="section-title">Serviços SEAD</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -292,8 +346,10 @@
                 </div>
             </div>
         </div>
+        </section>
     </main>
-    <section class="py-16 bg-gray-50">
+    <!-- Contato -->
+    <section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Suporte e Contato</h2>
             <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
@@ -306,28 +362,32 @@
                                 <span class="text-gray-700">(84) 3232-1234</span>
                             </div>
                             <div class="flex items-center space-x-3">
+                                <i class="fab fa-whatsapp fa-lg text-blue-600"></i>
+                                <span class="text-gray-700">(84) 98127-6028</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
                                 <i class="fas fa-envelope text-blue-600"></i>
-                                <span class="text-gray-700">suporte.compria@rn.gov.br</span>
+                                <span class="text-gray-700">comprrn@gmail.com</span>
                             </div>
                             <div class="flex items-center space-x-3">
                                 <i class="fas fa-clock text-blue-600"></i>
-                                <span class="text-gray-700">Seg-Sex: 8h às 18h</span>
+                                <span class="text-gray-700">Seg-Sex: 8h às 17h</span>
                             </div>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-4 text-gray-800">Links Úteis</h3>
                         <div class="space-y-3">
-                            <a href="#" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                            <a href="pages/manuais.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
                                 <i class="fas fa-book mr-2"></i>Manual do Usuário
                             </a>
-                            <a href="forum.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                            <a href="pages/forum.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
                                 <i class="fas fa-comments mr-2"></i>Fórum de Discussão
                             </a>
                             <a href="#" class="block text-blue-600 hover:text-blue-800 transition-colors">
                                 <i class="fas fa-video mr-2"></i>Tutoriais em Vídeo
                             </a>
-                            <a href="#" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                            <a href="pages/FAQs-perguntas.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
                                 <i class="fas fa-question-circle mr-2"></i>FAQ
                             </a>
                         </div>
@@ -336,8 +396,9 @@
             </div>
         </div>
     </section>
+    <div class="h-12 bg-white"></div>
     <!-- Rodapé com Mapa do Site -->
-    <footer class="footer py-6 px-4">
+    <footer class="footer py-6 px-4 mb-0">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row md:items-start md:justify-between items-start mb-8" style="padding-top: 4rem;">
                 <!-- Logo no canto superior esquerdo -->
@@ -386,7 +447,7 @@
                     <div class="sitemap-section">
                         <h4 class="text-white font-bold mb-4">Serviços SEAD</h4>
                         <ul class="space-y-2">
-                            <li><a href="https://www.sead.rn.gov.br" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Secretaria de Administração</a></li>
+                            <li><a href="https://www.sead.rn.gov.br" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">SEAD</a></li>
                             <li><a href="http://servicos.searh.rn.gov.br/searh/copag/contra_cheque.asp" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Contracheque</a></li>
                             <li><a href="http://servicos.searh.rn.gov.br/searh/dirf?escolha=1" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Declaração de Rendimentos</a></li>
                             <li><a href="http://servicos.searh.rn.gov.br/searh/Protocolo" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Protocolo NET</a></li>
@@ -425,77 +486,11 @@
         </div>
         <!-- Fim do container centralizado do rodapé -->
     </footer>
-    <!-- Copyright separado, faixa azul escura ocupando toda a largura -->
     <div class="w-full bg-blue-900 py-4 flex items-center justify-center m-0">
         <span class="text-white text-center text-sm font-semibold">
-            2025 © Governo do Estado do Rio Grande do Norte | Desenvolvimento <span class="text-yellow-400 font-bold">Central de compras governamentais</span> | Política de Privacidade
+            2025 © Governo do Estado do Rio Grande do Norte | Desenvolvido <span class="text-yellow-400 font-bold">Central de compras governamentais</span> | Política de Privacidade
         </span>
     </div>
-<script src="node_modules/@govbr-ds/core/dist/core.min.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const carousel = document.getElementById('news-carousel');
-            const items = carousel.querySelectorAll('[data-carousel-item]');
-            const prevButton = carousel.querySelector('[data-carousel-prev]');
-            const nextButton = carousel.querySelector('[data-carousel-next]');
-            let currentIndex = 0;
-            let interval;
-
-            function showItem(index) {
-                items.forEach((item, i) => {
-                    item.classList.toggle('hidden', i !== index);
-                });
-            }
-
-            function nextItem() {
-                currentIndex = (currentIndex + 1) % items.length;
-                showItem(currentIndex);
-            }
-
-            function prevItem() {
-                currentIndex = (currentIndex - 1 + items.length) % items.length;
-                showItem(currentIndex);
-            }
-
-            function startCarousel() {
-                interval = setInterval(nextItem, 3000); // Change image every 3 seconds
-            }
-
-            function stopCarousel() {
-                clearInterval(interval);
-            }
-
-            if (prevButton && nextButton) {
-              prevButton.addEventListener('click', () => {
-                  stopCarousel();
-                  prevItem();
-                  startCarousel();
-              });
-
-              nextButton.addEventListener('click', () => {
-                  stopCarousel();
-                  nextItem();
-                  startCarousel();
-              });
-            }
-
-            carousel.addEventListener('mouseenter', stopCarousel);
-            carousel.addEventListener('mouseleave', startCarousel);
-
-            showItem(currentIndex);
-            startCarousel();
-        });
-    </script>
-    <style>
-        .carousel-button {
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-        #news-carousel:hover .carousel-button {
-            opacity: 1;
-        }
-    </style>
 </body>
 </html>
