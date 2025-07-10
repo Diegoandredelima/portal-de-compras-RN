@@ -17,16 +17,3 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Copiar arquivos da pasta public para diretório temporário
-        run: |
-          mkdir dist
-          cp -r public/* dist/
-
-      - name: Publicar no GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
-
