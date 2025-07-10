@@ -47,4 +47,3 @@ jobs:
         uses: actions/deploy-pages@v4
         # Não é necessário 'with: token: ${{ secrets.GITHUB_TOKEN }}' pois as permissões já foram dadas globalmente.
         # A action deploy-pages@v4 usará o artefato carregado pelo upload-pages-artifact.
-
