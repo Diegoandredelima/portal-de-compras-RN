@@ -2,18 +2,49 @@ name: Deploy para GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" ] # Ou a branch que você quer usar para deploy
   workflow_dispatch:
+
+# Defina as permissões globais para o workflow
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
 
-      - name: Configurar Git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # Especificar uma versão do Node.js compatível com suas dependências
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm ci # Usar npm ci para instalações mais rápidas e consistentes em CI
+
+      # Não há um passo de build explícito no package.json para o site estático.
+      # Se houvesse, seria algo como:
+      # - name: Build do projeto
+      #   run: npm run build # ou o comando de build específico do seu projeto
+
+      - name: Fazer upload do artefato para o GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Fazer upload da pasta 'public'
+          path: ./public
+
+      - name: Deploy para GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        # Não é necessário 'with: token: ${{ secrets.GITHUB_TOKEN }}' pois as permissões já foram dadas globalmente.
+        # A action deploy-pages@v4 usará o artefato carregado pelo upload-pages-artifact.
+
