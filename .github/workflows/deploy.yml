@@ -9,16 +9,18 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # Usa um ambiente Linux para rodar os comandos
-
+    runs-on: ubuntu-latest
     steps:
-      # Etapa para baixar os arquivos do repositório
       - name: Checkout do código
         uses: actions/checkout@v4
 
-      # Etapa para publicar os arquivos no GitHub Pages
+      - name: Configurar Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Publicar no GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # Autenticação segura
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
