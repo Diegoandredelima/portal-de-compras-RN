@@ -1,11 +1,9 @@
-# Nome do fluxo de trabalho que aparecerá na aba "Actions"
 name: Deploy para GitHub Pages
 
-# Define quando o fluxo será acionado: ao fazer push na branch "main"
 on:
   push:
     branches: [ "main" ]
-  workflow_dispatch:  # Permite disparar manualmente também
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -16,11 +14,13 @@ jobs:
 
       - name: Configurar Git (nome e email)
         run: |
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Publicar no GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          publish_branch: gh-pages  # ✅ Aqui é a mágica que faltava!
+
