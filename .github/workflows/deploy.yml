@@ -1,0 +1,24 @@
+# Nome do fluxo de trabalho que aparecerá na aba "Actions"
+name: Deploy para GitHub Pages
+
+# Define quando o fluxo será acionado: ao fazer push na branch "main"
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:  # Permite disparar manualmente também
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Usa um ambiente Linux para rodar os comandos
+
+    steps:
+      # Etapa para baixar os arquivos do repositório
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      # Etapa para publicar os arquivos no GitHub Pages
+      - name: Publicar no GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Autenticação segura
+          publish_dir: ./  # Caminho dos arquivos do site (ex: index.html na raiz)
