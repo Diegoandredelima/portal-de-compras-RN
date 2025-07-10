@@ -21,4 +21,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}  # Autenticação segura
-          publish_dir: ./  # Caminho dos arquivos do site (ex: index.html na raiz)
+          publish_dir: ./public
