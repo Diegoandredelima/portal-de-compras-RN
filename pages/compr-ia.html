@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPR IA - Inteligência Artificial para Compras Governamentais</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/@govbr-ds/core/dist/core.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/compr-ia.css">
+</head>
+<body class="bg-white font-sans">
+    <header class="header-bg py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="../images/logos/COMPR_logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
+                <img src="../images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
+            </div>
+            <div class="flex items-center space-x-4 text-sm">
+                <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
+                <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
+                <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
+                <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
+                <div class="dropdown">
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
+                </div>
+                <div class="flex items-center space-x-2 ml-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="color-bar w-full"></div>
+    <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu"><i class="fas fa-bars text-2xl"></i></button>
+                <a href="../Index.html" class="text-xl font-medium">Central de Compras</a>
+            </div>
+            <div class="relative w-1/3">
+                <input type="text" id="search-input-field" placeholder="O que você procura?" class="search-input w-full">
+                <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="p-4 border-b flex justify-between items-center">
+            <h2 class="text-lg font-bold">Menu</h2>
+            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu"><i class="fas fa-times text-2xl"></i></button>
+        </div>
+        <div class="p-4">
+            <ul class="space-y-4">
+                <li><a href="../Index.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-home nav-icon"></i><span>Início</span></a></li>
+                <li><a href="fornecedor.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-user-tie nav-icon"></i><span>Fornecedor</span></a></li>
+                <li><a href="servidor.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-user nav-icon"></i><span>Servidor</span></a></li>
+                <li><a href="cidadao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-users nav-icon"></i><span>Cidadão</span></a></li>
+                <li><a href="capacite-se.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-graduation-cap nav-icon"></i><span>Capacite-se</span></a></li>
+                <li><a href="legislacao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-gavel nav-icon"></i><span>Legislação</span></a></li>
+                <li><a href="acesso-sistema.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-sign-in-alt nav-icon"></i><span>Acesso ao Sistema</span></a></li>
+                <li><a href="oportunidades.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-search-dollar nav-icon"></i><span>Oportunidades</span></a></li>
+                <li><a href="manuais.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-book nav-icon"></i><span>Manuais</span></a></li>
+                <li><a href="forum.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-comments nav-icon"></i><span>Fórum</span></a></li>
+                <li><a href="compr-ia.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-robot nav-icon"></i><span>COMPR IA</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
+
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center mb-8">
+                <img src="https://page1.genspark.site/v1/base64_upload/0f3f35f6c9f9a84d537069b18ba055b2" alt="COMPR IA Logo" class="h-24 ai-animation">
+            </div>
+            <h1 class="text-5xl font-bold mb-6">COMPR IA</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Revolucionando as compras governamentais com Inteligência Artificial avançada para otimizar processos, reduzir custos e aumentar a eficiência.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#funcionalidades" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Conhecer Funcionalidades
+                </a>
+                <a href="#acesso" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                    Acessar Plataforma
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">O que é COMPR IA?</h2>
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">COMPR IA é uma solução inovadora de inteligência artificial desenvolvida especificamente para transformar os processos de compras governamentais no estado do Rio Grande do Norte.</h3>
+                <p class="text-lg text-gray-700 mb-6">
+                    Nossa plataforma utiliza algoritmos avançados de machine learning para analisar dados, identificar padrões, otimizar processos e garantir maior transparência e eficiência nas contratações públicas.
+                </p>
+                <div class="flex items-center space-x-4">
+                    <div class="bg-blue-100 p-3 rounded-full">
+                        <i class="fas fa-robot text-2xl text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">IA Especializada</h3>
+                        <p class="text-gray-600">Desenvolvida para o setor público</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="funcionalidades" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Principais Funcionalidades</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-search-dollar text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Análise Inteligente de Propostas</h3>
+                    <p class="text-gray-600 mb-4">Avaliação automática de propostas com base em critérios técnicos, preços de mercado e histórico de fornecedores.</p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Comparação automática de preços</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Análise de documentação</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Verificação de habilitação</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Predição de Demanda</h3>
+                    <p class="text-gray-600 mb-4">Previsão inteligente de necessidades futuras baseada em dados históricos e padrões sazonais.</p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Análise de tendências</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Otimização de estoque</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Planejamento estratégico</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Detecção de Irregularidades</h3>
+                    <p class="text-gray-600 mb-4">Identificação proativa de padrões suspeitos e possíveis irregularidades nos processos.</p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Monitoramento em tempo real</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Alertas automáticos</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Análise comportamental</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Otimização de Processos</h3>
+                    <p class="text-gray-600 mb-4">Automatização e melhoria contínua dos fluxos de trabalho para maior eficiência.</p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Workflow automatizado</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Redução de tempo</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Eliminação de gargalos</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-file-chart-line text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Relatórios Inteligentes</h3>
+                    <p class="text-gray-600 mb-4">Geração automática de relatórios com insights valiosos para tomada de decisão.</p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Dashboards personalizados</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Métricas em tempo real</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Análise preditiva</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-comments text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Assistente Virtual</h3>
+                    <p class="text-gray-600 mb-4">ChatBot inteligente para suporte e orientação em processos de compras governamentais.</p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Suporte 24/7</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Respostas contextualizadas</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Guias interativos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Benefícios e Resultados</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-percentage text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">30%</h3>
+                    <p class="text-gray-700">Redução nos custos de aquisição</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-green-600 mb-2">50%</h3>
+                    <p class="text-gray-700">Redução no tempo de processo</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bullseye text-3xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-purple-600 mb-2">95%</h3>
+                    <p class="text-gray-700">Precisão na análise de propostas</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-check-circle text-3xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-red-600 mb-2">100%</h3>
+                    <p class="text-gray-700">Monitoramento de conformidade</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="acesso" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Acesse Nossas Plataformas</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center card-hover">
+                    <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-robot text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">ChatGPT Especializado</h3>
+                    <p class="text-gray-600 mb-6">
+                        Acesse nosso assistente de IA treinado especificamente para questões de compras governamentais, legislação e processos licitatórios.
+                    </p>
+                    <a href="https://chat.openai.com" target="_blank" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-flex items-center">
+                        <i class="fas fa-external-link-alt mr-2"></i>
+                        Acessar ChatGPT
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center card-hover">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-brain text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Plataforma COMPR IA</h3>
+                    <p class="text-gray-600 mb-6">
+                        Acesse a plataforma completa com todas as funcionalidades de IA para análise, otimização e gestão de compras governamentais.
+                    </p>
+                    <a href="#" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center">
+                        <i class="fas fa-sign-in-alt mr-2"></i>
+                        Acessar Plataforma
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Como Começar</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold text-blue-600">1</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Cadastro</h3>
+                        <p class="text-gray-600">Registre-se na plataforma com suas credenciais institucionais</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold text-green-600">2</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Treinamento</h3>
+                        <p class="text-gray-600">Participe do treinamento introdutório sobre as funcionalidades</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold text-purple-600">3</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Implementação</h3>
+                        <p class="text-gray-600">Comece a utilizar as ferramentas de IA nos seus processos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Suporte e Contato</h2>
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Precisa de Ajuda?</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-phone text-blue-600"></i>
+                                <span class="text-gray-700">(84) 3232-1234</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                                <span class="text-gray-700">suporte.compria@rn.gov.br</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-clock text-blue-600"></i>
+                                <span class="text-gray-700">Seg-Sex: 8h às 18h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Links Úteis</h3>
+                        <div class="space-y-3">
+                            <a href="#" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-book mr-2"></i>Manual do Usuário
+                            </a>
+                            <a href="forum.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-comments mr-2"></i>Fórum de Discussão
+                            </a>
+                            <a href="#" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-video mr-2"></i>Tutoriais em Vídeo
+                            </a>
+                            <a href="#" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-question-circle mr-2"></i>FAQ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer py-6 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between items-start mb-8" style="padding-top: 4rem;">
+                <!-- Logo no canto superior esquerdo -->
+                <img src="../images/logos/NEGATIVO.png" alt="Governo do Rio Grande do Norte" class="h-14 w-auto mb-2" style="height: 101px; transform: translate(0px, -45px);" data-selected="true" data-label-id="0">
+            </div>
+            <!-- Seções do mapa do site -->
+            <div class="w-full flex justify-center mt-[-16px] mb-2">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 flex-1 max-w-6xl mx-auto">
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Institucional</h4>
+                        <ul class="space-y-2">
+                            <li><a href="../index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
+                            <li><a href="institucional.html" class="text-gray-300 hover:text-white">Quem Somos</a></li>
+                            <li><a href="noticias.html" class="text-gray-300 hover:text-white">Notícias</a></li>
+                            <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
+                            <li><a href="forum.html" class="text-gray-300 hover:text-white">Fórum</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Acesso</h4>
+                        <ul class="space-y-2">
+                            <li><a href="fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
+                            <li><a href="servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
+                            <li><a href="cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
+                            <li><a href="meepp.html" class="text-gray-300 hover:text-white">ME/EPP</a></li>
+                            <li><a href="acesso-sistema.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Oportunidades</h4>
+                        <ul class="space-y-2">
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Licitações</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao/RegistroPreco" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Atas de Registro de Preço</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Conhecimento</h4>
+                        <ul class="space-y-2">
+                            <li><a href="capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
+                            <li><a href="legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
+                            <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
+                            <li><a href="compr-ia.html" class="text-gray-300 hover:text-white">COMPR IA</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Serviços SEAD</h4>
+                        <ul class="space-y-2">
+                            <li><a href="https://www.sead.rn.gov.br" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Secretaria de Administração</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/copag/contra_cheque.asp" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Contracheque</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/dirf?escolha=1" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Declaração de Rendimentos</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Protocolo" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Protocolo NET</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Diaria" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Diárias</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-white my-4">
+            <div class="flex flex-row justify-between items-start max-w-4xl mx-auto gap-16 mb-6">
+                <!-- Informações de contato -->
+                <div class="text-white text-sm space-y-1 w-1/2 pr-8">
+                    <div class="font-bold text-base mb-1">Contato</div>
+                    <div>Centro Administrativo do Estado</div>
+                    <div>Av. Senador Salgado Filho, s/n, Lagoa Nova - Natal/RN.</div>
+                    <div>CEP: 59064-901</div>
+                    <div><i class="fas fa-phone-alt mr-2"></i>+55 (84) 3232-5240</div>
+                    <div><i class="fas fa-envelope mr-2"></i>contato@rn.gov.br</div>
+                </div>
+                <!-- Redes sociais -->
+                <div class="flex flex-col items-end w-1/2 pl-8">
+                    <div class="font-bold text-base mb-2 text-white">REDES SOCIAIS</div>
+                    <div class="flex items-center gap-4 justify-center">
+                        <a href="https://twitter.com/" target="_blank" class="text-gray-300 hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="https://facebook.com/" target="_blank" class="text-gray-300 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://instagram.com/" target="_blank" class="text-gray-300 hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="https://youtube.com/" target="_blank" class="text-gray-300 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="https://wa.me/5584999999999" target="_blank" class="text-gray-300 hover:text-green-500" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                    <a href="https://www.sic.rn.gov.br/" target="_blank" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-lg font-semibold mt-4 ml-auto" aria-label="Acesso à Informação">
+                        <span class="text-white text-base font-bold">Acesso à Informação</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/scripts.js"></script>
+    <script src="../js/search.js"></script>
+</body>
+</html>

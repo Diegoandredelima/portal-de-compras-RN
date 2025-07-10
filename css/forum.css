@@ -1,0 +1,70 @@
+/* Definição de variáveis de cores globais */
+:root {
+    --primary-color: #1351B4;
+    --secondary-color: #FF6B35;
+    --success-color: #5EA51D;
+    --warning-color: #FFCD07;
+    --info-color: #3498db;
+    --dark-color: #071D41;
+}
+
+/* Estilos para os cartões de tópico do fórum */
+.forum-card {
+    transition: all 0.3s ease; /* Transição suave para efeitos de hover */
+}
+
+.forum-card:hover {
+    transform: translateY(-2px); /* Efeito de "subir" no hover */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Sombra mais pronunciada no hover */
+}
+
+/* Estilo para a barra lateral de filtros ficar "grudada" na tela ao rolar */
+.sticky-filters {
+    position: sticky;
+    top: 20px; /* Distância do topo da tela */
+    z-index: 10; /* Garante que fique acima de outros elementos */
+}
+
+/* Estilo base para o modal de detalhes do tópico (oculto por padrão) */
+.topic-detail-modal {
+    display: none;
+}
+
+/* Estilo para o modal de detalhes do tópico quando ativo (visível) */
+.topic-detail-modal.active {
+    display: flex; /* Usa flexbox para centralizar o conteúdo */
+}
+
+/* Estilo para o badge do usuário logado */
+.user-badge {
+    background: linear-gradient(45deg, var(--primary-color), var(--info-color)); /* Gradiente de cor */
+}
+
+/* Estilo para os itens de resposta no modal */
+.response-item {
+    border-left: 4px solid var(--primary-color); /* Borda esquerda com a cor primária */
+}
+
+/* Estilo para o formulário de criação de tópico */
+.create-topic-form {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); /* Gradiente de cor de fundo */
+}
+
+/* Estilo para o botão de filtro ativo (ordenado atualmente) */
+.filter-active {
+    background-color: var(--primary-color) !important; /* Cor de fundo primária */
+    color: white !important; /* Cor do texto branca */
+}
+
+/* Estilo base para os botões de paginação */
+.pagination-btn {
+    transition: all 0.2s ease; /* Transição suave para efeitos de hover */
+}
+
+/* Estilo para os botões de paginação no hover */
+.pagination-btn:hover {
+    background-color: var(--primary-color); /* Cor de fundo primária */
+    color: white; /* Cor do texto branca */
+}
+
+/* Ícones temáticos do fórum (exemplo de uso: .fa-comments, .fa-users, .fa-question-circle, .fa-lightbulb, .fa-gavel, .fa-chalkboard-teacher) */

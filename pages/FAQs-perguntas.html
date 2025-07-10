@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Central de Ajuda - Perguntas Frequentes</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/@govbr-ds/core/dist/core.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/FAQs-perguntas.css">
+</head>
+  <!-- Barra Superior -->
+    
+  <body class="bg-white">
+    <!-- Cabeçalho Superior -->
+    <header class="header-bg py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
+            <div class="flex items-center space-x-4">
+                <img src="../images/logos/COMPR_logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
+                <img src="../images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
+            </div>
+            <div class="flex items-center space-x-4 text-sm">
+                <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
+                <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
+                <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
+                <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
+                <div class="dropdown">
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
+                </div>
+                <div class="flex items-center space-x-2 ml-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra Colorida -->
+    <div class="color-bar w-full"></div>
+
+    <!-- Cabeçalho Fixo com Menu -->
+    <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <a href="../index.html" class="text-xl font-medium">Central de Compras</a>
+            </div>
+            <div class="flex-1 flex justify-end">
+                <div class="search-access-group relative" style="width: 200px; max-width: 100%;">
+                    <div class="relative w-full" style="max-width:100%;">
+                        
+                    <a href="acesso-sistema.html" class="access-btn bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-5 rounded-lg text-base flex items-center gap-1 shadow transition" aria-label="Acesso ao Sistema">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span class="hidden sm:inline">Acesso ao Sistema</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Container para Resultados da Busca -->
+    <div id="search-results-container" class="container mx-auto my-4 px-4"></div>
+
+    <!-- Menu Lateral -->
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="p-4 border-b flex justify-between items-center">
+            <h2 class="text-lg font-bold">Menu</h2>
+            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-4">
+            <ul class="space-y-4">
+                <li>
+                    <a href="fornecedor.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-user-tie nav-icon"></i>
+                        <span>Fornecedor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="servidor.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-user nav-icon"></i>
+                        <span>Servidor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="cidadao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-users nav-icon"></i>
+                        <span>Cidadão</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="capacite-se.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-graduation-cap nav-icon"></i>
+                        <span>Capacite-se</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="legislacao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-gavel nav-icon"></i>
+                        <span>Legislação</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="em-construcao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-sign-in-alt nav-icon"></i>
+                        <span>Acesso ao Sistema</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
+
+    <!-- Overlay mobile -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleSidebar()"></div>
+
+    <!-- Botão mobile para abrir sidebar -->
+    <button class="md:hidden fixed top-24 left-4 z-50 bg-blue-900 text-white p-2 rounded-full shadow-lg" onclick="toggleSidebar()" aria-label="Abrir menu de temas">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <main class="container mx-auto py-6 px-4">
+        <!-- Conteúdo de FAQs aqui -->
+         <!-- Barra de busca -->
+    <div class="bg-white py-8 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="search-container">
+                <div class="relative">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="O que você procura?" class="faq-search-input w-full">
+                </div>
+                <p class="text-center text-gray-600 mt-3">Digite palavras-chave para encontrar respostas específicas</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Barra lateral de navegação -->
+            <aside class="sidebar md:w-1/4 bg-white rounded-lg shadow-md p-6 h-fit" id="sidebar">
+                <div class="md:hidden flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold">Temas</h2>
+                    <button onclick="toggleSidebar()" class="text-gray-500">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <h2 class="hidden md:block text-xl font-bold mb-6 text-gray-800">Temas</h2>
+                <nav>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="nav-item active block p-3 rounded-md" onclick="showTheme('central-compras')">Central de Compras</a></li>
+                        <li><a href="#" class="nav-item block p-3 rounded-md" onclick="showTheme('secretaria-administracao')">Secretaria de Estado da Administração</a></li>
+                        <li><a href="#" class="nav-item block p-3 rounded-md" onclick="showTheme('fornecedor')">Fornecedor</a></li>
+                        <li><a href="#" class="nav-item block p-3 rounded-md" onclick="showTheme('me-epp')">ME/EPP</a></li>
+                        <li><a href="#" class="nav-item block p-3 rounded-md" onclick="showTheme('contrata-brasil')">Contrata+Brasil</a></li>
+                        <li><a href="#" class="nav-item block p-3 rounded-md" onclick="showTheme('lei-14133')">Lei 14.133/2021</a></li>
+                        <li><a href="#" class="nav-item block p-3 rounded-md" onclick="showTheme('decreto-32449')">Decreto Estadual 32.449</a></li>
+                        <li><a href="#" class="nav-item block p-3 rounded-md" onclick="showTheme('dispensa-licitacao')">Dispensa de Licitação</a></li>
+                        <li><a href="#" class="nav-item block p-3 rounded-md" onclick="showTheme('pregao-eletronico')">Pregão Eletrônico</a></li>
+                        <li><a href="#" class="nav-item block p-3 rounded-md" onclick="showTheme('inexigibilidade')">Inexigibilidade de Licitação</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Área de conteúdo principal -->
+            <main class="md:w-3/4">
+                <!-- Conteúdo dos temas -->
+                <div id="content-area" class="bg-white rounded-lg shadow-md p-6">
+                    <!-- Central de Compras -->
+                    <div id="central-compras" class="theme-content fade-in">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-shopping-cart text-3xl mr-4" style="color: var(--govbr-blue-warm-vivid-70);"></i>
+                            <h2 class="text-3xl font-bold text-gray-800">Central de Compras</h2>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">O que é a Central de Compras?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A Central de Compras é uma estrutura centralizada responsável pela gestão e coordenação dos processos de aquisição de bens e serviços do governo estadual. Ela atua como um órgão centralizador das demandas de compras, promovendo economia de escala, padronização de procedimentos e maior eficiência nos processos licitatórios.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são os benefícios da Central de Compras?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Os principais benefícios incluem: redução de custos através da economia de escala, padronização de procedimentos, maior agilidade nos processos, melhor controle de qualidade dos produtos e serviços adquiridos, redução da burocracia, e fortalecimento da transparência nas aquisições públicas.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como funciona o processo de compras na Central?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>O processo inicia com a identificação das necessidades pelos órgãos demandantes, seguido pela consolidação das demandas na Central de Compras. Posteriormente, são realizados os estudos de mercado, elaboração do termo de referência, processo licitatório, homologação e contratação. Todo o processo é acompanhado por sistemas informatizados para maior transparência.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quem pode participar das licitações da Central de Compras?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Podem participar todas as empresas que estejam devidamente habilitadas juridicamente, regularizadas fiscal e trabalhista, e que atendam aos requisitos técnicos e econômico-financeiros estabelecidos no edital. É importante estar cadastrado no sistema de fornecedores do estado e acompanhar regularmente os editais publicados.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como acompanhar os editais da Central de Compras?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Os editais são publicados no portal oficial do governo estadual, no Diário Oficial do Estado, e em jornais de grande circulação. Recomenda-se o cadastramento no sistema de fornecedores para receber notificações automáticas sobre oportunidades de negócio compatíveis com o perfil da empresa.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Qual o papel da Central de Compras na transparência?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A Central de Compras promove a transparência através da publicação de todas as informações sobre processos licitatórios, contratos firmados, valores pagos e fornecedores contratados. Mantém portais de transparência atualizados, realiza audiências públicas quando necessário e disponibiliza canais de comunicação para esclarecimentos e denúncias.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secretaria de Estado da Administração -->
+                    <div id="secretaria-administracao" class="theme-content" style="display: none;">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-building text-3xl mr-4" style="color: var(--govbr-blue-warm-vivid-70);"></i>
+                            <h2 class="text-3xl font-bold text-gray-800">Secretaria de Estado da Administração</h2>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Qual o papel da SEAD nas compras públicas?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A Secretaria de Estado da Administração (SEAD) é responsável pela coordenação, normatização e supervisão das atividades relacionadas às compras públicas estaduais. Estabelece diretrizes, regulamentos e procedimentos, além de promover a capacitação dos servidores envolvidos nos processos licitatórios.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como a SEAD apoia os órgãos estaduais?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A SEAD oferece suporte técnico e jurídico aos órgãos estaduais, disponibiliza sistemas informatizados para gestão de compras, promove cursos de capacitação, elabora manuais e orientações técnicas, e presta consultoria especializada para otimização dos processos de aquisição.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais sistemas a SEAD disponibiliza?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A SEAD disponibiliza diversos sistemas como o Sistema de Compras Eletrônicas, Portal do Fornecedor, Sistema de Cadastro de Fornecedores, Sistema de Acompanhamento de Contratos, e plataformas de transparência para consulta pública dos processos licitatórios e contratações realizadas.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como participar dos programas de capacitação da SEAD?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Os programas de capacitação são divulgados no portal da SEAD e através de comunicados oficiais. Servidores públicos podem se inscrever nos cursos disponíveis, que abrangem temas como legislação de licitações, gestão de contratos, pregão eletrônico, e boas práticas em compras públicas.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são as principais normas editadas pela SEAD?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A SEAD edita decretos, portarias e instruções normativas que regulamentam os processos de compras no âmbito estadual, estabelecem procedimentos padrão, definem competências dos órgãos, regulamentam o uso de sistemas informatizados e estabelecem critérios para sustentabilidade nas aquisições.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como solicitar orientação técnica da SEAD?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Órgãos estaduais podem solicitar orientação técnica através dos canais oficiais da SEAD, como sistema de atendimento interno, e-mail institucional ou através da área responsável por compras públicas. A SEAD disponibiliza também um FAQ e biblioteca de documentos técnicos para consulta.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fornecedor -->
+                    <div id="fornecedor" class="theme-content" style="display: none;">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-handshake text-3xl mr-4" style="color: var(--govbr-blue-warm-vivid-70);"></i>
+                            <h2 class="text-3xl font-bold text-gray-800">Fornecedor</h2>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como me cadastrar para fornecer ao governo estadual?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Para se cadastrar como fornecedor, acesse o Portal do Fornecedor no site oficial do governo estadual, preencha o formulário de cadastro com as informações da empresa, anexe os documentos solicitados (CNPJ, certidões negativas, alvará de funcionamento, etc.) e aguarde a análise e aprovação do cadastro.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais documentos são necessários para participar de licitações?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>São necessários: CNPJ atualizado, certidões negativas de débitos federais, estaduais e municipais, certidão negativa trabalhista, alvará de funcionamento, balanço patrimonial, demonstrações financeiras, comprovante de regularidade com FGTS, e outros documentos específicos conforme exigido no edital.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como acompanhar o status das minhas propostas?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>O acompanhamento pode ser feito através do Portal do Fornecedor, onde constam todas as propostas enviadas, status de análise, resultados de habilitação, classificação nas licitações e informações sobre contratos firmados. O sistema envia notificações automáticas sobre mudanças de status.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são os critérios de desempate nas licitações?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Os critérios de desempate seguem a seguinte ordem: bens e serviços produzidos ou prestados por empresas brasileiras, bens e serviços produzidos ou prestados por empresas que invistam em pesquisa e desenvolvimento no País, bens e serviços produzidos ou prestados por empresas que comprovem cumprimento de reserva de cargos para pessoa com deficiência, e outros critérios estabelecidos em lei.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como contestar o resultado de uma licitação?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A contestação deve ser feita através de recurso administrativo, protocolado nos prazos estabelecidos no edital, fundamentado em aspectos técnicos ou jurídicos, dirigido à autoridade competente. O recurso deve ser apresentado por escrito, com argumentação consistente e dentro dos prazos legais estabelecidos.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são meus direitos e deveres como fornecedor?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Direitos: receber pagamento nos prazos estabelecidos, ter acesso às informações sobre o processo licitatório, apresentar recursos, ter tratamento isonômico. Deveres: cumprir todas as cláusulas contratuais, manter documentação regularizada, fornecer produtos/serviços com qualidade, respeitar prazos de entrega e prestação de contas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ME/EPP -->
+                    <div id="me-epp" class="theme-content" style="display: none;">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-store text-3xl mr-4" style="color: var(--govbr-blue-warm-vivid-70);"></i>
+                            <h2 class="text-3xl font-bold text-gray-800">ME/EPP</h2>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são os benefícios da Lei Geral para ME/EPP?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A Lei Geral das Micro e Pequenas Empresas estabelece tratamento diferenciado, como: direito de preferência em caso de empate, possibilidade de regularização fiscal posterior, prazo estendido para comprovação de documentação, critérios especiais de desempate, e reserva de percentual para contratação exclusiva de ME/EPP em determinados processos.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como funciona o direito de preferência?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>O direito de preferência permite que ME/EPP sejam contratadas mesmo quando suas propostas sejam até 10% superiores à menor proposta válida apresentada por empresas de grande porte. A ME/EPP deve manifestar interesse em exercer o direito de preferência e adequar sua proposta ao valor da menor proposta.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são os critérios para enquadramento como ME/EPP?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Microempresa (ME): receita bruta anual até R$ 360.000,00. Empresa de Pequeno Porte (EPP): receita bruta anual entre R$ 360.000,01 e R$ 4.800.000,00. Deve estar optante pelo Simples Nacional ou ter regime tributário compatível, e não pode ter participação de outra empresa com mais de 10% do capital.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como comprovar a condição de ME/EPP?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A comprovação é feita através de declaração do próprio interessado, sob as penas da lei, podendo ser solicitada posteriormente a apresentação de documentos como: certidão simplificada da Junta Comercial, declaração do Simples Nacional, balanço patrimonial, e outros documentos que comprovem o enquadramento.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Posso regularizar documentos após ser declarado vencedor?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Sim, a Lei Geral permite que ME/EPP regularizem documentos relativos à regularidade fiscal após serem declaradas vencedoras, desde que comprovem a boa-fé e não haja dolo ou má-fé. O prazo para regularização é de até 5 dias úteis, prorrogável por igual período.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Existem licitações exclusivas para ME/EPP?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Sim, a legislação prevê que itens de contratação cujo valor seja de até R$ 80.000,00 podem ser destinados exclusivamente para ME/EPP, assim como itens que possam ser executados por essas empresas. Essa reserva visa fortalecer a economia local e promover o desenvolvimento das pequenas empresas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contrata+Brasil -->
+                    <div id="contrata-brasil" class="theme-content" style="display: none;">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-flag text-3xl mr-4" style="color: var(--govbr-blue-warm-vivid-70);"></i>
+                            <h2 class="text-3xl font-bold text-gray-800">Contrata+Brasil</h2>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">O que é o programa Contrata+Brasil?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>O Contrata+Brasil é um programa do Governo Federal que visa fortalecer a economia local através da facilitação da participação de Microempreendedores Individuais (MEI) e pequenas empresas nas contratações públicas. O programa promove o desenvolvimento econômico local e a geração de renda.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como o RN aderiu ao Contrata+Brasil?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>O Governo do Estado do Rio Grande do Norte aderiu ao Contrata+Brasil em julho, com apresentação aos municípios para ampliar a participação local. A adesão busca facilitar as contratações públicas com MEIs e pequenas empresas, promovendo o desenvolvimento econômico regional.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são os benefícios para os municípios?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Os municípios participantes têm acesso a orientações técnicas, capacitação para servidores, padronização de procedimentos, suporte na implementação de processos simplificados para contratação de MEIs, e fortalecimento da economia local através do direcionamento de recursos para empreendedores locais.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como MEIs podem participar do programa?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>MEIs devem manter regularidade fiscal e documental, cadastrar-se nos sistemas de fornecedores dos órgãos públicos, acompanhar oportunidades de contratação divulgadas pelos entes aderentes, e participar de capacitações oferecidas pelo programa para melhor compreensão dos processos públicos.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais setores são contemplados pelo programa?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>O programa contempla diversos setores como: serviços de manutenção e reparo, fornecimento de materiais básicos, serviços de limpeza e conservação, alimentação, transporte, serviços gráficos, e outros serviços que possam ser executados por MEIs e pequenas empresas locais.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como acompanhar oportunidades do Contrata+Brasil?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>As oportunidades são divulgadas nos portais oficiais dos órgãos participantes, no Portal Nacional de Contratações Públicas, através de editais específicos para o programa, e em canais de comunicação locais. Recomenda-se o cadastramento nos sistemas para receber notificações automáticas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lei 14.133/2021 -->
+                    <div id="lei-14133" class="theme-content" style="display: none;">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-gavel text-3xl mr-4" style="color: var(--govbr-blue-warm-vivid-70);"></i>
+                            <h2 class="text-3xl font-bold text-gray-800">Lei 14.133/2021</h2>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são as principais mudanças da Nova Lei de Licitações?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A Lei 14.133/2021 trouxe importantes mudanças: unificação das normas de licitação, criação do diálogo competitivo, ampliação da contratação integrada, fortalecimento da fase de planejamento, maior uso de tecnologia, procedimentos mais céleres, e foco em resultados e eficiência.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">O que é o diálogo competitivo?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>O diálogo competitivo é uma nova modalidade licitatória que permite a interação entre a Administração e os licitantes durante a fase de preparação das propostas, especialmente para contratos complexos onde não é possível definir previamente as especificações técnicas, permitindo soluções inovadoras.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são os novos critérios de julgamento?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A nova lei mantém os critérios tradicionais (menor preço, melhor técnica, técnica e preço) e incluiu novos critérios como: maior desconto, melhor destinação de bens alienados, e critérios específicos para cada tipo de contratação, sempre buscando a proposta mais vantajosa para a Administração.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como funciona a contratação integrada?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A contratação integrada permite que uma única empresa seja responsável pela elaboração do projeto e execução da obra ou serviço. É aplicável quando houver inovação tecnológica, riscos elevados, ou quando não for possível definir previamente as especificações, promovendo maior eficiência e responsabilização.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são os prazos da nova lei?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A nova lei estabeleceu prazos mais rigorosos: mínimo de 8 dias para convite, 15 dias para outros casos (exceto concurso), 30 dias para melhor técnica ou técnica e preço, e 45 dias para licitações internacionais. Os prazos são contados da última publicação do edital.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como a tecnologia é utilizada na nova lei?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A lei incentiva o uso de tecnologia através de: licitações preferencialmente eletrônicas, assinatura digital, catalogação eletrônica, sistema nacional de contratações públicas, inteligência artificial para análise de propostas, e ferramentas digitais para acompanhamento e controle dos contratos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Decreto Estadual 32.449 -->
+                    <div id="decreto-32449" class="theme-content" style="display: none;">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-file-alt text-3xl mr-4" style="color: var(--govbr-blue-warm-vivid-70);"></i>
+                            <h2 class="text-3xl font-bold text-gray-800">Decreto Estadual 32.449</h2>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">O que regulamenta o Decreto Estadual 32.449?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>O Decreto Estadual 32.449 regulamenta os procedimentos de licitação e contratação no âmbito da Administração Pública Estadual, estabelecendo normas complementares à legislação federal, definindo competências, procedimentos específicos e adequando a legislação nacional à realidade estadual.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são as competências definidas pelo decreto?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>O decreto define competências para: autorização de licitações conforme valor, aprovação de editais, homologação de resultados, gestão de contratos, aplicação de sanções, e estabelece as atribuições específicas de cada órgão e autoridade no processo licitatório estadual.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como o decreto trata da sustentabilidade?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>O decreto estabelece critérios de sustentabilidade ambiental nas contratações públicas, exigindo consideração de aspectos como: eficiência energética, uso racional de recursos naturais, redução de impactos ambientais, preferência por produtos reciclados, e cumprimento de normas ambientais pelos fornecedores.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são os procedimentos para recursos administrativos?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>O decreto estabelece que recursos administrativos devem ser protocolados no prazo legal, dirigidos à autoridade superior, fundamentados em aspectos técnicos ou jurídicos, e serão analisados por comissão específica ou autoridade competente, garantindo o devido processo legal e a ampla defesa.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como são aplicadas as sanções administrativas?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>As sanções são aplicadas mediante processo administrativo que garante contraditório e ampla defesa, podendo incluir: advertência, multa, suspensão temporária do direito de licitar, e declaração de inidoneidade. A graduação das sanções considera a gravidade da infração e os danos causados.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são as inovações do decreto estadual?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>O decreto introduz: procedimentos eletrônicos obrigatórios, sistema integrado de compras, critérios específicos para desenvolvimento local, procedimentos simplificados para pequenos valores, e mecanismos de controle e transparência adaptados à realidade tecnológica atual.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dispensa de Licitação -->
+                    <div id="dispensa-licitacao" class="theme-content" style="display: none;">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-file-contract text-3xl mr-4" style="color: var(--govbr-blue-warm-vivid-70);"></i>
+                            <h2 class="text-3xl font-bold text-gray-800">Dispensa de Licitação</h2>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são os casos de dispensa de licitação?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A dispensa de licitação é aplicável em casos específicos previstos em lei, como: situações de emergência, pequenos valores (até R$ 54.000 para obras e R$ 27.000 para outros), guerra, calamidade pública, complementação de obras/serviços, e outras hipóteses taxativamente previstas na legislação.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como funciona a dispensa por pequeno valor?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Para pequenos valores, a dispensa permite contratação direta respeitando os limites legais. Deve-se obter no mínimo 3 orçamentos, justificar a escolha do fornecedor, verificar regularidade fiscal, e manter processo administrativo completo. É necessário rotatividade entre fornecedores e comprovação de vantajosidade.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são os requisitos para dispensa em emergência?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A dispensa por emergência exige: caracterização da situação de emergência, urgência na contratação, risco de prejuízo ou comprometimento da segurança pública, impossibilidade de aguardar processo licitatório, limitação do prazo contratual a 180 dias, e documentação completa justificando a urgência.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como deve ser o processo administrativo da dispensa?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>O processo deve conter: justificativa da dispensa, caracterização da situação ensejadora, pesquisa de preços, verificação de regularidade fiscal do contratado, termo de referência ou projeto básico, parecer jurídico, autorização da autoridade competente, e publicação do extrato do contrato.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são os controles da dispensa de licitação?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Os controles incluem: análise prévia da legalidade, verificação dos requisitos específicos, acompanhamento da execução contratual, prestação de contas, auditoria interna e externa, publicação para transparência, e possível responsabilização dos gestores em caso de irregularidades.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são as vedações na dispensa de licitação?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>É vedado: fracionamento de despesas para fugir da obrigatoriedade de licitar, contratação de empresa declarada inidônea, preferência injustificada por determinado fornecedor, dispensas habituais com o mesmo fornecedor, e contratação sem pesquisa de preços ou justificativa inadequada.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pregão Eletrônico -->
+                    <div id="pregao-eletronico" class="theme-content" style="display: none;">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-computer text-3xl mr-4" style="color: var(--govbr-blue-warm-vivid-70);"></i>
+                            <h2 class="text-3xl font-bold text-gray-800">Pregão Eletrônico</h2>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">O que é o pregão eletrônico?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>O pregão eletrônico é uma modalidade licitatória realizada em ambiente virtual, que permite maior agilidade, transparência e competitividade. É utilizado para aquisição de bens e serviços comuns, onde a disputa de preços ocorre em sessão pública online com lances sucessivos.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como participar de um pregão eletrônico?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Para participar, é necessário: credenciamento na plataforma eletrônica, certificado digital válido, proposta inicial dentro do prazo, documentação de habilitação, participação na sessão pública para disputa de lances, e cumprimento de todos os requisitos do edital.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são as fases do pregão eletrônico?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>As fases incluem: recebimento das propostas, abertura da sessão pública, classificação das propostas, etapa de lances, desempate (quando necessário), negociação com o primeiro colocado, verificação de aceitabilidade, habilitação do vencedor, e adjudicação do objeto.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como funciona a etapa de lances?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Na etapa de lances, os participantes podem ofertar valores decrescentes em tempo real. O sistema possui tempo aleatório de encerramento, permite lances intermediários, e garante que todos vejam os valores ofertados. O vencedor é aquele que ofertar o menor preço válido.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são as vantagens do pregão eletrônico?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Vantagens incluem: maior competitividade, redução de custos, agilidade no processo, transparência total, participação de fornecedores de qualquer localidade, economia de recursos, facilidade de acompanhamento, e registro completo de toda a sessão.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como contestar decisões no pregão eletrônico?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Contestações podem ser feitas através de: chat durante a sessão para esclarecimentos imediatos, intenção de recurso manifestada no final da sessão, recurso formal apresentado no prazo estabelecido, e contrarrazões aos recursos apresentados por outros participantes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inexigibilidade de Licitação -->
+                    <div id="inexigibilidade" class="theme-content" style="display: none;">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-ban text-3xl mr-4" style="color: var(--govbr-blue-warm-vivid-70);"></i>
+                            <h2 class="text-3xl font-bold text-gray-800">Inexigibilidade de Licitação</h2>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">O que caracteriza a inexigibilidade de licitação?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A inexigibilidade ocorre quando é impossível a competição, como em casos de: fornecedor exclusivo de bem ou serviço, contratação de profissional de notória especialização, e serviços técnicos especializados de natureza singular. Deve haver impossibilidade jurídica ou fática de competição.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como comprovar a exclusividade de fornecedor?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>A exclusividade deve ser comprovada através de: declaração do fabricante ou produtor, pesquisa de mercado documentada, consulta a órgãos competentes, verificação de registros de propriedade intelectual, e atestado de entidade oficial quando necessário. A exclusividade deve ser técnica, não comercial.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">O que é notória especialização?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Notória especialização é o reconhecimento público da alta qualificação profissional em determinada área, comprovada através de: formação acadêmica especializada, experiência profissional relevante, obras publicadas, prêmios recebidos, reconhecimento por entidades profissionais, e histórico de trabalhos de excelência.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são os requisitos processuais da inexigibilidade?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Os requisitos incluem: justificativa fundamentada da impossibilidade de competição, caracterização da situação específica, verificação da regularidade fiscal, análise da razoabilidade dos preços, parecer jurídico, autorização da autoridade competente, e publicação do extrato do contrato.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Como é feito o controle da inexigibilidade?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>O controle envolve: análise prévia da legalidade, verificação dos requisitos específicos, análise da documentação comprobatória, avaliação da razoabilidade dos preços, acompanhamento da execução contratual, auditoria pelos órgãos de controle, e eventual responsabilização em caso de irregularidades.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3 class="text-lg font-semibold">Quais são os cuidados na contratação por inexigibilidade?</h3>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" style="display: none;">
+                                <p>Cuidados essenciais: verificação rigorosa dos requisitos legais, documentação completa e consistente, análise criteriosa dos preços, definição clara do objeto, estabelecimento de metas e resultados, acompanhamento rigoroso da execução, e atenção aos prazos e formalidades legais.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mensagem quando não há resultados de busca -->
+                    <div id="no-results" class="no-results" style="display: none;">
+                        <i class="fas fa-search text-4xl text-gray-400 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-600 mb-2">Nenhum resultado encontrado</h3>
+                        <p class="text-gray-500">Tente usar outras palavras-chave ou verifique a ortografia.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Seção de contato -->
+    <section class="contact-section">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4" style="color: var(--govbr-blue-warm-vivid-70);">
+                Não localizou a resposta desejada? Sem problemas.
+            </h2>
+            <p class="text-lg text-gray-600 mb-8">
+                Você pode entrar em contato direto com nosso time de atendimento ou participar da nossa comunidade online para tirar dúvidas específicas.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="https://wa.me/5584999999999" class="contact-button" target="_blank">
+                    <i class="fab fa-whatsapp text-green-500"></i>
+                    <span>WhatsApp: clique aqui</span>
+                </a>
+                
+                <a href="mailto:comprrn@gmail.com" class="contact-button">
+                    <i class="fas fa-envelope"></i>
+                    <span>E-mail: comprrn@gmail.com</span>
+                </a>
+                
+                <a href="forum.html" class="contact-button">
+                    <i class="fas fa-comments"></i>
+                    <span>Fórum de Discussão: acesse aqui</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Rodapé com Mapa do Site -->
+    <footer class="footer py-6 px-4 mb-0">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between items-start mb-8" style="padding-top: 4rem;">
+                <!-- Logo no canto superior esquerdo -->
+                <img src="../images/logos/NEGATIVO.png" alt="Governo do Rio Grande do Norte" class="h-14 w-auto mb-2" style="height: 101px; transform: translate(0px, -45px);" data-selected="true" data-label-id="0">
+            </div>
+            <!-- Seções do mapa do site -->
+            <div class="w-full flex justify-center mt-[-16px] mb-2">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 flex-1 max-w-6xl mx-auto">
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Institucional</h4>
+                        <ul class="space-y-2">
+                            <li><a href="../index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
+                            <li><a href="institucional.html" class="text-gray-300 hover:text-white">Quem Somos</a></li>
+                            <li><a href="noticias.html" class="text-gray-300 hover:text-white">Notícias</a></li>
+                            <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
+                            <li><a href="forum.html" class="text-gray-300 hover:text-white">Fórum</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Acesso</h4>
+                        <ul class="space-y-2">
+                            <li><a href="fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
+                            <li><a href="servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
+                            <li><a href="cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
+                            <li><a href="meepp.html" class="text-gray-300 hover:text-white">ME/EPP</a></li>
+                            <li><a href="acesso-sistema.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Oportunidades</h4>
+                        <ul class="space-y-2">
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Licitações</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao/RegistroPreco" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Atas de Registro de Preço</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Conhecimento</h4>
+                        <ul class="space-y-2">
+                            <li><a href="capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
+                            <li><a href="legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
+                            <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
+                            <li><a href="compr-ia.html" class="text-gray-300 hover:text-white">COMPR IA</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Serviços SEAD</h4>
+                        <ul class="space-y-2">
+                            <li><a href="https://www.sead.rn.gov.br" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">SEAD</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/copag/contra_cheque.asp" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Contracheque</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/dirf?escolha=1" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Declaração de Rendimentos</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Protocolo" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Protocolo NET</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Diaria" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Diárias</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-white my-4">
+            <div class="flex flex-row justify-between items-start max-w-4xl mx-auto gap-16 mb-6">
+                <!-- Informações de contato -->
+                <div class="text-white text-sm space-y-1 w-1/2 pr-8">
+                    <div class="font-bold text-base mb-1">Contato</div>
+                    <div>Centro Administrativo do Estado</div>
+                    <div>Av. Senador Salgado Filho, s/n, Lagoa Nova - Natal/RN.</div>
+                    <div>CEP: 59064-901</div>
+                    <div><i class="fas fa-phone-alt mr-2"></i>+55 (84) 3232-5240</div>
+                    <div><i class="fas fa-envelope mr-2"></i>contato@rn.gov.br</div>
+                </div>
+                <!-- Redes sociais -->
+                <div class="flex flex-col items-end w-1/2 pl-8">
+                    <div class="font-bold text-base mb-2 text-white">REDES SOCIAIS</div>
+                    <div class="flex items-center gap-4 justify-center">
+                        <a href="https://twitter.com/" target="_blank" class="text-gray-300 hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="https://facebook.com/" target="_blank" class="text-gray-300 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://instagram.com/" target="_blank" class="text-gray-300 hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="https://youtube.com/" target="_blank" class="text-gray-300 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="https://wa.me/5584999999999" target="_blank" class="text-gray-300 hover:text-green-500" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                    <a href="https://www.sic.rn.gov.br/" target="_blank" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-lg font-semibold mt-4 ml-auto" aria-label="Acesso à Informação">
+                        <span class="text-white text-base font-bold">Acesso à Informação</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Fim do container centralizado do rodapé -->
+    </footer>
+    <div class="w-full bg-blue-900 py-4 flex items-center justify-center m-0">
+        <span class="text-white text-center text-sm font-semibold">
+            2025 © Governo do Estado do Rio Grande do Norte | Desenvolvido <span class="text-yellow-400 font-bold">Central de compras governamentais</span> | Política de Privacidade
+        </span>
+    </div>
+    <script src="../js/FAQs.js"></script>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias e Comunicados - Portal de Compras Governamentais RN</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/@govbr-ds/core/dist/core.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/news.css">
+</head>
+<body class="bg-white">
+    <header class="header-bg py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="../images/logos/COMPR_logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
+                <img src="../images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
+            </div>
+            <div class="flex items-center space-x-4 text-sm">
+                <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
+                <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
+                <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
+                <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
+                <div class="dropdown">
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
+                </div>
+                <div class="flex items-center space-x-2 ml-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="color-bar w-full"></div>
+    <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <a href="../index.html" class="text-xl font-medium">Central de Compras</a>
+            </div>
+            <div class="flex-1 flex justify-end">
+                <div class="search-access-group relative" style="width: 570px; max-width: 100%;">
+                    <div class="relative w-full" style="max-width:100%;">
+                        <input type="text" id="search-input-field" placeholder="O que você procura?" class="search-input w-full">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
+                    </div>
+                    <a href="acesso-sistema.html" class="access-btn bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-5 rounded-lg text-base flex items-center gap-1 shadow transition" aria-label="Acesso ao Sistema">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span class="hidden sm:inline">Acesso ao Sistema</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="search-results-container" class="container mx-auto my-4 px-4"></div>
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="p-4 border-b flex justify-between items-center">
+            <h2 class="text-lg font-bold">Menu</h2>
+            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-4">
+            <ul class="space-y-4">
+                <li><a href="../Index.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-home nav-icon"></i><span>Início</span></a></li>
+                <li><a href="Fornecedor.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-user-tie nav-icon"></i><span>Fornecedor</span></a></li>
+                <li><a href="Servidor.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-user nav-icon"></i><span>Servidor</span></a></li>
+                <li><a href="Cidadao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-users nav-icon"></i><span>Cidadão</span></a></li>
+                <li><a href="Capacite-se.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-graduation-cap nav-icon"></i><span>Capacite-se</span></a></li>
+                <li><a href="legislacao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-gavel nav-icon"></i><span>Legislação</span></a></li>
+                <li><a href="em-construcao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-sign-in-alt nav-icon"></i><span>Acesso ao Sistema</span></a></li>
+                <li><a href="oportunidades.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-search-dollar nav-icon"></i><span>Oportunidades</span></a></li>
+                <li><a href="manuais.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-book nav-icon"></i><span>Manuais</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
+    <main class="container mx-auto py-6 px-4">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a href="../Index.html">Início</a>
+            <span class="separator">/</span>
+            <span>Notícias</span>
+        </div>
+        <h1 class="section-title flex items-center gap-2"><i class="fas fa-newspaper"></i> Notícias e Comunicados</h1>
+        <div class="container-box mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="md:col-span-2">
+                    <label for="search" class="block text-sm font-medium text-gray-700 mb-2">Buscar Notícias</label>
+                    <input type="text" id="search" class="search-input w-full" placeholder="Digite palavras-chave...">
+                </div>
+                <div>
+                    <label for="category" class="block text-sm font-medium text-gray-700 mb-2">Categoria</label>
+                    <select id="category" class="search-input w-full">
+                        <option value="">Todas as categorias</option>
+                        <option value="comunicado">Comunicados</option>
+                        <option value="noticia">Notícias</option>
+                        <option value="evento">Eventos</option>
+                        <option value="legislacao">Legislação</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-between items-center">
+                <button onclick="searchNews()" class="btn-primary">
+                    <i class="fas fa-search mr-2"></i>Buscar
+                </button>
+                <button onclick="clearSearch()" class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-times mr-1"></i>Limpar filtros
+                </button>
+            </div>
+        </div>
+        <div id="news-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"></div>
+        <div id="pagination" class="flex justify-center items-center space-x-2"></div>
+        <!-- Botões de Acesso Rápido -->
+        <div class="container-box mb-6">
+            <div class="flex justify-around flex-wrap">
+                <a href="capacite-se.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85">
+                    <i class="fas fa-graduation-cap nav-icon text-4xl text-blue-900"></i>
+                    <span>Capacite-se</span>
+                </a>
+                <a href="legislacao.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85">
+                    <i class="fas fa-gavel nav-icon text-4xl text-blue-900"></i>
+                    <span>Legislação</span>
+                </a>
+                <a href="institucional.html" class="flex items-center gap-4 mb-4 text-3A6A85">
+                    <i class="fas fa-building nav-icon text-4xl text-blue-900"></i>
+                    <span>Institucional</span>
+                </a>
+            </div>
+        </div>
+    </main>
+    <div id="newsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()" aria-label="Fechar modal">&times;</span>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+    <footer class="footer py-6 px-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Início</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../Index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
+                        <li><a href="oportunidades.html" class="text-gray-300 hover:text-white">Oportunidades</a></li>
+                        <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais</a></li>
+                        <li><a href="artigos.html" class="text-gray-300 hover:text-white">Artigos</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Perfis de Acesso</h4>
+                    <ul class="space-y-2">
+                        <li><a href="Fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
+                        <li><a href="Servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
+                        <li><a href="Cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
+                        <li><a href="em-construcao.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Conhecimento</h4>
+                    <ul class="space-y-2">
+                        <li><a href="Capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
+                        <li><a href="legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
+                        <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Central de Atendimento:</li>
+                        <li>(84) 3232-1000</li>
+                        <li>Email:</li>
+                        <li>contato@rn.gov.br</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 mt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <img src="../images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12 brightness-0 invert mr-4">
+                    </div>
+                    <div class="text-center md:text-right">
+                        <p class="text-sm text-blue-200"> 2025 Governo do Rio Grande do Norte</p>
+                        <p class="text-sm text-blue-200">Todos os direitos reservados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/scripts.js"></script>
+    <script src="../js/news-script.js"></script>
+    <script src="../js/search.js"></script>
+</body>
+</html>

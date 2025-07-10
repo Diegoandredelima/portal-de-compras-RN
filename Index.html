@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidadão - Portal de Compras Governamentais RN</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/@govbr-ds/core/dist/core.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/carrossel.css">
+</head>
+  <!-- Barra Superior -->
+    
+  <body class="bg-white">
+    <!-- Cabeçalho Superior -->
+    <header class="header-bg py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
+            <div class="flex items-center space-x-4">
+                <img src="images/logos/COMPR_logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
+                <img src="images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
+            </div>
+            <div class="flex items-center space-x-4 text-sm">
+                <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
+                <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
+                <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
+                <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
+                <div class="dropdown">
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
+                </div>
+                <div class="flex items-center space-x-2 ml-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra Colorida -->
+    <div class="color-bar w-full"></div>
+
+    <!-- Cabeçalho Fixo com Menu -->
+    <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <a href="index.html" class="text-xl font-medium">Central de Compras</a>
+            </div>
+            <div class="flex-1 flex justify-end">
+                <div class="search-access-group relative" style="width: 570px; max-width: 100%;">
+                    <div class="relative w-full" style="max-width:100%;">
+                        <input type="text" id="search-input-field" placeholder="O que você procura?" class="search-input w-full">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
+                    </div>
+                    <a href="pages/acesso-sistema.html" class="access-btn bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-5 rounded-lg text-base flex items-center gap-1 shadow transition" aria-label="Acesso ao Sistema">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span class="hidden sm:inline">Acesso ao Sistema</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Container para Resultados da Busca -->
+    <div id="search-results-container" class="container mx-auto my-4 px-4"></div>
+
+    <!-- Menu Lateral -->
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="p-4 border-b flex justify-between items-center">
+            <h2 class="text-lg font-bold">Menu</h2>
+            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-4">
+            <ul class="space-y-4">
+                <li>
+                    <a href="pages/fornecedor.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-user-tie nav-icon"></i>
+                        <span>Fornecedor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/servidor.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-user nav-icon"></i>
+                        <span>Servidor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/cidadao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-users nav-icon"></i>
+                        <span>Cidadão</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/capacite-se.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-graduation-cap nav-icon"></i>
+                        <span>Capacite-se</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/legislacao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-gavel nav-icon"></i>
+                        <span>Legislação</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/em-construcao.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-sign-in-alt nav-icon"></i>
+                        <span>Acesso ao Sistema</span>
+                    </a>
+                </li>
+                        <span>Manuais</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-7xl mx-auto py-6 px-8">
+        <!-- Navigation with Icons -->
+        <div class="container-box mb-6">
+            <div class="flex justify-around flex-wrap">
+                <a href="pages/Fornecedor.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85 hover:text-D34C2B transition-colors">
+                    <i class="fas fa-user-tie nav-icon text-4xl text-blue-900"></i>
+                    <span>Fornecedor</span>
+                </a>
+                <a href="pages/Servidor.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85 hover:text-D34C2B transition-colors">
+                    <i class="fas fa-user nav-icon text-4xl text-blue-900"></i>
+                    <span>Servidor</span>
+                </a>
+                <a href="pages/Cidadao.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85 hover:text-D34C2B transition-colors">
+                    <i class="fas fa-users nav-icon text-4xl text-blue-900"></i>
+                    <span>Cidadão</span>
+                </a>
+                <a href="pages/Capacite-se.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85 hover:text-D34C2B transition-colors">
+                    <i class="fas fa-graduation-cap nav-icon text-4xl text-blue-900"></i>
+                    <span>Capacite-se</span>
+                </a>
+                <a href="pages/Legislacao.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85 hover:text-D34C2B transition-colors">
+                    <i class="fas fa-gavel nav-icon text-4xl text-blue-900"></i>
+                    <span>Legislação</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Carrossel de Notícias -->
+        <div class="max-w-full mx-auto px-0">
+            
+            <div class="br-carousel" id="carousel" role="region" aria-label="Carrossel de notícias">
+                <div class="br-carousel__container">
+                    <div class="br-carousel__stage" id="carousel-stage">
+                        
+                        <!-- Item 1 -->
+                        <div class="br-carousel__item" role="group" aria-roledescription="slide" aria-label="1 de 4">
+                            <img src="images/imagem-noticia/Central-de-Compras-51-Ft-Aldecy-Junior.png" alt="Central de Compras">
+                            <a href="https://www.sead.rn.gov.br/materia/governo-do-rn-realiza-workshop-sobre-central-de-compras-com-foco-na-eficiencia-economicidade-e-transparencia-das-contratacoes-publicas/" class="br-carousel__item-content">
+                                <h3 class="br-carousel__item-title">Governo do RN realiza workshop sobre Central de Compras</h3>
+                                <p class="br-carousel__item-description">Workshop focado na eficiência, economicidade e transparência das contratações públicas.</p>
+                            </a>
+                        </div>
+    
+                        <!-- Item 2 -->
+                        <div class="br-carousel__item" role="group" aria-roledescription="slide" aria-label="2 de 4">
+                            <img src="images/imagem-noticia/Capa-1500x1000-7.png" alt="Modernização Digital">
+                            <a href="#" class="br-carousel__item-content">
+                                <h3 class="br-carousel__item-title">Modernização dos Serviços Digitais</h3>
+                                <p class="br-carousel__item-description">Investimentos em tecnologia para melhorar o atendimento ao cidadão.</p>
+                            </a>
+                        </div>
+    
+                        <!-- Item 3 -->
+                        <div class="br-carousel__item" role="group" aria-roledescription="slide" aria-label="3 de 4">
+                            <img src="images/imagem-noticia/contrata-mais-brasil.png" alt="Contrata Mais Brasil">
+                            <a href="https://www.sead.rn.gov.br/materia/governo-do-rn-adere-plataforma-contratabrasil-para-desburocratizar-e-agilizar-contratacoes-no-servico-publico" class="br-carousel__item-content">
+                                <h3 class="br-carousel__item-title">Governo do RN adere à plataforma Contrata Mais Brasil</h3>
+                                <p class="br-carousel__item-description">Plataforma para desburocratizar e agilizar contratações no serviço público.</p>
+                            </a>
+                        </div>
+    
+                        <!-- Item 4 -->
+                        <div class="br-carousel__item" role="group" aria-roledescription="slide" aria-label="4 de 4">
+                            <img src="images/imagem-noticia/WhatsApp-banner.png" alt="Atendimento WhatsApp">
+                            <a href="#" class="br-carousel__item-content">
+                                <h3 class="br-carousel__item-title">Atendimento via WhatsApp</h3>
+                                <p class="br-carousel__item-description">Novo canal de comunicação para facilitar o acesso aos serviços públicos.</p>
+                            </a>
+                        </div>
+    
+                    </div>
+                </div>
+    
+                <!-- Controles de navegação -->
+                <button class="br-carousel__btn br-carousel__btn--prev" id="prev-btn" aria-label="Slide anterior">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>
+    
+                <button class="br-carousel__btn br-carousel__btn--next" id="next-btn" aria-label="Próximo slide">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
+    
+                <!-- Controles de reprodução -->
+                <div class="br-carousel__controls">
+                    <button class="br-carousel__control-btn" id="play-pause-btn" aria-label="Pausar reprodução automática">
+                        <svg id="pause-icon" viewBox="0 0 24 24">
+                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                        </svg>
+                        <svg id="play-icon" viewBox="0 0 24 24" style="display: none;">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                </div>
+    
+                <!-- Indicadores -->
+                <div class="br-carousel__indicators" id="indicators">
+                    <button class="br-carousel__indicator active" data-slide="0" aria-label="Ir para slide 1"></button>
+                    <button class="br-carousel__indicator" data-slide="1" aria-label="Ir para slide 2"></button>
+                    <button class="br-carousel__indicator" data-slide="2" aria-label="Ir para slide 3"></button>
+                    <button class="br-carousel__indicator" data-slide="3" aria-label="Ir para slide 4"></button>
+                </div>
+            </div>
+        </div>
+        <!-- Fim do Carrossel -->
+        <div class="h-12 bg-white"></div>
+
+        <!-- Manuais & Links Section -->
+    <section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
+        <div class="mb-6">
+            <h3 class="section-title">Links Rápidos</h3>
+            <div class="my-4 flex flex-wrap gap-3">
+                <a href="pages/Institucional.html" class="link-button"><i class="fas fa-building mr-2"></i> Institucional</a>
+                <a href="pages/Noticias.html" class="link-button"><i class="fas fa-newspaper mr-2"></i> Notícias</a>
+                <a href="pages/manuais.html" class="link-button"><i class="fas fa-file-alt mr-2"></i> Manuais</a>
+                <a href="pages/Forum.html" class="link-button"><i class="fas fa-comments mr-2"></i> Fórum</a>
+                <a href="pages/Legislacao.html" class="link-button"><i class="fas fa-gavel mr-2"></i> Legislação</a>
+                <a href="pages/meepp.html" class="link-button"><i class="fas fa-briefcase mr-2"></i> ME/EPP</a>
+                <a href="pages/Compr-ia.html" class="link-button"><i class="fas fa-microchip mr-2"></i> COMPR IA</a>
+                <a href="pages/FAQs-perguntas.html" class="link-button"><i class="fas fa-question-circle mr-2"></i> FAQs - Perguntas Frequentes</a>
+            </div>
+        </div>
+    </section>
+    <div class="h-12 bg-white"></div>
+
+        <!-- Consultar Oportunidades -->
+<div class="bg-gray-50 rounded-lg p-6 mb-6 max-w-7xl mx-auto px-8">
+    <h3 class="section-title text-center">Consultar Oportunidades</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+        <!-- Card Contratações -->
+        <a href="http://servicos.searh.rn.gov.br/searh/Licitacao" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-xl shadow-md p-6 border border-gray-200 hover:border-blue-500 hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+            <div class="flex items-center">
+                <div class="bg-blue-100 text-blue-800 rounded-full p-3">
+                    <i class="fas fa-shopping-cart text-2xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-800 ml-4">Contratações</h4>
+            </div>
+            <p class="text-gray-600 mt-3">Acesse os editais de licitação e acompanhe os processos de contratação em andamento no Estado.</p>
+        </a>
+        <!-- Card Atas de Registro de Preço -->
+        <a href="http://servicos.searh.rn.gov.br/searh/Licitacao/RegistroPreco" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-xl shadow-md p-6 border border-gray-200 hover:border-blue-500 hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+            <div class="flex items-center">
+                <div class="bg-blue-100 text-blue-800 rounded-full p-3">
+                    <i class="fas fa-file-invoice-dollar text-2xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-800 ml-4">Atas de Registro de Preço</h4>
+            </div>
+            <p class="text-gray-600 mt-3">Consulte as Atas de Registro de Preço vigentes e participe das contratações do governo.</p>
+        </a>
+    </div>
+</div>
+<div class="h-12 bg-white"></div>
+
+        <!-- Compras Homologadas em 2024 -->
+        <section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
+        <div class="mb-6">
+        <div class="approved-purchases-section">
+            <h3 class="section-title">Compras Homologadas em 2024</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="metric-card">
+                    <div class="metric-value currency">R$ 31.4bi</div>
+                    <div class="metric-label">Valor Homologado em Compras</div>
+                    <div class="metric-bar blue"></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value currency">R$ 7bi</div>
+                    <div class="metric-label">Valor Homologado em Compras para ME/EPP</div>
+                    <div class="metric-bar orange"></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">11mil</div>
+                    <div class="metric-label">Processos de Compras Homologados</div>
+                    <div class="metric-bar green"></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">900</div>
+                    <div class="metric-label">Fornecedores Participantes</div>
+                    <div class="metric-bar yellow"></div>
+        </section>
+        <div class="h-12 bg-white"></div>
+            </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Serviços SEAD -->
+        <section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
+        <div class="mb-6">
+            <h3 class="section-title">Serviços SEAD</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-lg border p-6 flex flex-col items-center transition hover:shadow-xl aspect-square">
+                    <i class="fas fa-graduation-cap service-card-icon"></i>
+                    <h4 class="service-card-title">Escola de Governo</h4>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg border p-6 flex flex-col items-center transition hover:shadow-xl aspect-square">
+                    <i class="fas fa-money-check-alt service-card-icon"></i>
+                    <h4 class="service-card-title">RN Consig</h4>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg border p-6 flex flex-col items-center transition hover:shadow-xl aspect-square">
+                    <i class="fas fa-file-alt service-card-icon"></i>
+                    <h4 class="service-card-title">SEI! RN</h4>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg border p-6 flex flex-col items-center transition hover:shadow-xl aspect-square">
+                    <i class="fas fa-cogs service-card-icon"></i>
+                    <h4 class="service-card-title">SUAP</h4>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg border p-6 flex flex-col items-center transition hover:shadow-xl aspect-square">
+                    <i class="fas fa-home service-card-icon"></i>
+                    <h4 class="service-card-title">SIPAC</h4>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg border p-6 flex flex-col items-center transition hover:shadow-xl aspect-square">
+                    <i class="fas fa-map-marker-alt service-card-icon"></i>
+                    <h4 class="service-card-title">SIPAT</h4>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+    <!-- Contato -->
+    <section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Suporte e Contato</h2>
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Precisa de Ajuda?</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-phone text-blue-600"></i>
+                                <span class="text-gray-700">(84) 3232-1234</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-whatsapp fa-lg text-blue-600"></i>
+                                <span class="text-gray-700">(84) 98127-6028</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                                <span class="text-gray-700">comprrn@gmail.com</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-clock text-blue-600"></i>
+                                <span class="text-gray-700">Seg-Sex: 8h às 17h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Links Úteis</h3>
+                        <div class="space-y-3">
+                            <a href="pages/manuais.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-book mr-2"></i>Manual do Usuário
+                            </a>
+                            <a href="pages/forum.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-comments mr-2"></i>Fórum de Discussão
+                            </a>
+                            <a href="#" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-video mr-2"></i>Tutoriais em Vídeo
+                            </a>
+                            <a href="pages/FAQs-perguntas.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-question-circle mr-2"></i>FAQ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="h-12 bg-white"></div>
+    <!-- Rodapé com Mapa do Site -->
+    <footer class="footer py-6 px-4 mb-0">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between items-start mb-8" style="padding-top: 4rem;">
+                <!-- Logo no canto superior esquerdo -->
+                <img src="images/logos/NEGATIVO.png" alt="Governo do Rio Grande do Norte" class="h-14 w-auto mb-2" style="height: 101px; transform: translate(0px, -45px);" data-selected="true" data-label-id="0">
+            </div>
+            <!-- Seções do mapa do site -->
+            <div class="w-full flex justify-center mt-[-16px] mb-2">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 flex-1 max-w-6xl mx-auto">
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Institucional</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
+                            <li><a href="pages/institucional.html" class="text-gray-300 hover:text-white">Quem Somos</a></li>
+                            <li><a href="pages/noticias.html" class="text-gray-300 hover:text-white">Notícias</a></li>
+                            <li><a href="pages/manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
+                            <li><a href="pages/forum.html" class="text-gray-300 hover:text-white">Fórum</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Acesso</h4>
+                        <ul class="space-y-2">
+                            <li><a href="pages/fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
+                            <li><a href="pages/servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
+                            <li><a href="pages/cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
+                            <li><a href="pages/meepp.html" class="text-gray-300 hover:text-white">ME/EPP</a></li>
+                            <li><a href="pages/acesso-sistema.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Oportunidades</h4>
+                        <ul class="space-y-2">
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Licitações</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao/RegistroPreco" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Atas de Registro de Preço</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Conhecimento</h4>
+                        <ul class="space-y-2">
+                            <li><a href="pages/capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
+                            <li><a href="pages/legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
+                            <li><a href="pages/manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
+                            <li><a href="pages/compr-ia.html" class="text-gray-300 hover:text-white">COMPR IA</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-section">
+                        <h4 class="text-white font-bold mb-4">Serviços SEAD</h4>
+                        <ul class="space-y-2">
+                            <li><a href="https://www.sead.rn.gov.br" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">SEAD</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/copag/contra_cheque.asp" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Contracheque</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/dirf?escolha=1" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Declaração de Rendimentos</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Protocolo" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Protocolo NET</a></li>
+                            <li><a href="http://servicos.searh.rn.gov.br/searh/Diaria" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Diárias</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-white my-4">
+            <div class="flex flex-row justify-between items-start max-w-4xl mx-auto gap-16 mb-6">
+                <!-- Informações de contato -->
+                <div class="text-white text-sm space-y-1 w-1/2 pr-8">
+                    <div class="font-bold text-base mb-1">Contato</div>
+                    <div>Centro Administrativo do Estado</div>
+                    <div>Av. Senador Salgado Filho, s/n, Lagoa Nova - Natal/RN.</div>
+                    <div>CEP: 59064-901</div>
+                    <div><i class="fas fa-phone-alt mr-2"></i>+55 (84) 3232-5240</div>
+                    <div><i class="fas fa-envelope mr-2"></i>contato@rn.gov.br</div>
+                </div>
+                <!-- Redes sociais -->
+                <div class="flex flex-col items-end w-1/2 pl-8">
+                    <div class="font-bold text-base mb-2 text-white">REDES SOCIAIS</div>
+                    <div class="flex items-center gap-4 justify-center">
+                        <a href="https://twitter.com/" target="_blank" class="text-gray-300 hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="https://facebook.com/" target="_blank" class="text-gray-300 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://instagram.com/" target="_blank" class="text-gray-300 hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="https://youtube.com/" target="_blank" class="text-gray-300 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="https://wa.me/5584999999999" target="_blank" class="text-gray-300 hover:text-green-500" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                    <a href="https://www.sic.rn.gov.br/" target="_blank" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-lg font-semibold mt-4 ml-auto" aria-label="Acesso à Informação">
+                        <span class="text-white text-base font-bold">Acesso à Informação</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Fim do container centralizado do rodapé -->
+    </footer>
+    <div class="w-full bg-blue-900 py-4 flex items-center justify-center m-0">
+        <span class="text-white text-center text-sm font-semibold">
+            2025 © Governo do Estado do Rio Grande do Norte | Desenvolvido <span class="text-yellow-400 font-bold">Central de compras governamentais</span> | Política de Privacidade
+        </span>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

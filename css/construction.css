@@ -1,0 +1,119 @@
+/* Estilos básicos para corresponder ao Design System Gov.br e Tailwind */
+body {
+    font-family: 'Inter', sans-serif; /* Fonte padrão do Design System Gov.br ou similar */
+    color: #333;
+    background-color: #f0f2f5; /* Fundo mais suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ocupa a altura total da viewport */
+    margin: 0;
+    padding: 1rem;
+}
+.construction-container {
+    max-width: 768px; /* Largura máxima do container */
+    width: 100%;
+    padding: 2.5rem;
+    background-color: #fff;
+    border-radius: 12px; /* Cantos mais arredondados */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+    text-align: center;
+    animation: fadeIn 0.8s ease-out; /* Animação de fade-in */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.construction-icon {
+    font-size: 5rem; /* Ícone grande */
+    color: #FFCD07; /* Cor de aviso (amarelo) */
+    margin-bottom: 2rem;
+    animation: bounce 2s infinite ease-in-out; /* Animação de "pulinho" */
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.construction-title {
+    font-size: 2.5rem; /* Título grande */
+    font-weight: 700; /* Bold */
+    color: #071D41; /* Azul escuro do Gov.br */
+    margin-bottom: 1rem;
+}
+
+.construction-message {
+    font-size: 1.125rem; /* Texto médio */
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Quebra para próxima linha em telas pequenas */
+    justify-content: center;
+    gap: 1rem; /* Espaçamento entre botões */
+    margin-top: 2rem;
+}
+
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.85rem 1.75rem;
+    border-radius: 8px; /* Cantos arredondados nos botões */
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.action-button.primary {
+    background-color: #00558F; /* Azul primário do Gov.br */
+    color: #fff;
+    border: 1px solid #00558F;
+}
+.action-button.primary:hover {
+    background-color: #003e6b;
+    border-color: #003e6b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.action-button.secondary {
+    background-color: #f0f0f0; /* Cinza claro */
+    color: #333;
+    border: 1px solid #ccc;
+}
+.action-button.secondary:hover {
+    background-color: #e0e0e0;
+    border-color: #bbb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.action-button i {
+    margin-right: 0.6rem;
+    font-size: 1.1rem;
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+    .construction-title {
+        font-size: 2rem;
+    }
+    .construction-message {
+        font-size: 1rem;
+    }
+    .action-buttons {
+        flex-direction: column; /* Botões empilhados em telas pequenas */
+    }
+    .action-button {
+        width: 100%; /* Botões com largura total */
+        justify-content: center; /* Centraliza texto e ícone */
+    }
+}
