@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../node_modules/@govbr-ds/core/dist/core.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/carrossel.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
   <!-- Barra Superior -->
     
@@ -283,37 +284,115 @@
 </div>
 <div class="h-12 bg-white"></div>
 
-        <!-- Compras Homologadas em 2024 -->
-        <section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
-        <div class="mb-6">
-        <div class="approved-purchases-section">
-            <h3 class="section-title">Compras Homologadas em 2024</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="metric-card">
-                    <div class="metric-value currency">R$ 31.4bi</div>
-                    <div class="metric-label">Valor Homologado em Compras</div>
-                    <div class="metric-bar blue"></div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value currency">R$ 7bi</div>
-                    <div class="metric-label">Valor Homologado em Compras para ME/EPP</div>
-                    <div class="metric-bar orange"></div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">11mil</div>
-                    <div class="metric-label">Processos de Compras Homologados</div>
-                    <div class="metric-bar green"></div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">900</div>
-                    <div class="metric-label">Fornecedores Participantes</div>
-                    <div class="metric-bar yellow"></div>
-        </section>
-        <div class="h-12 bg-white"></div>
-            </div>
-                </div>
-            </div>
+<div class="h-12 bg-white"></div>
+
+<!-- Resumo dos Dados de Compras -->
+<section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
+    <div class="mb-6">
+        <h3 class="text-center text-4xl font-extrabold text-blue-800 mb-10">Resumo dos Dados de Compras</h3>
+        <div class="flex justify-center space-x-4 mb-8">
+            <button id="btnComprasHomologadas" class="px-6 py-3 rounded-lg font-semibold transition-colors duration-300 bg-blue-600 text-white hover:bg-blue-700 shadow-md">
+                Compras Homologadas em 2024
+            </button>
+            <button id="btnAdesoesCaronas" class="px-6 py-3 rounded-lg font-semibold transition-colors duration-300 bg-gray-300 text-gray-800 hover:bg-gray-400 shadow-md">
+                Adesões/Caronas
+            </button>
         </div>
+
+        <!-- Conteúdo Compras Homologadas -->
+        <div id="contentComprasHomologadas" class="bg-white rounded-lg shadow-lg p-6 mt-6">
+            <!-- Cards de Dados Quantitativos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
+                    <div class="text-3xl font-bold">R$ 31.4bi</div>
+                    <div class="text-center">Valor Homologado em Compras</div>
+                </div>
+                <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
+                    <div class="text-3xl font-bold">R$ 7bi</div>
+                    <div class="text-center">Valor Homologado em Compras para ME/EPP</div>
+                </div>
+                <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
+                    <div class="text-3xl font-bold">11 mil</div>
+                    <div class="text-center">Processos de Compras Homologados</div>
+                </div>
+                <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
+                    <div class="text-3xl font-bold">900</div>
+                    <div class="text-center">Fornecedores Participantes</div>
+                </div>
+            </div>
+
+            <!-- Gráfico de Linha - Acompanhamento Anual -->
+            <h4 class="text-xl font-semibold text-gray-800 mb-4 text-center">Acompanhamento Anual de Compras Homologadas (R$ Bilhões)</h4>
+            <div class="relative h-80 mb-8">
+                <canvas id="lineChartCompras"></canvas>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Gráfico de Barra - Maiores Compradores -->
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4 text-center">Top 5 Maiores Compradores (R$ Milhões)</h4>
+                    <div class="relative h-80">
+                        <canvas id="barChartCompradores"></canvas>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Barra - Setores com Mais Compras -->
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4 text-center">Top 5 Setores com Mais Compras (R$ Milhões)</h4>
+                    <div class="relative h-80">
+                        <canvas id="barChartSetores"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center mt-8 text-lg text-gray-700">Para acompanhar mais dados e análises detalhadas, <a href="#" class="text-blue-600 hover:underline font-semibold">acesse aqui</a>.</p>
+        </div>
+
+        <!-- Conteúdo Adesões/Caronas (inicialmente oculto) -->
+        <div id="contentAdesoesCaronas" class="bg-white rounded-lg shadow-lg p-6 mt-6 hidden">
+            <!-- Cards de Dados Quantitativos para Adesões/Caronas -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
+                    <div class="text-3xl font-bold">R$ 48.529.148,48</div>
+                    <div class="text-center">Valor Autorizado</div>
+                </div>
+                <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
+                    <div class="text-3xl font-bold">159</div>
+                    <div class="text-center">Nº de Caronas</div>
+                </div>
+                <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
+                    <div class="text-3xl font-bold">415</div>
+                    <div class="text-center">Nº de Itens</div>
+                </div>
+                <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
+                    <div class="text-3xl font-bold">11.000</div>
+                    <div class="text-center">Produtos</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+                <!-- Gráfico de Barra - Rank de Caronas -->
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4 text-center">Rank de Caronas</h4>
+                    <div class="relative h-80">
+                        <canvas id="barChartCaronasRank"></canvas>
+                    </div>
+                </div>
+
+                <!-- Caronas Mais Requisitadas - Gráfico de Rosca -->
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4 text-center">Caronas Mais Requisitadas</h4>
+                    <div class="relative h-80 flex items-center justify-center">
+                        <canvas id="donutChartCaronas"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center mt-8 text-lg text-gray-700">Para acompanhar mais dados e análises detalhadas, <a href="#" class="text-blue-600 hover:underline font-semibold">acesse aqui</a>.</p>
+        </div>
+    </div>
+</section>
+<div class="h-12 bg-white"></div>
 
         <!-- Serviços SEAD -->
         <section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
@@ -492,5 +571,7 @@
         </span>
     </div>
     <script src="js/scripts.js"></script>
+    <script src="js/Grafico.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>
