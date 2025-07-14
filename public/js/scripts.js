@@ -322,6 +322,34 @@ document.addEventListener('DOMContentLoaded', function() {
     loadPage('pages/home.html', 'home');
 });
 
+// Botões para a pagina legislação
+document.addEventListener('DOMContentLoaded', function () {
+    const filterContainer = document.getElementById('legislation-filter');
+    if (!filterContainer) return;
+
+    const filterButtons = filterContainer.querySelectorAll('.filter-btn');
+    const contentBlocks = document.querySelectorAll('.legislation-content');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Remove a classe 'active' de todos os botões
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Adiciona a classe 'active' ao botão clicado
+            this.classList.add('active');
+
+            const filter = this.getAttribute('data-filter');
+
+            contentBlocks.forEach(block => {
+                if (filter === 'all' || block.getAttribute('data-category') === filter) {
+                    block.classList.remove('hidden');
+                } else {
+                    block.classList.add('hidden');
+                }
+            });
+        });
+    });
+});
+
 // Expose loadPage to the global scope for onclick attributes
 window.loadPage = loadPage;
 window.formatDate = formatDate;
