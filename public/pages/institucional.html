@@ -78,14 +78,16 @@
         </div>
     </div>
 
-    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
-    <main class="container mx-auto py-6 px-4">
-        <!-- Breadcrumbs -->
-        <div class="breadcrumbs">
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container mx-auto px-4">
             <a href="../Index.html" class="text-gray-500 hover:text-main-blue"><i class="fas fa-home"></i></a>
             <span class="separator">/</span>
             <span>Institucional</span>
         </div>
+    </div>
+    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
+<main class="container mx-auto py-6 px-4">
         <!-- Conteúdo Institucional -->
         <section class="container-box mb-6">
             <div class="flex flex-col md:flex-row items-center justify-center gap-8">
@@ -168,47 +170,58 @@
                 </div>
             </div>
         </section>
+
+        <!-- Contato -->
         <section class="container-box mb-6">
-            <h2 class="section-title text-center">Contatos</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="text-center p-4">
-                    <i class="fas fa-map-marker-alt text-4xl text-main-blue mb-2"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">Endereço</h3>
-                    <p class="text-gray-600 text-sm">
-                        Rua Doutor José Augusto, 300<br>
-                        Lagoa Nova, Natal/RN<br>
-                        CEP: 59075-160
-                    </p>
-                </div>
-                <div class="text-center p-4">
-                    <i class="fas fa-phone text-4xl text-main-blue mb-2"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">Telefone</h3>
-                    <p class="text-gray-600 text-sm">
-                        (84) 3232-1234<br>
-                        (84) 3232-1235<br>
-                        Horário: 7h às 17h
-                    </p>
-                </div>
-                <div class="text-center p-4">
-                    <i class="fas fa-envelope text-4xl text-main-blue mb-2"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">E-mail</h3>
-                    <p class="text-gray-600 text-sm">
-                        contato@compras.rn.gov.br<br>
-                        atendimento@compras.rn.gov.br<br>
-                        ouvidoria@compras.rn.gov.br
-                    </p>
-                </div>
-                <div class="text-center p-4">
-                    <i class="fas fa-clock text-4xl text-main-blue mb-2"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">Atendimento</h3>
-                    <p class="text-gray-600 text-sm">
-                        Segunda a Sexta<br>
-                        7h às 17h<br>
-                        Agendamento online
-                    </p>
+            <section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Suporte e Contato</h2>
+                    <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Precisa de Ajuda?</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-phone text-blue-600"></i>
+                                <span class="text-gray-700">(84) 3232-1234</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-whatsapp fa-lg text-blue-600"></i>
+                                <span class="text-gray-700">(84) 98127-6028</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                                <span class="text-gray-700">comprrn@gmail.com</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-clock text-blue-600"></i>
+                                <span class="text-gray-700">Seg-Sex: 8h às 17h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Links Úteis</h3>
+                        <div class="space-y-3">
+                            <a href="pages/manuais.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-book mr-2"></i>Manual do Usuário
+                            </a>
+                            <a href="pages/forum.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-comments mr-2"></i>Fórum de Discussão
+                            </a>
+                            <a href="#" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-video mr-2"></i>Tutoriais em Vídeo
+                            </a>
+                            <a href="pages/FAQs-perguntas.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-question-circle mr-2"></i>FAQ
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
         </section>
+           <!-- Links Úteis -->
         <section class="container-box mb-6">
             <h2 class="section-title text-center">Links Úteis</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -258,97 +271,100 @@
         </section>
 </main>
 
-<footer class="footer py-6 px-4">
-        <div class="container mx-auto">
-            <div class="flex flex-col items-center md:flex-row md:items-start md:justify-between mb-8">
-                <!-- Logo no canto superior esquerdo -->
-                <img src="../images/logos/NEGATIVO.png" alt="Governo do Rio Grande do Norte" class="h-14 w-auto mb-8 md:mb-2" style="height: 101px;">
-                <div class="w-full flex justify-center mb-2">
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 flex-1 max-w-6xl mx-auto">
-                    <div class="sitemap-section">
-                        <h4 class="text-white font-bold mb-4">Institucional</h4>
-                        <ul class="space-y-2">
-                            <li><a href="../index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
-                            <li><a href="institucional.html" class="text-gray-300 hover:text-white">Quem Somos</a></li>
-                            <li><a href="noticias.html" class="text-gray-300 hover:text-white">Notícias</a></li>
-                            <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
-                            <li><a href="forum.html" class="text-gray-300 hover:text-white">Fórum</a></li>
-                        </ul>
-                    </div>
-                    <div class="sitemap-section">
-                        <h4 class="text-white font-bold mb-4">Acesso</h4>
-                        <ul class="space-y-2">
-                            <li><a href="fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
-                            <li><a href="servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
-                            <li><a href="cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
-                            <li><a href="meepp.html" class="text-gray-300 hover:text-white">ME/EPP</a></li>
-                            <li><a href="acesso-sistema.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
-                        </ul>
-                    </div>
-                    <div class="sitemap-section">
-                        <h4 class="text-white font-bold mb-4">Oportunidades</h4>
-                        <ul class="space-y-2">
-                            <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Licitações</a></li>
-                            <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao/RegistroPreco" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Atas de Registro de Preço</a></li>
-                        </ul>
-                    </div>
-                    <div class="sitemap-section">
-                        <h4 class="text-white font-bold mb-4">Conhecimento</h4>
-                        <ul class="space-y-2">
-                            <li><a href="capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
-                            <li><a href="legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
-                            <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
-                            <li><a href="compr-ia.html" class="text-gray-300 hover:text-white">COMPR IA</a></li>
-                            <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
-                        </ul>
-                    </div>
-                    <div class="sitemap-section">
-                        <h4 class="text-white font-bold mb-4">Serviços SEAD</h4>
-                        <ul class="space-y-2">
-                            <li><a href="https://www.sead.rn.gov.br" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Secretaria de Administração</a></li>
-                            <li><a href="http://servicos.searh.rn.gov.br/searh/copag/contra_cheque.asp" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Contracheque</a></li>
-                            <li><a href="http://servicos.searh.rn.gov.br/searh/dirf?escolha=1" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Declaração de Rendimentos</a></li>
-                            <li><a href="http://servicos.searh.rn.gov.br/searh/Protocolo" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Protocolo NET</a></li>
-                            <li><a href="http://servicos.searh.rn.gov.br/searh/Diaria" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Diárias</a></li>
-                        </ul>
-                    </div>
+  <!-- Footer -->
+  <footer class="footer py-6 px-4">
+    <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between items-start mb-8" style="padding-top: 4rem;">
+            <!-- Logo no canto superior esquerdo -->
+            <img src="../images/logos/NEGATIVO.png" alt="Governo do Rio Grande do Norte" class="h-14 w-auto mb-2" style="height: 101px; transform: translate(0px, -45px);" data-selected="true" data-label-id="0">
+        </div>
+        <!-- Seções do mapa do site -->
+        <div class="w-full flex justify-center mt-[-16px] mb-2">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 flex-1 max-w-6xl mx-auto">
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Institucional</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
+                        <li><a href="institucional.html" class="text-gray-300 hover:text-white">Quem Somos</a></li>
+                        <li><a href="noticias.html" class="text-gray-300 hover:text-white">Notícias</a></li>
+                        <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
+                        <li><a href="forum.html" class="text-gray-300 hover:text-white">Fórum</a></li>
+                    </ul>
                 </div>
-            </div>
-            <hr class="border-white my-4">
-            <div class="flex flex-row justify-between items-start max-w-4xl mx-auto gap-16 mb-6">
-                <!-- Informações de contato -->
-                <div class="text-white text-sm space-y-1 w-1/2 pr-8">
-                    <div class="font-bold text-base mb-1">Contato</div>
-                    <div>Centro Administrativo do Estado</div>
-                    <div>Av. Senador Salgado Filho, s/n, Lagoa Nova - Natal/RN.</div>
-                    <div>CEP: 59064-901</div>
-                    <div><i class="fas fa-phone-alt mr-2"></i>+55 (84) 3232-5240</div>
-                    <div><i class="fas fa-envelope mr-2"></i>contato@rn.gov.br</div>
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Acesso</h4>
+                    <ul class="space-y-2">
+                        <li><a href="fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
+                        <li><a href="servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
+                        <li><a href="cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
+                        <li><a href="meepp.html" class="text-gray-300 hover:text-white">ME/EPP</a></li>
+                        <li><a href="acesso-sistema.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
+                    </ul>
                 </div>
-                <!-- Redes sociais -->
-                <div class="flex flex-col items-end w-1/2 pl-8">
-                    <div class="font-bold text-base mb-2 text-white">REDES SOCIAIS</div>
-                    <div class="flex items-center gap-4 justify-center">
-                        <a href="https://twitter.com/" target="_blank" class="text-gray-300 hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
-                        <a href="https://facebook.com/" target="_blank" class="text-gray-300 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
-                        <a href="https://instagram.com/" target="_blank" class="text-gray-300 hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
-                        <a href="https://youtube.com/" target="_blank" class="text-gray-300 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
-                        <a href="https://wa.me/5584999999999" target="_blank" class="text-gray-300 hover:text-green-500" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
-                    </div>
-                    <a href="https://www.sic.rn.gov.br/" target="_blank" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-lg font-semibold mt-4 ml-auto" aria-label="Acesso à Informação">
-                        <span class="text-white text-base font-bold">Acesso à Informação</span>
-                    </a>
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Oportunidades</h4>
+                    <ul class="space-y-2">
+                        <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Licitações</a></li>
+                        <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao/RegistroPreco" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Atas de Registro de Preço</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Conhecimento</h4>
+                    <ul class="space-y-2">
+                        <li><a href="capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
+                        <li><a href="legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
+                        <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
+                        <li><a href="compr-ia.html" class="text-gray-300 hover:text-white">COMPR IA</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Serviços SEAD</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://www.sead.rn.gov.br" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Secretaria de Administração</a></li>
+                        <li><a href="http://servicos.searh.rn.gov.br/searh/copag/contra_cheque.asp" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Contracheque</a></li>
+                        <li><a href="http://servicos.searh.rn.gov.br/searh/dirf?escolha=1" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Declaração de Rendimentos</a></li>
+                        <li><a href="http://servicos.searh.rn.gov.br/searh/Protocolo" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Protocolo NET</a></li>
+                        <li><a href="http://servicos.searh.rn.gov.br/searh/Diaria" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Diárias</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- Copyright separado, faixa azul escura ocupando toda a largura -->
-    <div class="w-full bg-blue-900 py-4 flex items-center justify-center m-0">
-        <span class="text-white text-center text-sm font-semibold">
-            2025 © Governo do Estado do Rio Grande do Norte | Desenvolvimento <span class="text-yellow-400 font-bold">Central de compras governamentais</span> | Política de Privacidade
-        </span>
+        <hr class="border-white my-4">
+        <div class="flex flex-row justify-between items-start max-w-4xl mx-auto gap-16 mb-6">
+            <!-- Informações de contato -->
+            <div class="text-white text-sm space-y-1 w-1/2 pr-8">
+                <div class="font-bold text-base mb-1">Contato</div>
+                <div>Centro Administrativo do Estado</div>
+                <div>Av. Senador Salgado Filho, s/n, Lagoa Nova - Natal/RN.</div>
+                <div>CEP: 59064-901</div>
+                <div><i class="fas fa-phone-alt mr-2"></i>+55 (84) 3232-5240</div>
+                <div><i class="fas fa-envelope mr-2"></i>contato@rn.gov.br</div>
+            </div>
+            <!-- Redes sociais -->
+            <div class="flex flex-col items-end w-1/2 pl-8">
+                <div class="font-bold text-base mb-2 text-white">REDES SOCIAIS</div>
+                <div class="flex items-center gap-4 justify-center">
+                    <a href="https://twitter.com/" target="_blank" class="text-gray-300 hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="https://facebook.com/" target="_blank" class="text-gray-300 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="https://instagram.com/" target="_blank" class="text-gray-300 hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://youtube.com/" target="_blank" class="text-gray-300 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+                    <a href="https://wa.me/5584999999999" target="_blank" class="text-gray-300 hover:text-green-500" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                </div>
+                <a href="https://www.sic.rn.gov.br/" target="_blank" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-lg font-semibold mt-4 ml-auto" aria-label="Acesso à Informação">
+                    <span class="text-white text-base font-bold">Acesso à Informação</span>
+                </a>
+            </div>
+        </div>
     </div>
-    <script src="../js/scripts.js"></script>
+</footer>
+<!-- Copyright separado, faixa azul escura ocupando toda a largura -->
+<div class="w-full bg-blue-900 py-4 flex items-center justify-center m-0">
+    <span class="text-white text-center text-sm font-semibold">
+        2025 © Governo do Estado do Rio Grande do Norte | Desenvolvimento <span class="text-yellow-400 font-bold">Central de compras governamentais</span> | Política de Privacidade
+    </span>
+</div>
+   
     <script src="../js/search.js"></script>
 </body>
 </html>

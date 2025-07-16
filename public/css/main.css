@@ -1,5 +1,37 @@
+/*
+@charset "UTF-8";
+
+@description: Folha de estilos principal para o Portal de Compras Governamentais do RN.
+@version: 1.1
+@date: 2024-07-16
+
+SUMÁRIO:
+1.  CONFIGURAÇÕES GLOBAIS
+    - Fontes Locais
+    - Variáveis de Cor
+    - Estilos Globais
+
+2.  COMPONENTES
+    - Cabeçalho e Navegação
+    - Botões e Links
+    - Cards
+    - Menu Off-canvas
+    - Rodapé
+
+3.  SEÇÕES ESPECÍFICAS
+    - Legislação
+    - Banner Padrão
+
+4.  RESPONSIVIDADE
+    - Media Queries
+*/
+
+/* =================================================================== */
+/* 1. CONFIGURAÇÕES GLOBAIS                                          */
+/* =================================================================== */
+
 /* ------------------------
-    Fontes Locais
+    1.1 Fontes Locais
 ------------------------- */
 @font-face {
     font-family: 'Rawline';
@@ -26,7 +58,7 @@
 }
 
 /* ------------------------
-    Variáveis de Cor
+    1.2 Variáveis de Cor
 ------------------------- */
 :root {
     --primary-color: #1351B4;
@@ -49,7 +81,7 @@
 }
 
 /* ------------------------
-    Estilos Globais
+    1.3 Estilos Globais
 ------------------------- */
 body {
     font-family: 'Rawline', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -60,6 +92,13 @@ body {
     padding: 0;
 }
 
+/* =================================================================== */
+/* 2. COMPONENTES                                                    */
+/* =================================================================== */
+
+/* ------------------------
+    2.1 Cabeçalho e Navegação
+------------------------- */
 .header-bg {
     background-color: var(--lighter-grey-bg);
 }
@@ -162,6 +201,9 @@ body {
     font-weight: 700;
 }
 
+/* ------------------------
+    2.2 Botões e Links
+------------------------- */
 .link-button {
     display: inline-block;
     background-color: var(--primary-button);
@@ -181,6 +223,9 @@ body {
 
 .link-button .fas { color: inherit; }
 
+/* ------------------------
+    2.3 Cards
+------------------------- */
 .consult-card, .metric-card, .service-card {
     background-color: var(--carousel-text);
     border: 1px solid var(--border-grey);
@@ -247,6 +292,37 @@ body {
     height: 6px;
 }
 
+/* ------------------------
+    2.4 Menu Off-canvas
+------------------------- */
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    z-index: 2000;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+}
+
+.offcanvas-menu.active { left: 0; }
+
+.offcanvas-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1999;
+    display: none;
+}
+
+.offcanvas-backdrop.active { display: block; }
+
 /* Estilos para container 100% preenchido */
 .full-width-container {
     width: 100%;
@@ -266,6 +342,9 @@ body {
 .metric-bar.yellow { background-color: var(--warning-color); }
 
 /* Banner padrão para todas as páginas */
+/* ------------------------
+    3.2 Banner Padrão
+------------------------- */
 .banner-padrao {
   width: 100%;
   height: 280px;
@@ -276,7 +355,7 @@ body {
 }
 
 /* ------------------------
-    Rodapé
+    2.5 Rodapé
 ------------------------- */
 .footer {
     background-color: var(--main-blue);
@@ -296,7 +375,13 @@ body {
 .sitemap-section a:hover {
     color: white;
 }
-/* Estilos para os novos cards de legislação */
+/* =================================================================== */
+/* 3. SEÇÕES ESPECÍFICAS                                             */
+/* =================================================================== */
+
+/* ------------------------
+    3.1 Legislação
+------------------------- */
 .leg-card {
     position: relative;
     border-radius: 0.75rem;
@@ -400,6 +485,90 @@ body {
     font-size: 0.95rem;
     flex-grow: 1;
 }
+/* --------------------------------
+    Estitilos para a pagina servidor
+-------------------------------- */
+
+/* Hero Section */
+.hero-servidor {
+    background-color: var(--light-blue-bg); /* Fundo azul claro e suave */
+    color: var(--dark-blue); /* Cor do texto escura para contraste */
+    border-radius: 0 0 40px 40px;
+}
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-shadow: none; /* Sombra de texto removida */
+}
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--main-blue); /* Tom de azul mais escuro para o subtítulo */
+    opacity: 1;
+}
+/* Seção de Serviços */
+.service-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-grey);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(19, 81, 180, 0.15);
+    border-color: var(--primary-color);
+}
+.service-card-icon {
+    font-size: 2.5rem;
+    color: white;
+    background: var(--primary-color);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    box-shadow: 0 4px 10px rgba(19, 81, 180, 0.3);
+}
+.service-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 0.5rem;
+}
+.service-card-description {
+    font-size: 0.95rem;
+    color: #555;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+.service-card-link {
+    background-color: var(--light-blue-bg);
+    color: var(--primary-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    align-self: center;
+}
+.service-card-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.section-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+/* FIM */
 
 /* ------------------------
     Cards de Links Úteis
@@ -530,6 +699,9 @@ body {
 /* ------------------------
     Responsividade
 ------------------------- */
+/* =================================================================== */
+/* 4. RESPONSIVIDADE                                                 */
+/* =================================================================== */
 @media (max-width: 768px) {
     .header-bg .flex.justify-between {
         flex-direction: column;

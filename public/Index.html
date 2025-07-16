@@ -13,7 +13,7 @@
 </head>
   <!-- Barra Superior -->
     
-  <body class="bg-white">
+<body class="bg-white">
     <!-- Cabeçalho Superior -->
     <header class="header-bg py-2 px-4">
         <div class="container mx-auto flex justify-between items-center flex-wrap">
@@ -67,8 +67,6 @@
         </div>
     </div>
 
-    </div>
-
     <!-- Container para Resultados da Busca -->
     <div id="search-results-container" class="container mx-auto my-4 px-4"></div>
 
@@ -118,6 +116,9 @@
                         <span>Acesso ao Sistema</span>
                     </a>
                 </li>
+                <li>
+                    <a href="pages/manuais.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+                        <i class="fas fa-book nav-icon"></i>
                         <span>Manuais</span>
                     </a>
                 </li>
@@ -127,35 +128,43 @@
 
     <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
 
-    <!-- Conteúdo Principal -->
-    <main class="max-w-7xl mx-auto py-6 px-8">
-        <!-- Navigation with Icons -->
-        <div class="container-box mb-6">
+    <!-- =================================================================== -->
+    <!-- CONTEÚDO PRINCIPAL DA PÁGINA                                    -->
+    <!-- =================================================================== -->
+    <main>
+        <!-- =================================================================== -->
+        <!-- SEÇÃO DE NAVEGAÇÃO PRINCIPAL (ÍCONES)                           -->
+        <!-- =================================================================== -->
+        <section class="max-w-7xl mx-auto py-6 px-8">
+            <div class="container-box mb-6">
             <div class="flex justify-around flex-wrap">
-                <a href="pages/Fornecedor.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85 hover:text-D34C2B transition-colors">
+                <a href="pages/Fornecedor.html" class="flex items-center gap-4 mb-4 mr-4 text-gray-700 hover:text-blue-800 transition-colors">
                     <i class="fas fa-user-tie nav-icon text-4xl text-blue-900"></i>
                     <span>Fornecedor</span>
                 </a>
-                <a href="pages/Servidor.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85 hover:text-D34C2B transition-colors">
+                <a href="pages/Servidor.html" class="flex items-center gap-4 mb-4 mr-4 text-gray-700 hover:text-blue-800 transition-colors">
                     <i class="fas fa-user nav-icon text-4xl text-blue-900"></i>
                     <span>Servidor</span>
                 </a>
-                <a href="pages/Cidadao.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85 hover:text-D34C2B transition-colors">
+                <a href="pages/Cidadao.html" class="flex items-center gap-4 mb-4 mr-4 text-gray-700 hover:text-blue-800 transition-colors">
                     <i class="fas fa-users nav-icon text-4xl text-blue-900"></i>
                     <span>Cidadão</span>
                 </a>
-                <a href="pages/Capacite-se.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85 hover:text-D34C2B transition-colors">
+                <a href="pages/Capacite-se.html" class="flex items-center gap-4 mb-4 mr-4 text-gray-700 hover:text-blue-800 transition-colors">
                     <i class="fas fa-graduation-cap nav-icon text-4xl text-blue-900"></i>
                     <span>Capacite-se</span>
                 </a>
-                <a href="pages/Legislacao.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85 hover:text-D34C2B transition-colors">
+                <a href="pages/Legislacao.html" class="flex items-center gap-4 mb-4 mr-4 text-gray-700 hover:text-blue-800 transition-colors">
                     <i class="fas fa-gavel nav-icon text-4xl text-blue-900"></i>
                     <span>Legislação</span>
                 </a>
             </div>
         </div>
+        </section>
 
-        <!-- Carrossel de Notícias -->
+        <!-- =================================================================== -->
+        <!-- SEÇÃO DO CARROSSEL DE NOTÍCIAS                                  -->
+        <!-- =================================================================== -->
         <div class="max-w-full mx-auto px-0">
             
             <div class="br-carousel" id="carousel" role="region" aria-label="Carrossel de notícias">
@@ -238,7 +247,9 @@
         <!-- Fim do Carrossel -->
         <div class="h-12 bg-white"></div>
 
-        <!-- Manuais & Links Section -->
+        <!-- =================================================================== -->
+        <!-- SEÇÃO DE LINKS RÁPIDOS                                          -->
+        <!-- =================================================================== -->
     <section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
         <div class="mb-6">
             <h3 class="section-title">Links Rápidos</h3>
@@ -256,7 +267,9 @@
     </section>
     <div class="h-12 bg-white"></div>
 
-        <!-- Consultar Oportunidades -->
+        <!-- =================================================================== -->
+        <!-- SEÇÃO PARA CONSULTAR OPORTUNIDADES                              -->
+        <!-- =================================================================== -->
 <div class="bg-gray-50 rounded-lg p-6 mb-6 max-w-7xl mx-auto px-8">
     <h3 class="section-title text-center">Consultar Oportunidades</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
@@ -284,9 +297,9 @@
 </div>
 <div class="h-12 bg-white"></div>
 
-<div class="h-12 bg-white"></div>
-
-<!-- Resumo dos Dados de Compras -->
+<!-- =================================================================== -->
+<!-- SEÇÃO DE DADOS E ESTATÍSTICAS DE COMPRAS                        -->
+<!-- =================================================================== -->
 <section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
     <div class="mb-6">
         <h3 class="text-center text-4xl font-extrabold text-blue-800 mb-10">Resumo dos Dados de Compras</h3>
@@ -394,7 +407,9 @@
 </section>
 <div class="h-12 bg-white"></div>
 
-        <!-- Serviços SEAD -->
+        <!-- =================================================================== -->
+        <!-- SEÇÃO DE SERVIÇOS SEAD                                          -->
+        <!-- =================================================================== -->
         <section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
         <div class="mb-6">
             <h3 class="section-title">Serviços SEAD</h3>
@@ -565,11 +580,10 @@
 <!-- Copyright separado, faixa azul escura ocupando toda a largura -->
 <div class="w-full bg-blue-900 py-4 flex items-center justify-center m-0">
     <span class="text-white text-center text-sm font-semibold">
-        2025 © Governo do Estado do Rio Grande do Norte | Desenvolvimento <span class="text-yellow-400 font-bold">Central de compras governamentais</span> | Política de Privacidade
+        2025 &copy; Governo do Estado do Rio Grande do Norte | Desenvolvimento <span class="text-yellow-400 font-bold">Central de compras governamentais</span> | Política de Privacidade
     </span>
 </div>
 <script src="../public/js/scripts.js"></script>
-<script src="../public/js/search.js"></script>
 <script src="../public/js/Grafico.js"></script>
 </body>
 </html>

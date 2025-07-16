@@ -63,7 +63,6 @@ debug.log
 *.pid.lock
 
 # Arquivos de dependências
-package-lock.json
 yarn.lock
 
 # Arquivos de ambiente

@@ -1,20 +1,3 @@
-/**
- * ===================================================================
- * SCRIPT PARA A PÁGINA MEEPP (MICROEMPRESAS E EMPRESAS DE PEQUENO PORTE)
- * ===================================================================
- * 
- * Este script contém as funcionalidades interativas da página MEEPP,
- * incluindo:
- * 1. Controle do menu lateral (off-canvas)
- * 2. Rolagem suave para âncoras internas
- * 3. Sistema de abas para conteúdo dinâmico
- * 4. Funcionalidade de acordeão para o FAQ
- * 5. Animações de entrada para elementos ao rolar a página
- * 
- * @version 1.0
- * @date 2025-07-16
- */
-
 document.addEventListener('DOMContentLoaded', function() {
 
     // --- FUNCIONALIDADE 1: MENU LATERAL (OFF-CANVAS) ---

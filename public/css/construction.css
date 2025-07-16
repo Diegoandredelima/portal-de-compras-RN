@@ -26,6 +26,8 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+
+/* Ícone e Animação */
 .construction-icon {
     font-size: 5rem; /* Ícone grande */
     color: #FFCD07; /* Cor de aviso (amarelo) */
@@ -38,6 +40,7 @@ body {
     50% { transform: translateY(-15px); }
 }
 
+/* Título da Página */
 .construction-title {
     font-size: 2.5rem; /* Título grande */
     font-weight: 700; /* Bold */
@@ -45,6 +48,7 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Mensagem da Página */
 .construction-message {
     font-size: 1.125rem; /* Texto médio */
     color: #555;
@@ -52,6 +56,7 @@ body {
     margin-bottom: 2rem;
 }
 
+/* Botões de Ação */
 .action-buttons {
     display: flex;
     flex-wrap: wrap; /* Quebra para próxima linha em telas pequenas */
@@ -60,6 +65,7 @@ body {
     margin-top: 2rem;
 }
 
+/* Estilos dos Botões */
 .action-button {
     display: inline-flex;
     align-items: center;
@@ -103,6 +109,7 @@ body {
 
 /* Responsividade */
 @media (max-width: 640px) {
+    /* Ajustes para telas pequenas */
     .construction-title {
         font-size: 2rem;
     }

@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ME/EPP - Micro e Pequenas Empresas | Portal de Compras</title>
-    <meta name="description" content="Oportunidades exclusivas para Micro e Pequenas Empresas. Descubra como sua empresa pode participar de licitações públicas e acessar o mercado governamental.">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../node_modules/@govbr-ds/core/dist/core.min.css">
+    <title>Central de Compras RN - Oportunidades para Fornecedores</title>
+    <meta name="description" content="Venda para o Governo do Rio Grande do Norte. Oportunidades para Grandes Empresas, ME/EPP e MEI. Cadastre-se e participe das licitações do RN.">
+    <!-- Tailwind CSS (Framework de CSS) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/meepp.css">
 </head>
-<body class="bg-white">
-    <!-- Barra Superior -->
+
+<body class="bg-white font-sans">
+
+    <!-- =================================================================== -->
+    <!-- HEADER SUPERIOR (INFORMAÇÕES E REDES SOCIAIS)                      -->
+    <!-- =================================================================== -->
     <header class="header-bg py-2 px-4">
         <div class="container mx-auto flex justify-between items-center">
+            <!-- Logos -->
             <div class="flex items-center space-x-4">
                 <img src="../images/logos/COMPR_logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
                 <img src="../images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
             </div>
+            <!-- Links de Acesso e Redes Sociais -->
             <div class="flex items-center space-x-4 text-sm">
                 <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
                 <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
@@ -38,508 +45,637 @@
         </div>
     </header>
 
-    <!-- Barra Colorida -->
+    <!-- Barra de Cor Divisória -->
     <div class="color-bar w-full"></div>
-    <!-- Cabeçalho Fixo com Menu -->
+
+    <!-- =================================================================== -->
+    <!-- HEADER FIXO (MENU PRINCIPAL)                                      -->
+    <!-- =================================================================== -->
     <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-                <a href="../index.html" class="text-xl font-medium">Central de Compras</a>
+                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu"><i class="fas fa-bars text-2xl"></i></button>
+                <a href="../Index.html" class="text-xl font-medium">Central de Compras</a>
             </div>
-            <div class="flex-1 flex justify-end">
-                <div class="search-access-group relative" style="width: 570px; max-width: 100%;">
-                    <div class="relative w-full" style="max-width:100%;">
-                        <input type="text" id="search-input-field" placeholder="O que você procura?" class="search-input w-full">
-                        <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
-                    </div>
-                    <a href="../pages/acesso-sistema.html" class="access-btn bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-5 rounded-lg text-base flex items-center gap-1 shadow transition" aria-label="Acesso ao Sistema">
-                        <i class="fas fa-sign-in-alt"></i>
-                        <span class="hidden sm:inline">Acesso ao Sistema</span>
-                    </a>
-                </div>
-            </div>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#beneficios" class="text-gray-600 hover:text-primary-color transition">Benefícios</a>
+                <a href="#oportunidades" class="text-gray-600 hover:text-primary-color transition">Oportunidades</a>
+                <a href="#como-participar" class="text-gray-600 hover:text-primary-color transition">Como Participar</a>
+                <a href="#faq" class="text-gray-600 hover:text-primary-color transition">FAQ</a>
+            </nav>
         </div>
     </div>
-    <!-- Menu Lateral -->
+
+    <!-- =================================================================== -->
+    <!-- MENU LATERAL (OFFCANVAS)                                          -->
+    <!-- =================================================================== -->
     <div class="offcanvas-menu" id="offcanvas-menu">
         <div class="p-4 border-b flex justify-between items-center">
             <h2 class="text-lg font-bold">Menu</h2>
-            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
+            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu"><i class="fas fa-times text-2xl"></i></button>
         </div>
         <div class="p-4">
             <ul class="space-y-4">
-                
+                <li><a href="../Index.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-home nav-icon"></i><span>Início</span></a></li>
                 <li><a href="servidor.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-user nav-icon"></i><span>Servidor</span></a></li>
                 <li><a href="cidadao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-users nav-icon"></i><span>Cidadão</span></a></li>
                 <li><a href="capacite-se.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-graduation-cap nav-icon"></i><span>Capacite-se</span></a></li>
                 <li><a href="legislacao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-gavel nav-icon"></i><span>Legislação</span></a></li>
-                <li><a href="em-construcao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-sign-in-alt nav-icon"></i><span>Acesso ao Sistema</span></a></li>
-
-                
+                <li><a href="manuais.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-book nav-icon"></i><span>Manuais</span></a></li>
+                <li><a href="forum.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-comments nav-icon"></i><span>Fórum</span></a></li>
             </ul>
         </div>
     </div>
-    <!-- Quick Links padrão portal -->
-<div class="container-box mb-6">
-    <div class="flex justify-around flex-wrap">
-        <a href="../pages/capacite-se.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85">
-            <i class="fas fa-graduation-cap nav-icon text-4xl text-blue-900"></i>
-            <span>Capacite-se</span>
-        </a>
-        <a href="../pages/legislacao.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85">
-            <i class="fas fa-gavel nav-icon text-4xl text-blue-900"></i>
-            <span>Legislação</span>
-        </a>
-        <a href="../pages/forum.html" class="flex items-center gap-4 mb-4 mr-4 text-3A6A85">
-            <i class="fas fa-comments nav-icon text-4xl text-blue-900"></i>
-            <span>Fórum</span>
-        </a>
+    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
 
-    </div>
-    </div>
-    </header>
+    <!-- =================================================================== -->
+    <!-- CONTEÚDO PRINCIPAL DA PÁGINA                                    -->
+    <!-- =================================================================== -->
 
-    <!-- Loading Animation -->
-    <div id="loadingScreen" class="loading-screen active">
-        <div class="loading-container">
-            <div class="loading-spinner">
-                <div class="spinner-ring"></div>
-                <div class="spinner-ring"></div>
-                <div class="spinner-ring"></div>
-            </div>
-            <h2 class="loading-title">Carregando Oportunidades para ME/EPP</h2>
-            <p class="loading-subtitle">Preparando as melhores oportunidades para sua empresa...</p>
-            <div class="loading-progress">
-                <div class="progress-bar" id="progressBar"></div>
-            </div>
-            <div class="loading-stats">
-                <div class="stat-item">
-                    <div class="stat-number" id="companiesCount">0</div>
-                    <div class="stat-label">Empresas Cadastradas</div>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container hero-content">
+        <h1 class="hero-title">
+            Venda para o Governo do RN
+            <br>
+            <span class="hero-highlight">Oportunidades para Todos!</span>
+        </h1>
+        <p class="hero-subtitle">
+            Conectando seu negócio ao desenvolvimento do Rio Grande do Norte. 
+            Grandes empresas, ME/EPP e MEI têm espaço garantido.
+        </p>
+        <div class="hero-buttons">
+            <a href="#cadastro" class="btn btn-accent btn-lg">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m22 2-7 20-4-9-9-4Z"/>
+                    <path d="M22 2 11 13"/>
+                </svg>
+                Cadastre-se Agora
+            </a>
+            <a href="#oportunidades" class="btn btn-outline btn-lg">
+                Conheça as Oportunidades
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Benefícios Section -->
+<section id="beneficios" class="section section-bg">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Por Que Vender para o Governo do RN?</h2>
+            <p class="section-subtitle">Benefícios exclusivos para fornecedores que escolhem o Rio Grande do Norte</p>
+        </div>
+        
+        <div class="benefits-grid">
+            <div class="card card-hover">
+                <div class="card-header">
+                    <svg class="card-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                    </svg>
+                    <h3 class="card-title">Mercado Estável</h3>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="opportunitiesCount">0</div>
-                    <div class="stat-label">Oportunidades Ativas</div>
+                <div class="card-content">
+                    <p>Demanda contínua por bens e serviços com contratos de longo prazo e renovações programadas.</p>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="valueCount">R$ 0</div>
-                    <div class="stat-label">Valor em Contratos</div>
+            </div>
+
+            <div class="card card-hover">
+                <div class="card-header">
+                    <svg class="card-icon secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="2" x2="12" y2="22"/>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                    <h3 class="card-title">Pagamento Garantido</h3>
+                </div>
+                <div class="card-content">
+                    <p>Segurança nas transações com o Estado, pagamentos em dia e transparência total.</p>
+                </div>
+            </div>
+
+            <div class="card card-hover">
+                <div class="card-header">
+                    <svg class="card-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    <h3 class="card-title">Transparência</h3>
+                </div>
+                <div class="card-content">
+                    <p>Processos claros, acessíveis e auditáveis. Todas as informações disponíveis publicamente.</p>
+                </div>
+            </div>
+
+            <div class="card card-hover">
+                <div class="card-header">
+                    <svg class="card-icon secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    <h3 class="card-title">Desenvolvimento Local</h3>
+                </div>
+                <div class="card-content">
+                    <p>Contribua para o crescimento do seu estado e tenha prioridade como fornecedor local.</p>
+                </div>
+            </div>
+
+            <div class="card card-hover">
+                <div class="card-header">
+                    <svg class="card-icon accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 12l2 2 4-4"/>
+                        <path d="M21 12c.552 0 1-.448 1-1V8a2 2 0 0 0-2-2h-5L9.5 3h-3C5.672 3 5 3.672 5 4.5S5.672 6 6.5 6H9l5.5 3H20a2 2 0 0 1 2 2v3c0 .552-.448 1-1 1"/>
+                    </svg>
+                    <h3 class="card-title">Inovação</h3>
+                </div>
+                <div class="card-content">
+                    <p>Oportunidades em diversas áreas: tecnologia, saúde, educação, infraestrutura e muito mais.</p>
+                </div>
+            </div>
+
+            <div class="card card-hover">
+                <div class="card-header">
+                    <svg class="card-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15.5 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"/>
+                        <path d="M15 3v6h6"/>
+                        <path d="M10 13l2 2 4-4"/>
+                    </svg>
+                    <h3 class="card-title">Tratamento Diferenciado</h3>
+                </div>
+                <div class="card-content">
+                    <p>ME/EPP e MEI têm benefícios especiais garantidos por lei federal.</p>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Main Content -->
-    <main id="mainContent" class="main-content">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="container mx-auto px-4 py-16">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
+</section>
 
 
-                    <div>
-                        <div class="hero-badge">
-                            <i class="fas fa-award"></i>
-                            <span>Oportunidades Exclusivas ME/EPP</span>
-                        </div>
-                        <h1 class="hero-title">
-                            Sua <span class="text-primary">Micro ou Pequena Empresa</span>
-                            no Mercado Público
-                        </h1>
-                        <p class="hero-subtitle">
-                            Descubra como sua empresa pode participar de licitações públicas e acessar
-                            oportunidades exclusivas no maior mercado do país.
-                        </p>
-                        <div class="hero-stats">
-                            <div class="stat-card">
-                                <div class="stat-number">250.594</div>
-                                <div class="stat-label">Pequenos Negócios no RN</div>
+    <main>
+        <!-- =================================================================== -->
+        <!-- SEÇÃO DE OPORTUNIDADES POR PORTE                                -->
+        <!-- =================================================================== -->
+        <section id="oportunidades" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Seu Negócio, Sua Oportunidade</h2>
+                    <p class="section-subtitle">Venda para o RN independente do porte da sua empresa</p>
+                </div>
+
+                <!-- Abas de Navegação -->
+                <div class="tabs">
+                    <div class="tabs-list">
+                        <button class="tab-trigger flex items-center justify-center space-x-2" data-tab="grandes">
+                            <i class="fas fa-building-columns fa-fw"></i>
+                            <span>Grandes Empresas</span>
+                        </button>
+                        <button class="tab-trigger active flex items-center justify-center space-x-2" data-tab="me-epp">
+                            <i class="fas fa-users fa-fw"></i>
+                            <span>ME/EPP</span>
+                        </button>
+                        <button class="tab-trigger flex items-center justify-center space-x-2" data-tab="mei">
+                            <i class="fas fa-user-tie fa-fw"></i>
+                            <span>MEI</span>
+                        </button>
+                    </div>
+
+                    <!-- Conteúdo da Aba: ME/EPP -->
+                    <div class="tab-content active" id="me-epp">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-users card-icon secondary"></i>
+                                    Benefícios para ME/EPP
+                                </h3>
+                                <p class="card-description">Tratamento diferenciado garantido por lei federal</p>
                             </div>
-                            <div class="stat-card">
-                                <div class="stat-number">R$ 54,6 bi</div>
-                                <div class="stat-label">Valor Contratado ME/EPP</div>
+                            <div class="card-content">
+                                <div class="benefits-grid-2">
+                                    <div class="benefit-item">
+                                        <div class="benefit-header">
+                                            <span class="badge badge-secondary">Lei 123/2006</span>
+                                            <h4><b>Empate Ficto</b></h4>
+                                        </div>
+                                        <p>Propostas até 10% superiores à melhor classificada são consideradas empatadas (5% no pregão), dando direito de cobrir a oferta.</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-header">
+                                            <span class="badge badge-secondary">Exclusivo</span>
+                                            <h4><b>Licitações Exclusivas</b></h4>
+                                        </div>
+                                        <p>Participação exclusiva em licitações de até R$ 140 mil, garantindo mercado reservado para pequenos negócios.</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-header">
+                                            <span class="badge badge-secondary">25%</span>
+                                            <h4><b>Cotas de Participação</b></h4>
+                                        </div>
+                                        <p>Reserva de até 25% do objeto para ME/EPP em bens e serviços divisíveis, ampliando as oportunidades de contratação.</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-header">
+                                            <span class="badge badge-secondary">RN</span>
+                                            <h4><b>Prioridade Local</b></h4>
+                                        </div>
+                                        <p>Fornecedores locais e regionais têm prioridade de até 10% sobre o menor preço, fortalecendo a economia potiguar.</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-header">
+                                            <span class="badge badge-secondary">5 dias</span>
+                                            <h4><b>Regularização Tardia</b></h4>
+                                        </div>
+                                        <p>Prazo de 5 dias úteis para regularização fiscal e trabalhista após ser declarado vencedor da licitação.</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-header">
+                                            <span class="badge badge-secondary">Automático</span>
+                                            <h4><b>Benefícios Garantidos</b></h4>
+                                        </div>
+                                        <p>Todos os benefícios são aplicados automaticamente, independentemente de previsão específica no edital.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="stat-card">
-                                <div class="stat-number">99%</div>
-                                <div class="stat-label">Das Empresas são ME/EPP</div>
-                            </div>
-                        </div>
-                        <div class="hero-actions">
-                            <button class="btn btn-primary transform transition-transform duration-200 hover:scale-105 hover:shadow-lg" onclick="scrollToSection('benefits')">
-                                <i class="fas fa-rocket"></i>
-                                Descobrir Vantagens
-                            </button>
-                            <button class="btn btn-secondary transform transition-transform duration-200 hover:scale-105 hover:shadow-lg" onclick="scrollToSection('howto')">
-                                <i class="fas fa-play-circle"></i>
-                                Como Participar
-                            </button>
                         </div>
                     </div>
-                    <div class="hero-image">
-                        <div class="image-container">
-                            <img src="../images/meepp-hero.jpg" alt="Empresários ME/EPP" class="main-image">
-                            <div class="floating-card">
-                                <div class="card-icon">
-                                    <i class="fas fa-chart-line text-success"></i>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-title">Crescimento 2024</div>
-                                    <div class="card-value">+7,5%</div>
+
+                    <!-- Conteúdo da Aba: Grandes Empresas -->
+                    <div class="tab-content" id="grandes">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-building-columns card-icon primary"></i>
+                                    Oportunidades para Grandes Empresas
+                                </h3>
+                                <p class="card-description">Contratos de grande volume e complexidade técnica</p>
+                            </div>
+                            <div class="card-content">
+                                <div class="benefits-grid-2">
+                                    <div class="benefit-item">
+                                        <h4><b>Licitações de Grande Porte</b></h4>
+                                        <p>Participe de licitações de grande volume e complexidade técnica, incluindo obras de infraestrutura, sistemas de TI e fornecimento de equipamentos especializados.</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <h4><b>Parcerias Estratégicas</b></h4>
+                                        <p>Oportunidades de subcontratação obrigatória com ME/EPP locais, fortalecendo a economia regional e criando parcerias duradouras.</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <h4><b>Mercado Diversificado</b></h4>
+                                        <p>Acesso a um mercado robusto e diversificado em áreas como saúde, educação, segurança pública, meio ambiente e desenvolvimento urbano.</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <h4><b>Contratos de Longo Prazo</b></h4>
+                                        <p>Possibilidade de contratos plurianuais e atas de registro de preços com vigência estendida, garantindo previsibilidade de receita.</p>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Conteúdo da Aba: MEI -->
+                    <div class="tab-content" id="mei">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-user-tie card-icon accent"></i>
+                                    Contrata+Brasil para MEI
+                                </h3>
+                                <p class="card-description">Programa federal de simplificação para microempreendedores</p>
+                            </div>
+                            <div class="card-content">
+                                <div class="highlight-box">
+                                    <h4>🚀 Programa Contrata+Brasil</h4>
+                                    <p>Plataforma federal que conecta MEI com oportunidades de prestação de serviços para órgãos públicos federais, estaduais e municipais.</p>
+                                </div>
+                                
+                                <div class="benefits-grid-2">
+                                    <div class="benefit-item">      
+                                        <h4><b>Menos Burocracia</b></h4>
+                                        <p>Processos simplificados e ágeis, especialmente desenvolvidos para a realidade do microempreendedor individual.</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <h4><b>Serviços Comuns</b></h4>
+                                        <p>Oportunidades em serviços como pintura, elétrica, gesso, reformas, limpeza e manutenção predial.</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <h4><b>Cadastro Único</b></h4>
+                                        <p>Um único cadastro na plataforma dá acesso a oportunidades em diversos órgãos públicos do país.</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <h4><b>Acompanhamento Digital</b></h4>
+                                        <p>Acompanhe suas propostas e contratos de forma digital, com notificações e atualizações em tempo real.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <a href="#" class="btn btn-accent btn-full">
+                                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                            <polyline points="15,3 21,3 21,9"/>
+                                            <line x1="10" y1="14" x2="21" y2="3"/>
+                                        </svg>
+                                        Acessar Contrata+Brasil
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- Fim do container .tabs -->
+            </div> <!-- Fim do .container -->
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- SEÇÃO COMO PARTICIPAR                                             -->
+        <!-- =================================================================== -->
+        <section id="como-participar" class="section section-bg">
+            <div class="container mx-auto px-4">
+                <div class="section-header">
+                    <h2 class="section-title">Seu Caminho para Vender ao Governo</h2>
+                    <p class="section-subtitle">Processo simples e transparente em 4 passos</p>
+                </div>
+                <div class="steps-grid">
+                    <!-- Passo 1 -->
+                    <div class="card card-hover">
+                        <div class="card-header">
+                            <div class="step-icon primary"><i class="fas fa-file-signature"></i></div>
+                            <h3 class="card-title">1. Cadastro</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Realize seu cadastro no SICAF ou no sistema de fornecedores do RN. Tenha sua documentação em dia.</p>
+                        </div>
+                    </div>
+                    <!-- Passo 2 -->
+                    <div class="card card-hover">
+                        <div class="card-header">
+                            <div class="step-icon secondary"><i class="fas fa-search-dollar"></i></div>
+                            <h3 class="card-title">2. Oportunidades</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Acompanhe licitações no Portal de Compras do RN, PNCP e Contrata+Brasil (para MEI).</p>
+                        </div>
+                    </div>
+                    <!-- Passo 3 -->
+                    <div class="card card-hover">
+                        <div class="card-header">
+                            <div class="step-icon accent"><i class="fas fa-paper-plane"></i></div>
+                            <h3 class="card-title">3. Participe</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Envie sua proposta nos pregões eletrônicos. Aproveite os benefícios da sua categoria.</p>
+                        </div>
+                    </div>
+                    <!-- Passo 4 -->
+                    <div class="card card-hover">
+                        <div class="card-header">
+                            <div class="step-icon primary"><i class="fas fa-handshake"></i></div>
+                            <h3 class="card-title">4. Contrate</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Sendo vencedor, assine o contrato e comece a fornecer para o Estado do Rio Grande do Norte.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Benefits Section -->
-        <section id="benefits" class="benefits-section">
-            <div class="container mx-auto px-4 py-16">
-                <div class="text-center mb-12">
-                    <h2 class="section-title">Por que Ser ME/EPP é uma Vantagem?</h2>
-                    <p class="section-subtitle">
-                        Descubra os benefícios exclusivos que podem transformar seu negócio
+        <!-- =================================================================== -->
+        <!-- SEÇÃO DE DADOS E ESTATÍSTICAS                                     -->
+        <!-- =================================================================== -->
+        <section id="dados" class="section">
+            <div class="container mx-auto px-4">
+                <div class="section-header">
+                    <h2 class="section-title">O Impacto das Compras Governamentais</h2>
+                    <p class="section-subtitle">Números que mostram a força do mercado público no RN</p>
+                </div>
+                <div class="stats-grid">
+                    <!-- Stat Card 1 -->
+                    <div class="card stat-card text-center p-6 card-hover">
+                        <i class="fas fa-file-invoice-dollar text-4xl text-primary mb-4"></i>
+                        <h3 class="stat-value primary">R$ 2,78bi</h3>
+                        <p class="stat-label">Plano de Contratações 2025</p>
+                    </div>
+                    <!-- Stat Card 2 -->
+                    <div class="card stat-card text-center p-6 card-hover">
+                        <i class="fas fa-chart-pie text-4xl text-secondary mb-4"></i>
+                        <h3 class="stat-value secondary">23,36%</h3>
+                        <p class="stat-label">Participação ME/EPP (Nacional)</p>
+                    </div>
+                    <!-- Stat Card 3 -->
+                    <div class="card stat-card text-center p-6 card-hover">
+                        <i class="fas fa-briefcase text-4xl text-accent mb-4"></i>
+                        <h3 class="stat-value accent">107.256</h3>
+                        <p class="stat-label">Fornecedores ME/EPP (Nacional)</p>
+                    </div>
+                    <!-- Stat Card 4 -->
+                    <div class="card stat-card text-center p-6 card-hover">
+                        <i class="fas fa-piggy-bank text-4xl text-primary mb-4"></i>
+                        <h3 class="stat-value primary">10-25%</h3>
+                        <p class="stat-label">Economia com Centralização</p>
+                    </div>
+                </div>
+                <div class="card economy-card mt-8">
+                    <div class="card-content flex flex-col md:flex-row items-center p-8">
+                        <div class="md:mr-8 mb-4 md:mb-0 text-center">
+                            <i class="fas fa-calculator text-6xl text-secondary opacity-75"></i>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <p class="text-lg mb-2">Baseado em estudos, a centralização de compras pode gerar <span class="highlight-text">economias entre 10% e 25%</span> dos valores licitados.</p>
+                            <p class="text-muted">Para o orçamento de R$ 2,78 bilhões, isso representa uma economia potencial de <span class="highlight-text">R$ 278 milhões a R$ 695 milhões</span> anuais.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- SEÇÃO DE DÚVIDAS FREQUENTES (FAQ)                                 -->
+        <!-- =================================================================== -->
+        <section id="faq" class="section section-bg">
+            <div class="container mx-auto px-4">
+                <div class="section-header">
+                    <h2 class="section-title">Dúvidas Frequentes</h2>
+                    <p class="section-subtitle">Respostas para as principais questões</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Como faço para me cadastrar como fornecedor do RN?</h3>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Para se cadastrar, acesse o SICAF (Sistema de Cadastramento Unificado de Fornecedores) ou o sistema de cadastro específico do RN. É necessário ter certificado digital e documentação da empresa regularizada.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Quais os documentos necessários para uma licitação?</h3>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Os documentos básicos incluem: CNPJ ativo, certidões negativas de débitos, certidão de regularidade do FGTS e prova de inexistência de débitos trabalhistas. ME/EPP têm prazo adicional para regularização.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Minha empresa é de outro estado, posso vender para o RN?</h3>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sim, empresas de qualquer estado podem participar. Porém, fornecedores locais podem ter prioridade de até 10% sobre o menor preço, conforme previsto em lei, para fomentar a economia local.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Onde encontro os editais de licitação do RN?</h3>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Os editais são publicados no Portal de Compras do RN, no Portal Nacional de Contratações Públicas (PNCP) e no Diário Oficial do Estado. Recomendamos acompanhar regularmente esses canais.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- SEÇÃO DE CHAMADA PARA AÇÃO (CTA) FINAL                          -->
+        <!-- =================================================================== -->
+        <section id="cadastro" class="cta-section" style="margin-bottom: 1rem;">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Pronto para Vender para o Governo do RN?</h2>
+                    <p class="cta-subtitle">
+                        Cadastre-se agora e comece a participar das oportunidades de negócio 
+                        com o Estado do Rio Grande do Norte.
                     </p>
-                </div>
-                <div class="grid lg:grid-cols-3 gap-8">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-gavel"></i>
-                        </div>
-                        <h3 class="benefit-title">Licitações Exclusivas</h3>
-                        <p class="benefit-description">
-                            Compras de até R$ 80 mil podem ser exclusivas para ME/EPP,
-                            reduzindo a concorrência e aumentando suas chances.
-                        </p>
-                        <div class="benefit-highlight">
-                            <i class="fas fa-check-circle text-success"></i>
-                            <span>Prioridade em empates</span>
-                        </div>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-percentage"></i>
-                        </div>
-                        <h3 class="benefit-title">Cotas Garantidas</h3>
-                        <p class="benefit-description">
-                            Até 25% das compras em licitações maiores são reservadas
-                            para micro e pequenas empresas.
-                        </p>
-                        <div class="benefit-highlight">
-                            <i class="fas fa-chart-pie text-info"></i>
-                            <span>Participação garantida</span>
-                        </div>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h3 class="benefit-title">Contrata+Brasil</h3>
-                        <p class="benefit-description">
-                            Plataforma que conecta MEIs diretamente com órgãos públicos,
-                            sem processos licitatórios complexos.
-                        </p>
-                        <div class="benefit-highlight">
-                            <i class="fas fa-lightning-bolt text-warning"></i>
-                            <span>Contratação direta</span>
-                        </div>
+                    
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-white btn-lg">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15,3 21,3 21,9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                            Portal de Compras RN
+                        </a>
+                        <a href="#" class="btn btn-outline-white btn-lg">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15,3 21,3 21,9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                            SICAF - Cadastro Federal
+                        </a>
+                        <a href="#" class="btn btn-accent btn-lg">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15,3 21,3 21,9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                            Contrata+Brasil (MEI)
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Statistics Section -->
-        <section class="statistics-section">
-            <div class="container mx-auto px-4 py-16">
-                <div class="text-center mb-12">
-                    <h2 class="section-title text-white">ME/EPP em Números</h2>
-                    <p class="section-subtitle text-white opacity-90">
-                        Dados que comprovam a força das micro e pequenas empresas
-                    </p>
-                </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="stat-card-dark">
-                        <div class="stat-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="stat-number">23,8 milhões</div>
-                        <div class="stat-label">ME/EPP no Brasil</div>
-                    </div>
-                    <div class="stat-card-dark">
-                        <div class="stat-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="stat-number">52%</div>
-                        <div class="stat-label">Empregos com Carteira</div>
-                    </div>
-                    <div class="stat-card-dark">
-                        <div class="stat-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="stat-number">27%</div>
-                        <div class="stat-label">Participação no PIB</div>
-                    </div>
-                    <div class="stat-card-dark">
-                        <div class="stat-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <div class="stat-number">33,4%</div>
-                        <div class="stat-label">Taxa de Empreendedorismo</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How to Section -->
-        <section id="howto" class="howto-section">
-            <div class="container mx-auto px-4 py-16">
-                <div class="text-center mb-12">
-                    <h2 class="section-title">Como Participar das Oportunidades</h2>
-                    <p class="section-subtitle">
-                        Siga estes passos para começar a participar de licitações públicas
-                    </p>
-                </div>
-                <div class="steps-container">
-                    <div class="step-item">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3 class="step-title">Regularize sua Empresa</h3>
-                            <p class="step-description">
-                                Certifique-se de que sua empresa está devidamente registrada
-                                como ME ou EPP e possui todas as certidões em dia.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3 class="step-title">Cadastre-se no Sistema</h3>
-                            <p class="step-description">
-                                Registre sua empresa em nosso portal e mantenha
-                                seus dados sempre atualizados.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3 class="step-title">Monitore as Oportunidades</h3>
-                            <p class="step-description">
-                                Acompanhe regularmente os editais e oportunidades
-                                disponíveis para ME/EPP.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3 class="step-title">Participe e Vença</h3>
-                            <p class="step-description">
-                                Prepare sua proposta e participe das licitações
-                                com vantagens exclusivas para ME/EPP.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Success Stories Section -->
-        <section class="success-section">
-            <div class="container mx-auto px-4 py-16">
-                <div class="text-center mb-12">
-                    <h2 class="section-title">Histórias de Sucesso</h2>
-                    <p class="section-subtitle">
-                        Conheça empresas que cresceram com o mercado público
-                    </p>
-                </div>
-                <div class="grid lg:grid-cols-3 gap-8">
-                    <div class="success-card">
-                        <div class="success-image">
-                            <img src="../images/success-1.jpg" alt="Empresa de Sucesso">
-                        </div>
-                        <div class="success-content">
-                            <h3 class="success-title">Tech Solutions RN</h3>
-                            <p class="success-description">
-                                Microempresa de TI que cresceu 300% em 2 anos participando
-                                de licitações públicas especializadas.
-                            </p>
-                            <div class="success-stats">
-                                <div class="success-stat">
-                                    <span class="stat-value">R$ 2,5M</span>
-                                    <span class="stat-label">Contratos Ganhos</span>
-                                </div>
-                                <div class="success-stat">
-                                    <span class="stat-value">15</span>
-                                    <span class="stat-label">Colaboradores</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="success-card">
-                        <div class="success-image">
-                            <img src="../images/success-2.jpg" alt="Empresa de Sucesso">
-                        </div>
-                        <div class="success-content">
-                            <h3 class="success-title">Construção Segura</h3>
-                            <p class="success-description">
-                                EPP do setor de construção que se especializou em
-                                obras públicas de pequeno porte.
-                            </p>
-                            <div class="success-stats">
-                                <div class="success-stat">
-                                    <span class="stat-value">R$ 5,2M</span>
-                                    <span class="stat-label">Faturamento Anual</span>
-                                </div>
-                                <div class="success-stat">
-                                    <span class="stat-value">25</span>
-                                    <span class="stat-label">Projetos Concluídos</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="success-card">
-                        <div class="success-image">
-                            <img src="../images/success-3.jpg" alt="Empresa de Sucesso">
-                        </div>
-                        <div class="success-content">
-                            <h3 class="success-title">Consultoria Potiguar</h3>
-                            <p class="success-description">
-                                ME de consultoria que encontrou no setor público
-                                o mercado ideal para crescer.
-                            </p>
-                            <div class="success-stats">
-                                <div class="success-stat">
-                                    <span class="stat-value">R$ 800K</span>
-                                    <span class="stat-label">Receita Anual</span>
-                                </div>
-                                <div class="success-stat">
-                                    <span class="stat-value">12</span>
-                                    <span class="stat-label">Clientes Ativos</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="container mx-auto px-4 py-16">
-                <div class="cta-container">
-                    <div class="cta-content">
-                        <h2 class="cta-title">Pronto para Começar?</h2>
-                        <p class="cta-subtitle">
-                            Não perca mais tempo. Cadastre sua empresa agora e comece a
-                            participar das melhores oportunidades do mercado público.
-                        </p>
-                        <div class="cta-actions">
-                            <button class="btn btn-primary btn-lg">
-                                <i class="fas fa-user-plus"></i>
-                                Cadastrar Empresa
-                            </button>
-                            <button class="btn btn-secondary btn-lg">
-                                <i class="fas fa-phone"></i>
-                                Falar com Especialista
-                            </button>
-                        </div>
-                    </div>
-                    <div class="cta-image">
-                        <img src="../images/cta-meepp.jpg" alt="Cadastre sua empresa">
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- Footer padrão do portal -->
+    <!-- =================================================================== -->
+    <!-- RODAPÉ                                                              -->
+    <!-- =================================================================== -->
     <footer class="footer py-6 px-4">
-        <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row md:items-start md:justify-between items-start mb-8" style="padding-top: 4rem;">
-                <img src="../images/logos/NEGATIVO.png" alt="Governo do Rio Grande do Norte" class="h-14 w-auto mb-2" style="height: 101px; transform: translate(0px, -45px);">
-            </div>
-            <div class="w-full flex justify-center mt-[-16px] mb-2">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 flex-1 max-w-4xl ml-[-10%]">
-                    <div class="sitemap-section">
-                        <h4 class="text-white font-bold mb-4">Início</h4>
-                        <ul class="space-y-2">
-                            <li><a href="../index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
-                            <li><a href="../pages/noticias.html" class="text-gray-300 hover:text-white">Notícias</a></li>
-                            <li><a href="../pages/artigos.html" class="text-gray-300 hover:text-white">Artigos</a></li>
-                            <li><a href="../pages/forum.html" class="text-gray-300 hover:text-white">Fórum</a></li>
-                        </ul>
-                    </div>
-                    <div class="sitemap-section">
-                        <h4 class="text-white font-bold mb-4">Perfis de Acesso</h4>
-                        <ul class="space-y-2">
-                            <li><a href="../pages/fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
-                            <li><a href="../pages/servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
-                            <li><a href="../pages/cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
-                            <li><a href="../pages/acesso-sistema.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
-                        </ul>
-                    </div>
-                    <div class="sitemap-section">
-                        <h4 class="text-white font-bold mb-4">Conhecimento</h4>
-                        <ul class="space-y-2">
-                            <li><a href="../pages/capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
-                            <li><a href="../pages/legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
-                            <li><a href="../pages/manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
-                            <li><a href="../pages/institucional.html" class="text-gray-300 hover:text-white">Institucional</a></li>
-                            <li><a href="../pages/compr-ia.html" class="text-gray-300 hover:text-white">COMPR IA</a></li>
-                            <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
-                        </ul>
-                    </div>
-                    <div class="sitemap-section">
-                        <h4 class="text-white font-bold mb-4">Oportunidades</h4>
-                        <ul class="space-y-2">
-                            <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao" class="text-gray-300 hover:text-white">Licitação</a></li>
-                            <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao/RegistroPreco" class="text-gray-300 hover:text-white">Ata de Registro de preço</a></li>
-                            <li><a href="../pages/Fornecedor.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
-                            <li><a href="../pages/em-construcao.html" class="text-gray-300 hover:text-white">ME/EPP</a></li>
-                        </ul>
-                    </div>
+    <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between items-start mb-8" style="padding-top: 4rem;">
+            <!-- Logo no canto superior esquerdo -->
+            <img src="../images/logos/NEGATIVO.png" alt="Governo do Rio Grande do Norte" class="h-14 w-auto mb-2" style="height: 101px; transform: translate(0px, -45px);" data-selected="true" data-label-id="0">
+        </div>
+        <!-- Seções do mapa do site -->
+        <div class="w-full flex justify-center mt-[-16px] mb-2">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 flex-1 max-w-6xl mx-auto">
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Institucional</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
+                        <li><a href="institucional.html" class="text-gray-300 hover:text-white">Quem Somos</a></li>
+                        <li><a href="noticias.html" class="text-gray-300 hover:text-white">Notícias</a></li>
+                        <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
+                        <li><a href="forum.html" class="text-gray-300 hover:text-white">Fórum</a></li>
+                    </ul>
                 </div>
-            </div>
-            <hr class="border-white my-4">
-            <div class="flex flex-row justify-between items-start max-w-4xl mx-auto gap-16 mb-6">
-                <div class="text-white text-sm space-y-1 w-1/2 pr-8">
-                    <div class="font-bold text-base mb-1">Contato</div>
-                    <div>Centro Administrativo do Estado</div>
-                    <div>Av. Senador Salgado Filho, s/n, Lagoa Nova - Natal/RN.</div>
-                    <div>CEP: 59064-901</div>
-                    <div><i class="fas fa-phone-alt mr-2"></i>+55 (84) 3232-5240</div>
-                    <div><i class="fas fa-envelope mr-2"></i>contato@rn.gov.br</div>
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Acesso</h4>
+                    <ul class="space-y-2">
+                        <li><a href="fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
+                        <li><a href="servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
+                        <li><a href="cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
+                        <li><a href="meepp.html" class="text-gray-300 hover:text-white">ME/EPP</a></li>
+                        <li><a href="acesso-sistema.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
+                    </ul>
                 </div>
-                <div class="flex flex-col items-end w-1/2 pl-8">
-                    <div class="font-bold text-base mb-2 text-white">REDES SOCIAIS</div>
-                    <div class="flex items-center gap-4 justify-center">
-                        <a href="https://twitter.com/" target="_blank" class="text-gray-300 hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
-                        <a href="https://facebook.com/" target="_blank" class="text-gray-300 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
-                        <a href="https://instagram.com/" target="_blank" class="text-gray-300 hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
-                        <a href="https://youtube.com/" target="_blank" class="text-gray-300 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
-                        <a href="https://wa.me/5584999999999" target="_blank" class="text-gray-300 hover:text-green-500" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
-                    </div>
-                    <a href="https://www.sic.rn.gov.br/" target="_blank" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-lg font-semibold mt-4 ml-auto" aria-label="Acesso à Informação">
-                        <span class="text-white text-base font-bold">Acesso à Informação</span>
-                    </a>
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Oportunidades</h4>
+                    <ul class="space-y-2">
+                        <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Licitações</a></li>
+                        <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao/RegistroPreco" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Atas de Registro de Preço</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Conhecimento</h4>
+                    <ul class="space-y-2">
+                        <li><a href="capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
+                        <li><a href="legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
+                        <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
+                        <li><a href="compr-ia.html" class="text-gray-300 hover:text-white">COMPR IA</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-section">
+                    <h4 class="text-white font-bold mb-4">Serviços SEAD</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://www.sead.rn.gov.br" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Secretaria de Administração</a></li>
+                        <li><a href="http://servicos.searh.rn.gov.br/searh/copag/contra_cheque.asp" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Contracheque</a></li>
+                        <li><a href="http://servicos.searh.rn.gov.br/searh/dirf?escolha=1" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Declaração de Rendimentos</a></li>
+                        <li><a href="http://servicos.searh.rn.gov.br/searh/Protocolo" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Protocolo NET</a></li>
+                        <li><a href="http://servicos.searh.rn.gov.br/searh/Diaria" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Diárias</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </footer>
-    <div class="w-full bg-blue-900 py-4 flex items-center justify-center m-0">
-        <span class="text-white text-center text-sm font-semibold">
-            2025 © Governo do Estado do Rio Grande do Norte | Desenvolvimento <span class="text-yellow-400 font-bold">Central de compras governamentais</span> | Política de Privacidade
-        </span>
+        <hr class="border-white my-4">
+        <div class="flex flex-row justify-between items-start max-w-4xl mx-auto gap-16 mb-6">
+            <!-- Informações de contato -->
+            <div class="text-white text-sm space-y-1 w-1/2 pr-8">
+                <div class="font-bold text-base mb-1">Contato</div>
+                <div>Centro Administrativo do Estado</div>
+                <div>Av. Senador Salgado Filho, s/n, Lagoa Nova - Natal/RN.</div>
+                <div>CEP: 59064-901</div>
+                <div><i class="fas fa-phone-alt mr-2"></i>+55 (84) 3232-5240</div>
+                <div><i class="fas fa-envelope mr-2"></i>contato@rn.gov.br</div>
+            </div>
+            <!-- Redes sociais -->
+            <div class="flex flex-col items-end w-1/2 pl-8">
+                <div class="font-bold text-base mb-2 text-white">REDES SOCIAIS</div>
+                <div class="flex items-center gap-4 justify-center">
+                    <a href="https://twitter.com/" target="_blank" class="text-gray-300 hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="https://facebook.com/" target="_blank" class="text-gray-300 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="https://instagram.com/" target="_blank" class="text-gray-300 hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://youtube.com/" target="_blank" class="text-gray-300 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+                    <a href="https://wa.me/5584999999999" target="_blank" class="text-gray-300 hover:text-green-500" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                </div>
+                <a href="https://www.sic.rn.gov.br/" target="_blank" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-lg font-semibold mt-4 ml-auto" aria-label="Acesso à Informação">
+                    <span class="text-white text-base font-bold">Acesso à Informação</span>
+                </a>
+            </div>
+        </div>
     </div>
-    <!-- Scripts -->
-    <script src="../js/scripts.js"></script>
+</footer>
+<!-- Copyright separado, faixa azul escura ocupando toda a largura -->
+<div class="w-full bg-blue-900 py-4 flex items-center justify-center m-0">
+    <span class="text-white text-center text-sm font-semibold">
+        2025 &copy; Governo do Estado do Rio Grande do Norte | Desenvolvimento <span class="text-yellow-400 font-bold">Central de compras governamentais</span> | Política de Privacidade
+    </span>
+</div>
+    </div>
     <script src="../js/meepp.js"></script>
 </body>
 </html>
