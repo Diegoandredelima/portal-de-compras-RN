@@ -44,7 +44,7 @@ SUMÁRIO:
 ------------------------- */
 .br-carousel__container {
     position: relative;
-    height: 480px;
+    height: 360px;
     overflow: hidden;
     width: 100%;
 }

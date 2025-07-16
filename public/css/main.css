@@ -323,6 +323,39 @@ body {
 
 .offcanvas-backdrop.active { display: block; }
 
+/* Menu Lateral Moderno */
+.offcanvas-menu {
+    background-color: #ffffff;
+    backdrop-filter: blur(6px);
+    box-shadow: 4px 0 20px rgba(0,0,0,0.08);
+}
+.offcanvas-menu h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--main-blue, #00167C);
+}
+.offcanvas-menu .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    color: #1f2937;
+    transition: background 0.25s ease, transform 0.18s ease;
+}
+.offcanvas-menu .menu-item i {
+    font-size: 1.1rem;
+    color: #00167C;
+}
+.offcanvas-menu .menu-item:hover {
+    background-color: rgba(0,22,124,0.06);
+    transform: translateX(4px);
+}
+.offcanvas-menu .menu-item.active {
+    background-color: rgba(0,22,124,0.12);
+    font-weight: 600;
+}
+
 /* Estilos para container 100% preenchido */
 .full-width-container {
     width: 100%;
@@ -376,6 +409,37 @@ body {
     color: white;
 }
 /* =================================================================== */
+/* 2.6 Ajustes de Fundo para Seções                                  */
+/* =================================================================== */
+/*
+   Sobrescrevemos a cor padrão do utilitário Tailwind bg-gray-50
+   para um cinza ainda mais claro, dando leve profundidade mas mantendo
+   contraste suave com o branco.
+*/
+.bg-gray-50 {
+    background-color: var(--lighter-grey-bg) !important;
+}
+
+/* =================================================================== */
+/* Destaque sutil para os Painéis de Transparência */
+.painel-btn {
+    background-color: #f8fafc; /* gray-50 */
+    border: 2px solid rgba(0, 22, 124, 0.08); /* azul bem suave */
+    border-radius: 0.75rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+}
+.painel-btn:hover,
+.painel-btn:focus-visible {
+    background-color: #f0f6ff; /* azul clarinho */
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 22px rgba(0, 22, 124, 0.12);
+    transform: translateY(-4px);
+}
+.painel-btn:focus-visible {
+    outline: 3px solid var(--info-color);
+    outline-offset: 2px;
+}
+
 /* 3. SEÇÕES ESPECÍFICAS                                             */
 /* =================================================================== */
 

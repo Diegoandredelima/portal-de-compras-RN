@@ -20,6 +20,63 @@
 /* =================================================================== */
 
 /* Header */
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Cores Gov.br adaptadas */
+    --primary: #1e40af;
+    --primary-foreground: #ffffff;
+    --secondary: #059669;
+    --secondary-foreground: #ffffff;
+    --accent: #d97706;
+    --accent-foreground: #1f2937;
+    --background: #ffffff;
+    --foreground: #1f2937;
+    --muted: #f3f4f6;
+    --muted-foreground: #6b7280;
+    --border: #e5e7eb;
+    --card: #ffffff;
+    --card-foreground: #1f2937;
+    
+    /* Espaçamentos */
+    --container-padding: 1rem;
+    --section-padding: 5rem 0;
+    --card-padding: 1.5rem;
+    
+    /* Bordas */
+    --radius: 0.5rem;
+    --radius-lg: 0.75rem;
+    
+    /* Sombras */
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    
+    /* Transições */
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--foreground);
+    background-color: var(--background);
+    scroll-behavior: smooth;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Header */
 .header {
     position: fixed;
     top: 0;
@@ -75,17 +132,13 @@
     color: var(--primary);
 }
 
-/* =================================================================== */
-/* 2. ESTILOS DAS SEÇÕES ESPECÍFICAS                                 */
-/* =================================================================== */
-
 /* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -114,6 +167,7 @@
     max-width: 48rem;
     margin-left: auto;
     margin-right: auto;
+    color: #e5e7eb;
     opacity: 0.9;
 }
 
@@ -162,7 +216,64 @@
     margin: 0 auto;
 }
 
-/* --- Estilos para Grids --- */
+/* Cards */
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.card-hover {
+    transition: var(--transition);
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.card-header {
+    padding: var(--card-padding);
+    text-align: center;
+}
+
+.card-content {
+    padding: 0 var(--card-padding) var(--card-padding);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--card-foreground);
+}
+
+.card-description {
+    color: var(--muted-foreground);
+    margin-bottom: 1rem;
+}
+
+.card-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+}
+
+.card-icon.primary {
+    color: var(--primary);
+}
+
+.card-icon.secondary {
+    color: var(--secondary);
+}
+
+.card-icon.accent {
+    color: var(--accent);
+}
+
+/* Grids */
 .benefits-grid {
     display: grid;
     gap: 2rem;
@@ -188,11 +299,185 @@
     margin-bottom: 3rem;
 }
 
-/* CTA Section */
-.cta-section {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.btn-primary:hover {
+    background: #1e3a8a;
+}
+
+.btn-secondary {
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+}
+
+.btn-secondary:hover {
+    background: #047857;
+}
+
+.btn-accent {
+    background: var(--accent);
+    color: var(--accent-foreground);
+}
+
+.btn-accent:hover {
+    background: #c2410c;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.btn-white {
+    background: white;
+    color: var(--primary);
+}
+
+.btn-white:hover {
+    background: #f9fafb;
+}
+
+.btn-outline-white {
+    background: transparent;
     color: white;
-    padding: var(--section-padding);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline-white:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Tabs */
+.tabs {
+    margin-top: 2rem;
+}
+
+.tabs-list {
+    display: flex;
+    background: var(--muted);
+    border-radius: var(--radius);
+    padding: 0.25rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+}
+
+.tab-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+    flex: 1;
+    justify-content: center;
+}
+
+.tab-trigger:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.tab-trigger.active {
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.tab-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Benefits */
+.benefit-item {
+    margin-bottom: 1.5rem;
+}
+
+.benefit-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-header h4 {
+    font-weight: 600;
+    color: var(--card-foreground);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: var(--radius);
+}
+
+.badge-secondary {
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+}
+
+.highlight-box {
+    background: rgba(217, 119, 6, 0.1);
+    padding: 1rem;
+    border-radius: var(--radius);
     margin-bottom: 1.5rem;
 }
 
@@ -469,3 +754,4 @@
         font-size: 1rem;
     }
 }
+
