@@ -2,28 +2,31 @@
 @charset "UTF-8";
 
 @description: Folha de estilos principal para o Portal de Compras Governamentais do RN.
-@version: 1.1
-@date: 2024-07-16
+@version: 1.2
+@date: 2024-07-17
 
-SUMÁRIO:
-1.  CONFIGURAÇÕES GLOBAIS
-    - Fontes Locais
-    - Variáveis de Cor
-    - Estilos Globais
+ESTRUTURA DO ARQUIVO:
+1. CONFIGURAÇÕES GLOBAIS
+   - Fontes Locais
+   - Variáveis CSS
+   - Reset/Normalize
+   - Estilos Base
 
-2.  COMPONENTES
-    - Cabeçalho e Navegação
-    - Botões e Links
-    - Cards
-    - Menu Off-canvas
-    - Rodapé
+2. COMPONENTES REUTILIZÁVEIS
+   - Cabeçalho e Navegação
+   - Botões e Links
+   - Cards
+   - Menu Off-canvas
+   - Rodapé
 
-3.  SEÇÕES ESPECÍFICAS
-    - Legislação
-    - Banner Padrão
+3. SEÇÕES E PÁGINAS ESPECÍFICAS
+   - Legislação
+   - Servidor
+   - Banner Padrão
+   - Carrossel
 
-4.  RESPONSIVIDADE
-    - Media Queries
+4. RESPONSIVIDADE
+   - Media Queries
 */
 
 /* =================================================================== */
@@ -301,14 +304,17 @@ body {
     left: -300px;
     width: 300px;
     height: 100%;
-    background-color: white;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    backdrop-filter: blur(6px);
+    box-shadow: 4px 0 20px rgba(0,0,0,0.08);
     z-index: 2000;
     transition: left 0.3s ease;
     overflow-y: auto;
 }
 
-.offcanvas-menu.active { left: 0; }
+.offcanvas-menu.active { 
+    left: 0; 
+}
 
 .offcanvas-backdrop {
     position: fixed;
@@ -321,19 +327,17 @@ body {
     display: none;
 }
 
-.offcanvas-backdrop.active { display: block; }
-
-/* Menu Lateral Moderno */
-.offcanvas-menu {
-    background-color: #ffffff;
-    backdrop-filter: blur(6px);
-    box-shadow: 4px 0 20px rgba(0,0,0,0.08);
+.offcanvas-backdrop.active { 
+    display: block; 
 }
+
+/* Estilos dos itens do menu */
 .offcanvas-menu h2 {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--main-blue, #00167C);
 }
+
 .offcanvas-menu .menu-item {
     display: flex;
     align-items: center;
@@ -343,14 +347,17 @@ body {
     color: #1f2937;
     transition: background 0.25s ease, transform 0.18s ease;
 }
+
 .offcanvas-menu .menu-item i {
     font-size: 1.1rem;
     color: #00167C;
 }
+
 .offcanvas-menu .menu-item:hover {
     background-color: rgba(0,22,124,0.06);
     transform: translateX(4px);
 }
+
 .offcanvas-menu .menu-item.active {
     background-color: rgba(0,22,124,0.12);
     font-weight: 600;
@@ -374,18 +381,7 @@ body {
 .metric-bar.green { background-color: var(--success-color); }
 .metric-bar.yellow { background-color: var(--warning-color); }
 
-/* Banner padrão para todas as páginas */
-/* ------------------------
-    3.2 Banner Padrão
-------------------------- */
-.banner-padrao {
-  width: 100%;
-  height: 280px;
-  max-width: 100%;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
+
 
 /* ------------------------
     2.5 Rodapé
@@ -440,11 +436,117 @@ body {
     outline-offset: 2px;
 }
 
-/* 3. SEÇÕES ESPECÍFICAS                                             */
+/* =================================================================== */
+/* 3. SEÇÕES E PÁGINAS ESPECÍFICAS                                 */
 /* =================================================================== */
 
 /* ------------------------
-    3.1 Legislação
+    3.1 Carrossel de Notícias
+------------------------- */
+.br-carousel .br-carousel__item {
+    height: 350px !important;
+}
+
+.br-carousel .carousel-image-height {
+    height: 100% !important; /* Faz a imagem preencher o item */
+    width: 100%;
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+}
+
+/* ------------------------
+    3.2 Página Servidor
+------------------------- */
+/* Hero Section */
+.hero-servidor {
+    background-color: var(--light-blue-bg); /* Fundo azul claro e suave */
+    color: var(--dark-blue); /* Cor do texto escura para contraste */
+    border-radius: 0 0 40px 40px;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-shadow: none; /* Sombra de texto removida */
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--main-blue); /* Tom de azul mais escuro para o subtítulo */
+    opacity: 1;
+}
+
+/* Seção de Serviços */
+.service-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-grey);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(19, 81, 180, 0.15);
+    border-color: var(--primary-color);
+}
+
+.service-card-icon {
+    font-size: 2.5rem;
+    color: white;
+    background: var(--primary-color);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    box-shadow: 0 4px 10px rgba(19, 81, 180, 0.3);
+}
+
+.service-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 0.5rem;
+}
+
+.service-card-description {
+    font-size: 0.95rem;
+    color: #555;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.service-card-link {
+    background-color: var(--light-blue-bg);
+    color: var(--primary-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    align-self: center;
+}
+
+.service-card-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.section-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* ------------------------
+    3.3 Legislação
 ------------------------- */
 .leg-card {
     position: relative;
@@ -549,93 +651,20 @@ body {
     font-size: 0.95rem;
     flex-grow: 1;
 }
-/* --------------------------------
-    Estitilos para a pagina servidor
--------------------------------- */
-
-/* Hero Section */
-.hero-servidor {
-    background-color: var(--light-blue-bg); /* Fundo azul claro e suave */
-    color: var(--dark-blue); /* Cor do texto escura para contraste */
-    border-radius: 0 0 40px 40px;
+/* ------------------------
+    3.4 Banner Padrão
+------------------------- */
+.banner-padrao {
+    width: 100%;
+    height: 280px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
-.hero-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    text-shadow: none; /* Sombra de texto removida */
-}
-.hero-subtitle {
-    font-size: 1.1rem;
-    color: var(--main-blue); /* Tom de azul mais escuro para o subtítulo */
-    opacity: 1;
-}
-/* Seção de Serviços */
-.service-card {
-    background-color: #fff;
-    border-radius: 1rem;
-    padding: 2rem;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border-grey);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(19, 81, 180, 0.15);
-    border-color: var(--primary-color);
-}
-.service-card-icon {
-    font-size: 2.5rem;
-    color: white;
-    background: var(--primary-color);
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem auto;
-    box-shadow: 0 4px 10px rgba(19, 81, 180, 0.3);
-}
-.service-card-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--dark-blue);
-    margin-bottom: 0.5rem;
-}
-.service-card-description {
-    font-size: 0.95rem;
-    color: #555;
-    flex-grow: 1;
-    margin-bottom: 1.5rem;
-}
-.service-card-link {
-    background-color: var(--light-blue-bg);
-    color: var(--primary-color);
-    padding: 0.6rem 1.2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    align-self: center;
-}
-.service-card-link:hover {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.section-heading {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--dark-blue);
-    text-align: center;
-    margin-bottom: 3rem;
-}
-/* FIM */
 
 /* ------------------------
-    Cards de Links Úteis
+    3.5 Cards de Links Úteis
 ------------------------- */
 .useful-link-card {
     display: flex;
@@ -670,6 +699,9 @@ body {
     font-size: 0.875rem;
     color: #666;
 }
+
+
+/* Estilos adicionais para legislação */
 .legislation-link {
     background-color: var(--light-blue-bg);
     color: var(--primary-color);
@@ -682,6 +714,7 @@ body {
     align-self: flex-start;
     border: 1px solid var(--light-blue-border);
 }
+
 @media (min-width: 768px) {
     .legislation-link {
         margin-top: 0;
@@ -690,31 +723,13 @@ body {
         white-space: nowrap;
     }
 }
+
 .legislation-link:hover {
     background-color: var(--primary-color);
     color: white;
 }
-.breadcrumbs {
-    background-color: #f1f5f9;
-    padding: 0.75rem 0;
-    font-size: 0.9rem;
-}
-.breadcrumbs a {
-    color: var(--primary-color);
-}
-.breadcrumbs .separator {
-    margin: 0 0.5rem;
-    color: #999;
-}
-.sitemap-section a {
-    color: #d1d5db;
-    transition: color 0.2s;
-}
-.sitemap-section a:hover {
-    color: white;
-}
 
-/* Novos estilos para títulos de categoria */
+/* Títulos de categoria */
 .legislation-category-title {
     font-size: 1.75rem;
     font-weight: 700;
@@ -733,7 +748,7 @@ body {
     margin-bottom: 1.25rem;
 }
 
-/* Estilos para os botões de filtro */
+/* Botões de filtro para legislação */
 .filter-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -741,6 +756,7 @@ body {
     gap: 0.75rem;
     margin-bottom: 3rem;
 }
+
 .filter-btn {
     background-color: #fff;
     color: var(--main-blue);
@@ -751,18 +767,44 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
 .filter-btn:hover {
     background-color: var(--light-blue-bg);
     border-color: var(--primary-color);
 }
+
 .filter-btn.active {
     background-color: var(--primary-color);
     color: #fff;
     border-color: var(--primary-color);
 }
+
 /* ------------------------
-    Responsividade
+    3.6 Breadcrumbs
 ------------------------- */
+.breadcrumbs {
+    background-color: #f1f5f9;
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+}
+
+.breadcrumbs a {
+    color: var(--primary-color);
+}
+
+.breadcrumbs .separator {
+    margin: 0 0.5rem;
+    color: #999;
+}
+
+.sitemap-section a {
+    color: #d1d5db;
+    transition: color 0.2s;
+}
+
+.sitemap-section a:hover {
+    color: white;
+}
 /* =================================================================== */
 /* 4. RESPONSIVIDADE                                                 */
 /* =================================================================== */

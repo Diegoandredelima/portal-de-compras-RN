@@ -1,438 +1,442 @@
-// Dados simulados para o estado da aplicação e informações do usuário
-let isLoggedIn = false; // Estado de login do usuário
-let currentUser = ''; // Nome do usuário logado
-
-// Variáveis de controle para paginação, ordenação e seleção de tópico
-let currentPage = 1; // Página atual da lista de tópicos
-let itemsPerPage = 10; // Quantidade de tópicos por página
-let currentSort = 'recent'; // Critério de ordenação atual (recent, popular, answered)
-let currentTopicId = null; // ID do tópico atualmente aberto no modal
-
-// Dados de exemplo para tópicos do fórum
-let topics = [
-    {
-        id: 1,
-        title: "Como a Nova Lei de Licitações impacta pequenas empresas?",
-        description: "Gostaria de entender melhor como a Lei 14.133/2021 afeta especificamente as Micro e Pequenas Empresas. Quais são as principais mudanças e oportunidades?",
-        author: "João Silva",
-        category: "legislacao",
-        date: "2024-05-15",
-        responses: 125,
-        views: 450,
-        lastActivity: "2024-05-20"
-    },
-    {
-        id: 2,
-        title: "Ferramentas de IA para otimização de processos de compra",
-        description: "Quais ferramentas de inteligência artificial vocês recomendam para análise de propostas e gestão de contratos em órgãos públicos?",
-        author: "Maria Souza",
-        category: "tecnologia",
-        date: "2024-05-10",
-        responses: 87,
-        views: 320,
-        lastActivity: "2024-05-18"
-    },
-    {
-        id: 3,
-        title: "Dicas para servidores: como se capacitar em gestão de contratos?",
-        description: "Estou buscando cursos, manuais e melhores práticas para aperfeiçoamento profissional na área de gestão de contratos públicos.",
-        author: "Pedro Costa",
-        category: "capacitacao",
-        date: "2024-05-01",
-        responses: 60,
-        views: 280,
-        lastActivity: "2024-05-15"
-    },
-    {
-        id: 4,
-        title: "Registro de Preços: dúvidas sobre validade e renovação",
-        description: "Tenho algumas dúvidas sobre os prazos de validade do registro de preços e procedimentos para renovação. Alguém pode esclarecer?",
-        author: "Ana Oliveira",
-        category: "duvidas",
-        date: "2024-04-25",
-        responses: 42,
-        views: 190,
-        lastActivity: "2024-05-12"
-    },
-    {
-        id: 5,
-        title: "Experiências com o ComprasNet 4.0",
-        description: "Como tem sido a experiência de vocês com a nova versão do portal de compras? Quais melhorias notaram?",
-        author: "Carlos Santos",
-        category: "tecnologia",
-        date: "2024-04-20",
-        responses: 35,
-        views: 150,
-        lastActivity: "2024-05-10"
-    }
-];
-
-// Dados de exemplo para respostas, organizados por ID do tópico
-let responses = {
-    1: [
-        {
-            id: 1,
-            author: "Maria Fernanda",
-            date: "2024-05-16",
-            text: "Excelente pergunta! A nova lei trouxe várias facilidades para MEIs e EPPs, como a possibilidade de comprovação da regularidade fiscal até o momento da assinatura do contrato."
-        },
-        {
-            id: 2,
-            author: "Roberto Lima",
-            date: "2024-05-17",
-            text: "Complementando a resposta anterior, também temos o benefício da cota de até 25% para ME/EPP em itens de natureza divisível. Isso é uma grande oportunidade!"
-        }
-    ],
-    2: [
-        {
-            id: 3,
-            author: "Tech Specialist",
-            date: "2024-05-11",
-            text: "Recomendo dar uma olhada na plataforma COMPR IA do governo do RN. Tem funcionalidades interessantes para análise automatizada de propostas."
-        }
-    ]
-};
-
 /**
- * Alterna o estado de login do usuário (simulação).
- * Atualiza a interface do usuário com base no estado de login.
+ * @charset "UTF-8";
+ * @description: Script para interatividade e gestão do Fórum de Compras Governamentais.
+ * @version: 1.2
+ * @date: 2025-07-18
+ *
+ * Estrutura do Script:
+ * 1. ESTADO DA APLICAÇÃO
+ * 2. DADOS SIMULADOS
+ * 3. ELEMENTOS DO DOM
+ * 4. FUNÇÕES DE INICIALIZAÇÃO
+ * 5. FUNÇÕES DE RENDERIZAÇÃO
+ * 6. FUNÇÕES DE EVENTOS (HANDLERS)
+ * 7. FUNÇÕES DE LÓGICA (MODAL)
+ * 8. FUNÇÕES DE AUTENTICAÇÃO E INTERAÇÃO
+ * 9. INICIALIZAÇÃO
  */
-function toggleLogin() {
-    isLoggedIn = !isLoggedIn; // Inverte o estado de login
-    if (isLoggedIn) {
-        currentUser = 'Usuário Demo'; // Define um usuário de demonstração
-        // Oculta o botão de login e mostra as informações do usuário
-        document.getElementById('login-btn').classList.add('hidden');
-        document.getElementById('user-info').classList.remove('hidden');
-        document.getElementById('username').textContent = currentUser;
-        // Mostra o botão "Novo Tópico" e a seção de criação de tópico
-        document.getElementById('new-topic-btn').classList.remove('hidden');
-        document.getElementById('create-topic-section').classList.remove('hidden');
-        // Oculta a mensagem para usuários não logados
-        document.getElementById('login-message').style.display = 'none';
-    } else {
-        currentUser = ''; // Limpa o usuário atual
-        // Mostra o botão de login e oculta as informações do usuário
-        document.getElementById('login-btn').classList.remove('hidden');
-        document.getElementById('user-info').classList.add('hidden');
-        // Oculta o botão "Novo Tópico" e a seção de criação de tópico
-        document.getElementById('new-topic-btn').classList.add('hidden');
-        document.getElementById('create-topic-section').classList.add('hidden');
-        // Mostra a mensagem para usuários não logados
-        document.getElementById('login-message').style.display = 'block';
-    }
-}
 
-/**
- * Formata uma string de data para o formato localizado (DD/MM/AAAA).
- * @param {string} dateString - A string de data no formato "AAAA-MM-DD".
- * @returns {string} A data formatada.
- */
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('pt-BR');
-}
+document.addEventListener('DOMContentLoaded', () => {
+    // ===================================================================
+    // 1. ESTADO DA APLICAÇÃO
+    // ===================================================================
+    let isLoggedIn = false;
+    let currentTopicId = null;
+    let userInteractions = JSON.parse(localStorage.getItem('userInteractions')) || {};
+    let currentPage = 1;
+    const topicsPerPage = 5;
 
-/**
- * Renderiza os tópicos na tela com base nos filtros e ordenação atuais.
- */
-function renderTopics() {
-    const container = document.getElementById('topics-container');
-    const filteredTopics = filterAndSortTopics(); // Aplica filtros e ordenação
-    const startIndex = (currentPage - 1) * itemsPerPage; // Calcula o índice inicial para a página atual
-    const endIndex = startIndex + itemsPerPage; // Calcula o índice final
-    const topicsToShow = filteredTopics.slice(startIndex, endIndex); // Obtém os tópicos para a página atual
-
-    // Gera o HTML para cada tópico e insere no contêiner
-    container.innerHTML = topicsToShow.map(topic => `
-        <div class="forum-card bg-white rounded-lg shadow-md p-6 mb-4 cursor-pointer" onclick="openTopicDetail(${topic.id})">
-            <div class="flex justify-between items-start mb-3">
-                <div class="flex-1">
-                    <h3 class="text-lg font-bold text-gray-800 hover:text-blue-600 transition">${topic.title}</h3>
-                    <p class="text-gray-600 mt-2 line-clamp-2">${topic.description}</p>
-                </div>
-                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full ml-4">${getCategoryLabel(topic.category)}</span>
-            </div>
-            <div class="flex items-center justify-between text-sm text-gray-500">
-                <div class="flex items-center space-x-4">
-                    <span><i class="fas fa-user mr-1"></i>${topic.author}</span>
-                    <span><i class="fas fa-calendar mr-1"></i>${formatDate(topic.date)}</span>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <span><i class="fas fa-comments mr-1"></i>${topic.responses}</span>
-                    <span><i class="fas fa-eye mr-1"></i>${topic.views}</span>
-                </div>
-            </div>
-        </div>
-    `).join('');
-
-    renderPagination(filteredTopics.length); // Renderiza os botões de paginação
-}
-
-/**
- * Aplica os filtros de busca e categoria, e a ordenação aos tópicos.
- * @returns {Array} Uma nova array de tópicos filtrados e ordenados.
- */
-function filterAndSortTopics() {
-    let filtered = [...topics]; // Cria uma cópia da array de tópicos para não modificar a original
-
-    // Filtro de busca por texto no título ou descrição
-    const searchTerm = document.getElementById('search-input').value.toLowerCase();
-    if (searchTerm) {
-        filtered = filtered.filter(topic =>
-            topic.title.toLowerCase().includes(searchTerm) ||
-            topic.description.toLowerCase().includes(searchTerm)
-        );
-    }
-
-    // Filtro por categoria selecionada
-    const categoryFilter = document.getElementById('filter-category').value;
-    if (categoryFilter) {
-        filtered = filtered.filter(topic => topic.category === categoryFilter);
-    }
-
-    // Ordenação dos tópicos com base no critério atual
-    switch (currentSort) {
-        case 'recent':
-            // Ordena por data, do mais recente para o mais antigo
-            filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
-            break;
-        case 'popular':
-            // Ordena por número de visualizações, do maior para o menor
-            filtered.sort((a, b) => b.views - a.views);
-            break;
-        case 'answered':
-            // Ordena por número de respostas, do maior para o menor
-            filtered.sort((a, b) => b.responses - a.responses);
-            break;
-    }
-
-    return filtered;
-}
-
-/**
- * Renderiza os botões de paginação com base no número total de itens.
- * @param {number} totalItems - O número total de tópicos após a filtragem.
- */
-function renderPagination(totalItems) {
-    const totalPages = Math.ceil(totalItems / itemsPerPage); // Calcula o número total de páginas
-    const paginationContainer = document.getElementById('page-numbers');
-
-    let paginationHTML = '';
-    // Cria um botão para cada página
-    for (let i = 1; i <= totalPages; i++) {
-        paginationHTML += `
-            <button class="pagination-btn px-3 py-2 border border-gray-300 rounded-lg ${i === currentPage ? 'bg-blue-600 text-white' : ''}"
-                    onclick="changePage(${i})">${i}</button>
-        `;
-    }
-
-    paginationContainer.innerHTML = paginationHTML; // Insere os botões no HTML
-}
-
-/**
- * Altera a página atual e renderiza os tópicos novamente.
- * @param {number|string} page - O número da página ou 'prev'/'next' para navegar.
- */
-function changePage(page) {
-    if (page === 'prev' && currentPage > 1) {
-        currentPage--; // Volta para a página anterior
-    } else if (page === 'next') {
-        const totalPages = Math.ceil(filterAndSortTopics().length / itemsPerPage);
-        if (currentPage < totalPages) currentPage++; // Avança para a próxima página
-    } else if (typeof page === 'number') {
-        currentPage = page; // Define a página diretamente pelo número
-    }
-    renderTopics(); // Renderiza os tópicos da nova página
-}
-
-/**
- * Retorna o rótulo amigável para uma dada categoria.
- * @param {string} category - A chave da categoria.
- * @returns {string} O rótulo da categoria.
- */
-function getCategoryLabel(category) {
-    const labels = {
-        'geral': 'Geral',
-        'legislacao': 'Legislação',
-        'capacitacao': 'Capacitação',
-        'tecnologia': 'Tecnologia',
-        'duvidas': 'Dúvidas'
+    // ===================================================================
+    // 2. DADOS SIMULADOS
+    // ===================================================================
+    const categories = {
+        'legislacao': 'Legislação e Normas',
+        'planejamento': 'Planejamento das Contratações',
+        'modalidades': 'Modalidades de Licitação',
+        'gestao': 'Gestão de Contratos',
+        'transparencia': 'Transparência e Controle Social',
+        'fiscalizacao': 'Fiscalização e Auditoria',
+        'inovacao': 'Inovação e Tecnologia',
+        'capacitacao': 'Capacitação Profissional',
+        'fornecedores': 'Acesso de Fornecedores',
+        'analise': 'Análise de Dados e BI',
+        'sustentabilidade': 'Sustentabilidade nas Contratações',
+        'duvidas': 'Dúvidas Frequentes',
     };
-    return labels[category] || 'Geral'; // Retorna o rótulo ou 'Geral' como padrão
-}
 
-/**
- * Abre o modal de detalhes do tópico e preenche com as informações do tópico selecionado.
- * @param {number} topicId - O ID do tópico a ser exibido.
- */
-function openTopicDetail(topicId) {
-    currentTopicId = topicId; // Armazena o ID do tópico aberto
-    const topic = topics.find(t => t.id === topicId); // Encontra o tópico pelos dados simulados
-    const topicResponses = responses[topicId] || []; // Obtém as respostas para este tópico
+    let topics = [
+        { id: 1, category: 'legislacao', title: "Lei 14.133 - Esclarecimentos sobre valores limite", description: "Análise aprofundada das novas regras para contratação direta e suas implicações práticas para gestores e fornecedores.", date: "2025-07-15", likes: 112, dislikes: 5, comments: [
+            { author: "Pregoeiro_Master", text: "Excelente resumo! A dispensa eletrônica tem sido um desafio, mas o novo decreto ajuda a clarear os pontos." },
+            { author: "Auditora_TCU", text: "Atenção ao Art. 75. Muitos órgãos ainda erram no somatório de despesas para evitar o fracionamento." },
+            { author: "Fornecedor_PE", text: "@Pregoeiro_Master, qual a sua interpretação sobre a necessidade de 3 cotações para dispensas de baixo valor?" },
+            { author: "Pregoeiro_Master", text: "@Fornecedor_PE, a jurisprudência recente do TCU (Acórdão 1234/2025) flexibilizou, mas a boa prática recomenda manter as cotações para garantir o preço de mercado." }
+        ]},
+        { id: 2, category: 'planejamento', title: "ETP Digital - Dicas sobre sistema Compras.gov.br", description: "Passo a passo e boas práticas para a criação de um Estudo Técnico Preliminar eficiente no novo sistema do governo federal.", date: "2025-07-14", likes: 98, dislikes: 2, comments: [
+            { author: "Gestora_Contratos", text: "O sistema ainda é instável, mas a padronização do ETP ajuda muito na análise." },
+            { author: "Consultor_SEGES", text: "Dica de ouro: preencham a seção de 'Resultados Pretendidos' com métricas claras. Isso facilita a fiscalização do contrato depois." },
+            { author: "Servidor_Novo", text: "Alguém tem um modelo de ETP para aquisição de software como serviço (SaaS)?" },
+            { author: "Gestora_Contratos", text: "@Servidor_Novo, tenho um ótimo! Me envie uma mensagem direta que compartilho o template." }
+        ]},
+        { id: 3, category: 'modalidades', title: "Diálogo Competitivo - Comparações com outras modalidades", description: "Discussão sobre os cenários ideais para aplicação da nova modalidade de licitação, focando em inovação e soluções complexas.", date: "2025-07-12", likes: 150, dislikes: 8, comments: [
+            { author: "Juliana_S", text: "Excelente para soluções que o mercado precisa desenvolver. Usamos para um sistema de logística e foi um sucesso." },
+            { author: "Advogado_Publico", text: "O desafio é a fase de diálogo. Exige muita preparação da equipe técnica para não direcionar a solução." },
+            { author: "Empresario_Inovador", text: "Do lado do fornecedor, é uma ótima oportunidade de apresentar soluções criativas que não se encaixam no pregão tradicional." }
+        ]},
+        { id: 4, category: 'gestao', title: "Fiscalização Contratos - Práticas de acompanhamento", description: "Como garantir a qualidade e o cumprimento das obrigações em contratos de serviços contínuos, como limpeza e vigilância.", date: "2025-07-10", likes: 85, dislikes: 1, comments: [
+            { author: "Fiscal_Contrato_RN", text: "Uso um checklist mensal e faço reuniões trimestrais com a empresa. Ajuda a corrigir desvios rapidamente." },
+            { author: "Preposto_EmpresaX", text: "Uma comunicação clara entre fiscal e preposto é a chave. Muitos problemas são resolvidos com uma simples ligação." },
+            { author: "Auditor_CGU", text: "Lembrem-se de registrar tudo no processo! O que não está nos autos, não existe para o controle. Fotos, relatórios, atas de reunião são fundamentais." }
+        ]},
+        { id: 5, category: 'transparencia', title: "PNCP Transparência - Integração de sistemas", description: "Vantagens e desafios do Portal Nacional de Contratações Públicas como ferramenta de controle social e integração de dados.", date: "2025-07-09", likes: 180, dislikes: 3, comments: [
+            { author: "Marcos_A", text: "Facilitou muito a vida do cidadão fiscalizador! Agora consigo ver as compras do meu município em um só lugar." },
+            { author: "Beatriz_C", text: "A integração com os sistemas municipais ainda é um desafio. Muitos dados chegam com atraso ou incompletos." },
+            { author: "Desenvolvedor_Gov", text: "Estamos trabalhando em novas APIs para facilitar o envio de dados pelos municípios. A versão 2.0 da API de integração será lançada em breve." }
+        ]},
+        { id: 6, category: 'fiscalizacao', title: "TCU Licitações TI - Erros comuns e como evitar", description: "Análise dos apontamentos mais frequentes do Tribunal de Contas da União em aquisições de tecnologia da informação.", date: "2025-07-08", likes: 250, dislikes: 10, comments: [
+            { author: "Auditor_TCU_TI", text: "O erro número 1 ainda é a pesquisa de preços deficiente. Copiar e colar preços de outros editais sem uma análise crítica é pedir para ter a licitação suspensa." },
+            { author: "Gerente_TI_Gov", text: "Outro ponto é o excesso de especificações restritivas. O TR deve focar no problema a ser resolvido, não em uma marca ou produto específico." },
+            { author: "Consultora_LicitaTI", text: "@Gerente_TI_Gov, exatamente! E não se esqueçam da análise de riscos de segurança da informação, um item cada vez mais cobrado pelo TCU." }
+        ]},
+        { id: 7, category: 'inovacao', title: "Uso de Inteligência Artificial para pesquisa de preços", description: "Explorando ferramentas e métodos de IA para otimizar e dar mais segurança à fase de pesquisa mercadológica.", date: "2025-07-05", likes: 133, dislikes: 4, comments: [] },
+        { id: 8, category: 'capacitacao', title: "Melhores cursos e certificações para pregoeiros em 2025", description: "Quais as qualificações mais exigidas e valorizadas para os profissionais que atuam na linha de frente das licitações?", date: "2025-07-02", likes: 78, dislikes: 0, comments: [] },
+        { id: 9, category: 'fornecedores', title: "Como micro e pequenas empresas podem vender mais para o governo?", description: "Dicas práticas sobre o tratamento diferenciado em licitações e como aproveitar as oportunidades.", date: "2025-06-30", likes: 190, dislikes: 2, comments: [] },
+        { id: 10, category: 'analise', title: "Criando dashboards de compras públicas com Power BI", description: "Um guia inicial para conectar fontes de dados abertos e criar indicadores de eficiência e economicidade.", date: "2025-06-28", likes: 210, dislikes: 7, comments: [] },
+        { id: 11, category: 'sustentabilidade', title: "Critérios de sustentabilidade em editais: como aplicar?", description: "Exemplos práticos de como incluir requisitos de sustentabilidade ambiental e social nas contratações.", date: "2025-06-25", likes: 165, dislikes: 6, comments: [] },
+        { id: 12, category: 'duvidas', title: "Posso ser penalizado por um erro no Termo de Referência?", description: "Discussão sobre a responsabilidade dos agentes públicos na fase de planejamento da contratação.", date: "2025-06-22", likes: 95, dislikes: 1, comments: [] },
+    ];
 
-    // Preenche o modal com o título, metadados e descrição do tópico
-    document.getElementById('modal-topic-title').textContent = topic.title || 'Título do tópico';
-    document.getElementById('modal-topic-meta').innerHTML = `
-        <div class="flex items-center space-x-4">
-            <span><i class="fas fa-user mr-1"></i>${topic.author}</span>
-            <span><i class="fas fa-calendar mr-1"></i>${formatDate(topic.date)}</span>
-            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">${getCategoryLabel(topic.category)}</span>
-        </div>
-    `;
-    document.getElementById('modal-topic-description').textContent = topic.description;
-    document.getElementById('responses-count').textContent = topicResponses.length; // Atualiza a contagem de respostas
+    // ===================================================================
+    // 3. ELEMENTOS DO DOM
+    // ===================================================================
+    const authContainer = document.getElementById('auth-container');
+    const loginNoticeBox = document.getElementById('login-notice-box');
+    const loginBtn = document.getElementById('login-btn');
+    const topicsContainer = document.getElementById('topics-container');
+    const searchInput = document.getElementById('search-input');
+    const sortSelect = document.getElementById('sort-select');
+    const categorySelect = document.getElementById('category-select');
+    const paginationContainer = document.getElementById('pagination-container');
+    const modal = document.getElementById('topic-modal');
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeMenu = document.getElementById('close-menu');
+    const offcanvasMenu = document.getElementById('offcanvas-menu');
 
-    // Renderiza a lista de respostas para o tópico
-    const responsesList = document.getElementById('responses-list');
-    responsesList.innerHTML = topicResponses.map(response => `
-        <div class="response-item bg-gray-50 p-4 rounded-lg">
-            <div class="flex items-center justify-between mb-2">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm">
-                        ${response.author.charAt(0)} </div>
-                    <span class="font-medium">${response.author}</span>
-                </div>
-                <span class="text-sm text-gray-500">${formatDate(response.date)}</span>
-            </div>
-            <p class="text-gray-700">${response.text}</p>
-        </div>
-    `).join('');
+    // ===================================================================
+    // 4. FUNÇÕES DE INICIALIZAÇÃO
+    // ===================================================================
 
-    // Controla a visibilidade do formulário de resposta e da mensagem de login no modal
-    if (isLoggedIn) {
-        document.getElementById('response-form-section').classList.remove('hidden');
-        document.getElementById('response-login-message').style.display = 'none';
-    } else {
-        document.getElementById('response-form-section').classList.add('hidden');
-        document.getElementById('response-login-message').style.display = 'block';
-    }
+    /**
+     * Popula o select de categorias com base nos dados simulados.
+     */
+    const initializeCategories = () => {
+        categorySelect.innerHTML = '<option value="all">Todas as Categorias</option>';
+        for (const key in categories) {
+            const option = document.createElement('option');
+            option.value = key;
+            option.textContent = categories[key];
+            categorySelect.appendChild(option);
+        }
+    };
 
-    document.getElementById('topic-detail-modal').classList.add('active'); // Torna o modal visível
-}
+    // ===================================================================
+    // 5. FUNÇÕES DE RENDERIZAÇÃO
+    // ===================================================================
 
-// --- Listeners de Eventos ---
+    /**
+     * Ponto central de renderização. Aplica todos os filtros, ordenação e 
+     * paginação, e então chama as funções para renderizar os tópicos e a paginação.
+     */
+    const applyFiltersAndRender = () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        const activeCategory = categorySelect.value;
+        const sortBy = sortSelect.value;
 
-// Adiciona listeners quando o DOM estiver completamente carregado
-document.addEventListener('DOMContentLoaded', function() {
-    // Listener para os botões de Login/Logout
-    document.getElementById('login-btn').addEventListener('click', toggleLogin);
-    document.getElementById('logout-btn').addEventListener('click', toggleLogin);
-    document.getElementById('logout-btn').setAttribute('aria-label', 'Sair do sistema');
-
-    // Listeners para os campos de busca e filtro de categoria
-    document.getElementById('search-input').addEventListener('input', () => {
-        currentPage = 1; // Reseta a página para a primeira
-        renderTopics(); // Renderiza os tópicos com os novos filtros
-    });
-
-    document.getElementById('filter-category').addEventListener('change', () => {
-        currentPage = 1; // Reseta a página para a primeira
-        renderTopics(); // Renderiza os tópicos com a nova categoria
-    });
-
-    // Listeners para os botões de ordenação
-    document.querySelectorAll('.sort-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Remove a classe 'filter-active' de todos os botões de ordenação
-            document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('filter-active'));
-            // Adiciona a classe 'filter-active' ao botão clicado
-            this.classList.add('filter-active');
-            currentSort = this.dataset.sort; // Atualiza o critério de ordenação
-            currentPage = 1; // Reseta a página para a primeira
-            renderTopics(); // Renderiza os tópicos com a nova ordenação
+        let filteredTopics = topics.filter(topic => {
+            const matchesSearch = topic.title.toLowerCase().includes(searchTerm) || topic.description.toLowerCase().includes(searchTerm);
+            const matchesCategory = activeCategory === 'all' || topic.category === activeCategory;
+            return matchesSearch && matchesCategory;
         });
-    });
 
-    // Listener para o botão 'Limpar Filtros'
-    document.getElementById('clear-filters').addEventListener('click', function() {
-        document.getElementById('search-input').value = ''; // Limpa o campo de busca
-        document.getElementById('filter-category').value = ''; // Reseta a categoria para 'Todas'
-        // Reseta o estilo dos botões de ordenação e define 'recent' como ativo
-        document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('filter-active'));
-        document.querySelector('[data-sort="recent"]').classList.add('filter-active');
-        currentSort = 'recent'; // Reseta o critério de ordenação
-        currentPage = 1; // Reseta a página para a primeira
-        renderTopics(); // Renderiza os tópicos sem filtros
-    });
+        filteredTopics.sort((a, b) => {
+            switch (sortBy) {
+                case 'popular': return (b.likes - b.dislikes) - (a.likes - a.dislikes);
+                case 'replies': return b.comments.length - a.comments.length;
+                case 'recent':
+                default: return new Date(b.date) - new Date(a.date);
+            }
+        });
 
-    // Listener para o botão 'Fechar Modal'
-    document.getElementById('close-modal').addEventListener('click', function() {
-        document.getElementById('topic-detail-modal').classList.remove('active'); // Oculta o modal
-    });
-    document.getElementById('close-modal').setAttribute('aria-label', 'Fechar modal');
+        renderTopics(filteredTopics);
+        renderPagination(filteredTopics.length, filteredTopics);
+    };
 
-    // Listener para o botão 'Novo Tópico'
-    document.getElementById('new-topic-btn').addEventListener('click', function() {
-        // Rola suavemente para a seção de criação de tópico
-        document.getElementById('create-topic-section').scrollIntoView({ behavior: 'smooth' });
-    });
-    document.getElementById('new-topic-btn').setAttribute('aria-label', 'Criar novo tópico');
+    /**
+     * Renderiza a lista de tópicos no container principal.
+     * @param {Array} filteredTopics - A lista de tópicos filtrados e ordenados.
+     */
+    const renderTopics = (filteredTopics) => {
+        const startIndex = (currentPage - 1) * topicsPerPage;
+        const endIndex = startIndex + topicsPerPage;
+        const paginatedTopics = filteredTopics.slice(startIndex, endIndex);
 
-    // Listener para o formulário de criação de novo tópico
-    document.getElementById('new-topic-form').addEventListener('submit', function(e) {
-        e.preventDefault(); // Impede o envio padrão do formulário
-        const title = document.getElementById('topic-title').value;
-        const category = document.getElementById('topic-category').value;
-        const description = document.getElementById('topic-description').value;
-
-        // Cria um novo objeto de tópico
-        const newTopic = {
-            id: topics.length + 1, // ID simples baseado no tamanho da array
-            title,
-            description,
-            author: currentUser, // Usa o nome do usuário logado
-            category,
-            date: new Date().toISOString().split('T')[0], // Data atual no formato YYYY-MM-DD
-            responses: 0,
-            views: 1,
-            lastActivity: new Date().toISOString().split('T')[0]
-        };
-
-        topics.unshift(newTopic); // Adiciona o novo tópico no início da lista
-        this.reset(); // Limpa os campos do formulário
-        renderTopics(); // Renderiza a lista de tópicos atualizada
-
-        alert('Tópico criado com sucesso!'); // Feedback para o usuário
-    });
-
-    // Listener para o formulário de resposta a um tópico
-    document.getElementById('response-form').addEventListener('submit', function(e) {
-        e.preventDefault(); // Impede o envio padrão do formulário
-        const text = document.getElementById('response-text').value;
-
-        // Garante que existe uma array de respostas para o tópico atual
-        if (!responses[currentTopicId]) {
-            responses[currentTopicId] = [];
+        if (paginatedTopics.length === 0) {
+            topicsContainer.innerHTML = `<div class="text-center p-8 bg-gray-50 rounded-lg"><p class="text-gray-600">Nenhum tópico encontrado com os filtros atuais.</p></div>`;
+            return;
         }
 
-        // Cria um novo objeto de resposta
-        const newResponse = {
-            id: Date.now(), // ID único baseado no timestamp
-            author: currentUser, // Usa o nome do usuário logado
-            date: new Date().toISOString().split('T')[0], // Data atual
-            text
-        };
+        topicsContainer.innerHTML = paginatedTopics.map(topic => {
+            const isHot = topic.comments.length > 3 || topic.likes > 150;
+            const userVote = userInteractions[topic.id];
 
-        responses[currentTopicId].push(newResponse); // Adiciona a nova resposta ao tópico
+            return `
+            <div class="topic-card">
+                <div class="topic-card-clickable" onclick="openTopic(${topic.id})">
+                    <div class="flex justify-between items-start">
+                         <h3 class="font-bold text-lg text-gray-800 mb-2 pr-4">${topic.title}</h3>
+                         ${isHot ? '<i class="fas fa-fire fire-icon"></i>' : ''}
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">${topic.description}</p>
+                </div>
+                <div class="flex justify-between items-center border-t border-gray-100 px-6 py-3">
+                    <div class="flex items-center space-x-4 text-sm text-gray-500">
+                         <span title="Comentários"><i class="fas fa-comments mr-1"></i> ${topic.comments.length}</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button class="interaction-btn ${userVote === 'like' ? 'active' : ''}" onclick="handleInteraction(${topic.id}, 'like', event)" ${!isLoggedIn ? 'disabled' : ''}>
+                            <i class="fas fa-thumbs-up"></i> <span id="likes-${topic.id}">${topic.likes}</span>
+                        </button>
+                        <button class="interaction-btn ${userVote === 'dislike' ? 'active' : ''}" onclick="handleInteraction(${topic.id}, 'dislike', event)" ${!isLoggedIn ? 'disabled' : ''}>
+                            <i class="fas fa-thumbs-down"></i> <span id="dislikes-${topic.id}">${topic.dislikes}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>`;
+        }).join('');
+    };
+    
+    /**
+     * Renderiza os controles de paginação.
+     * @param {number} totalTopics - O número total de tópicos (usado para calcular o total de páginas).
+     * @param {Array} filteredTopics - A lista completa de tópicos após filtros (para navegação).
+     */
+    const renderPagination = (totalTopics, filteredTopics) => {
+        const totalPages = Math.ceil(totalTopics / topicsPerPage);
+        paginationContainer.innerHTML = '';
 
-        // Atualiza a contagem de respostas no tópico original
-        const topic = topics.find(t => t.id === currentTopicId);
-        if (topic) {
-            topic.responses++;
-            topic.lastActivity = new Date().toISOString().split('T')[0]; // Atualiza última atividade
+        if (totalPages <= 1) return;
+
+        let paginationHTML = `
+            <button id="prev-page-btn" class="pagination-btn" ${currentPage === 1 ? 'disabled' : ''}>
+                <i class="fas fa-arrow-left mr-2"></i> Anterior
+            </button>
+            <span class="text-sm text-gray-600">Página ${currentPage} de ${totalPages}</span>
+            <button id="next-page-btn" class="pagination-btn" ${currentPage === totalPages ? 'disabled' : ''}>
+                Próxima <i class="fas fa-arrow-right ml-2"></i>
+            </button>`;
+        
+        paginationContainer.innerHTML = paginationHTML;
+
+        document.getElementById('prev-page-btn').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderTopics(filteredTopics);
+                renderPagination(totalTopics, filteredTopics);
+            }
+        });
+
+        document.getElementById('next-page-btn').addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderTopics(filteredTopics);
+                renderPagination(totalTopics, filteredTopics);
+            }
+        });
+    };
+
+    /**
+     * Renderiza o conteúdo principal dentro do modal (descrição, comentários, formulário de resposta).
+     * @param {object} topic - O objeto do tópico a ser exibido.
+     */
+    const renderModalContent = (topic) => {
+         document.getElementById('modal-title').textContent = topic.title;
+         document.getElementById('modal-content-body').innerHTML = `<p class="text-gray-700 leading-relaxed">${topic.description}</p>`;
+         renderComments(topic);
+         renderReplyForm(topic);
+    };
+
+    /**
+     * Renderiza a seção de comentários de um tópico.
+     * @param {object} topic - O tópico cujos comentários serão renderizados.
+     */
+    const renderComments = (topic) => {
+        const commentsSection = document.getElementById('comments-section');
+        let commentsHtml = `<h3 class="text-lg font-semibold mb-4 text-gray-800">Discussão</h3>`;
+        if (topic.comments.length === 0) {
+            commentsHtml += `<p class="text-gray-500 text-sm">Nenhum comentário ainda.</p>`;
+        } else {
+            commentsHtml += topic.comments.map(comment => `
+                <div class="py-4 border-b border-gray-200 last:border-b-0">
+                    <p class="font-semibold text-gray-700">${comment.author}</p>
+                    <p class="text-gray-600 mt-1">${comment.text}</p>
+                </div>`).join('');
+        }
+        commentsSection.innerHTML = commentsHtml;
+    };
+
+    /**
+     * Renderiza o formulário de resposta no modal, se o usuário estiver logado.
+     * @param {object} topic - O tópico ao qual o usuário pode responder.
+     */
+    const renderReplyForm = (topic) => {
+        const container = document.getElementById('reply-form-container');
+        if (isLoggedIn) {
+            container.innerHTML = `
+                <form id="reply-form">
+                    <h4 class="font-semibold mb-3 text-gray-800">Sua Resposta</h4>
+                    <textarea id="reply-textarea" class="form-textarea" rows="3" placeholder="Digite sua resposta..." required></textarea>
+                    <div class="mt-3 text-right">
+                        <button type="submit" class="btn-secondary">Enviar Resposta</button>
+                    </div>
+                </form>`;
+            document.getElementById('reply-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                submitReply(topic.id);
+            });
+        } else {
+            container.innerHTML = `<div class="bg-gray-100 p-4 rounded-lg text-center text-sm">Faça login para responder.</div>`;
+        }
+    };
+
+    // ===================================================================
+    // 6. FUNÇÕES DE EVENTOS (HANDLERS)
+    // ===================================================================
+
+    /**
+     * Manipula a mudança nos filtros de busca, categoria ou ordenação.
+     */
+    const handleFilterChange = () => {
+        currentPage = 1; // Reseta para a primeira página ao mudar filtros
+        applyFiltersAndRender();
+    };
+
+    /**
+     * Manipula a interação do usuário (like/dislike) em um tópico.
+     * @param {number} topicId - O ID do tópico.
+     * @param {string} type - O tipo de interação ('like' ou 'dislike').
+     * @param {Event} event - O objeto do evento para parar a propagação.
+     */
+    window.handleInteraction = (topicId, type, event) => {
+        event.stopPropagation(); // Impede que o modal abra ao clicar no botão
+        if (!isLoggedIn) return;
+
+        const topic = topics.find(t => t.id === topicId);
+        const currentVote = userInteractions[topicId];
+
+        if (currentVote === type) { // Clicou no mesmo botão de novo (remover voto)
+            delete userInteractions[topicId];
+            topic[type + 's']--;
+        } else {
+            if (currentVote) { // Trocando o voto (e.g., de like para dislike)
+                topic[currentVote + 's']--;
+            }
+            topic[type + 's']++;
+            userInteractions[topicId] = type;
         }
 
-        this.reset(); // Limpa o campo de texto da resposta
-        openTopicDetail(currentTopicId); // Reabre o modal para exibir a nova resposta
-        renderTopics(); // Atualiza a lista principal de tópicos (para refletir a nova contagem de respostas)
-    });
+        localStorage.setItem('userInteractions', JSON.stringify(userInteractions));
+        applyFiltersAndRender(); // Re-renderiza para atualizar o estado dos botões e contagens
+    };
 
-    // Listeners para os botões de navegação da paginação (Anterior/Próximo)
-    document.querySelector('[data-page="prev"]').addEventListener('click', () => changePage('prev'));
-    document.querySelector('[data-page="next"]').addEventListener('click', () => changePage('next'));
+    // ===================================================================
+    // 7. FUNÇÕES DE LÓGICA (MODAL)
+    // ===================================================================
 
-    // Renderização inicial dos tópicos ao carregar a página
-    renderTopics();
+    /**
+     * Abre o modal com os detalhes de um tópico específico.
+     * @param {number} topicId - O ID do tópico a ser aberto.
+     */
+    window.openTopic = (topicId) => {
+        currentTopicId = topicId;
+        const topic = topics.find(t => t.id === topicId);
+        renderModalContent(topic);
+        modal.classList.add('active');
+    };
+
+    /**
+     * Fecha o modal de tópico.
+     */
+    window.closeModal = () => {
+        modal.classList.remove('active');
+        currentTopicId = null;
+    };
+
+    // ===================================================================
+    // 8. FUNÇÕES DE AUTENTICAÇÃO E INTERAÇÃO
+    // ===================================================================
+
+    /**
+     * Simula o login do usuário.
+     */
+    const handleLogin = () => {
+        isLoggedIn = true;
+        updateUI();
+    };
+
+    /**
+     * Simula o logout do usuário.
+     */
+    const handleLogout = () => {
+        isLoggedIn = false;
+        userInteractions = {};
+        localStorage.removeItem('userInteractions');
+        updateUI();
+    };
+
+    /**
+     * Atualiza a interface do usuário com base no estado de login.
+     */
+    const updateUI = () => {
+        if (isLoggedIn) {
+            loginNoticeBox.classList.add('hidden');
+            authContainer.innerHTML = `
+                <div class="flex items-center space-x-3">
+                    <span class="text-sm font-medium text-gray-700">Bem-vindo, Usuário Teste!</span>
+                    <button id="logout-btn" class="btn-secondary text-sm !py-2 !px-3">Sair</button>
+                </div>`;
+            document.getElementById('logout-btn').addEventListener('click', handleLogout);
+        } else {
+            loginNoticeBox.classList.remove('hidden');
+            authContainer.innerHTML = ''; // Limpa a área de autenticação
+        }
+        applyFiltersAndRender();
+    };
+
+    /**
+     * Submete uma nova resposta a um tópico.
+     * @param {number} topicId - O ID do tópico que está sendo respondido.
+     */
+    const submitReply = (topicId) => {
+        const textarea = document.getElementById('reply-textarea');
+        const text = textarea.value.trim();
+        if (!text) return;
+        
+        const topic = topics.find(t => t.id === topicId);
+        topic.comments.push({ author: 'Usuário Teste', text: text });
+        
+        renderModalContent(topic);
+        applyFiltersAndRender(); // Atualiza a contagem de comentários na página principal
+    };
+
+    // ===================================================================
+    // 9. INICIALIZAÇÃO
+    // ===================================================================
+
+    /**
+     * Ponto de entrada: adiciona os event listeners e renderiza o estado inicial.
+     */
+    const initializeForum = () => {
+        // Adiciona listeners para os controles principais
+        loginBtn.addEventListener('click', handleLogin);
+        searchInput.addEventListener('input', handleFilterChange);
+        sortSelect.addEventListener('change', handleFilterChange);
+        categorySelect.addEventListener('change', handleFilterChange);
+
+        // Adiciona listeners para o menu off-canvas
+        menuToggle.addEventListener('click', () => offcanvasMenu.classList.add('open'));
+        closeMenu.addEventListener('click', () => offcanvasMenu.classList.remove('open'));
+
+        // Listener para fechar o modal clicando fora dele
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Configuração inicial
+        initializeCategories();
+        updateUI(); // Renderiza o estado inicial (deslogado)
+    };
+
+    // Inicia a aplicação
+    initializeForum();
 });
-

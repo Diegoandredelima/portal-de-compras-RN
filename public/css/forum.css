@@ -1,70 +1,212 @@
-/* Definição de variáveis de cores globais */
 :root {
     --primary-color: #1351B4;
     --secondary-color: #FF6B35;
     --success-color: #5EA51D;
     --warning-color: #FFCD07;
     --info-color: #3498db;
-    --dark-color: #071D41;
+    --dark-blue: #071D41;
+    --main-blue: #3A6A85;
+    --primary-button: #D34C2B;
+    --orange-hover: #B03C1F;
+    --light-grey-bg: #f8f9fa;
+    --border-grey: #e5e7eb;
+    --font-color: #374151;
+    --light-blue-bg: #eef4ff;
+    --light-blue-border: #cad9f0;
 }
 
-/* Estilos para os cartões de tópico do fórum */
-.forum-card {
-    transition: all 0.3s ease; /* Transição suave para efeitos de hover */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--font-color);
+    background-color: var(--light-grey-bg);
 }
 
-.forum-card:hover {
-    transform: translateY(-2px); /* Efeito de "subir" no hover */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Sombra mais pronunciada no hover */
+.color-bar {
+    height: 4px;
+    background: linear-gradient(90deg,
+        var(--secondary-color) 0%, var(--secondary-color) 25%,
+        var(--success-color) 25%, var(--success-color) 50%,
+        var(--warning-color) 50%, var(--warning-color) 75%,
+        var(--info-color) 75%, var(--info-color) 100%);
 }
 
-/* Estilo para a barra lateral de filtros ficar "grudada" na tela ao rolar */
-.sticky-filters {
+.header-bg {
+     background-color: #f8f9fa;
+}
+
+.sticky-header {
     position: sticky;
-    top: 20px; /* Distância do topo da tela */
-    z-index: 10; /* Garante que fique acima de outros elementos */
+    top: 0;
+    z-index: 1000;
+    background-color: white;
 }
 
-/* Estilo base para o modal de detalhes do tópico (oculto por padrão) */
-.topic-detail-modal {
-    display: none;
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Start off-screen */
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    z-index: 1500;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 4px 0px 15px rgba(0,0,0,0.1);
 }
 
-/* Estilo para o modal de detalhes do tópico quando ativo (visível) */
-.topic-detail-modal.active {
-    display: flex; /* Usa flexbox para centralizar o conteúdo */
+.offcanvas-menu.active {
+    left: 0;
 }
 
-/* Estilo para o badge do usuário logado */
-.user-badge {
-    background: linear-gradient(45deg, var(--primary-color), var(--info-color)); /* Gradiente de cor */
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: var(--font-color);
+    font-weight: 500;
+}
+.menu-item:hover {
+    background-color: var(--light-grey-bg);
+    color: var(--primary-color);
+}
+.nav-icon {
+    width: 20px;
+    margin-right: 16px;
+    text-align: center;
 }
 
-/* Estilo para os itens de resposta no modal */
-.response-item {
-    border-left: 4px solid var(--primary-color); /* Borda esquerda com a cor primária */
+.breadcrumbs {
+    background-color: #f1f1f1;
+    padding: 12px 0;
+    font-size: 0.875rem;
+}
+.breadcrumbs .separator {
+    margin: 0 8px;
+    color: #9ca3af;
 }
 
-/* Estilo para o formulário de criação de tópico */
-.create-topic-form {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); /* Gradiente de cor de fundo */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
+    cursor: pointer;
 }
 
-/* Estilo para o botão de filtro ativo (ordenado atualmente) */
-.filter-active {
-    background-color: var(--primary-color) !important; /* Cor de fundo primária */
-    color: white !important; /* Cor do texto branca */
+.btn-primary:hover {
+    background-color: #0f439a;
 }
 
-/* Estilo base para os botões de paginação */
+.btn-secondary {
+    background-color: var(--primary-button);
+    color: white;
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: var(--orange-hover);
+}
+
 .pagination-btn {
-    transition: all 0.2s ease; /* Transição suave para efeitos de hover */
+    background-color: white;
+    border: 1px solid var(--border-grey);
+    color: var(--font-color);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.pagination-btn:hover:not(:disabled) {
+    background-color: #f3f4f6;
+    border-color: #d1d5db;
+}
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
-/* Estilo para os botões de paginação no hover */
-.pagination-btn:hover {
-    background-color: var(--primary-color); /* Cor de fundo primária */
-    color: white; /* Cor do texto branca */
+.topic-card {
+    background-color: white;
+    border: 1px solid var(--border-grey);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
 }
 
-/* Ícones temáticos do fórum (exemplo de uso: .fa-comments, .fa-users, .fa-question-circle, .fa-lightbulb, .fa-gavel, .fa-chalkboard-teacher) */
+.topic-card-clickable {
+    cursor: pointer;
+    padding: 1.5rem;
+}
+
+.topic-card-clickable:hover {
+    background-color: #fcfcfc;
+}
+
+.topic-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.07);
+    border-color: var(--primary-color);
+}
+
+.interaction-btn {
+    background: none;
+    border: 1px solid var(--border-grey);
+    color: #6b7280;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.8rem;
+}
+
+.interaction-btn:hover {
+    background-color: #f3f4f6;
+    color: var(--dark-blue);
+}
+
+.interaction-btn.active {
+    background-color: var(--light-blue-bg);
+    border-color: var(--light-blue-border);
+    color: var(--primary-color);
+}
+
+.fire-icon {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.modal {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.6); z-index: 2000; overflow-y: auto;
+}
+
+.modal.active { display: flex; align-items: center; justify-content: center; }
+
+.modal-content {
+    background-color: white; border-radius: 0.75rem; width: 90%; max-width: 800px;
+    margin: 2rem auto; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: slide-up 0.4s ease-out;
+}
+
+@keyframes slide-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.form-input, .form-textarea, .form-select {
+    width: 100%; padding: 0.75rem; border: 1px solid var(--border-grey);
+    border-radius: 0.5rem; font-size: 1rem;
+    background-color: white;
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+    outline: none; border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(19, 81, 180, 0.1);
+}
