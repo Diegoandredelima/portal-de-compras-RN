@@ -2,61 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://compras.rn.gov.br/</loc>
-    <lastmod>2024-03-15</lastmod>
+    <lastmod>2025-07-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://compras.rn.gov.br/pages/fornecedor.html</loc>
-    <lastmod>2024-03-15</lastmod>
+    <loc>https://compras.rn.gov.br/pages/Fornecedor.html</loc>
+    <lastmod>2025-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://compras.rn.gov.br/pages/servidor.html</loc>
-    <lastmod>2024-03-15</lastmod>
+    <loc>https://compras.rn.gov.br/pages/Servidor.html</loc>
+    <lastmod>2025-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://compras.rn.gov.br/pages/cidadao.html</loc>
-    <lastmod>2024-03-15</lastmod>
+    <loc>https://compras.rn.gov.br/pages/Cidadao.html</loc>
+    <lastmod>2025-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://compras.rn.gov.br/pages/capacite-se.html</loc>
-    <lastmod>2024-03-15</lastmod>
+    <loc>https://compras.rn.gov.br/pages/Capacite-se.html</loc>
+    <lastmod>2025-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://compras.rn.gov.br/pages/legislacao.html</loc>
-    <lastmod>2024-03-15</lastmod>
+    <loc>https://compras.rn.gov.br/pages/Legislacao.html</loc>
+    <lastmod>2025-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://compras.rn.gov.br/pages/acesso-sistema.html</loc>
-    <lastmod>2024-03-15</lastmod>
+    <loc>https://compras.rn.gov.br/pages/Acesso-sistema.html</loc>
+    <lastmod>2025-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://compras.rn.gov.br/pages/oportunidades.html</loc>
-    <lastmod>2024-03-15</lastmod>
+    <loc>https://compras.rn.gov.br/pages/Oportunidade.html</loc>
+    <lastmod>2025-07-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://compras.rn.gov.br/pages/manuais.html</loc>
-    <lastmod>2024-03-15</lastmod>
+    <loc>https://compras.rn.gov.br/pages/Manuais.html</loc>
+    <lastmod>2025-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://compras.rn.gov.br/pages/Noticias.html</loc>
+    <lastmod>2025-07-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://compras.rn.gov.br/pages/Institucional.html</loc>
+    <lastmod>2025-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://compras.rn.gov.br/pages/artigos.html</loc>
-    <lastmod>2024-03-15</lastmod>
+    <loc>https://compras.rn.gov.br/pages/Forum.html</loc>
+    <lastmod>2025-07-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://compras.rn.gov.br/pages/FAQs-perguntas.html</loc>
+    <lastmod>2025-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://compras.rn.gov.br/pages/Compr-ia.html</loc>
+    <lastmod>2025-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
