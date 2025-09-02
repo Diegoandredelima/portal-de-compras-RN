@@ -7,7 +7,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://compras.rn.gov.br/pages/Fornecedor.html</loc>
+    <loc>https://compras.rn.gov.br/pages/fornecedor.html</loc>
     <lastmod>2025-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -19,7 +19,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://compras.rn.gov.br/pages/Cidadao.html</loc>
+    <loc>https://compras.rn.gov.br/pages/cidadao.html</loc>
     <lastmod>2025-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -31,7 +31,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://compras.rn.gov.br/pages/Legislacao.html</loc>
+    <loc>https://compras.rn.gov.br/pages/legislacao.html</loc>
     <lastmod>2025-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -49,7 +49,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://compras.rn.gov.br/pages/Manuais.html</loc>
+    <loc>https://compras.rn.gov.br/pages/manuais.html</loc>
     <lastmod>2025-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

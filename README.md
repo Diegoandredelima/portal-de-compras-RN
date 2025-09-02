@@ -39,20 +39,20 @@ portal-de-compras-RN/
 │   │   ├── scripts.js     # Script principal
 │   │   └── forum.js       # Funcionalidades do fórum
 │   └── pages/             # Páginas HTML do portal
-│       ├── Fornecedor.html
-│       ├── Servidor.html
-│       ├── Cidadao.html
+│       ├── fornecedor.html
+│       ├── servidor.html
+│       ├── cidadao.html
 │       ├── Forum.html
-│       ├── Legislacao.html
-│       ├── Oportunidade.html
+│       ├── legislacao.html
+│       ├── oportunidade.html
 │       ├── FAQs-perguntas.html
-│       ├── Manuais.html
-│       ├── Noticias.html
-│       ├── Institucional.html
-│       ├── Capacite-se.html
-│       ├── Acesso-sistema.html
-│       ├── Em-construcao.html
-│       └── Compr-ia.html
+│       ├── manuais.html
+│       ├── noticias.html
+│       ├── institucional.html
+│       ├── capacite-se.html
+│       ├── acesso-sistema.html
+│       ├── em-construcao.html
+│       └── compr-ia.html
 ├── backend-wordpress/      # Backend WordPress (planejado)
 ├── config.json            # Configurações do projeto
 ├── manifest.json          # Manifesto PWA

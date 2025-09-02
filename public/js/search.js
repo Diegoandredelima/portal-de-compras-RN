@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const pagesToSearch = [
-        'Index.html',
-        'pages/Fornecedor.html',
-        'pages/Servidor.html',
-        'pages/Cidadao.html',
-        'pages/Capacite-se.html',
-        'pages/Legislacao.html',
-        'pages/Manuais.html',
+        '/index.html',
+        'pages/fornecedor.html',
+        'pages/servidor.html',
+        'pages/cidadao.html',
+        'pages/capacite-se.html',
+        'pages/legislacao.html',
+        'pages/manuais.html',
         'pages/Oportunidades.html',
         'pages/Artigos.html',
         'pages/Noticias.html',

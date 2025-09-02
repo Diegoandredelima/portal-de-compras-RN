@@ -3,264 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Central de Compras RN - Oportunidades para Fornecedores</title>
-    <meta name="description" content="Venda para o Governo do Rio Grande do Norte. Oportunidades para Grandes Empresas, ME/EPP e MEI. Cadastre-se e participe das licitações do RN.">
-    <!-- Tailwind CSS (Framework de CSS) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome (Ícones) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/compraia.css">
+    <title>Página em Construção - Portal de Compras Governamentais</title>
+    <!-- Importação do Tailwind CSS via CDN (padrão do projeto) -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Importação do Font Awesome para os ícones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <!-- Estilos específicos da página de construção -->
+    <link rel="stylesheet" href="../css/construction.css">
 </head>
-<body class="bg-white font-sans">
-    <header class="header-bg py-2 px-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <img src="../images/logos/COMPR_logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
-                <img src="../images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
-            </div>
-            <div class="flex items-center space-x-4 text-sm">
-                <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
-                <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
-                <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
-                <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
-                <div class="dropdown">
-                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
-                </div>
-                <div class="flex items-center space-x-2 ml-4">
-                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="color-bar w-full"></div>
-    <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center">
-                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu"><i class="fas fa-bars text-2xl"></i></button>
-                <a href="../Index.html" class="text-xl font-medium">Central de Compras</a>
-            </div>
-            <nav class="hidden md:flex items-center space-x-6">
-                <a href="#beneficios" class="text-gray-600 hover:text-primary-color transition">Benefícios</a>
-                <a href="#oportunidades" class="text-gray-600 hover:text-primary-color transition">Oportunidades</a>
-                <a href="#como-participar" class="text-gray-600 hover:text-primary-color transition">Como Participar</a>
-                <a href="#faq" class="text-gray-600 hover:text-primary-color transition">FAQ</a>
-            </nav>
+<body>
+    <div class="construction-container">
+        <i class="fas fa-tools construction-icon"></i> <!-- Ícone de ferramentas -->
+        <h1 class="construction-title">Página em Construção</h1>
+        <p class="construction-message">
+            Estamos trabalhando para trazer um conteúdo incrível para você! Esta página está passando por uma manutenção e em breve estará disponível com muitas novidades. Agradecemos a sua paciência.
+        </p>
+        <div class="action-buttons">
+            <a href="../index.html" class="action-button primary">
+                <i class="fas fa-home"></i> Voltar para a Página Inicial
+            </a>
+            <a href="#" class="action-button secondary" onclick="alert('Envie seu feedback ou entre em contato conosco em contato@rn.gov.br')">
+                <i class="fas fa-comment-dots"></i> Enviar Feedback
+            </a>
         </div>
     </div>
-    
-    <div class="offcanvas-menu" id="offcanvas-menu">
-        <div class="p-4 border-b flex justify-between items-center">
-            <h2 class="text-lg font-bold">Menu</h2>
-            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu"><i class="fas fa-times text-2xl"></i></button>
-        </div>
-        <div class="p-4">
-            <ul class="space-y-4">
-                <li><a href="../Index.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-home nav-icon"></i><span>Início</span></a></li>
-                <li><a href="servidor.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-user nav-icon"></i><span>Servidor</span></a></li>
-                <li><a href="cidadao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-users nav-icon"></i><span>Cidadão</span></a></li>
-                <li><a href="capacite-se.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-graduation-cap nav-icon"></i><span>Capacite-se</span></a></li>
-                <li><a href="legislacao.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-gavel nav-icon"></i><span>Legislação</span></a></li>
-                <li><a href="manuais.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-book nav-icon"></i><span>Manuais</span></a></li>
-                <li><a href="forum.html" class="flex items-center p-2 rounded hover:bg-gray-100"><i class="fas fa-comments nav-icon"></i><span>Fórum</span></a></li>
-                
-            </ul>
-        </div>
-    </div>
-    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
-
-
-<!-- CONTEÚDO PRINCIPAL -->
-<main>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1 class="hero-title">Venda para o Governo do RN <br><span class="hero-highlight">Oportunidades para Todos!</span></h1>
-            <p class="hero-subtitle">Conectando seu negócio ao desenvolvimento do Rio Grande do Norte. Grandes empresas, ME/EPP e MEI têm espaço garantido.</p>
-            <div class="hero-buttons">
-                <a href="#cadastro" class="btn btn-accent btn-lg"><i class="fas fa-rocket btn-icon"></i> Cadastre-se Agora</a>
-                <a href="#oportunidades" class="btn btn-outline-white btn-lg">Conheça as Oportunidades</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefícios Section -->
-    <section id="beneficios" class="section section-bg">
-        <div class="container">
-            <div class="section-header"><h2 class="section-title">Por Que Vender para o Governo do RN?</h2><p class="section-subtitle">Benefícios exclusivos para fornecedores que escolhem o Rio Grande do Norte</p></div>
-            <div class="benefits-grid">
-                <div class="card card-hover"><div class="card-header"><i class="fas fa-shield-alt card-icon primary"></i><h3 class="card-title">Mercado Estável</h3></div><div class="card-content"><p>Demanda contínua por bens e serviços com contratos de longo prazo e renovações programadas.</p></div></div>
-                <div class="card card-hover"><div class="card-header"><i class="fas fa-hand-holding-usd card-icon secondary"></i><h3 class="card-title">Pagamento Garantido</h3></div><div class="card-content"><p>Segurança nas transações com o Estado, pagamentos em dia e transparência total.</p></div></div>
-                <div class="card card-hover"><div class="card-header"><i class="fas fa-eye card-icon primary"></i><h3 class="card-title">Transparência</h3></div><div class="card-content"><p>Processos claros, acessíveis e auditáveis. Todas as informações disponíveis publicamente.</p></div></div>
-                <div class="card card-hover"><div class="card-header"><i class="fas fa-map-marked-alt card-icon secondary"></i><h3 class="card-title">Desenvolvimento Local</h3></div><div class="card-content"><p>Contribua para o crescimento do seu estado e tenha prioridade como fornecedor local.</p></div></div>
-                <div class="card card-hover"><div class="card-header"><i class="fas fa-lightbulb card-icon accent"></i><h3 class="card-title">Inovação</h3></div><div class="card-content"><p>Oportunidades em diversas áreas: tecnologia, saúde, educação, infraestrutura e muito mais.</p></div></div>
-                <div class="card card-hover"><div class="card-header"><i class="fas fa-award card-icon primary"></i><h3 class="card-title">Tratamento Diferenciado</h3></div><div class="card-content"><p>ME/EPP e MEI têm benefícios especiais garantidos por lei federal.</p></div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Oportunidades por Porte -->
-    <section id="oportunidades" class="section">
-        <div class="container">
-            <div class="section-header"><h2 class="section-title">Seu Negócio, Sua Oportunidade</h2><p class="section-subtitle">Venda para o RN independente do porte da sua empresa</p></div>
-            <div class="tabs">
-                <div class="tabs-list">
-                    <button class="tab-trigger active" data-tab="me-epp"><i class="fas fa-users tab-icon"></i> ME/EPP</button>
-                    <button class="tab-trigger" data-tab="grandes"><i class="fas fa-building tab-icon"></i> Grandes Empresas</button>
-                    <button class="tab-trigger" data-tab="mei"><i class="fas fa-user tab-icon"></i> MEI</button>
-                </div>
-                <!-- Conteúdo ME/EPP -->
-                <div class="tab-content active" id="me-epp"><div class="card"><div class="card-header"><h3 class="card-title">Benefícios para ME/EPP</h3><p class="card-description">Tratamento diferenciado garantido por lei federal</p></div><div class="card-content"><div class="benefits-grid-2 text-left"><div class="benefit-item"><div class="benefit-header"><span class="badge badge-secondary">Lei 123/2006</span><h4>Empate Ficto</h4></div><p>Propostas até 10% superiores à melhor classificada são consideradas empatadas, dando direito de cobrir a oferta.</p></div><div class="benefit-item"><div class="benefit-header"><span class="badge badge-secondary">Exclusivo</span><h4>Licitações Exclusivas</h4></div><p>Participação exclusiva em licitações de até R$ 140 mil, garantindo mercado reservado.</p></div><div class="benefit-item"><div class="benefit-header"><span class="badge badge-secondary">25%</span><h4>Cotas de Participação</h4></div><p>Reserva de até 25% do objeto para ME/EPP em bens e serviços divisíveis.</p></div><div class="benefit-item"><div class="benefit-header"><span class="badge badge-secondary">RN</span><h4>Prioridade Local</h4></div><p>Fornecedores locais e regionais têm prioridade de até 10% sobre o menor preço.</p></div></div></div></div></div>
-                <!-- Conteúdo Grandes Empresas -->
-                <div class="tab-content" id="grandes"><div class="card"><div class="card-header"><h3 class="card-title">Oportunidades para Grandes Empresas</h3><p class="card-description">Contratos de grande volume e complexidade técnica</p></div><div class="card-content"><div class="benefits-grid-2 text-left"><div class="benefit-item"><h4>Licitações de Grande Porte</h4><p>Participe de licitações de grande volume e complexidade técnica, incluindo obras e sistemas de TI.</p></div><div class="benefit-item"><h4>Parcerias Estratégicas</h4><p>Oportunidades de subcontratação obrigatória com ME/EPP locais, fortalecendo a economia regional.</p></div></div></div></div></div>
-                <!-- Conteúdo MEI -->
-                <div class="tab-content" id="mei"><div class="card"><div class="card-header"><h3 class="card-title">Contrata+Brasil para MEI</h3><p class="card-description">Programa federal de simplificação para microempreendedores</p></div><div class="card-content"><div class="highlight-box"><h4>🚀 Programa Contrata+Brasil</h4><p>Plataforma federal que conecta MEI com oportunidades de prestação de serviços para órgãos públicos.</p></div><div class="benefits-grid-2 text-left"><div class="benefit-item"><h4>Menos Burocracia</h4><p>Processos simplificados e ágeis, especialmente desenvolvidos para a realidade do MEI.</p></div><div class="benefit-item"><h4>Serviços Comuns</h4><p>Oportunidades em serviços como pintura, elétrica, gesso, reformas e manutenção predial.</p></div></div></div></div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Como Participar -->
-    <section id="como-participar" class="section section-bg">
-        <div class="container">
-            <div class="section-header"><h2 class="section-title">Seu Caminho para Vender ao Governo</h2><p class="section-subtitle">Processo simples e transparente em 4 passos</p></div>
-            <div class="steps-grid">
-                <div class="card card-hover"><div class="card-header"><div class="step-icon primary"><i class="fas fa-file-signature"></i></div><h3 class="card-title">1. Cadastro</h3></div><div class="card-content"><p>Realize seu cadastro no SICAF ou no sistema de fornecedores do RN. Tenha sua documentação em dia.</p></div></div>
-                <div class="card card-hover"><div class="card-header"><div class="step-icon secondary"><i class="fas fa-search-dollar"></i></div><h3 class="card-title">2. Oportunidades</h3></div><div class="card-content"><p>Acompanhe licitações no Portal de Compras do RN, PNCP e Contrata+Brasil (para MEI).</p></div></div>
-                <div class="card card-hover"><div class="card-header"><div class="step-icon accent"><i class="fas fa-paper-plane"></i></div><h3 class="card-title">3. Participe</h3></div><div class="card-content"><p>Envie sua proposta nos pregões eletrônicos. Aproveite os benefícios da sua categoria.</p></div></div>
-                <div class="card card-hover"><div class="card-header"><div class="step-icon primary"><i class="fas fa-handshake"></i></div><h3 class="card-title">4. Contrate</h3></div><div class="card-content"><p>Sendo vencedor, assine o contrato e comece a fornecer para o Estado do Rio Grande do Norte.</p></div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dados e Estatísticas -->
-    <section id="dados" class="section">
-        <div class="container">
-            <div class="section-header"><h2 class="section-title">O Impacto das Compras Governamentais</h2><p class="section-subtitle">Números que mostram a força do mercado público no RN</p></div>
-            <div class="stats-grid">
-                <div class="card stat-card"><h3 class="stat-value primary">R$ 2,78bi</h3><p class="stat-label">Plano de Contratações 2025</p></div>
-                <div class="card stat-card"><h3 class="stat-value secondary">23,36%</h3><p class="stat-label">Participação ME/EPP (Nacional)</p></div>
-                <div class="card stat-card"><h3 class="stat-value accent">107.256</h3><p class="stat-label">Fornecedores ME/EPP (Nacional)</p></div>
-                <div class="card stat-card"><h3 class="stat-value primary">10-25%</h3><p class="stat-label">Economia com Centralização</p></div>
-            </div>
-            <div class="card economy-card mt-8"><div class="card-content p-8 text-center"><p class="text-lg mb-4">Baseado em estudos, a centralização de compras pode gerar <span class="highlight-text">economias entre 10% e 25%</span> dos valores licitados.</p><p class="text-muted">Para o orçamento de R$ 2,78 bilhões, isso representa uma economia potencial de <span class="highlight-text">R$ 278 milhões a R$ 695 milhões</span> anuais.</p></div></div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="section section-bg">
-        <div class="container">
-            <div class="section-header"><h2 class="section-title">Dúvidas Frequentes</h2><p class="section-subtitle">Respostas para as principais questões</p></div>
-            <div class="faq-container">
-                <div class="faq-item"><div class="faq-question"><h3>Como faço para me cadastrar como fornecedor do RN?</h3><i class="fas fa-chevron-down faq-icon"></i></div><div class="faq-answer"><p>Para se cadastrar, acesse o SICAF (Sistema de Cadastramento Unificado de Fornecedores) ou o sistema de cadastro específico do RN. É necessário ter certificado digital e documentação da empresa regularizada.</p></div></div>
-                <div class="faq-item"><div class="faq-question"><h3>Quais os documentos necessários para uma licitação?</h3><i class="fas fa-chevron-down faq-icon"></i></div><div class="faq-answer"><p>Os documentos básicos incluem: CNPJ ativo, certidões negativas de débitos, certidão de regularidade do FGTS e prova de inexistência de débitos trabalhistas. ME/EPP têm prazo adicional para regularização.</p></div></div>
-                <div class="faq-item"><div class="faq-question"><h3>Minha empresa é de outro estado, posso vender para o RN?</h3><i class="fas fa-chevron-down faq-icon"></i></div><div class="faq-answer"><p>Sim, empresas de qualquer estado podem participar. Porém, fornecedores locais podem ter prioridade de até 10% sobre o menor preço, conforme previsto em lei, para fomentar a economia local.</p></div></div>
-                <div class="faq-item"><div class="faq-question"><h3>Onde encontro os editais de licitação do RN?</h3><i class="fas fa-chevron-down faq-icon"></i></div><div class="faq-answer"><p>Os editais são publicados no Portal de Compras do RN, no Portal Nacional de Contratações Públicas (PNCP) e no Diário Oficial do Estado. Recomendamos acompanhar regularmente esses canais.</p></div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Final -->
-    <section id="cadastro" class="cta-section">
-        <div class="container"><div class="cta-content"><h2 class="cta-title">Pronto para Vender para o Governo do RN?</h2><p class="cta-subtitle">Cadastre-se agora e comece a participar das oportunidades de negócio com o Estado.</p><div class="hero-buttons"><a href="#" class="btn btn-white btn-lg"><i class="fas fa-user-plus btn-icon"></i> Portal de Compras RN</a><a href="#" class="btn btn-accent btn-lg"><i class="fas fa-file-signature btn-icon"></i> Cadastro Federal (SICAF)</a></div></div></div>
-    </section>
-</main>
-                <!-- Footer -->
-   <footer class="footer py-6 px-4">
-    <div class="container mx-auto">
-        <div class="flex flex-col md:flex-row md:items-start md:justify-between items-start mb-8" style="padding-top: 4rem;">
-            <!-- Logo no canto superior esquerdo -->
-            <img src="../public/images/logos/NEGATIVO.png" alt="Governo do Rio Grande do Norte" class="h-14 w-auto mb-2" style="height: 101px; transform: translate(0px, -45px);" data-selected="true" data-label-id="0">
-        </div>
-        <!-- Seções do mapa do site -->
-        <div class="w-full flex justify-center mt-[-16px] mb-2">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 flex-1 max-w-6xl mx-auto">
-                <div class="sitemap-section">
-                    <h4 class="text-white font-bold mb-4">Institucional</h4>
-                    <ul class="space-y-2">
-                        <li><a href="../index.html" class="text-gray-300 hover:text-white">Página Principal</a></li>
-                        <li><a href="institucional.html" class="text-gray-300 hover:text-white">Quem Somos</a></li>
-                        <li><a href="noticias.html" class="text-gray-300 hover:text-white">Notícias</a></li>
-                        <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
-                        <li><a href="forum.html" class="text-gray-300 hover:text-white">Fórum</a></li>
-                    </ul>
-                </div>
-                <div class="sitemap-section">
-                    <h4 class="text-white font-bold mb-4">Acesso</h4>
-                    <ul class="space-y-2">
-                        <li><a href="fornecedor.html" class="text-gray-300 hover:text-white">Fornecedor</a></li>
-                        <li><a href="servidor.html" class="text-gray-300 hover:text-white">Servidor</a></li>
-                        <li><a href="cidadao.html" class="text-gray-300 hover:text-white">Cidadão</a></li>
-                        <li><a href="meepp.html" class="text-gray-300 hover:text-white">ME/EPP</a></li>
-                        <li><a href="acesso-sistema.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
-                    </ul>
-                </div>
-                <div class="sitemap-section">
-                    <h4 class="text-white font-bold mb-4">Oportunidades</h4>
-                    <ul class="space-y-2">
-                        <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Licitações</a></li>
-                        <li><a href="http://servicos.searh.rn.gov.br/searh/Licitacao/RegistroPreco" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Atas de Registro de Preço</a></li>
-                    </ul>
-                </div>
-                <div class="sitemap-section">
-                    <h4 class="text-white font-bold mb-4">Conhecimento</h4>
-                    <ul class="space-y-2">
-                        <li><a href="capacite-se.html" class="text-gray-300 hover:text-white">Capacite-se</a></li>
-                        <li><a href="legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
-                        <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
-                        <li><a href="compr-ia.html" class="text-gray-300 hover:text-white">COMPR IA</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
-                    </ul>
-                </div>
-                <div class="sitemap-section">
-                    <h4 class="text-white font-bold mb-4">Serviços SEAD</h4>
-                    <ul class="space-y-2">
-                        <li><a href="https://www.sead.rn.gov.br" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Secretaria de Administração</a></li>
-                        <li><a href="http://servicos.searh.rn.gov.br/searh/copag/contra_cheque.asp" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Contracheque</a></li>
-                        <li><a href="http://servicos.searh.rn.gov.br/searh/dirf?escolha=1" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Declaração de Rendimentos</a></li>
-                        <li><a href="http://servicos.searh.rn.gov.br/searh/Protocolo" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Protocolo NET</a></li>
-                        <li><a href="http://servicos.searh.rn.gov.br/searh/Diaria" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white">Diárias</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <hr class="border-white my-4">
-        <div class="flex flex-row justify-between items-start max-w-4xl mx-auto gap-16 mb-6">
-            <!-- Informações de contato -->
-            <div class="text-white text-sm space-y-1 w-1/2 pr-8">
-                <div class="font-bold text-base mb-1">Contato</div>
-                <div>Centro Administrativo do Estado</div>
-                <div>Av. Senador Salgado Filho, s/n, Lagoa Nova - Natal/RN.</div>
-                <div>CEP: 59064-901</div>
-                <div><i class="fas fa-phone-alt mr-2"></i>+55 (84) 3232-5240</div>
-                <div><i class="fas fa-envelope mr-2"></i>contato@rn.gov.br</div>
-            </div>
-            <!-- Redes sociais -->
-            <div class="flex flex-col items-end w-1/2 pl-8">
-                <div class="font-bold text-base mb-2 text-white">REDES SOCIAIS</div>
-                <div class="flex items-center gap-4 justify-center">
-                    <a href="https://twitter.com/" target="_blank" class="text-gray-300 hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
-                    <a href="https://facebook.com/" target="_blank" class="text-gray-300 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
-                    <a href="https://instagram.com/" target="_blank" class="text-gray-300 hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="https://youtube.com/" target="_blank" class="text-gray-300 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
-                    <a href="https://wa.me/5584999999999" target="_blank" class="text-gray-300 hover:text-green-500" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
-                </div>
-                <a href="https://www.sic.rn.gov.br/" target="_blank" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-lg font-semibold mt-4 ml-auto" aria-label="Acesso à Informação">
-                    <span class="text-white text-base font-bold">Acesso à Informação</span>
-                </a>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Copyright separado, faixa azul escura ocupando toda a largura -->
-<div class="w-full bg-blue-900 py-4 flex items-center justify-center m-0">
-    <span class="text-white text-center text-sm font-semibold">
-        2025 © Governo do Estado do Rio Grande do Norte | Desenvolvimento <span class="text-yellow-400 font-bold">Central de compras governamentais</span> | Política de Privacidade
-    </span>
-</div>
-    <script src="../js/compr-ia.js"></script>
 </body>
 </html>
