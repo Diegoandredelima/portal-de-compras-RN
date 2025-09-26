@@ -247,4 +247,4 @@ Para dúvidas ou sugestões, entre em contato com a equipe de desenvolvimento:
 
 ---
 
-© 2024 Governo do Rio Grande do Norte. Todos os direitos reservados. 
+© 2025 Todos os direitos reservados. 
