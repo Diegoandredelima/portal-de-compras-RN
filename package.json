@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/governo-rn/portal-compras-governamentais.git"
+    "url": "git+https://github.com/Diegoandredelima/portal-de-compras-RN.git"
   },
   "keywords": [
     "compras",
@@ -28,9 +28,9 @@
   "author": "Governo do Estado do Rio Grande do Norte",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/governo-rn/portal-compras-governamentais/issues"
+    "url": "https://github.com/Diegoandredelima/portal-de-compras-RN/issues"
   },
-  "homepage": "https://github.com/governo-rn/portal-compras-governamentais#readme",
+  "homepage": "https://github.com/Diegoandredelima/portal-de-compras-RN#readme",
   "devDependencies": {
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",

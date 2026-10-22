@@ -1,33 +1,38 @@
 // Nome do cache
-const CACHE_NAME = 'compras-rn-v2';
+const CACHE_NAME = 'compras-rn-v3';
 
 // Arquivos para cache
 const urlsToCache = [
   '/',
-  '/Index.html',
+  '/index.html',
   '/css/main.css',
+  '/css/carrossel.css',
+  '/css/forum.css',
+  '/css/news-styles.css',
+  '/css/oportunidade.css',
   '/js/scripts.js',
   '/js/forum.js',
-  '/images/compr-logo.png',
-  '/images/rn-governo-logo.png',
+  '/js/grafico.js',
+  '/js/search.js',
+  '/images/logos/COMPR_logo.png',
+  '/images/logos/SEAD_Logo.jpg',
+  '/images/logos/NEGATIVO.png',
   '/images/icon-192x192.png',
   '/images/icon-512x512.png',
   '/pages/fornecedor.html',
-  '/pages/Servidor.html',
+  '/pages/servidor.html',
   '/pages/cidadao.html',
-  '/pages/Capacite-se.html',
+  '/pages/capacite-se.html',
   '/pages/legislacao.html',
-  '/pages/Acesso-sistema.html',
-  '/pages/Oportunidade.html',
+  '/pages/acesso-sistema.html',
+  '/pages/oportunidade.html',
   '/pages/manuais.html',
-  '/pages/Noticias.html',
-  '/pages/Institucional.html',
-  '/pages/Forum.html',
-  '/pages/FAQs-perguntas.html',
-  '/pages/Em-construcao.html',
-  '/pages/Compr-ia.html',
-  'https://cdn.tailwindcss.com',
-  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
+  '/pages/noticias.html',
+  '/pages/institucional.html',
+  '/pages/forum.html',
+  '/pages/faqs-perguntas.html',
+  '/pages/em-construcao.html',
+  '/pages/compr-ia.html'
 ];
 
 // Instalação do Service Worker

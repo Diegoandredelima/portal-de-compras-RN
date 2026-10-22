@@ -3,29 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página em Construção - Portal de Compras Governamentais</title>
-    <!-- Importação do Tailwind CSS via CDN (padrão do projeto) -->
+    <title>COMPR IA - Assistente Inteligente de Compras Públicas RN</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Importação do Font Awesome para os ícones -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
-    <!-- Estilos específicos da página de construção -->
-    <link rel="stylesheet" href="../css/construction.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
-<body>
-    <div class="construction-container">
-        <i class="fas fa-tools construction-icon"></i> <!-- Ícone de ferramentas -->
-        <h1 class="construction-title">Página em Construção</h1>
-        <p class="construction-message">
-            Estamos trabalhando para trazer um conteúdo incrível para você! Esta página está passando por uma manutenção e em breve estará disponível com muitas novidades. Agradecemos a sua paciência.
-        </p>
-        <div class="action-buttons">
-            <a href="../index.html" class="action-button primary">
-                <i class="fas fa-home"></i> Voltar para a Página Inicial
-            </a>
-            <a href="#" class="action-button secondary" onclick="alert('Envie seu feedback ou entre em contato conosco em contato@rn.gov.br')">
-                <i class="fas fa-comment-dots"></i> Enviar Feedback
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <!-- Cabeçalho Superior -->
+    <header class="header-bg py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
+            <div class="flex items-center space-x-4">
+                <img src="../images/logos/COMPR_logo.png" alt="Coordenadoria de Compras Governamentais" class="h-12">
+                <img src="../images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
+            </div>
+            <div class="flex items-center space-x-4 text-sm flex-wrap mt-2 md:mt-0">
+                <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
+                <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
+                <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="color-bar w-full"></div>
+
+    <!-- Cabeçalho fixo com menu -->
+    <div class="sticky-header py-4 px-4 border-b bg-white" id="sticky-header">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="../index.html" class="text-xl font-medium text-blue-900 flex items-center gap-2">
+                    <i class="fas fa-arrow-left text-sm text-gray-500"></i>
+                    <span>Central de Compras</span>
+                </a>
+            </div>
+            <a href="acesso-sistema.html" class="access-btn bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-5 rounded-lg text-sm flex items-center gap-1 shadow transition">
+                <i class="fas fa-sign-in-alt"></i>
+                <span>Acesso ao Sistema</span>
             </a>
         </div>
     </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 flex items-center justify-center p-6">
+        <div class="max-w-2xl w-full bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12 text-center">
+            <div class="w-20 h-20 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center text-4xl mx-auto mb-6 shadow-inner">
+                <i class="fas fa-robot"></i>
+            </div>
+            <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-orange-100 text-orange-700 mb-4">
+                Em Desenvolvimento • Versão Beta em Breve
+            </span>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-blue-900 mb-4">
+                COMPR IA: Inteligência Artificial a Serviço das Compras Públicas
+            </h1>
+            <p class="text-gray-600 text-base md:text-lg mb-8 leading-relaxed">
+                Estamos construindo uma ferramenta inteligente baseada em IA generativa para auxiliar gestores, servidores e fornecedores na pesquisa de preços, esclarecimento de dúvidas da Lei 14.133/2021 e navegação simplificada nos editais do Estado do RN.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 text-left">
+                <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                    <i class="fas fa-search-dollar text-blue-600 text-xl mb-2"></i>
+                    <h2 class="font-bold text-sm text-gray-800 mb-1">Pesquisa de Preços</h2>
+                    <p class="text-xs text-gray-500">Análise de preços públicos e conformidade com limites legais.</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                    <i class="fas fa-gavel text-green-600 text-xl mb-2"></i>
+                    <h2 class="font-bold text-sm text-gray-800 mb-1">Consultas Legais</h2>
+                    <p class="text-xs text-gray-500">Orientação contextualizada sobre decretos e normas estaduais.</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                    <i class="fas fa-file-contract text-orange-600 text-xl mb-2"></i>
+                    <h2 class="font-bold text-sm text-gray-800 mb-1">Apoio a ETP/TR</h2>
+                    <p class="text-xs text-gray-500">Suporte técnico para termos de referência e editais.</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="../index.html" class="px-6 py-3 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-lg transition shadow flex items-center justify-center gap-2">
+                    <i class="fas fa-home"></i> Voltar ao Início
+                </a>
+                <a href="faqs-perguntas.html" class="px-6 py-3 border border-gray-300 hover:bg-gray-100 text-gray-700 font-semibold rounded-lg transition flex items-center justify-center gap-2">
+                    <i class="fas fa-question-circle"></i> Acessar FAQ
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé Minimalista -->
+    <footer class="bg-gray-800 text-gray-400 py-4 text-center text-xs">
+        2025 &copy; Governo do Estado do Rio Grande do Norte | Coordenadoria de Compras Governamentais (COMPR / SEAD)
+    </footer>
 </body>
 </html>

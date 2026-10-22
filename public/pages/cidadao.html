@@ -6,7 +6,7 @@
     <title>Cidadão - Portal de Compras Governamentais RN</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../node_modules/@govbr-ds/core/dist/core.min.css">
+    <!-- Removido core.min.css para manter consistência com as demais páginas -->
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class="bg-white">
@@ -72,7 +72,7 @@
                 <li><a href="capacite-se.html" class="menu-item"><i class="fas fa-graduation-cap nav-icon"></i><span>Capacite-se</span></a></li>
                 <li><a href="legislacao.html" class="menu-item"><i class="fas fa-gavel nav-icon"></i><span>Legislação</span></a></li>
                 <li><a href="oportunidade.html" class="menu-item"><i class="fas fa-bullhorn nav-icon"></i><span>Oportunidades</span></a></li>
-                <li><a href="fAQs-perguntas.html" class="menu-item"><i class="fas fa-question nav-icon"></i><span>FAQ</span></a></li>
+                <li><a href="faqs-perguntas.html" class="menu-item"><i class="fas fa-question nav-icon"></i><span>FAQ</span></a></li>
                 <li><a href="forum.html" class="menu-item"><i class="fas fa-comments nav-icon"></i><span>Forum</span></a></li>
                 <li><a href="acesso-sistema.html" class="menu-item"><i class="fas fa-sign-in-alt nav-icon"></i><span>Acesso ao Sistema</span></a></li>
             </ul>
@@ -93,7 +93,7 @@
                 <h3 class="section-title">Conheça os Painéis de Transparência Pública em Contratações Governamentais</h3>
                 <p class="mb-6 text-gray-700">
                     Os painéis desenvolvidos em Power BI a partir dos dados do Portal Nacional de Contratações Públicas (PNCP) são ferramentas que promovem transparência, controle social, e melhor análise das compras públicas realizadas por órgãos do governo.
-                    <br><br>
+                </p>
          <!-- Grid de Painéis -->
          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
 
@@ -170,9 +170,9 @@
             </a>
 
         </div>
-    </div>
-                    Abaixo, explicamos de forma simples e objetiva o que cada painel mostra e como ele pode ser útil para você, cidadão, pesquisador, jornalista, deputado ou membro de órgão de controle.
-                </p>
+        <p class="mb-6 text-gray-700 mt-6">
+            Abaixo, explicamos de forma simples e objetiva o que cada painel mostra e como ele pode ser útil para você, cidadão, pesquisador, jornalista, deputado ou membro de órgão de controle.
+        </p>
 
                 <div class="space-y-10 text-gray-700">
 
@@ -253,6 +253,7 @@
                     </div>
 
                 </div>
+        </div>
     </main>
      <!-- Contato -->
      <section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
@@ -293,7 +294,7 @@
                             <a href="#" class="block text-blue-600 hover:text-blue-800 transition-colors">
                                 <i class="fas fa-video mr-2"></i>Tutoriais em Vídeo
                             </a>
-                            <a href="fAQs-perguntas.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                            <a href="faqs-perguntas.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
                                 <i class="fas fa-question-circle mr-2"></i>FAQ
                             </a>
                         </div>
@@ -320,6 +321,8 @@
                             <li><a href="noticias.html" class="text-gray-300 hover:text-white">Notícias</a></li>
                             <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
                             <li><a href="forum.html" class="text-gray-300 hover:text-white">Fórum</a></li>
+                        </ul>
+                    </div>
                     <div class="sitemap-section">
                         <h4 class="text-white font-bold mb-4">Acesso</h4>
                         <ul class="space-y-2">
@@ -329,6 +332,7 @@
                             <li><a href="oportunidade.html" class="text-gray-300 hover:text-white">ME/EPP</a></li>
                             <li><a href="acesso-sistema.html" class="text-gray-300 hover:text-white">Acesso ao Sistema</a></li>
                         </ul>
+                    </div>
                     <div class="sitemap-section">
                         <h4 class="text-white font-bold mb-4">Oportunidades</h4>
                         <ul class="space-y-2">
