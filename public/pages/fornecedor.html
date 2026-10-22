@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Área do Fornecedor - Saiba como se cadastrar no SICAF e vender para o Governo do Estado do Rio Grande do Norte.">
     <title>Fornecedor - Portal de Compras Governamentais - RN</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class="bg-white">
+    <!-- Link para Pular para o Conteúdo Principal (WCAG 2.1) -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
      <!-- Cabeçalho Superior -->
      <header class="header-bg py-2 px-4">
         <div class="container mx-auto flex justify-between items-center flex-wrap">
@@ -96,7 +99,10 @@
 <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
 
 <!-- Conteúdo Principal -->
-<main class="container mx-auto px-4 py-8">
+<main id="main-content" class="container mx-auto px-4 py-8">
+        <!-- Título H1 Semântico -->
+        <h1 class="sr-only">Área do Fornecedor - Venda para o Governo do Estado do Rio Grande do Norte</h1>
+
         <!-- Banner com Foto -->
         <div class="mb-6 w-full flex items-center justify-center">
             <img src="../images/Banner/banner-empresario.png" alt="Banner Fornecedor" class="banner-padrao" />
@@ -104,19 +110,24 @@
 
         <!-- Venda para o Governo -->
         <div class="mb-6">
-            <h3 class="section-title">Comece a vender para o governo</h3>
+            <h2 class="section-title">Comece a vender para o governo</h2>
             <p class="mb-4 text-gray-700">
                 Se você é fornecedor e deseja participar de licitações ou contratações diretas com a Administração Pública do Estado do Rio Grande do Norte — incluindo órgãos da administração direta, autarquias e fundações — é necessário realizar o registro cadastral no Sistema de Cadastramento Unificado de Fornecedores (SICAF), disponível na plataforma Compras.gov.br.
             </p>
             <p class="mb-4 text-gray-700">
                 Este procedimento está regulamentado pelo artigo 4º da Portaria nº 123 (GS/SEAD), de 29 de janeiro de 2024 e tem como objetivo tornar o processo de credenciamento mais ágil, seguro e 100% digital, além de totalmente gratuito para os fornecedores.
             </p>
-            <div class="mb-4">
-                <span class="inline-block text-blue-900 font-bold">📌 Importante:</span> <span class="text-gray-700">O SICAF é utilizado por diversos órgãos e entidades dos três poderes, o que proporciona uma experiência unificada e facilita o acesso a diferentes oportunidades de compras públicas.</span>
+            <div class="mb-4 p-4 bg-blue-50 border-l-4 border-blue-900 rounded-r">
+                <span class="inline-flex items-center text-blue-900 font-bold gap-2">
+                    <i class="fas fa-info-circle text-blue-900" aria-hidden="true"></i> Importante:
+                </span>
+                <span class="text-gray-800 ml-1">O SICAF é utilizado por diversos órgãos e entidades dos três poderes, o que proporciona uma experiência unificada e facilita o acesso a diferentes oportunidades de compras públicas.</span>
             </div>
-            <div class="mb-4">
-                <span class="inline-block text-yellow-600 font-bold">⚠️ Responsabilidades do fornecedor:</span>
-                <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+            <div class="mb-4 p-4 bg-yellow-50 border-l-4 border-yellow-600 rounded-r">
+                <span class="inline-flex items-center text-yellow-800 font-bold gap-2">
+                    <i class="fas fa-exclamation-triangle text-yellow-600" aria-hidden="true"></i> Responsabilidades do fornecedor:
+                </span>
+                <ul class="list-disc list-inside text-gray-800 mt-2 space-y-1">
                     <li>Realizar o cadastro e manter seus dados atualizados diretamente no SICAF;</li>
                     <li>Emitir seu certificado de registro sempre que necessário por meio da plataforma;</li>
                     <li>Não será aceito o envio de documentos físicos à Administração Pública do RN para fins de registro cadastral.</li>
@@ -139,7 +150,7 @@
                     <span class="text-gray-600 text-center mt-1">Participe de discussões e tire dúvidas com outros fornecedores.</span>
                 </a>
                 <!-- FAQs -->
-                <a href="fAQs-perguntas.html" class="flex flex-col items-center bg-white rounded-lg shadow-md p-6 hover:bg-blue-50 transition w-64">
+                <a href="faqs-perguntas.html" class="flex flex-col items-center bg-white rounded-lg shadow-md p-6 hover:bg-blue-50 transition w-64">
                     <i class="fas fa-question-circle text-4xl text-yellow-500 mb-3"></i>
                     <span class="text-lg font-semibold text-blue-900">FAQs</span>
                     <span class="text-gray-600 text-center mt-1">Veja as perguntas frequentes e encontre respostas rápidas.</span>

@@ -331,32 +331,89 @@ let lineChartComprasInstance = null;
             }
         }
 
-        // Função para mostrar a seção de Compras Homologadas
+        // Função para mostrar a seção de Compras Homologadas (com WAI-ARIA)
         function showComprasHomologadas() {
-            document.getElementById('contentComprasHomologadas').classList.remove('hidden');
-            document.getElementById('contentAdesoesCaronas').classList.add('hidden');
-            document.getElementById('btnComprasHomologadas').classList.remove('bg-gray-300', 'text-gray-800');
-            document.getElementById('btnComprasHomologadas').classList.add('bg-blue-600', 'text-white');
-            document.getElementById('btnAdesoesCaronas').classList.remove('bg-blue-600', 'text-white');
-            document.getElementById('btnAdesoesCaronas').classList.add('bg-gray-300', 'text-gray-800');
+            const btnCompras = document.getElementById('btnComprasHomologadas');
+            const btnCaronas = document.getElementById('btnAdesoesCaronas');
+            const contentCompras = document.getElementById('contentComprasHomologadas');
+            const contentCaronas = document.getElementById('contentAdesoesCaronas');
+
+            if (contentCompras) contentCompras.classList.remove('hidden');
+            if (contentCaronas) contentCaronas.classList.add('hidden');
+
+            if (btnCompras) {
+                btnCompras.classList.remove('bg-gray-300', 'text-gray-800');
+                btnCompras.classList.add('bg-blue-600', 'text-white');
+                btnCompras.setAttribute('aria-selected', 'true');
+                btnCompras.setAttribute('tabindex', '0');
+            }
+            if (btnCaronas) {
+                btnCaronas.classList.remove('bg-blue-600', 'text-white');
+                btnCaronas.classList.add('bg-gray-300', 'text-gray-800');
+                btnCaronas.setAttribute('aria-selected', 'false');
+                btnCaronas.setAttribute('tabindex', '-1');
+            }
             initComprasCharts(); // Re-inicializa os gráficos ao mostrar a seção
         }
 
-        // Função para mostrar a seção de Adesões/Caronas
+        // Função para mostrar a seção de Adesões/Caronas (com WAI-ARIA)
         function showAdesoesCaronas() {
-            document.getElementById('contentAdesoesCaronas').classList.remove('hidden');
-            document.getElementById('contentComprasHomologadas').classList.add('hidden');
-            document.getElementById('btnAdesoesCaronas').classList.remove('bg-gray-300', 'text-gray-800');
-            document.getElementById('btnAdesoesCaronas').classList.add('bg-blue-600', 'text-white');
-            document.getElementById('btnComprasHomologadas').classList.remove('bg-blue-600', 'text-white');
-            document.getElementById('btnComprasHomologadas').classList.add('bg-gray-300', 'text-gray-800');
+            const btnCompras = document.getElementById('btnComprasHomologadas');
+            const btnCaronas = document.getElementById('btnAdesoesCaronas');
+            const contentCompras = document.getElementById('contentComprasHomologadas');
+            const contentCaronas = document.getElementById('contentAdesoesCaronas');
+
+            if (contentCaronas) contentCaronas.classList.remove('hidden');
+            if (contentCompras) contentCompras.classList.add('hidden');
+
+            if (btnCaronas) {
+                btnCaronas.classList.remove('bg-gray-300', 'text-gray-800');
+                btnCaronas.classList.add('bg-blue-600', 'text-white');
+                btnCaronas.setAttribute('aria-selected', 'true');
+                btnCaronas.setAttribute('tabindex', '0');
+            }
+            if (btnCompras) {
+                btnCompras.classList.remove('bg-blue-600', 'text-white');
+                btnCompras.classList.add('bg-gray-300', 'text-gray-800');
+                btnCompras.setAttribute('aria-selected', 'false');
+                btnCompras.setAttribute('tabindex', '-1');
+            }
             initAdesoesCharts(); // Inicializa o gráfico de caronas ao mostrar a seção
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Adiciona event listeners aos botões
-            document.getElementById('btnComprasHomologadas').addEventListener('click', showComprasHomologadas);
-            document.getElementById('btnAdesoesCaronas').addEventListener('click', showAdesoesCaronas);
+            const btnCompras = document.getElementById('btnComprasHomologadas');
+            const btnCaronas = document.getElementById('btnAdesoesCaronas');
+
+            if (btnCompras && btnCaronas) {
+                btnCompras.addEventListener('click', showComprasHomologadas);
+                btnCaronas.addEventListener('click', showAdesoesCaronas);
+
+                // Navegação por teclado nas abas (Seta Esquerda / Direita)
+                [btnCompras, btnCaronas].forEach(btn => {
+                    btn.addEventListener('keydown', function(e) {
+                        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                            e.preventDefault();
+                            if (this === btnCompras) {
+                                btnCaronas.focus();
+                                showAdesoesCaronas();
+                            } else {
+                                btnCompras.focus();
+                                showComprasHomologadas();
+                            }
+                        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                            e.preventDefault();
+                            if (this === btnCaronas) {
+                                btnCompras.focus();
+                                showComprasHomologadas();
+                            } else {
+                                btnCaronas.focus();
+                                showAdesoesCaronas();
+                            }
+                        }
+                    });
+                });
+            }
 
             // Mostra a seção de Compras Homologadas por padrão ao carregar a página
             showComprasHomologadas();

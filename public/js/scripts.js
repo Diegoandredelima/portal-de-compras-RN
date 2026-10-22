@@ -291,34 +291,80 @@ function initializePageScripts(params = null) {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Off-canvas menu toggle logic
+    // Off-canvas menu acessível (WCAG 2.1 AA)
     const menuToggle = document.getElementById('menu-toggle');
     const closeMenu = document.getElementById('close-menu');
     const offcanvasMenu = document.getElementById('offcanvas-menu');
     const offcanvasBackdrop = document.getElementById('offcanvas-backdrop');
 
-    menuToggle.addEventListener('click', function() {
-        offcanvasMenu.classList.add('active');
-        offcanvasBackdrop.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
+    if (menuToggle && offcanvasMenu) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-controls', 'offcanvas-menu');
+        offcanvasMenu.setAttribute('role', 'dialog');
+        offcanvasMenu.setAttribute('aria-modal', 'true');
+        offcanvasMenu.setAttribute('aria-label', 'Menu de navegação');
+        offcanvasMenu.setAttribute('aria-hidden', 'true');
 
-    function closeOffcanvasMenu() {
-        offcanvasMenu.classList.remove('active');
-        offcanvasBackdrop.classList.remove('active');
-        document.body.style.overflow = '';
+        function openOffcanvasMenu() {
+            offcanvasMenu.classList.add('active');
+            if (offcanvasBackdrop) offcanvasBackdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            menuToggle.setAttribute('aria-expanded', 'true');
+            offcanvasMenu.setAttribute('aria-hidden', 'false');
+            if (closeMenu) {
+                setTimeout(() => closeMenu.focus(), 50);
+            }
+        }
+
+        function closeOffcanvasMenu() {
+            offcanvasMenu.classList.remove('active');
+            if (offcanvasBackdrop) offcanvasBackdrop.classList.remove('active');
+            document.body.style.overflow = '';
+            menuToggle.setAttribute('aria-expanded', 'false');
+            offcanvasMenu.setAttribute('aria-hidden', 'true');
+            menuToggle.focus();
+        }
+
+        menuToggle.addEventListener('click', openOffcanvasMenu);
+        if (closeMenu) closeMenu.addEventListener('click', closeOffcanvasMenu);
+        if (offcanvasBackdrop) offcanvasBackdrop.addEventListener('click', closeOffcanvasMenu);
+
+        // Fechar com ESC (WCAG 2.1)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && offcanvasMenu.classList.contains('active')) {
+                closeOffcanvasMenu();
+            }
+        });
+
+        // Focus trap dentro do menu
+        offcanvasMenu.addEventListener('keydown', function(e) {
+            if (e.key !== 'Tab') return;
+            const focusables = offcanvasMenu.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            if (focusables.length === 0) return;
+            const firstElement = focusables[0];
+            const lastElement = focusables[focusables.length - 1];
+
+            if (e.shiftKey) {
+                if (document.activeElement === firstElement) {
+                    lastElement.focus();
+                    e.preventDefault();
+                }
+            } else {
+                if (document.activeElement === lastElement) {
+                    firstElement.focus();
+                    e.preventDefault();
+                }
+            }
+        });
+
+        // Fechar ao clicar em um link
+        const menuLinks = offcanvasMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', closeOffcanvasMenu);
+        });
     }
 
-    closeMenu.addEventListener('click', closeOffcanvasMenu);
-    offcanvasBackdrop.addEventListener('click', closeOffcanvasMenu);
-
-    // Close menu when clicking a link in the menu
-    const menuLinks = offcanvasMenu.querySelectorAll('a');
-    menuLinks.forEach(link => {
-        link.addEventListener('click', closeOffcanvasMenu);
-    });
-
-    // Initial page load (loads home.html into the content wrapper)
+    // Initial page load (se existir page-content-wrapper)
     loadPage('pages/home.html', 'home');
 });
 

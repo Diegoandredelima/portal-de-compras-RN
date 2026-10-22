@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQs - Central de Ajuda - Perguntas Frequentes</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
-    <!-- Removido core.min.css para manter consistência com as demais páginas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/fAQs-perguntas.css">
+    <link rel="stylesheet" href="../css/faqs-perguntas.css">
 </head>
-  <!-- Barra Superior -->
-    
-  <body class="bg-white">
+<body class="bg-white">
+    <!-- Link para Pular para o Conteúdo Principal (WCAG 2.1) -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
     <!-- Cabeçalho Superior -->
     <header class="header-bg py-2 px-4">
         <div class="container mx-auto flex justify-between items-center flex-wrap">
@@ -101,7 +100,8 @@
         <i class="fas fa-bars"></i>
     </button>
 
-    <main class="container mx-auto py-6 px-4">
+    <main id="main-content" class="container mx-auto py-6 px-4">
+        <h1 class="sr-only">Perguntas Frequentes - Central de Ajuda e FAQs</h1>
         <!-- Conteúdo de FAQs aqui -->
          <!-- Barra de busca -->
     <div class="bg-white py-8 shadow-sm">
@@ -963,7 +963,7 @@
             2025 © Governo do Estado do Rio Grande do Norte | Desenvolvido <span class="text-yellow-400 font-bold">Central de compras governamentais</span> | Política de Privacidade
         </span>
     </div>
-    <script src="../js/fAQs.js"></script>
+    <script src="../js/faqs.js"></script>
     <script src="../js/scripts.js"></script>
     <script src="../js/search.js"></script>
 </body>

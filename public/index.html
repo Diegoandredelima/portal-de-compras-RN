@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal de Compras Governamentais do Estado do Rio Grande do Norte - Informações, licitações, fornecedores e transparência.">
+    <meta property="og:title" content="Portal de Compras Governamentais RN">
+    <meta property="og:description" content="Acesse informações sobre compras públicas, licitações, editais e oportunidades no Estado do RN.">
+    <meta property="og:type" content="website">
     <title>Portal de Compras Governamentais RN</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
-    <!-- Removido core.min.css para manter consistência com as demais páginas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/carrossel.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-  <!-- Barra Superior -->
-    
 <body class="bg-white">
+    <!-- Link para Pular para o Conteúdo Principal (Acessibilidade WCAG 2.1) -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
     <!-- Cabeçalho Superior -->
     <header class="header-bg py-2 px-4">
         <div class="container mx-auto flex justify-between items-center flex-wrap">
@@ -22,44 +26,44 @@
                 <img src="images/logos/SEAD_Logo.jpg" alt="Governo do Rio Grande do Norte" class="h-12">
             </div>
             <div class="flex items-center space-x-4 text-sm">
-                <a href="http://www.transparencia.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
-                <a href="https://falabr.cgu.gov.br/web/home" target="_blank" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
-                <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
-                <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
+                <a href="http://www.transparencia.rn.gov.br/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900">Portal da Transparência</a>
+                <a href="https://falabr.cgu.gov.br/web/home" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900">Ouvidoria</a>
+                <a href="https://falabr.cgu.gov.br/web/manifestacao/criar/selecionar-assunto?ouvidoriaInterna=false" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900">Assédio Não!</a>
+                <a href="https://www.sic.rn.gov.br/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900">POLI</a>
                 <div class="dropdown">
-                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
+                    <a href="pages/faqs-perguntas.html" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs" aria-hidden="true"></i></a>
                 </div>
                 <div class="flex items-center space-x-2 ml-4">
-                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Barra Colorida -->
-<div class="color-bar w-full"></div>
+    <div class="color-bar w-full" role="presentation" aria-hidden="true"></div>
 
     <!-- Cabeçalho Fixo com Menu -->
     <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu">
-                    <i class="fas fa-bars text-2xl"></i>
+                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu de navegação" aria-controls="offcanvas-menu" aria-expanded="false">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
                 </button>
                 <a href="index.html" class="text-xl font-medium">Central de Compras</a>
             </div>
             <div class="flex-1 flex justify-end">
                 <div class="search-access-group relative" style="width: 450px; max-width: 100%;">
                     <div class="relative w-full" style="max-width:100%;">
-                        <input type="text" id="search-input-field" placeholder="O que você procura?" class="search-input w-full">
-                        <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
+                        <input type="text" id="search-input-field" placeholder="O que você procura?" class="search-input w-full" aria-label="Campo de busca no portal">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-500" aria-hidden="true"></i>
                     </div>
                     <a href="pages/acesso-sistema.html" class="access-btn bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-5 rounded-lg text-base flex items-center gap-1 shadow transition" aria-label="Acesso ao Sistema">
-                        <i class="fas fa-sign-in-alt"></i>
+                        <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
                         <span class="hidden sm:inline">Acesso ao Sistema</span>
                     </a>
                 </div>
@@ -98,7 +102,9 @@
     <!-- =================================================================== -->
     <!-- CONTEÚDO PRINCIPAL DA PÁGINA                                    -->
     <!-- =================================================================== -->
-    <main>
+    <main id="main-content">
+        <!-- Título H1 Semântico para Acessibilidade (WCAG 2.1) -->
+        <h1 class="sr-only">Portal de Compras Governamentais do Estado do Rio Grande do Norte</h1>
         <!-- =================================================================== -->
         <!-- SEÇÃO DE NAVEGAÇÃO PRINCIPAL (ÍCONES)                           -->
         <!-- =================================================================== -->
@@ -106,23 +112,23 @@
             <div class="container-box mb-6">
             <div class="flex justify-around flex-wrap">
                 <a href="pages/fornecedor.html" class="flex items-center gap-4 mb-4 mr-4 text-gray-700 hover:text-blue-800 transition-colors">
-                    <i class="fas fa-user-tie nav-icon text-4xl text-blue-900"></i>
+                    <i class="fas fa-user-tie nav-icon text-4xl text-blue-900" aria-hidden="true"></i>
                     <span>Fornecedor</span>
                 </a>
                 <a href="pages/servidor.html" class="flex items-center gap-4 mb-4 mr-4 text-gray-700 hover:text-blue-800 transition-colors">
-                    <i class="fas fa-user nav-icon text-4xl text-blue-900"></i>
+                    <i class="fas fa-user nav-icon text-4xl text-blue-900" aria-hidden="true"></i>
                     <span>Servidor</span>
                 </a>
                 <a href="pages/cidadao.html" class="flex items-center gap-4 mb-4 mr-4 text-gray-700 hover:text-blue-800 transition-colors">
-                    <i class="fas fa-users nav-icon text-4xl text-blue-900"></i>
+                    <i class="fas fa-users nav-icon text-4xl text-blue-900" aria-hidden="true"></i>
                     <span>Cidadão</span>
                 </a>
                 <a href="pages/capacite-se.html" class="flex items-center gap-4 mb-4 mr-4 text-gray-700 hover:text-blue-800 transition-colors">
-                    <i class="fas fa-graduation-cap nav-icon text-4xl text-blue-900"></i>
+                    <i class="fas fa-graduation-cap nav-icon text-4xl text-blue-900" aria-hidden="true"></i>
                     <span>Capacite-se</span>
                 </a>
                 <a href="pages/legislacao.html" class="flex items-center gap-4 mb-4 mr-4 text-gray-700 hover:text-blue-800 transition-colors">
-                    <i class="fas fa-gavel nav-icon text-4xl text-blue-900"></i>
+                    <i class="fas fa-gavel nav-icon text-4xl text-blue-900" aria-hidden="true"></i>
                     <span>Legislação</span>
                 </a>   
             </div>
@@ -267,103 +273,128 @@
 <!-- =================================================================== -->
 <!-- SEÇÃO DE DADOS E ESTATÍSTICAS DE COMPRAS                        -->
 <!-- =================================================================== -->
-<section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8">
+<section class="py-16 bg-gray-50 max-w-7xl mx-auto px-8" aria-labelledby="section-stats-title">
     <div class="mb-6">
-        <h3 class="text-center text-4xl font-extrabold text-blue-800 mb-10">Resumo dos Dados de Compras</h3>
-        <div class="flex justify-center space-x-4 mb-8">
-            <button id="btnComprasHomologadas" class="px-6 py-3 rounded-lg font-semibold transition-colors duration-300 bg-blue-600 text-white hover:bg-blue-700 shadow-md">
+        <h2 id="section-stats-title" class="text-center text-4xl font-extrabold text-blue-800 mb-10">Resumo dos Dados de Compras</h2>
+        <div class="flex justify-center space-x-4 mb-8" role="tablist" aria-label="Selecione o tipo de dados estatísticos">
+            <button id="btnComprasHomologadas" role="tab" aria-selected="true" aria-controls="contentComprasHomologadas" tabindex="0" class="px-6 py-3 rounded-lg font-semibold transition-colors duration-300 bg-blue-600 text-white hover:bg-blue-700 shadow-md">
                 Compras Homologadas em 2024
             </button>
-            <button id="btnAdesoesCaronas" class="px-6 py-3 rounded-lg font-semibold transition-colors duration-300 bg-gray-300 text-gray-800 hover:bg-gray-400 shadow-md">
+            <button id="btnAdesoesCaronas" role="tab" aria-selected="false" aria-controls="contentAdesoesCaronas" tabindex="-1" class="px-6 py-3 rounded-lg font-semibold transition-colors duration-300 bg-gray-300 text-gray-800 hover:bg-gray-400 shadow-md">
                 Adesões/Caronas
             </button>
         </div>
 
         <!-- Conteúdo Compras Homologadas -->
-        <div id="contentComprasHomologadas" class="bg-white rounded-lg shadow-lg p-6 mt-6">
+        <div id="contentComprasHomologadas" role="tabpanel" aria-labelledby="btnComprasHomologadas" class="bg-white rounded-lg shadow-lg p-6 mt-6">
             <!-- Cards de Dados Quantitativos -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
                     <div class="text-3xl font-bold">R$ 31.4bi</div>
-                    <div class="text-center">Valor Homologado em Compras</div>
+                    <div class="text-center font-medium">Valor Homologado em Compras</div>
                 </div>
                 <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
                     <div class="text-3xl font-bold">R$ 7bi</div>
-                    <div class="text-center">Valor Homologado em Compras para ME/EPP</div>
+                    <div class="text-center font-medium">Valor Homologado em Compras para ME/EPP</div>
                 </div>
                 <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
                     <div class="text-3xl font-bold">11 mil</div>
-                    <div class="text-center">Processos de Compras Homologados</div>
+                    <div class="text-center font-medium">Processos de Compras Homologados</div>
                 </div>
                 <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
                     <div class="text-3xl font-bold">900</div>
-                    <div class="text-center">Fornecedores Participantes</div>
+                    <div class="text-center font-medium">Fornecedores Participantes</div>
                 </div>
             </div>
 
             <!-- Gráfico de Linha - Acompanhamento Anual -->
-            <h4 class="text-xl font-semibold text-gray-800 mb-4 text-center">Acompanhamento Anual de Compras Homologadas (R$ Bilhões)</h4>
-            <div class="relative h-80 mb-8">
-                <canvas id="lineChartCompras"></canvas>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Acompanhamento Anual de Compras Homologadas (R$ Bilhões)</h3>
+            <div class="relative h-80 mb-4">
+                <canvas id="lineChartCompras" aria-label="Gráfico de linha mostrando o acompanhamento mensal de compras homologadas no ano" role="img"></canvas>
             </div>
+            <!-- Tabela alternativa acessível (WCAG 1.1.1) -->
+            <details class="mb-8 text-sm text-gray-600 bg-gray-50 p-3 rounded">
+                <summary class="cursor-pointer font-semibold text-blue-700 hover:underline">Ver dados mensais em tabela acessível</summary>
+                <div class="overflow-x-auto mt-2">
+                    <table class="min-w-full text-left text-xs text-gray-700 border">
+                        <thead class="bg-gray-100 font-bold border-b">
+                            <tr><th class="p-2">Mês</th><th class="p-2">Valor Homologado (R$ Bilhões)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b"><td class="p-2">Jan</td><td class="p-2">2.5 bi</td></tr>
+                            <tr class="border-b"><td class="p-2">Fev</td><td class="p-2">2.8 bi</td></tr>
+                            <tr class="border-b"><td class="p-2">Mar</td><td class="p-2">3.1 bi</td></tr>
+                            <tr class="border-b"><td class="p-2">Abr</td><td class="p-2">2.9 bi</td></tr>
+                            <tr class="border-b"><td class="p-2">Mai</td><td class="p-2">3.5 bi</td></tr>
+                            <tr class="border-b"><td class="p-2">Jun</td><td class="p-2">3.8 bi</td></tr>
+                            <tr class="border-b"><td class="p-2">Jul</td><td class="p-2">4.2 bi</td></tr>
+                            <tr class="border-b"><td class="p-2">Ago</td><td class="p-2">3.9 bi</td></tr>
+                            <tr class="border-b"><td class="p-2">Set</td><td class="p-2">3.7 bi</td></tr>
+                            <tr class="border-b"><td class="p-2">Out</td><td class="p-2">3.3 bi</td></tr>
+                            <tr class="border-b"><td class="p-2">Nov</td><td class="p-2">3.0 bi</td></tr>
+                            <tr><td class="p-2">Dez</td><td class="p-2">2.6 bi</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Gráfico de Barra - Maiores Compradores -->
                 <div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-4 text-center">Top 5 Maiores Compradores (R$ Milhões)</h4>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Top 5 Maiores Compradores (R$ Milhões)</h3>
                     <div class="relative h-80">
-                        <canvas id="barChartCompradores"></canvas>
+                        <canvas id="barChartCompradores" aria-label="Gráfico de barra dos maiores compradores por secretaria" role="img"></canvas>
                     </div>
                 </div>
 
                 <!-- Gráfico de Barra - Setores com Mais Compras -->
                 <div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-4 text-center">Top 5 Setores com Mais Compras (R$ Milhões)</h4>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Top 5 Setores com Mais Compras (R$ Milhões)</h3>
                     <div class="relative h-80">
-                        <canvas id="barChartSetores"></canvas>
+                        <canvas id="barChartSetores" aria-label="Gráfico de barra dos setores com mais compras" role="img"></canvas>
                     </div>
                 </div>
             </div>
 
-            <p class="text-center mt-8 text-lg text-gray-700">Para acompanhar mais dados e análises detalhadas, <a href="#" class="text-blue-600 hover:underline font-semibold">acesse aqui</a>.</p>
+            <p class="text-center mt-8 text-lg text-gray-700">Para acompanhar mais dados e análises detalhadas, <a href="http://www.transparencia.rn.gov.br/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">acesse o Portal da Transparência</a>.</p>
         </div>
 
         <!-- Conteúdo Adesões/Caronas (inicialmente oculto) -->
-        <div id="contentAdesoesCaronas" class="bg-white rounded-lg shadow-lg p-6 mt-6 hidden">
+        <div id="contentAdesoesCaronas" role="tabpanel" aria-labelledby="btnAdesoesCaronas" class="bg-white rounded-lg shadow-lg p-6 mt-6 hidden">
             <!-- Cards de Dados Quantitativos para Adesões/Caronas -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
                     <div class="text-3xl font-bold">R$ 48.529.148,48</div>
-                    <div class="text-center">Valor Autorizado</div>
+                    <div class="text-center font-medium">Valor Autorizado</div>
                 </div>
                 <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
                     <div class="text-3xl font-bold">159</div>
-                    <div class="text-center">Nº de Caronas</div>
+                    <div class="text-center font-medium">Nº de Caronas</div>
                 </div>
                 <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
                     <div class="text-3xl font-bold">415</div>
-                    <div class="text-center">Nº de Itens</div>
+                    <div class="text-center font-medium">Nº de Itens</div>
                 </div>
                 <div class="p-4 text-white rounded-lg shadow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300" style="background-color: var(--success-color);">
                     <div class="text-3xl font-bold">11.000</div>
-                    <div class="text-center">Produtos</div>
+                    <div class="text-center font-medium">Produtos</div>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
                 <!-- Gráfico de Barra - Rank de Caronas -->
                 <div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-4 text-center">Rank de Caronas</h4>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Rank de Caronas</h3>
                     <div class="relative h-80">
-                        <canvas id="barChartCaronasRank"></canvas>
+                        <canvas id="barChartCaronasRank" aria-label="Gráfico do ranking de caronas" role="img"></canvas>
                     </div>
                 </div>
 
                 <!-- Caronas Mais Requisitadas - Gráfico de Rosca -->
                 <div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-4 text-center">Caronas Mais Requisitadas</h4>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Caronas Mais Requisitadas</h3>
                     <div class="relative h-80 flex items-center justify-center">
-                        <canvas id="donutChartCaronas"></canvas>
+                        <canvas id="donutChartCaronas" aria-label="Gráfico de rosca das caronas mais requisitadas" role="img"></canvas>
                     </div>
                 </div>
             </div>
@@ -448,7 +479,7 @@
                             <a href="#" class="block text-blue-600 hover:text-blue-800 transition-colors">
                                 <i class="fas fa-video mr-2"></i>Tutoriais em Vídeo
                             </a>
-                            <a href="pages/fAQs-perguntas.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                            <a href="pages/faqs-perguntas.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
                                 <i class="fas fa-question-circle mr-2"></i>FAQ
                             </a>
                         </div>
