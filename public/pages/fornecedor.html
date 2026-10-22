@@ -26,13 +26,13 @@
                 <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
                 <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
                 <div class="dropdown">
-                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs" aria-hidden="true"></i></a>
                 </div>
                 <div class="flex items-center space-x-2 ml-4">
-                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/GovernoDoRN" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/GovernodoRN" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/seadrn/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com/@governodorn" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -45,8 +45,8 @@
     <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu">
-                    <i class="fas fa-bars text-2xl"></i>
+                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu" aria-controls="offcanvas-menu" aria-expanded="false">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
                 </button>
                 <a href="../index.html" class="text-xl font-medium">Central de Compras</a>
             </div>
@@ -54,10 +54,10 @@
                 <div class="search-access-group relative" style="width: 450px; max-width: 100%;">
                     <div class="relative w-full" style="max-width:100%;">
                         <input type="text" id="search-input-field" placeholder="O que você procura?" class="search-input w-full">
-                        <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-500" aria-hidden="true"></i>
                     </div>
                     <a href="acesso-sistema.html" class="access-btn bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-5 rounded-lg text-base flex items-center gap-1 shadow transition" aria-label="Acesso ao Sistema">
-                        <i class="fas fa-sign-in-alt"></i>
+                        <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
                         <span class="hidden sm:inline">Acesso ao Sistema</span>
                     </a>
                 </div>
@@ -66,32 +66,54 @@
     </div>
 
     <!-- Menu Lateral -->
-    <div class="offcanvas-menu" id="offcanvas-menu">
-        <div class="p-4 border-b flex justify-between items-center">
-            <h2 class="text-lg font-bold">Menu</h2>
-            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu">
-                <i class="fas fa-times text-2xl"></i>
+    <div class="offcanvas-menu" id="offcanvas-menu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+        <div class="offcanvas-header">
+            <div>
+                <h2>Central de Compras RN</h2>
+                <div class="offcanvas-header-subtitle">Navegação do Portal</div>
+            </div>
+            <button id="close-menu" class="offcanvas-close-btn" aria-label="Fechar menu">
+                <i class="fas fa-times text-lg" aria-hidden="true"></i>
             </button>
         </div>
-        <div class="p-4">
-            <ul class="space-y-4">
-                <li><a href="servidor.html" class="menu-item"><i class="fas fa-user nav-icon"></i><span>Servidor</span></a></li>
-                <li><a href="cidadao.html" class="menu-item"><i class="fas fa-users nav-icon"></i><span>Cidadão</span></a></li>
-                <li><a href="capacite-se.html" class="menu-item"><i class="fas fa-graduation-cap nav-icon"></i><span>Capacite-se</span></a></li>
-                <li><a href="legislacao.html" class="menu-item"><i class="fas fa-gavel nav-icon"></i><span>Legislação</span></a></li>
-                <li><a href="oportunidade.html" class="menu-item"><i class="fas fa-bullhorn nav-icon"></i><span>Oportunidades</span></a></li>
-                <li><a href="faqs-perguntas.html" class="menu-item"><i class="fas fa-question nav-icon"></i><span>FAQ</span></a></li>
-                <li><a href="forum.html" class="menu-item"><i class="fas fa-comments nav-icon"></i><span>Forum</span></a></li>
-                <li><a href="acesso-sistema.html" class="menu-item"><i class="fas fa-sign-in-alt nav-icon"></i><span>Acesso ao Sistema</span></a></li>
-                
+        <nav class="offcanvas-nav" aria-label="Menu principal do portal">
+            <div class="offcanvas-section-label">Acesso por Perfil</div>
+            <ul>
+                <li><a href="../index.html" class="menu-item"><i class="fas fa-home nav-icon" aria-hidden="true"></i><span>Início</span></a></li>
+                <li><a href="fornecedor.html" class="menu-item"><i class="fas fa-user-tie nav-icon" aria-hidden="true"></i><span>Fornecedor</span></a></li>
+                <li><a href="servidor.html" class="menu-item"><i class="fas fa-user-shield nav-icon" aria-hidden="true"></i><span>Servidor</span></a></li>
+                <li><a href="cidadao.html" class="menu-item"><i class="fas fa-users nav-icon" aria-hidden="true"></i><span>Cidadão</span></a></li>
             </ul>
+
+            <div class="offcanvas-section-label">Compras e Conhecimento</div>
+            <ul>
+                <li><a href="oportunidade.html" class="menu-item"><i class="fas fa-bullhorn nav-icon" aria-hidden="true"></i><span>Oportunidades (ME/EPP)</span></a></li>
+                <li><a href="legislacao.html" class="menu-item"><i class="fas fa-gavel nav-icon" aria-hidden="true"></i><span>Legislação</span></a></li>
+                <li><a href="capacite-se.html" class="menu-item"><i class="fas fa-graduation-cap nav-icon" aria-hidden="true"></i><span>Capacite-se</span></a></li>
+                <li><a href="manuais.html" class="menu-item"><i class="fas fa-book-open nav-icon" aria-hidden="true"></i><span>Manuais e Tutoriais</span></a></li>
+                <li><a href="noticias.html" class="menu-item"><i class="fas fa-newspaper nav-icon" aria-hidden="true"></i><span>Notícias</span></a></li>
+                <li><a href="institucional.html" class="menu-item"><i class="fas fa-landmark nav-icon" aria-hidden="true"></i><span>Quem Somos</span></a></li>
+            </ul>
+
+            <div class="offcanvas-section-label">Inovação e Suporte</div>
+            <ul>
+                <li><a href="compr-ia.html" class="menu-item"><i class="fas fa-microchip nav-icon" aria-hidden="true"></i><span>COMPR.IA</span><span class="menu-badge">IA</span></a></li>
+                <li><a href="forum.html" class="menu-item"><i class="fas fa-comments nav-icon" aria-hidden="true"></i><span>Fórum de Discussão</span></a></li>
+                <li><a href="faqs-perguntas.html" class="menu-item"><i class="fas fa-circle-question nav-icon" aria-hidden="true"></i><span>Perguntas Frequentes</span></a></li>
+            </ul>
+        </nav>
+        <div class="offcanvas-footer">
+            <a href="acesso-sistema.html" class="offcanvas-cta">
+                <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                <span>Acesso ao Sistema</span>
+            </a>
         </div>
     </div>
 
   <!-- Breadcrumbs -->
   <div class="breadcrumbs">
     <div class="container mx-auto px-4">
-        <a href="../index.html" class="text-gray-500 hover:text-main-blue"><i class="fas fa-home"></i></a>
+        <a href="../index.html" class="text-gray-500 hover:text-main-blue"><i class="fas fa-home" aria-hidden="true"></i></a>
         <span class="separator">/</span>
         <span>Fornecedor</span>
     </div>
@@ -100,21 +122,32 @@
 
 <!-- Conteúdo Principal -->
 <main id="main-content" class="container mx-auto px-4 py-8">
-        <!-- Título H1 Semântico -->
-        <h1 class="sr-only">Área do Fornecedor - Venda para o Governo do Estado do Rio Grande do Norte</h1>
-
-        <!-- Banner com Foto -->
-        <div class="mb-6 w-full flex items-center justify-center">
-            <img src="../images/Banner/banner-empresario.png" alt="Banner Fornecedor" class="banner-padrao" />
+        <!-- Hero Banner Institucional do Fornecedor -->
+        <div class="fornecedor-hero">
+            <img src="../images/Banner/banner-empresario.png" alt="Fornecedores do Governo do Estado do Rio Grande do Norte" class="fornecedor-hero-bg" />
+            <div class="fornecedor-hero-overlay"></div>
+            <div class="fornecedor-hero-content">
+                <span class="page-hero-badge"><i class="fas fa-handshake" aria-hidden="true"></i> Espaço do Fornecedor</span>
+                <h1 class="page-hero-title">Comece a vender para o Governo do RN</h1>
+                <p class="page-hero-subtitle">Cadastre sua empresa gratuitamente no SICAF/Compras.gov.br e participe de licitações e contratações diretas em todo o Estado.</p>
+                <div class="flex flex-wrap gap-3 mt-5">
+                    <a href="https://www3.comprasnet.gov.br/sicaf-web/index.jsf" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        <i class="fas fa-user-plus" aria-hidden="true"></i> Cadastrar no SICAF
+                    </a>
+                    <a href="oportunidade.html" class="btn-primary-blue" style="border: 1.5px solid rgba(255,255,255,0.4);">
+                        <i class="fas fa-bullhorn" aria-hidden="true"></i> Ver Oportunidades
+                    </a>
+                </div>
+            </div>
         </div>
 
         <!-- Venda para o Governo -->
-        <div class="mb-6">
-            <h2 class="section-title">Comece a vender para o governo</h2>
-            <p class="mb-4 text-gray-700">
+        <div class="mb-6 bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-200">
+            <h2 class="section-title">Como funciona o Cadastro de Fornecedores (SICAF)</h2>
+            <p class="mb-4 text-gray-700 leading-relaxed">
                 Se você é fornecedor e deseja participar de licitações ou contratações diretas com a Administração Pública do Estado do Rio Grande do Norte — incluindo órgãos da administração direta, autarquias e fundações — é necessário realizar o registro cadastral no Sistema de Cadastramento Unificado de Fornecedores (SICAF), disponível na plataforma Compras.gov.br.
             </p>
-            <p class="mb-4 text-gray-700">
+            <p class="mb-4 text-gray-700 leading-relaxed">
                 Este procedimento está regulamentado pelo artigo 4º da Portaria nº 123 (GS/SEAD), de 29 de janeiro de 2024 e tem como objetivo tornar o processo de credenciamento mais ágil, seguro e 100% digital, além de totalmente gratuito para os fornecedores.
             </p>
             <div class="mb-4 p-4 bg-blue-50 border-l-4 border-blue-900 rounded-r">
@@ -123,7 +156,7 @@
                 </span>
                 <span class="text-gray-800 ml-1">O SICAF é utilizado por diversos órgãos e entidades dos três poderes, o que proporciona uma experiência unificada e facilita o acesso a diferentes oportunidades de compras públicas.</span>
             </div>
-            <div class="mb-4 p-4 bg-yellow-50 border-l-4 border-yellow-600 rounded-r">
+            <div class="mb-6 p-4 bg-yellow-50 border-l-4 border-yellow-600 rounded-r">
                 <span class="inline-flex items-center text-yellow-800 font-bold gap-2">
                     <i class="fas fa-exclamation-triangle text-yellow-600" aria-hidden="true"></i> Responsabilidades do fornecedor:
                 </span>
@@ -134,9 +167,9 @@
                 </ul>
             </div>
             
-            <div class="flex space-x-4">
-                <a href="http://compras.rn.gov.br/editalCadastro.html" class="btn-primary text-lg px-8 py-3 shadow-lg border-2 border-orange-600 bg-orange-500 hover:bg-orange-600 transition font-bold rounded-lg">Passo a Passo</a>
-                <a href="https://www3.comprasnet.gov.br/sicaf-web/index.jsf" class="btn-outline text-lg px-8 py-3 shadow-lg border-2 border-blue-700 text-blue-900 hover:bg-blue-50 transition font-bold rounded-lg">Cadastre-se</a>
+            <div class="flex flex-wrap gap-4">
+                <a href="http://compras.rn.gov.br/editalCadastro.html" target="_blank" rel="noopener noreferrer" class="btn-primary text-lg px-8 py-3"><i class="fas fa-list-check" aria-hidden="true"></i> Passo a Passo</a>
+                <a href="https://www3.comprasnet.gov.br/sicaf-web/index.jsf" target="_blank" rel="noopener noreferrer" class="btn-outline text-lg px-8 py-3"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Cadastre-se no SICAF</a>
             </div>
         </div>
         <!-- Seção de Dúvidas e Canais de Atendimento -->
@@ -145,19 +178,19 @@
             <div class="flex flex-col md:flex-row justify-center items-center gap-8">
                 <!-- Fórum -->
                 <a href="forum.html" class="flex flex-col items-center bg-white rounded-lg shadow-md p-6 hover:bg-blue-50 transition w-64">
-                    <i class="fas fa-comments text-4xl text-blue-700 mb-3"></i>
+                    <i class="fas fa-comments text-4xl text-blue-700 mb-3" aria-hidden="true"></i>
                     <span class="text-lg font-semibold text-blue-900">Fórum</span>
                     <span class="text-gray-600 text-center mt-1">Participe de discussões e tire dúvidas com outros fornecedores.</span>
                 </a>
                 <!-- FAQs -->
                 <a href="faqs-perguntas.html" class="flex flex-col items-center bg-white rounded-lg shadow-md p-6 hover:bg-blue-50 transition w-64">
-                    <i class="fas fa-question-circle text-4xl text-yellow-500 mb-3"></i>
+                    <i class="fas fa-question-circle text-4xl text-yellow-500 mb-3" aria-hidden="true"></i>
                     <span class="text-lg font-semibold text-blue-900">FAQs</span>
                     <span class="text-gray-600 text-center mt-1">Veja as perguntas frequentes e encontre respostas rápidas.</span>
                 </a>
                 <!-- WhatsApp -->
                 <a href="https://wa.me/5584981276028" target="_blank" class="flex flex-col items-center bg-white rounded-lg shadow-md p-6 hover:bg-green-50 transition w-64">
-                    <i class="fab fa-whatsapp text-4xl text-green-500 mb-3"></i>
+                    <i class="fab fa-whatsapp text-4xl text-green-500 mb-3" aria-hidden="true"></i>
                     <span class="text-lg font-semibold text-blue-900">WhatsApp</span>
                     <span class="text-gray-600 text-center mt-1">Fale diretamente com nossa equipe de atendimento.</span>
                 </a>
@@ -167,10 +200,9 @@
 
     <footer class="footer py-6 px-4">
         <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row md:items-start md:justify-between items-start mb-8" style="padding-top: 4rem;">
-                <!-- Logo no canto superior esquerdo -->
-                <img src="../images/logos/NEGATIVO.png" alt="Governo do Rio Grande do Norte" class="h-14 w-auto mb-2" style="height: 101px; transform: translate(0px, -45px);" data-selected="true" data-label-id="0">
-            </div>
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between items-start mb-6 pt-4">
+            <img src="../images/logos/NEGATIVO.png" alt="Governo do Rio Grande do Norte" class="h-16 w-auto mb-2">
+        </div>
             <!-- Seções do mapa do site -->
             <div class="w-full flex justify-center mt-[-16px] mb-2">
                 <div class="grid grid-cols-1 md:grid-cols-5 gap-8 flex-1 max-w-6xl mx-auto">
@@ -208,7 +240,7 @@
                             <li><a href="legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
                             <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
                             <li><a href="compr-ia.html" class="text-gray-300 hover:text-white">COMPR IA</a></li>
-                            <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
+                            <li><a href="capacite-se.html" class="text-gray-300 hover:text-white">Vídeos</a></li>
                         </ul>
                     </div>
                     <div class="sitemap-section">
@@ -224,27 +256,27 @@
                 </div>
             </div>
             <hr class="border-white my-4">
-            <div class="flex flex-row justify-between items-start max-w-4xl mx-auto gap-16 mb-6">
+            <div class="flex flex-col md:flex-row justify-between items-start max-w-4xl mx-auto gap-8 md:gap-16 mb-6">
                 <!-- Informações de contato -->
-                <div class="text-white text-sm space-y-1 w-1/2 pr-8">
+                <div class="text-white text-sm space-y-1 w-full md:w-1/2 md:pr-8">
                     <div class="font-bold text-base mb-1">Contato</div>
                     <div>Centro Administrativo do Estado</div>
                     <div>Av. Senador Salgado Filho, s/n, Lagoa Nova - Natal/RN.</div>
                     <div>CEP: 59064-901</div>
-                    <div><i class="fas fa-phone-alt mr-2"></i>+55 (84) 3232-5240</div>
-                    <div><i class="fas fa-envelope mr-2"></i>contato@rn.gov.br</div>
+                    <div><i class="fas fa-phone-alt mr-2" aria-hidden="true"></i>+55 (84) 3232-5240</div>
+                    <div><i class="fas fa-envelope mr-2" aria-hidden="true"></i>contato@rn.gov.br</div>
                 </div>
                 <!-- Redes sociais -->
-                <div class="flex flex-col items-end w-1/2 pl-8">
+                <div class="flex flex-col items-start md:items-end w-full md:w-1/2 md:pl-8">
                     <div class="font-bold text-base mb-2 text-white">REDES SOCIAIS</div>
                     <div class="flex items-center gap-4 justify-center">
-                        <a href="https://twitter.com/" target="_blank" class="text-gray-300 hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
-                        <a href="https://facebook.com/" target="_blank" class="text-gray-300 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
-                        <a href="https://instagram.com/" target="_blank" class="text-gray-300 hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
-                        <a href="https://youtube.com/" target="_blank" class="text-gray-300 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
-                        <a href="https://wa.me/5584999999999" target="_blank" class="text-gray-300 hover:text-green-500" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                        <a href="https://x.com/GovernoDoRN" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+                        <a href="https://www.facebook.com/GovernodoRN" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/seadrn/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+                        <a href="https://www.youtube.com/@governodorn" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/5584981276028" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-green-500" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg" aria-hidden="true"></i></a>
                     </div>
-                    <a href="https://www.sic.rn.gov.br/" target="_blank" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-lg font-semibold mt-4 ml-auto" aria-label="Acesso à Informação">
+                    <a href="https://www.sic.rn.gov.br/" target="_blank" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-lg font-semibold mt-4 md:ml-auto" aria-label="Acesso à Informação">
                         <span class="text-white text-base font-bold">Acesso à Informação</span>
                     </a>
                 </div>

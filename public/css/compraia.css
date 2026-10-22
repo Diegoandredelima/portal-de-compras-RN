@@ -1,19 +1,17 @@
         /* ------------------------
             FONTES E VARIÁVEIS GLOBAIS
         ------------------------- */
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
-
         :root {
-            --primary-color: #1e40af; /* Azul Gov.br */
-            --secondary-color: #059669; /* Verde Gov.br */
-            --accent-color: #d97706; /* Amarelo/Laranja Gov.br */
+            --primary-color: #1351B4; /* Azul Gov.br */
+            --secondary-color: #1F6E14; /* Verde Gov.br */
+            --accent-color: #FFCD07; /* Amarelo Gov.br */
             --dark-blue: #071D41;
-            --main-blue: #3A6A85;
+            --main-blue: #1A446C;
             --background-light: #f3f4f6;
             --border-color: #e5e7eb;
             --card-background: #ffffff;
             --text-primary: #1f2937;
-            --text-muted: #6b7280;
+            --text-muted: #4b5563;
             --radius: 0.5rem;
             --radius-lg: 0.75rem;
             --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
@@ -26,7 +24,7 @@
             ESTILOS DE BASE
         ------------------------- */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Rawline', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
             background-color: var(--card-background);

@@ -54,7 +54,8 @@ class BrCarousel {
         
         this.currentSlide = 0;
         this.totalSlides = this.items.length;
-        this.isPlaying = true;
+        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        this.isPlaying = !prefersReducedMotion;
         this.autoplayInterval = null;
         this.autoplayDelay = 5000;
         
@@ -63,7 +64,13 @@ class BrCarousel {
 
     init() {
         this.setupEventListeners();
-        this.startAutoplay();
+        if (this.isPlaying) {
+            this.startAutoplay();
+        } else if (this.playIcon && this.pauseIcon && this.playPauseBtn) {
+            this.playIcon.style.display = 'block';
+            this.pauseIcon.style.display = 'none';
+            this.playPauseBtn.setAttribute('aria-label', 'Iniciar reprodução automática');
+        }
         this.updateIndicators();
     }
 
@@ -357,15 +364,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Fechar ao clicar em um link
+        // Fechar ao clicar em um link e destacar link da página atual
+        const currentFile = window.location.pathname.split('/').pop() || 'index.html';
         const menuLinks = offcanvasMenu.querySelectorAll('a');
         menuLinks.forEach(link => {
             link.addEventListener('click', closeOffcanvasMenu);
+            const hrefFile = (link.getAttribute('href') || '').split('/').pop();
+            if (hrefFile && hrefFile === currentFile && link.classList.contains('menu-item')) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+            }
         });
     }
 
-    // Initial page load (se existir page-content-wrapper)
-    loadPage('pages/home.html', 'home');
+    // Initial page load (apenas se existir page-content-wrapper)
+    if (document.getElementById('page-content-wrapper')) {
+        loadPage('pages/home.html', 'home');
+    }
 });
 
 // Botões para a pagina legislação

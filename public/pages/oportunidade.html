@@ -35,13 +35,13 @@
                 <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
                 <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
                 <div class="dropdown">
-                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs" aria-hidden="true"></i></a>
                 </div>
                 <div class="flex items-center space-x-2 ml-4">
-                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/GovernoDoRN" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/GovernodoRN" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/seadrn/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com/@governodorn" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
     <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu"><i class="fas fa-bars text-2xl"></i></button>
+                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu" aria-controls="offcanvas-menu" aria-expanded="false"><i class="fas fa-bars text-2xl" aria-hidden="true"></i></button>
                 <a href="../index.html" class="text-xl font-medium">Central de Compras</a>
             </div>
             <nav class="hidden md:flex items-center space-x-6">
@@ -71,22 +71,47 @@
     <!-- =================================================================== -->
     <!-- MENU LATERAL (OFFCANVAS)                                          -->
     <!-- =================================================================== -->
-    <div class="offcanvas-menu" id="offcanvas-menu">
-        <div class="p-4 border-b flex justify-between items-center">
-            <h2 class="text-lg font-bold">Menu</h2>
-            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu"><i class="fas fa-times text-2xl"></i></button>
+    <div class="offcanvas-menu" id="offcanvas-menu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+        <div class="offcanvas-header">
+            <div>
+                <h2>Central de Compras RN</h2>
+                <div class="offcanvas-header-subtitle">Navegação do Portal</div>
+            </div>
+            <button id="close-menu" class="offcanvas-close-btn" aria-label="Fechar menu">
+                <i class="fas fa-times text-lg" aria-hidden="true"></i>
+            </button>
         </div>
-        <div class="p-4">
-            <ul class="space-y-4">
-                <li><a href="fornecedor.html" class="menu-item"><i class="fas fa-user-tie nav-icon"></i><span>Fornecedor</span></a></li>
-                <li><a href="servidor.html" class="menu-item"><i class="fas fa-user nav-icon"></i><span>Servidor</span></a></li>
-                <li><a href="cidadao.html" class="menu-item"><i class="fas fa-users nav-icon"></i><span>Cidadão</span></a></li>
-                <li><a href="capacite-se.html" class="menu-item"><i class="fas fa-graduation-cap nav-icon"></i><span>Capacite-se</span></a></li>
-                <li><a href="legislacao.html" class="menu-item"><i class="fas fa-gavel nav-icon"></i><span>Legislação</span></a></li>
-                <li><a href="faqs-perguntas.html" class="menu-item"><i class="fas fa-question nav-icon"></i><span>FAQ</span></a></li>
-                <li><a href="forum.html" class="menu-item"><i class="fas fa-comments nav-icon"></i><span>Forum</span></a></li>
-                <li><a href="acesso-sistema.html" class="menu-item"><i class="fas fa-sign-in-alt nav-icon"></i><span>Acesso ao Sistema</span></a></li>
+        <nav class="offcanvas-nav" aria-label="Menu principal do portal">
+            <div class="offcanvas-section-label">Acesso por Perfil</div>
+            <ul>
+                <li><a href="../index.html" class="menu-item"><i class="fas fa-home nav-icon" aria-hidden="true"></i><span>Início</span></a></li>
+                <li><a href="fornecedor.html" class="menu-item"><i class="fas fa-user-tie nav-icon" aria-hidden="true"></i><span>Fornecedor</span></a></li>
+                <li><a href="servidor.html" class="menu-item"><i class="fas fa-user-shield nav-icon" aria-hidden="true"></i><span>Servidor</span></a></li>
+                <li><a href="cidadao.html" class="menu-item"><i class="fas fa-users nav-icon" aria-hidden="true"></i><span>Cidadão</span></a></li>
             </ul>
+
+            <div class="offcanvas-section-label">Compras e Conhecimento</div>
+            <ul>
+                <li><a href="oportunidade.html" class="menu-item"><i class="fas fa-bullhorn nav-icon" aria-hidden="true"></i><span>Oportunidades (ME/EPP)</span></a></li>
+                <li><a href="legislacao.html" class="menu-item"><i class="fas fa-gavel nav-icon" aria-hidden="true"></i><span>Legislação</span></a></li>
+                <li><a href="capacite-se.html" class="menu-item"><i class="fas fa-graduation-cap nav-icon" aria-hidden="true"></i><span>Capacite-se</span></a></li>
+                <li><a href="manuais.html" class="menu-item"><i class="fas fa-book-open nav-icon" aria-hidden="true"></i><span>Manuais e Tutoriais</span></a></li>
+                <li><a href="noticias.html" class="menu-item"><i class="fas fa-newspaper nav-icon" aria-hidden="true"></i><span>Notícias</span></a></li>
+                <li><a href="institucional.html" class="menu-item"><i class="fas fa-landmark nav-icon" aria-hidden="true"></i><span>Quem Somos</span></a></li>
+            </ul>
+
+            <div class="offcanvas-section-label">Inovação e Suporte</div>
+            <ul>
+                <li><a href="compr-ia.html" class="menu-item"><i class="fas fa-microchip nav-icon" aria-hidden="true"></i><span>COMPR.IA</span><span class="menu-badge">IA</span></a></li>
+                <li><a href="forum.html" class="menu-item"><i class="fas fa-comments nav-icon" aria-hidden="true"></i><span>Fórum de Discussão</span></a></li>
+                <li><a href="faqs-perguntas.html" class="menu-item"><i class="fas fa-circle-question nav-icon" aria-hidden="true"></i><span>Perguntas Frequentes</span></a></li>
+            </ul>
+        </nav>
+        <div class="offcanvas-footer">
+            <a href="acesso-sistema.html" class="offcanvas-cta">
+                <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                <span>Acesso ao Sistema</span>
+            </a>
         </div>
     </div>
     <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
@@ -227,15 +252,15 @@
                 <div class="tabs">
                     <div class="tabs-list">
                         <button class="tab-trigger flex items-center justify-center space-x-2" data-tab="grandes">
-                            <i class="fas fa-building-columns fa-fw"></i>
+                            <i class="fas fa-building-columns fa-fw" aria-hidden="true"></i>
                             <span>Grandes Empresas</span>
                         </button>
                         <button class="tab-trigger active flex items-center justify-center space-x-2" data-tab="me-epp">
-                            <i class="fas fa-users fa-fw"></i>
+                            <i class="fas fa-users fa-fw" aria-hidden="true"></i>
                             <span>ME/EPP</span>
                         </button>
                         <button class="tab-trigger flex items-center justify-center space-x-2" data-tab="mei">
-                            <i class="fas fa-user-tie fa-fw"></i>
+                            <i class="fas fa-user-tie fa-fw" aria-hidden="true"></i>
                             <span>MEI</span>
                         </button>
                     </div>
@@ -245,7 +270,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    <i class="fas fa-users card-icon secondary"></i>
+                                    <i class="fas fa-users card-icon secondary" aria-hidden="true"></i>
                                     Benefícios para ME/EPP
                                 </h3>
                                 <p class="card-description">Tratamento diferenciado garantido por lei federal</p>
@@ -304,7 +329,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    <i class="fas fa-building-columns card-icon primary"></i>
+                                    <i class="fas fa-building-columns card-icon primary" aria-hidden="true"></i>
                                     Oportunidades para Grandes Empresas
                                 </h3>
                                 <p class="card-description">Contratos de grande volume e complexidade técnica</p>
@@ -337,14 +362,14 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    <i class="fas fa-user-tie card-icon accent"></i>
+                                    <i class="fas fa-user-tie card-icon accent" aria-hidden="true"></i>
                                     Contrata+Brasil para MEI
                                 </h3>
                                 <p class="card-description">Programa federal de simplificação para microempreendedores</p>
                             </div>
                             <div class="card-content">
                                 <div class="highlight-box">
-                                    <h4>🚀 Programa Contrata+Brasil</h4>
+                                    <h4><i class="fas fa-rocket mr-2" aria-hidden="true"></i>Programa Contrata+Brasil</h4>
                                     <p>Plataforma federal que conecta MEI com oportunidades de prestação de serviços para órgãos públicos federais, estaduais e municipais.</p>
                                 </div>
                                 
@@ -368,8 +393,8 @@
                                 </div>
                                 
                                 <div class="mt-6">
-                                    <a href="#" class="btn btn-accent btn-full">
-                                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <a href="https://www.gov.br/compras/pt-br/acesso-a-informacao/noticias/contrata-mais-brasil" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-full">
+                                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
                                             <polyline points="15,3 21,3 21,9"/>
                                             <line x1="10" y1="14" x2="21" y2="3"/>
@@ -398,7 +423,7 @@
                     <!-- Passo 1 -->
                     <div class="card card-hover">
                         <div class="card-header">
-                            <div class="step-icon primary"><i class="fas fa-file-signature"></i></div>
+                            <div class="step-icon primary"><i class="fas fa-file-signature" aria-hidden="true"></i></div>
                             <h3 class="card-title">1. Cadastro</h3>
                         </div>
                         <div class="card-content">
@@ -408,7 +433,7 @@
                     <!-- Passo 2 -->
                     <div class="card card-hover">
                         <div class="card-header">
-                            <div class="step-icon secondary"><i class="fas fa-search-dollar"></i></div>
+                            <div class="step-icon secondary"><i class="fas fa-search-dollar" aria-hidden="true"></i></div>
                             <h3 class="card-title">2. Oportunidades</h3>
                         </div>
                         <div class="card-content">
@@ -418,7 +443,7 @@
                     <!-- Passo 3 -->
                     <div class="card card-hover">
                         <div class="card-header">
-                            <div class="step-icon accent"><i class="fas fa-paper-plane"></i></div>
+                            <div class="step-icon accent"><i class="fas fa-paper-plane" aria-hidden="true"></i></div>
                             <h3 class="card-title">3. Participe</h3>
                         </div>
                         <div class="card-content">
@@ -428,7 +453,7 @@
                     <!-- Passo 4 -->
                     <div class="card card-hover">
                         <div class="card-header">
-                            <div class="step-icon primary"><i class="fas fa-handshake"></i></div>
+                            <div class="step-icon primary"><i class="fas fa-handshake" aria-hidden="true"></i></div>
                             <h3 class="card-title">4. Contrate</h3>
                         </div>
                         <div class="card-content">
@@ -451,25 +476,25 @@
                 <div class="stats-grid">
                     <!-- Stat Card 1 -->
                     <div class="card stat-card text-center p-6 card-hover">
-                        <i class="fas fa-file-invoice-dollar text-4xl text-primary mb-4"></i>
+                        <i class="fas fa-file-invoice-dollar text-4xl text-primary mb-4" aria-hidden="true"></i>
                         <h3 class="stat-value primary">R$ 2,78bi</h3>
                         <p class="stat-label">Plano de Contratações 2025</p>
                     </div>
                     <!-- Stat Card 2 -->
                     <div class="card stat-card text-center p-6 card-hover">
-                        <i class="fas fa-chart-pie text-4xl text-secondary mb-4"></i>
+                        <i class="fas fa-chart-pie text-4xl text-secondary mb-4" aria-hidden="true"></i>
                         <h3 class="stat-value secondary">23,36%</h3>
                         <p class="stat-label">Participação ME/EPP (Nacional)</p>
                     </div>
                     <!-- Stat Card 3 -->
                     <div class="card stat-card text-center p-6 card-hover">
-                        <i class="fas fa-briefcase text-4xl text-accent mb-4"></i>
+                        <i class="fas fa-briefcase text-4xl text-accent mb-4" aria-hidden="true"></i>
                         <h3 class="stat-value accent">107.256</h3>
                         <p class="stat-label">Fornecedores ME/EPP (Nacional)</p>
                     </div>
                     <!-- Stat Card 4 -->
                     <div class="card stat-card text-center p-6 card-hover">
-                        <i class="fas fa-piggy-bank text-4xl text-primary mb-4"></i>
+                        <i class="fas fa-piggy-bank text-4xl text-primary mb-4" aria-hidden="true"></i>
                         <h3 class="stat-value primary">10-25%</h3>
                         <p class="stat-label">Economia com Centralização</p>
                     </div>
@@ -477,7 +502,7 @@
                 <div class="card economy-card mt-8">
                     <div class="card-content flex flex-col md:flex-row items-center p-8">
                         <div class="md:mr-8 mb-4 md:mb-0 text-center">
-                            <i class="fas fa-calculator text-6xl text-secondary opacity-75"></i>
+                            <i class="fas fa-calculator text-6xl text-secondary opacity-75" aria-hidden="true"></i>
                         </div>
                         <div class="text-center md:text-left">
                             <p class="text-lg mb-2">Baseado em estudos, a centralização de compras pode gerar <span class="highlight-text">economias entre 10% e 25%</span> dos valores licitados.</p>
@@ -501,7 +526,7 @@
                     <div class="faq-item">
                         <div class="faq-question">
                             <h3>Como faço para me cadastrar como fornecedor do RN?</h3>
-                            <i class="fas fa-chevron-down faq-icon"></i>
+                            <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
                         </div>
                         <div class="faq-answer">
                             <p>Para se cadastrar, acesse o SICAF (Sistema de Cadastramento Unificado de Fornecedores) ou o sistema de cadastro específico do RN. É necessário ter certificado digital e documentação da empresa regularizada.</p>
@@ -510,7 +535,7 @@
                     <div class="faq-item">
                         <div class="faq-question">
                             <h3>Quais os documentos necessários para uma licitação?</h3>
-                            <i class="fas fa-chevron-down faq-icon"></i>
+                            <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
                         </div>
                         <div class="faq-answer">
                             <p>Os documentos básicos incluem: CNPJ ativo, certidões negativas de débitos, certidão de regularidade do FGTS e prova de inexistência de débitos trabalhistas. ME/EPP têm prazo adicional para regularização.</p>
@@ -519,7 +544,7 @@
                     <div class="faq-item">
                         <div class="faq-question">
                             <h3>Minha empresa é de outro estado, posso vender para o RN?</h3>
-                            <i class="fas fa-chevron-down faq-icon"></i>
+                            <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
                         </div>
                         <div class="faq-answer">
                             <p>Sim, empresas de qualquer estado podem participar. Porém, fornecedores locais podem ter prioridade de até 10% sobre o menor preço, conforme previsto em lei, para fomentar a economia local.</p>
@@ -528,7 +553,7 @@
                     <div class="faq-item">
                         <div class="faq-question">
                             <h3>Onde encontro os editais de licitação do RN?</h3>
-                            <i class="fas fa-chevron-down faq-icon"></i>
+                            <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
                         </div>
                         <div class="faq-answer">
                             <p>Os editais são publicados no Portal de Compras do RN, no Portal Nacional de Contratações Públicas (PNCP) e no Diário Oficial do Estado. Recomendamos acompanhar regularmente esses canais.</p>
@@ -551,24 +576,24 @@
                     </p>
                     
                     <div class="cta-buttons">
-                        <a href="#" class="btn btn-white btn-lg">
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <a href="../index.html" class="btn btn-white btn-lg">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
                                 <polyline points="15,3 21,3 21,9"/>
                                 <line x1="10" y1="14" x2="21" y2="3"/>
                             </svg>
                             Portal de Compras RN
                         </a>
-                        <a href="#" class="btn btn-outline-white btn-lg">
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <a href="https://www3.comprasnet.gov.br/sicaf-web/index.jsf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white btn-lg">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
                                 <polyline points="15,3 21,3 21,9"/>
                                 <line x1="10" y1="14" x2="21" y2="3"/>
                             </svg>
                             SICAF - Cadastro Federal
                         </a>
-                        <a href="#" class="btn btn-accent btn-lg">
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <a href="https://www.gov.br/compras/pt-br/acesso-a-informacao/noticias/contrata-mais-brasil" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-lg">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
                                 <polyline points="15,3 21,3 21,9"/>
                                 <line x1="10" y1="14" x2="21" y2="3"/>
@@ -587,9 +612,8 @@
     <!-- =================================================================== -->
     <footer class="footer py-6 px-4">
     <div class="container mx-auto">
-        <div class="flex flex-col md:flex-row md:items-start md:justify-between items-start mb-8" style="padding-top: 4rem;">
-            <!-- Logo no canto superior esquerdo -->
-            <img src="../images/logos/NEGATIVO.png" alt="Governo do Rio Grande do Norte" class="h-14 w-auto mb-2" style="height: 101px; transform: translate(0px, -45px);" data-selected="true" data-label-id="0">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between items-start mb-6 pt-4">
+            <img src="../images/logos/NEGATIVO.png" alt="Governo do Rio Grande do Norte" class="h-16 w-auto mb-2">
         </div>
         <!-- Seções do mapa do site -->
         <div class="w-full flex justify-center mt-[-16px] mb-2">
@@ -628,7 +652,7 @@
                         <li><a href="legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
                         <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
                         <li><a href="compr-ia.html" class="text-gray-300 hover:text-white">COMPR IA</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
+                        <li><a href="capacite-se.html" class="text-gray-300 hover:text-white">Vídeos</a></li>
                     </ul>
                 </div>
                 <div class="sitemap-section">
@@ -644,27 +668,27 @@
             </div>
         </div>
         <hr class="border-white my-4">
-        <div class="flex flex-row justify-between items-start max-w-4xl mx-auto gap-16 mb-6">
+        <div class="flex flex-col md:flex-row justify-between items-start max-w-4xl mx-auto gap-8 md:gap-16 mb-6">
             <!-- Informações de contato -->
-            <div class="text-white text-sm space-y-1 w-1/2 pr-8">
+            <div class="text-white text-sm space-y-1 w-full md:w-1/2 md:pr-8">
                 <div class="font-bold text-base mb-1">Contato</div>
                 <div>Centro Administrativo do Estado</div>
                 <div>Av. Senador Salgado Filho, s/n, Lagoa Nova - Natal/RN.</div>
                 <div>CEP: 59064-901</div>
-                <div><i class="fas fa-phone-alt mr-2"></i>+55 (84) 3232-5240</div>
-                <div><i class="fas fa-envelope mr-2"></i>contato@rn.gov.br</div>
+                <div><i class="fas fa-phone-alt mr-2" aria-hidden="true"></i>+55 (84) 3232-5240</div>
+                <div><i class="fas fa-envelope mr-2" aria-hidden="true"></i>contato@rn.gov.br</div>
             </div>
             <!-- Redes sociais -->
-            <div class="flex flex-col items-end w-1/2 pl-8">
+            <div class="flex flex-col items-start md:items-end w-full md:w-1/2 md:pl-8">
                 <div class="font-bold text-base mb-2 text-white">REDES SOCIAIS</div>
                 <div class="flex items-center gap-4 justify-center">
-                    <a href="https://twitter.com/" target="_blank" class="text-gray-300 hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
-                    <a href="https://facebook.com/" target="_blank" class="text-gray-300 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
-                    <a href="https://instagram.com/" target="_blank" class="text-gray-300 hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="https://youtube.com/" target="_blank" class="text-gray-300 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
-                    <a href="https://wa.me/5584999999999" target="_blank" class="text-gray-300 hover:text-green-500" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    <a href="https://x.com/GovernoDoRN" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/GovernodoRN" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/seadrn/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com/@governodorn" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i></a>
+                    <a href="https://wa.me/5584981276028" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-green-500" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg" aria-hidden="true"></i></a>
                 </div>
-                <a href="https://www.sic.rn.gov.br/" target="_blank" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-lg font-semibold mt-4 ml-auto" aria-label="Acesso à Informação">
+                <a href="https://www.sic.rn.gov.br/" target="_blank" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-lg font-semibold mt-4 md:ml-auto" aria-label="Acesso à Informação">
                     <span class="text-white text-base font-bold">Acesso à Informação</span>
                 </a>
             </div>
@@ -677,6 +701,8 @@
         2025 &copy; Governo do Estado do Rio Grande do Norte | Desenvolvimento <span class="text-yellow-400 font-bold">Central de compras governamentais</span> | Política de Privacidade
     </span>
 </div>
+    <script src="../js/scripts.js"></script>
+    <script src="../js/search.js"></script>
     <script src="../js/oportunidade.js"></script>
 </body>
 </html>

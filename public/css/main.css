@@ -217,87 +217,129 @@ footer *:focus-visible,
 }
 
 .access-btn:hover {
-    background-color: #4a8a17;
+    background-color: #16520e;
 }
-
-.offcanvas-menu {
-    position: fixed;
-    top: 0;
-    left: -300px;
-    width: 300px;
-    height: 100%;
-    background-color: white;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    z-index: 2000;
-    transition: left 0.3s ease;
-    overflow-y: auto;
-}
-
-.offcanvas-menu.active { left: 0; }
-
-.offcanvas-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 1999;
-    display: none;
-}
-
-.offcanvas-backdrop.active { display: block; }
 
 .container-box {
-    background-color: var(--carousel-text);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    color: var(--main-blue);
-    border: 1px solid var(--border-grey);
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--font-color);
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 18px rgba(7, 29, 65, 0.05);
 }
 
 .section-title {
-    border-bottom: 2px solid var(--main-blue);
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-    color: var(--main-blue);
-    font-size: 1.5rem;
-    font-weight: 700;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-blue);
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.6;
+    max-width: 48rem;
 }
 
 /* ------------------------
-    2.2 Botões e Links
+    2.2 Botões e Links Padronizados (GovBR)
 ------------------------- */
 .link-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     background-color: var(--primary-button);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    color: #ffffff !important;
+    padding: 0.65rem 1.25rem;
+    border-radius: 8px;
     text-decoration: none;
-    transition: background-color 0.3s;
-    font-weight: 500;
+    transition: all 0.22s ease;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 6px rgba(184, 58, 27, 0.2);
 }
 
 .link-button:hover {
     background-color: var(--orange-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(184, 58, 27, 0.3);
 }
 
 .link-button .fas { color: inherit; }
 
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.6rem;
+    border: 2px solid var(--primary-color);
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(19, 81, 180, 0.2);
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(7, 29, 65, 0.28);
+}
+
+.btn-primary-blue {
+    background-color: #1351B4;
+    border-color: #1351B4;
+}
+
+.btn-primary-gray {
+    background-color: #1A446C;
+    border-color: #1A446C;
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #ffffff;
+    color: var(--primary-color) !important;
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.6rem;
+    border: 2px solid var(--primary-color);
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.btn-outline:hover {
+    background-color: var(--light-blue-bg);
+    color: var(--dark-blue) !important;
+    border-color: var(--dark-blue);
+    transform: translateY(-2px);
+}
+
 /* ------------------------
-    2.3 Cards
+    2.3 Cards e Componentes Visuais
 ------------------------- */
 .consult-card, .metric-card, .service-card {
-    background-color: var(--carousel-text);
-    border: 1px solid var(--border-grey);
-    border-radius: 8px;
-    padding: 25px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 1.75rem;
+    box-shadow: 0 4px 14px rgba(7, 29, 65, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -306,20 +348,165 @@ footer *:focus-visible,
 }
 
 .consult-card:hover, .metric-card:hover, .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 26px rgba(19, 81, 180, 0.13);
+    border-color: var(--primary-color);
 }
 
 .consult-card-icon, .service-card-icon {
-    font-size: 3.5rem;
-    color: var(--dark-blue);
-    margin-bottom: 15px;
+    font-size: 2.25rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
 .consult-card-title, .service-card-title {
-    font-weight: 600;
-    color: var(--font-color);
+    font-weight: 700;
+    color: var(--dark-blue);
     font-size: 1.2rem;
+}
+
+/* Cards de Acesso Rápido por Perfil (Home) */
+.quick-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .quick-nav-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .quick-nav-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+}
+
+.quick-nav-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 1.25rem 0.85rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(7, 29, 65, 0.05);
+    transition: all 0.25s ease;
+}
+
+.quick-nav-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    border-top-color: #FFCD07;
+    box-shadow: 0 12px 24px rgba(19, 81, 180, 0.14);
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.quick-nav-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background-color: #eef4ff;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    transition: all 0.25s ease;
+}
+
+.quick-nav-card:hover .quick-nav-icon {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    transform: scale(1.06);
+}
+
+.quick-nav-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--dark-blue);
+    margin-bottom: 0.2rem;
+}
+
+.quick-nav-desc {
+    font-size: 0.78rem;
+    color: #64748b;
+    line-height: 1.3;
+}
+
+/* Cards de Manuais e Tutoriais */
+.manual-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 14px;
+    padding: 1.75rem;
+    box-shadow: 0 4px 14px rgba(7, 29, 65, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.25s ease;
+}
+
+.manual-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(19, 81, 180, 0.13);
+    border-color: var(--primary-color);
+}
+
+.manual-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background-color: #eef4ff;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.manual-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 0.5rem;
+}
+
+.manual-card-description {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+}
+
+/* Cards de KPI do Dashboard */
+.kpi-card {
+    background: linear-gradient(135deg, #1F6E14 0%, #15520D 100%);
+    border-top: 4px solid #FFCD07;
+    color: #ffffff;
+    padding: 1.35rem 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(21, 82, 13, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(21, 82, 13, 0.28);
 }
 
 .info-icon {
@@ -345,7 +532,7 @@ footer *:focus-visible,
 
 .metric-label {
     font-size: 0.95rem;
-    color: #666;
+    color: #475569;
     text-align: center;
 }
 
@@ -358,20 +545,22 @@ footer *:focus-visible,
 }
 
 /* ------------------------
-    2.4 Menu Off-canvas
+    2.4 Menu Off-canvas Modernizado (GovBR)
 ------------------------- */
 .offcanvas-menu {
     position: fixed;
     top: 0;
-    left: -300px;
-    width: 300px;
+    left: -340px;
+    width: 320px;
+    max-width: 88vw;
     height: 100%;
     background-color: #ffffff;
-    backdrop-filter: blur(6px);
-    box-shadow: 4px 0 20px rgba(0,0,0,0.08);
+    box-shadow: 8px 0 32px rgba(7, 29, 65, 0.22);
     z-index: 2000;
-    transition: left 0.3s ease;
+    transition: left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .offcanvas-menu.active { 
@@ -384,7 +573,8 @@ footer *:focus-visible,
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(7, 29, 65, 0.55);
+    backdrop-filter: blur(3px);
     z-index: 1999;
     display: none;
 }
@@ -393,36 +583,152 @@ footer *:focus-visible,
     display: block; 
 }
 
-/* Estilos dos itens do menu */
-.offcanvas-menu h2 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--main-blue, #00167C);
+.offcanvas-header {
+    background: linear-gradient(135deg, #071D41 0%, #1351B4 100%);
+    color: #ffffff;
+    padding: 1.15rem 1.25rem;
+    border-bottom: 3px solid #FFCD07;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.offcanvas-header h2 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #ffffff !important;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.offcanvas-header-subtitle {
+    font-size: 0.75rem;
+    color: #cbd5e1;
+    display: block;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.offcanvas-close-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.offcanvas-close-btn:hover {
+    background: #FFCD07;
+    color: #071D41 !important;
+    border-color: #FFCD07;
+}
+
+.offcanvas-section-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    padding: 0.85rem 0.75rem 0.35rem 0.75rem;
 }
 
 .offcanvas-menu .menu-item {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    color: #1f2937;
-    transition: background 0.25s ease, transform 0.18s ease;
+    padding: 0.55rem 0.75rem;
+    border-radius: 0.6rem;
+    color: #1e293b;
+    font-weight: 500;
+    font-size: 0.94rem;
+    border-left: 3px solid transparent;
+    text-decoration: none;
+    transition: all 0.2s ease;
 }
 
-.offcanvas-menu .menu-item i {
-    font-size: 1.1rem;
-    color: #00167C;
+.offcanvas-menu .menu-item i.nav-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background-color: #eef4ff;
+    color: #1351B4;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 0;
+    transition: all 0.2s ease;
 }
 
 .offcanvas-menu .menu-item:hover {
-    background-color: rgba(0,22,124,0.06);
-    transform: translateX(4px);
+    background-color: #f0f6ff;
+    color: #071D41;
+    transform: translateX(3px);
 }
 
-.offcanvas-menu .menu-item.active {
-    background-color: rgba(0,22,124,0.12);
-    font-weight: 600;
+.offcanvas-menu .menu-item:hover i.nav-icon {
+    background-color: #1351B4;
+    color: #ffffff;
+}
+
+.offcanvas-menu .menu-item.active,
+.offcanvas-menu .menu-item[aria-current="page"] {
+    background-color: #e0ecff;
+    color: #071D41;
+    font-weight: 700;
+    border-left-color: #1351B4;
+}
+
+.offcanvas-menu .menu-item.active i.nav-icon,
+.offcanvas-menu .menu-item[aria-current="page"] i.nav-icon {
+    background-color: #071D41;
+    color: #FFCD07;
+}
+
+.menu-badge {
+    margin-left: auto;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0.15rem 0.45rem;
+    border-radius: 9999px;
+    background-color: #FFCD07;
+    color: #071D41;
+}
+
+.offcanvas-footer {
+    margin-top: auto;
+    padding: 1rem 1.25rem;
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+}
+
+.offcanvas-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    background-color: #071D41;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 0.92rem;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 4px 10px rgba(7, 29, 65, 0.18);
+}
+
+.offcanvas-cta:hover {
+    background-color: #1351B4;
 }
 
 /* Estilos para container 100% preenchido */
@@ -483,16 +789,19 @@ footer *:focus-visible,
 /* =================================================================== */
 /* Destaque sutil para os Painéis de Transparência */
 .painel-btn {
-    background-color: #f8fafc; /* gray-50 */
-    border: 2px solid rgba(0, 22, 124, 0.08); /* azul bem suave */
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid var(--primary-color);
     border-radius: 0.75rem;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(7, 29, 65, 0.04);
     transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
 }
 .painel-btn:hover,
 .painel-btn:focus-visible {
-    background-color: #f0f6ff; /* azul clarinho */
+    background-color: #f8fbff;
     border-color: var(--primary-color);
-    box-shadow: 0 8px 22px rgba(0, 22, 124, 0.12);
+    box-shadow: 0 10px 24px rgba(19, 81, 180, 0.14);
     transform: translateY(-4px);
 }
 .painel-btn:focus-visible {
@@ -501,41 +810,117 @@ footer *:focus-visible,
 }
 
 /* =================================================================== */
-/* 3. SEÇÕES E PÁGINAS ESPECÍFICAS                                 */
+/* 3. SEÇÕES, BANNERS E PÁGINAS ESPECÍFICAS                            */
 /* =================================================================== */
 
 /* ------------------------
-    3.1 Carrossel de Notícias
+    3.1 Banners Hero Institucionais
 ------------------------- */
-.br-carousel .br-carousel__item {
-    height: 350px !important;
+.page-hero-banner {
+    position: relative;
+    background: linear-gradient(125deg, #071D41 0%, #1351B4 65%, #1A446C 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 4px solid #FFCD07;
+    box-shadow: 0 12px 28px rgba(7, 29, 65, 0.14);
+    overflow: hidden;
 }
 
-.br-carousel .carousel-image-height {
-    height: 100% !important; /* Faz a imagem preencher o item */
+.page-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(255, 205, 7, 0.18);
+    border: 1px solid rgba(255, 205, 7, 0.5);
+    color: #FFCD07;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 9999px;
+    margin-bottom: 0.85rem;
+}
+
+.page-hero-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #ffffff !important;
+    line-height: 1.2;
+    margin-bottom: 0.65rem;
+    border: none;
+    padding: 0;
+}
+
+.page-hero-subtitle {
+    font-size: 1.05rem;
+    color: #e2e8f0;
+    max-width: 44rem;
+    line-height: 1.55;
+}
+
+/* Hero Banner da Página Fornecedor (com imagem de fundo e overlay) */
+.fornecedor-hero {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.25rem;
+    border-bottom: 4px solid #FFCD07;
+    box-shadow: 0 14px 32px rgba(7, 29, 65, 0.16);
+    background-color: #071D41;
+}
+
+.fornecedor-hero-bg {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.35;
+}
+
+.fornecedor-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(95deg, rgba(7, 29, 65, 0.96) 0%, rgba(19, 81, 180, 0.86) 60%, rgba(7, 29, 65, 0.7) 100%);
+}
+
+.fornecedor-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2.75rem 2.5rem;
+    max-width: 46rem;
+    color: #ffffff;
 }
 
 /* ------------------------
     3.2 Página Servidor
 ------------------------- */
-/* Hero Section */
 .hero-servidor {
-    background-color: var(--light-blue-bg); /* Fundo azul claro e suave */
-    color: var(--dark-blue); /* Cor do texto escura para contraste */
-    border-radius: 0 0 40px 40px;
+    background: linear-gradient(135deg, #071D41 0%, #1351B4 70%, #1A446C 100%);
+    color: #ffffff;
+    border-radius: 20px;
+    border-bottom: 4px solid #FFCD07;
+    box-shadow: 0 12px 30px rgba(7, 29, 65, 0.14);
+    margin-bottom: 1rem;
 }
 
 .hero-title {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
     font-weight: 800;
-    text-shadow: none; /* Sombra de texto removida */
+    color: #ffffff;
+    text-shadow: none;
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
-    color: var(--main-blue); /* Tom de azul mais escuro para o subtítulo */
+    font-size: 1.125rem;
+    color: #e2e8f0;
     opacity: 1;
 }
 

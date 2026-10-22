@@ -13,7 +13,7 @@ const themes = {
 };
 
 // Função para mostrar um tema específico
-function showTheme(themeId) {
+function showTheme(themeId, triggerEl) {
     // Ocultar todos os conteúdos
     document.querySelectorAll('.theme-content').forEach(content => {
         content.style.display = 'none';
@@ -29,22 +29,30 @@ function showTheme(themeId) {
     // Atualizar navegação ativa
     document.querySelectorAll('.nav-item').forEach(item => {
         item.classList.remove('active');
+        item.removeAttribute('aria-current');
     });
     
     // Marcar o item atual como ativo
-    event.target.classList.add('active');
+    const activeItem = triggerEl || document.querySelector(`.nav-item[href="#${themeId}"]`) || document.querySelector('.nav-item');
+    if (activeItem) {
+        activeItem.classList.add('active');
+        activeItem.setAttribute('aria-current', 'true');
+    }
     
     // Fechar sidebar em mobile
-    if (window.innerWidth <= 768) {
+    const sidebar = document.getElementById('sidebar');
+    if (window.innerWidth <= 768 && sidebar && sidebar.classList.contains('open')) {
         toggleSidebar();
     }
     
     // Limpar busca
-    document.getElementById('searchInput').value = '';
-    document.getElementById('no-results').style.display = 'none';
+    const searchInput = document.getElementById('searchInput');
+    const noResults = document.getElementById('no-results');
+    if (searchInput) searchInput.value = '';
+    if (noResults) noResults.style.display = 'none';
 }
 
-// Função para toggle do acordeão
+// Função para toggle do acordeão (Acessível via mouse e teclado WCAG 2.1)
 function toggleAccordion(header) {
     const content = header.nextElementSibling;
     const icon = header.querySelector('.accordion-icon');
@@ -56,8 +64,9 @@ function toggleAccordion(header) {
     allHeaders.forEach((h, index) => {
         if (h !== header) {
             h.classList.remove('active');
-            allContents[index].style.display = 'none';
-            allIcons[index].classList.remove('rotated');
+            h.setAttribute('aria-expanded', 'false');
+            if (allContents[index]) allContents[index].style.display = 'none';
+            if (allIcons[index]) allIcons[index].classList.remove('rotated');
         }
     });
     
@@ -65,11 +74,13 @@ function toggleAccordion(header) {
     if (content.style.display === 'block') {
         content.style.display = 'none';
         header.classList.remove('active');
-        icon.classList.remove('rotated');
+        header.setAttribute('aria-expanded', 'false');
+        if (icon) icon.classList.remove('rotated');
     } else {
         content.style.display = 'block';
         header.classList.add('active');
-        icon.classList.add('rotated');
+        header.setAttribute('aria-expanded', 'true');
+        if (icon) icon.classList.add('rotated');
     }
 }
 
@@ -181,6 +192,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Configurar acessibilidade de teclado para todos os acordeões (WCAG 2.1.1)
+    document.querySelectorAll('.accordion-header').forEach((header, idx) => {
+        header.setAttribute('role', 'button');
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('aria-expanded', 'false');
+        const content = header.nextElementSibling;
+        if (content) {
+            const contentId = content.id || `faq-accordion-panel-${idx}`;
+            content.id = contentId;
+            header.setAttribute('aria-controls', contentId);
+        }
+        header.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleAccordion(header);
+            }
+        });
+    });
+
     // Mostrar primeiro tema por padrão
     showTheme('central-compras');
 });

@@ -17,34 +17,11 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- FUNCIONALIDADE 1: MENU LATERAL (OFF-CANVAS) ---
-    const menuToggle = document.getElementById('menu-toggle');
-    const closeMenu = document.getElementById('close-menu');
-    const offcanvasMenu = document.getElementById('offcanvas-menu');
-    const offcanvasBackdrop = document.getElementById('offcanvas-backdrop');
-
-    if (menuToggle) {
-        const openOffcanvasMenu = () => {
-            offcanvasMenu.classList.add('active');
-            offcanvasBackdrop.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        };
-        const closeOffcanvasMenu = () => {
-            offcanvasMenu.classList.remove('active');
-            offcanvasBackdrop.classList.remove('active');
-            document.body.style.overflow = '';
-        };
-        menuToggle.addEventListener('click', openOffcanvasMenu);
-        closeMenu.addEventListener('click', closeOffcanvasMenu);
-        offcanvasBackdrop.addEventListener('click', closeOffcanvasMenu);
-        offcanvasMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeOffcanvasMenu));
-    }
-
-    // --- FUNCIONALIDADE 2: ROLAGEM SUAVE ---
+    // --- FUNCIONALIDADE 1: ROLAGEM SUAVE ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
-            if (targetId.length > 1) {
+            if (targetId && targetId.length > 1) {
                 e.preventDefault();
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
@@ -56,34 +33,59 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- FUNCIONALIDADE 3: ABAS (TABS) ---
+    // --- FUNCIONALIDADE 2: ABAS (TABS) ACESSÍVEIS ---
     const tabTriggers = document.querySelectorAll('.tab-trigger');
     if (tabTriggers.length > 0) {
         const tabContents = document.querySelectorAll('.tab-content');
         tabTriggers.forEach(trigger => {
             trigger.addEventListener('click', function() {
-                tabTriggers.forEach(t => t.classList.remove('active'));
+                tabTriggers.forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
                 tabContents.forEach(c => c.classList.remove('active'));
                 this.classList.add('active');
-                document.getElementById(this.dataset.tab).classList.add('active');
+                this.setAttribute('aria-selected', 'true');
+                const panel = document.getElementById(this.dataset.tab);
+                if (panel) panel.classList.add('active');
             });
         });
     }
 
-    // --- FUNCIONALIDADE 4: FAQ (ACCORDION) ---
+    // --- FUNCIONALIDADE 3: FAQ (ACCORDION ACESSÍVEL VIA TECLADO) ---
     const faqItems = document.querySelectorAll('.faq-item');
     if (faqItems.length > 0) {
-        faqItems.forEach(item => {
+        faqItems.forEach((item, idx) => {
             const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
+            if (!question) return;
+            question.setAttribute('role', 'button');
+            question.setAttribute('tabindex', '0');
+            question.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+
+            const toggleItem = () => {
                 const wasActive = item.classList.contains('active');
-                faqItems.forEach(i => i.classList.remove('active'));
-                if (!wasActive) item.classList.add('active');
+                faqItems.forEach(i => {
+                    i.classList.remove('active');
+                    const q = i.querySelector('.faq-question');
+                    if (q) q.setAttribute('aria-expanded', 'false');
+                });
+                if (!wasActive) {
+                    item.classList.add('active');
+                    question.setAttribute('aria-expanded', 'true');
+                }
+            };
+
+            question.addEventListener('click', toggleItem);
+            question.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleItem();
+                }
             });
         });
     }
 
-    // --- FUNCIONALIDADE 5: ANIMAÇÃO AO ROLAR ---
+    // --- FUNCIONALIDADE 4: ANIMAÇÃO AO ROLAR ---
     if ("IntersectionObserver" in window) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {

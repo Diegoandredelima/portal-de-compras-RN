@@ -26,13 +26,13 @@
                 <a href="https://www.sic.rn.gov.br/" target="_blank" class="text-gray-600 hover:text-gray-900">Acesso à Informação</a>
                 <a href="https://app.powerbi.com/view?r=eyJrIjoiYzAwZDU5YmYtYzFmMS00NTg2LWI1NzEtNTNlOTJhNGJmNjI0IiwidCI6Ijc2YzdjNzQxLTk2M2QtNDI4Zi1hOTExLTAwZDcyZTVkNjQ1YyJ9" target="_blank" class="text-gray-600 hover:text-gray-900">POLI</a>
                 <div class="dropdown">
-                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Ajuda <i class="fas fa-chevron-down text-xs" aria-hidden="true"></i></a>
                 </div>
                 <div class="flex items-center space-x-2 ml-4">
-                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/GovernoDoRN" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/GovernodoRN" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/seadrn/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com/@governodorn" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -41,8 +41,8 @@
     <div class="sticky-header py-4 px-4 border-b" id="sticky-header">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu">
-                    <i class="fas fa-bars text-2xl"></i>
+                <button class="mr-4 text-gray-700" id="menu-toggle" aria-label="Abrir menu" aria-controls="offcanvas-menu" aria-expanded="false">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
                 </button>
                 <a href="../index.html" class="text-xl font-medium">Central de Compras</a>
             </div>
@@ -50,10 +50,10 @@
                 <div class="search-access-group relative" style="width: 450px; max-width: 100%;">
                     <div class="relative w-full" style="max-width:100%;">
                         <input type="text" id="search-input-field" placeholder="O que você procura?" class="search-input w-full">
-                        <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-500" aria-hidden="true"></i>
                     </div>
                     <a href="acesso-sistema.html" class="access-btn bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-5 rounded-lg text-base flex items-center gap-1 shadow transition" aria-label="Acesso ao Sistema">
-                        <i class="fas fa-sign-in-alt"></i>
+                        <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
                         <span class="hidden sm:inline">Acesso ao Sistema</span>
                     </a>
                 </div>
@@ -61,43 +61,67 @@
         </div>
     </div>
     <div id="search-results-container" class="container mx-auto my-4 px-4"></div>
-    <div class="offcanvas-menu" id="offcanvas-menu">
-        <div class="p-4 border-b flex justify-between items-center">
-            <h2 class="text-lg font-bold">Menu</h2>
-            <button id="close-menu" class="text-gray-700" aria-label="Fechar menu">
-                <i class="fas fa-times text-2xl"></i>
+    <div class="offcanvas-menu" id="offcanvas-menu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+        <div class="offcanvas-header">
+            <div>
+                <h2>Central de Compras RN</h2>
+                <div class="offcanvas-header-subtitle">Navegação do Portal</div>
+            </div>
+            <button id="close-menu" class="offcanvas-close-btn" aria-label="Fechar menu">
+                <i class="fas fa-times text-lg" aria-hidden="true"></i>
             </button>
         </div>
-        <div class="p-4">
-            <ul class="space-y-4">
-                <li><a href="fornecedor.html" class="menu-item"><i class="fas fa-user-tie nav-icon"></i><span>Fornecedor</span></a></li>
-                <li><a href="servidor.html" class="menu-item"><i class="fas fa-user nav-icon"></i><span>Servidor</span></a></li>
-                <li><a href="cidadao.html" class="menu-item"><i class="fas fa-users nav-icon"></i><span>Cidadão</span></a></li>
-                <li><a href="capacite-se.html" class="menu-item"><i class="fas fa-graduation-cap nav-icon"></i><span>Capacite-se</span></a></li>
-                <li><a href="oportunidade.html" class="menu-item"><i class="fas fa-bullhorn nav-icon"></i><span>Oportunidades</span></a></li>
-                <li><a href="faqs-perguntas.html" class="menu-item"><i class="fas fa-question nav-icon"></i><span>FAQ</span></a></li>
-                <li><a href="forum.html" class="menu-item"><i class="fas fa-comments nav-icon"></i><span>Forum</span></a></li>
-                <li><a href="acesso-sistema.html" class="menu-item"><i class="fas fa-sign-in-alt nav-icon"></i><span>Acesso ao Sistema</span></a></li>
+        <nav class="offcanvas-nav" aria-label="Menu principal do portal">
+            <div class="offcanvas-section-label">Acesso por Perfil</div>
+            <ul>
+                <li><a href="../index.html" class="menu-item"><i class="fas fa-home nav-icon" aria-hidden="true"></i><span>Início</span></a></li>
+                <li><a href="fornecedor.html" class="menu-item"><i class="fas fa-user-tie nav-icon" aria-hidden="true"></i><span>Fornecedor</span></a></li>
+                <li><a href="servidor.html" class="menu-item"><i class="fas fa-user-shield nav-icon" aria-hidden="true"></i><span>Servidor</span></a></li>
+                <li><a href="cidadao.html" class="menu-item"><i class="fas fa-users nav-icon" aria-hidden="true"></i><span>Cidadão</span></a></li>
             </ul>
+
+            <div class="offcanvas-section-label">Compras e Conhecimento</div>
+            <ul>
+                <li><a href="oportunidade.html" class="menu-item"><i class="fas fa-bullhorn nav-icon" aria-hidden="true"></i><span>Oportunidades (ME/EPP)</span></a></li>
+                <li><a href="legislacao.html" class="menu-item"><i class="fas fa-gavel nav-icon" aria-hidden="true"></i><span>Legislação</span></a></li>
+                <li><a href="capacite-se.html" class="menu-item"><i class="fas fa-graduation-cap nav-icon" aria-hidden="true"></i><span>Capacite-se</span></a></li>
+                <li><a href="manuais.html" class="menu-item"><i class="fas fa-book-open nav-icon" aria-hidden="true"></i><span>Manuais e Tutoriais</span></a></li>
+                <li><a href="noticias.html" class="menu-item"><i class="fas fa-newspaper nav-icon" aria-hidden="true"></i><span>Notícias</span></a></li>
+                <li><a href="institucional.html" class="menu-item"><i class="fas fa-landmark nav-icon" aria-hidden="true"></i><span>Quem Somos</span></a></li>
+            </ul>
+
+            <div class="offcanvas-section-label">Inovação e Suporte</div>
+            <ul>
+                <li><a href="compr-ia.html" class="menu-item"><i class="fas fa-microchip nav-icon" aria-hidden="true"></i><span>COMPR.IA</span><span class="menu-badge">IA</span></a></li>
+                <li><a href="forum.html" class="menu-item"><i class="fas fa-comments nav-icon" aria-hidden="true"></i><span>Fórum de Discussão</span></a></li>
+                <li><a href="faqs-perguntas.html" class="menu-item"><i class="fas fa-circle-question nav-icon" aria-hidden="true"></i><span>Perguntas Frequentes</span></a></li>
+            </ul>
+        </nav>
+        <div class="offcanvas-footer">
+            <a href="acesso-sistema.html" class="offcanvas-cta">
+                <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                <span>Acesso ao Sistema</span>
+            </a>
         </div>
     </div>
   <!-- Breadcrumbs -->
   <div class="breadcrumbs">
     <div class="container mx-auto px-4">
-        <a href="../index.html" class="text-gray-500 hover:text-main-blue"><i class="fas fa-home"></i></a>
+        <a href="../index.html" class="text-gray-500 hover:text-main-blue"><i class="fas fa-home" aria-hidden="true"></i></a>
         <span class="separator">/</span>
         <span>Legislação</span>
     </div>
 </div>
 
-<main id="main-content" class="container mx-auto py-12 px-4">
-    <!-- Seção de Título -->
-    <section class="mb-12">
-        <h1 class="section-title">Legislação</h1>
-        <p class="section-subtitle">
-            Nesta seção, o Portal de Compras reúne a legislação de interesse dos cidadãos, fornecedores e agentes públicos, organizada por hierarquias normativas e por temas.
+<main id="main-content" class="container mx-auto py-8 px-4">
+    <!-- Hero Banner de Legislação -->
+    <div class="page-hero-banner">
+        <span class="page-hero-badge"><i class="fas fa-gavel" aria-hidden="true"></i> Base Normativa</span>
+        <h1 class="page-hero-title">Legislação de Compras Públicas</h1>
+        <p class="page-hero-subtitle">
+            Leis federais, decretos estaduais, portarias e instruções normativas de interesse dos cidadãos, fornecedores e agentes públicos do Rio Grande do Norte.
         </p>
-    </section>
+    </div>
 
     <!-- Seção de Cards - Principais Normativos -->
     <section class="mb-16">
@@ -108,7 +132,7 @@
             <a href="#" class="leg-card">
                 <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1589216532372-1c2a36790049?q=80&w=1974&auto=format&fit=crop');"></div>
                 <div class="card-overlay"></div>
-                <div class="card-icon"><i class="fas fa-gavel"></i></div>
+                <div class="card-icon"><i class="fas fa-gavel" aria-hidden="true"></i></div>
                 <div class="card-content">
                     <h3 class="card-title">Nova Lei de Licitações e Contratos</h3>
                     <p class="card-subtitle">Lei nº 14.133, de 1º de abril de 2021</p>
@@ -119,7 +143,7 @@
             <a href="#" class="leg-card">
                 <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070&auto=format&fit=crop');"></div>
                 <div class="card-overlay"></div>
-                <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
+                <div class="card-icon"><i class="fas fa-bullhorn" aria-hidden="true"></i></div>
                 <div class="card-content">
                     <h3 class="card-title">Decreto do Pregão Eletrônico</h3>
                     <p class="card-subtitle">Decreto nº 10.024, de 20 de setembro de 2019</p>
@@ -130,7 +154,7 @@
             <a href="#" class="leg-card">
                 <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1974&auto=format&fit=crop');"></div>
                 <div class="card-overlay"></div>
-                <div class="card-icon"><i class="fas fa-store"></i></div>
+                <div class="card-icon"><i class="fas fa-store" aria-hidden="true"></i></div>
                 <div class="card-content">
                     <h3 class="card-title">Decreto Estadual nº 32.449, de 07 de março de 2023</h3>
                     <p class="card-subtitle">Regulamenta a Lei Federal nº 14.133, de 1º de abril de 2021, no âmbito da Administração Pública direta e autárquica.</p>
@@ -141,7 +165,7 @@
             <a href="#" class="leg-card">
                 <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop');"></div>
                 <div class="card-overlay"></div>
-                <div class="card-icon"><i class="fas fa-file-signature"></i></div>
+                <div class="card-icon"><i class="fas fa-file-signature" aria-hidden="true"></i></div>
                 <div class="card-content">
                     <h3 class="card-title">Regime de Transição da Lei 14.133</h3>
                     <p class="card-subtitle">Portaria SEGES/MGI Nº 1.769, de 2023</p>
@@ -171,94 +195,94 @@
                         <h4 class="legislation-title">Lei Complementar Estadual Nº 695, de 18 de janeiro de 2022</h4>
                         <p class="legislation-description">Adequa o funcionamento da gestão de contratos do Estado do Rio Grande do Norte às disposições previstas na Lei Federal nº 14.133, de 01 de abril de 2021 e reestrutura o controle interno do Poder Executivo por meio da criação do setor de integridade e transparência.</p>
                     </div>
-                    <a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+                    <a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a>
                 </div>
                 <div class="legislation-list-item">
                     <div>
                         <h4 class="legislation-title">Lei Complementar Estadual N.º 675, de 06 de novembro de 2020</h4>
                         <p class="legislation-description">Institui o Estatuto da Microempresa, Empresa de Pequeno Porte e dos Microempreendedores Individuais do Rio Grande do Norte, estabelece tratamento diferenciado e favorecido e dá outras providências.</p>
                     </div>
-                    <a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+                    <a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a>
                 </div>
                 <div class="legislation-list-item">
                     <div>
                         <h4 class="legislation-title">Lei Complementar Estadual N.º 578, de 09 de setembro de 2016</h4>
                         <p class="legislation-description">Altera a Lei Complementar Estadual nº 240, de 27 de junho de 2002, que dispõe sobre a Lei Orgânica da Procuradoria-Geral do Estado do Rio Grande do Norte e o Estatuto dos Procuradores do Estado, e dá outras providências.</p>
                     </div>
-                    <a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+                    <a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a>
                 </div>
 
                 <h3 class="legislation-subcategory-title">Leis Ordinárias</h3>
                 <!-- Lista completa de Leis Ordinárias Estaduais -->
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Estadual Nº 11.587, de 08 de novembro de 2023</h4><p class="legislation-description">Dispõe sobre a reserva de vagas de emprego para travestis e transexuais nas empresas privadas que recebem incentivos fiscais ou tenham convênio com órgãos do Poder Público do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Estadual N.º 10.862, de 30 de março de 2021</h4><p class="legislation-description">Dispõe sobre a obrigatoriedade de gravação em áudio e vídeo e de transmissão ao vivo, por meio da internet, dos procedimentos licitatórios de competência dos órgãos e das entidades que compõem a Administração Pública Direta e Indireta do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Estadual N.º 10.841, de 14 de janeiro de 2021</h4><p class="legislation-description">Institui mecanismo de controle do patrimônio público do Estado do Rio Grande do Norte, dispondo sobre provisões de encargos trabalhistas a serem pagos às empresas contratadas para prestar serviços de forma contínua, no âmbito dos Poderes Públicos.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Estadual N.º 10.783, de 22 de outubro de 2020</h4><p class="legislation-description">Dispõe sobre a obrigatoriedade da comprovação das cotas de aprendizes e pessoas com deficiência por parte de empresas que celebrem contratos com o Governo do Estado do Rio Grande do Norte e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Estadual N.º 10.766, de 25 de agosto de 2020</h4><p class="legislation-description">Dispõe sobre a transparência nos contratos emergenciais firmados pela Administração Pública em razão da situação de calamidade decorrente da pandemia do Coronavírus – Covid-19.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Estadual N.º 10.171, de 21 de fevereiro de 2017</h4><p class="legislation-description">Dispõe sobre a reserva de vaga de empregos para mulheres vítimas de violência doméstica e familiar nas empresas prestadoras de serviços junto ao Governo do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Nº 8.966, de 21 de junho de 2007</h4><p class="legislation-description">Dispõe sobre propostas de preço apresentadas no âmbito de processo licitatório conduzido por Órgão ou Ente da Administração Pública Estadual.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Estadual Nº 11.587, de 08 de novembro de 2023</h4><p class="legislation-description">Dispõe sobre a reserva de vagas de emprego para travestis e transexuais nas empresas privadas que recebem incentivos fiscais ou tenham convênio com órgãos do Poder Público do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Estadual N.º 10.862, de 30 de março de 2021</h4><p class="legislation-description">Dispõe sobre a obrigatoriedade de gravação em áudio e vídeo e de transmissão ao vivo, por meio da internet, dos procedimentos licitatórios de competência dos órgãos e das entidades que compõem a Administração Pública Direta e Indireta do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Estadual N.º 10.841, de 14 de janeiro de 2021</h4><p class="legislation-description">Institui mecanismo de controle do patrimônio público do Estado do Rio Grande do Norte, dispondo sobre provisões de encargos trabalhistas a serem pagos às empresas contratadas para prestar serviços de forma contínua, no âmbito dos Poderes Públicos.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Estadual N.º 10.783, de 22 de outubro de 2020</h4><p class="legislation-description">Dispõe sobre a obrigatoriedade da comprovação das cotas de aprendizes e pessoas com deficiência por parte de empresas que celebrem contratos com o Governo do Estado do Rio Grande do Norte e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Estadual N.º 10.766, de 25 de agosto de 2020</h4><p class="legislation-description">Dispõe sobre a transparência nos contratos emergenciais firmados pela Administração Pública em razão da situação de calamidade decorrente da pandemia do Coronavírus – Covid-19.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Estadual N.º 10.171, de 21 de fevereiro de 2017</h4><p class="legislation-description">Dispõe sobre a reserva de vaga de empregos para mulheres vítimas de violência doméstica e familiar nas empresas prestadoras de serviços junto ao Governo do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Nº 8.966, de 21 de junho de 2007</h4><p class="legislation-description">Dispõe sobre propostas de preço apresentadas no âmbito de processo licitatório conduzido por Órgão ou Ente da Administração Pública Estadual.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
 
                 <h3 class="legislation-subcategory-title">Decretos Estaduais</h3>
                 <!-- Lista completa de Decretos Estaduais -->
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 34.387, de 07 de março de 2025</h4><p class="legislation-description">Fixa o regime de transição de que trata o art. 191 da Lei Federal nº 14.133, de 1º de abril de 2021, no âmbito da Administração Pública Estadual direta, autárquica e fundacional de direito público do Rio Grande do Norte.Regulamenta as Leis Estaduais nº 10.171, de 21 de fevereiro de 2017, que dispõe sobre a reserva de vaga de empregos para mulheres vítimas de violência doméstica e familiar nas empresas prestadoras de serviços junto ao Governo do Estado do Rio Grande do Norte, e nº 11.297, de 15 de dezembro de 2022, que cria o Selo Social “Empresa Amiga da Mulher”, e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 32.560, de 28 de março de 2023</h4><p class="legislation-description">Fixa o regime de transição de que trata o art. 191 da Lei Federal nº 14.133, de 1º de abril de 2021, no âmbito da Administração Pública Estadual direta, autárquica e fundacional de direito público do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 33.089, de 27 de outubro de 2023</h4><p class="legislation-description">Dispõe sobre a dispensa de licitação, na forma eletrônica, de que trata a Lei federal nº 14.133, de 1º de abril de 2021, e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 32.593, de 12 de abril de 2023</h4><p class="legislation-description">Regime de transição.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual N.º 32.449, de 07 de março de 2023</h4><p class="legislation-description">Regulamenta a Lei Federal nº 14.133, de 1º de abril de 2021, no âmbito da Administração Pública direta, autárquica e fundacional de direito público do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 31.832, de 22 de agosto de 2022</h4><p class="legislation-description">Regulamenta a Política Estadual de Trabalho no âmbito do Sistema Penitenciário do Estado do Rio Grande do Norte, voltada à ampliação e qualificação da oferta de vagas de trabalho para pessoas privadas de liberdade e egressas dos estabelecimentos carcerários e institui normas para licitações e contratos da administração pública firmados pelo Poder Executivo estadual.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 31.771, de 03 de agosto de 2022</h4><p class="legislation-description">Constitui, no âmbito do Poder Executivo Estadual, o Comitê Gestor de Compras Públicas (COGECOM) de que dispõe o § 1º do art. 38 da Lei Complementar Estadual nº 675, de 06 de novembro de 2020, para operacionalizar a ampliação da participação das microempresas, empresas de pequeno porte, microempreendedores individuais e equiparados nas licitações e contratos.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 31.902, de 9 de setembro de 2022</h4><p class="legislation-description">Altera o Decreto Estadual nº 30.753, de 22 de julho de 2021, que instituiu o Programa RN APRENDIZ.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 31.346, de 1º de abril de 2022</h4><p class="legislation-description">Regulamenta o Capítulo II da Lei Complementar Estadual nº 695, de 18 de janeiro de 2022, que adequa o funcionamento da gestão de contratos do Estado do Rio Grande do Norte às disposições previstas na Lei Federal nº 14.133, de 1º de abril de 2021, nos termos do seu art. 14.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 30.753, de 22 de julho de 2021</h4><p class="legislation-description">Dispõe sobre o Programa Estadual de Aprendizagem do Rio Grande do Norte (RN APRENDIZ) e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 30.380, de 22 de fevereiro de 2021</h4><p class="legislation-description">Dispõe sobre a filmagem e gravação, em áudio e vídeo, das sessões públicas dos procedimentos licitatórios presenciais e a obrigatoriedade de registro fotográfico no ato de entrega de bens e mercadorias adquiridos.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Nº 21.034, de 20 de fevereiro de 2009</h4><p class="legislation-description">Regulamenta a Lei nº 8.966, de 21 de junho de 2007, que dispõe sobre propostas de preço apresentadas no âmbito de processo licitatório conduzido por Órgão ou Ente da Administração Pública Estadual.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto N.º 17.245, de 02 de dezembro de 2003</h4><p class="legislation-description">Regulamenta o disposto no art. 54, inciso X e § 1º, da Lei Complementar Estadual n.º 163, de 5 de fevereiro de 1999, com a redação que lhe foi dada pela Lei Complementar Estadual n.º 237, de 16 de maio de 2002.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto N.º 17.144, de 16 de outubro de 2003</h4><p class="legislation-description">Aprova o Regulamento para a modalidade de licitação denominada pregão, para aquisição de bens e serviços comuns, no âmbito do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto N.º 17.145, de 16 de outubro de 2003</h4><p class="legislation-description">Dispõe sobre a os procedimentos para a realização de licitações na modalidade de pregão, por utilização de recursos de tecnologia da informação denominado pregão eletrônico, destinado à aquisição de bens e serviços comuns, no âmbito do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 34.387, de 07 de março de 2025</h4><p class="legislation-description">Fixa o regime de transição de que trata o art. 191 da Lei Federal nº 14.133, de 1º de abril de 2021, no âmbito da Administração Pública Estadual direta, autárquica e fundacional de direito público do Rio Grande do Norte.Regulamenta as Leis Estaduais nº 10.171, de 21 de fevereiro de 2017, que dispõe sobre a reserva de vaga de empregos para mulheres vítimas de violência doméstica e familiar nas empresas prestadoras de serviços junto ao Governo do Estado do Rio Grande do Norte, e nº 11.297, de 15 de dezembro de 2022, que cria o Selo Social “Empresa Amiga da Mulher”, e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 32.560, de 28 de março de 2023</h4><p class="legislation-description">Fixa o regime de transição de que trata o art. 191 da Lei Federal nº 14.133, de 1º de abril de 2021, no âmbito da Administração Pública Estadual direta, autárquica e fundacional de direito público do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 33.089, de 27 de outubro de 2023</h4><p class="legislation-description">Dispõe sobre a dispensa de licitação, na forma eletrônica, de que trata a Lei federal nº 14.133, de 1º de abril de 2021, e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 32.593, de 12 de abril de 2023</h4><p class="legislation-description">Regime de transição.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual N.º 32.449, de 07 de março de 2023</h4><p class="legislation-description">Regulamenta a Lei Federal nº 14.133, de 1º de abril de 2021, no âmbito da Administração Pública direta, autárquica e fundacional de direito público do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 31.832, de 22 de agosto de 2022</h4><p class="legislation-description">Regulamenta a Política Estadual de Trabalho no âmbito do Sistema Penitenciário do Estado do Rio Grande do Norte, voltada à ampliação e qualificação da oferta de vagas de trabalho para pessoas privadas de liberdade e egressas dos estabelecimentos carcerários e institui normas para licitações e contratos da administração pública firmados pelo Poder Executivo estadual.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 31.771, de 03 de agosto de 2022</h4><p class="legislation-description">Constitui, no âmbito do Poder Executivo Estadual, o Comitê Gestor de Compras Públicas (COGECOM) de que dispõe o § 1º do art. 38 da Lei Complementar Estadual nº 675, de 06 de novembro de 2020, para operacionalizar a ampliação da participação das microempresas, empresas de pequeno porte, microempreendedores individuais e equiparados nas licitações e contratos.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 31.902, de 9 de setembro de 2022</h4><p class="legislation-description">Altera o Decreto Estadual nº 30.753, de 22 de julho de 2021, que instituiu o Programa RN APRENDIZ.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 31.346, de 1º de abril de 2022</h4><p class="legislation-description">Regulamenta o Capítulo II da Lei Complementar Estadual nº 695, de 18 de janeiro de 2022, que adequa o funcionamento da gestão de contratos do Estado do Rio Grande do Norte às disposições previstas na Lei Federal nº 14.133, de 1º de abril de 2021, nos termos do seu art. 14.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 30.753, de 22 de julho de 2021</h4><p class="legislation-description">Dispõe sobre o Programa Estadual de Aprendizagem do Rio Grande do Norte (RN APRENDIZ) e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Estadual Nº 30.380, de 22 de fevereiro de 2021</h4><p class="legislation-description">Dispõe sobre a filmagem e gravação, em áudio e vídeo, das sessões públicas dos procedimentos licitatórios presenciais e a obrigatoriedade de registro fotográfico no ato de entrega de bens e mercadorias adquiridos.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Nº 21.034, de 20 de fevereiro de 2009</h4><p class="legislation-description">Regulamenta a Lei nº 8.966, de 21 de junho de 2007, que dispõe sobre propostas de preço apresentadas no âmbito de processo licitatório conduzido por Órgão ou Ente da Administração Pública Estadual.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto N.º 17.245, de 02 de dezembro de 2003</h4><p class="legislation-description">Regulamenta o disposto no art. 54, inciso X e § 1º, da Lei Complementar Estadual n.º 163, de 5 de fevereiro de 1999, com a redação que lhe foi dada pela Lei Complementar Estadual n.º 237, de 16 de maio de 2002.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto N.º 17.144, de 16 de outubro de 2003</h4><p class="legislation-description">Aprova o Regulamento para a modalidade de licitação denominada pregão, para aquisição de bens e serviços comuns, no âmbito do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto N.º 17.145, de 16 de outubro de 2003</h4><p class="legislation-description">Dispõe sobre a os procedimentos para a realização de licitações na modalidade de pregão, por utilização de recursos de tecnologia da informação denominado pregão eletrônico, destinado à aquisição de bens e serviços comuns, no âmbito do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
                 
                 <h3 class="legislation-subcategory-title">Portarias</h3>
                 <!-- Lista completa de Portarias -->
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Portaria-SEI Nº 123, de 29 de janeiro de 2024</h4><p class="legislation-description">Institui diretrizes necessárias para adoção em licitação do critério de julgamento por menor preço ou maior desconto de que trata a Lei nº 14.133, de 2021, bem como sobre a utilização do Sistema de Compras do Governo Federal (Compras.gov.br), no âmbito da Administração Pública direta, autárquica e fundacional de direito público do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Portaria-SEI Nº 1725, de 07 de agosto de 2023</h4><p class="legislation-description">Dispõe sobre as autoridades competentes para autorizar a abertura de processos licitatórios nos órgãos e entidades do Poder Executivo Estadual e orienta sobre as retribuições que podem ser concedidas pela participação de atividades relacionadas.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Portaria-SEI Nº 1046, de 12 de maio de 2023</h4><p class="legislation-description">Prorroga a exigência de elaboração do Plano de Contratações Anuais (PCA) e Plano de Contratações Anual do Estado (PCAE) na Administração Pública Estadua direta, autárquica e fundacional de direito público do Estado do Rio Grande do Norte, para o exercício subsequente ao atual.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Portaria-SEI Nº 34/2022, de 20 de janeiro de 2022</h4><p class="legislation-description">Aprova o procedimento de apuração e aplicação de sanções aos licitantes, fornecedores e contratados, estes quando decorrentes de ata de registro de preços, no âmbito dos órgãos e entidades participantes do Sistema de Registro de Preços gerenciado pela Secretaria de Estado da Administração do Rio Grande do Norte (SEAD/RN) e delega competência administrativa ao Secretário de Estado Adjunto da Administração.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Portaria-SEI Nº 123, de 29 de janeiro de 2024</h4><p class="legislation-description">Institui diretrizes necessárias para adoção em licitação do critério de julgamento por menor preço ou maior desconto de que trata a Lei nº 14.133, de 2021, bem como sobre a utilização do Sistema de Compras do Governo Federal (Compras.gov.br), no âmbito da Administração Pública direta, autárquica e fundacional de direito público do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Portaria-SEI Nº 1725, de 07 de agosto de 2023</h4><p class="legislation-description">Dispõe sobre as autoridades competentes para autorizar a abertura de processos licitatórios nos órgãos e entidades do Poder Executivo Estadual e orienta sobre as retribuições que podem ser concedidas pela participação de atividades relacionadas.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Portaria-SEI Nº 1046, de 12 de maio de 2023</h4><p class="legislation-description">Prorroga a exigência de elaboração do Plano de Contratações Anuais (PCA) e Plano de Contratações Anual do Estado (PCAE) na Administração Pública Estadua direta, autárquica e fundacional de direito público do Estado do Rio Grande do Norte, para o exercício subsequente ao atual.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Portaria-SEI Nº 34/2022, de 20 de janeiro de 2022</h4><p class="legislation-description">Aprova o procedimento de apuração e aplicação de sanções aos licitantes, fornecedores e contratados, estes quando decorrentes de ata de registro de preços, no âmbito dos órgãos e entidades participantes do Sistema de Registro de Preços gerenciado pela Secretaria de Estado da Administração do Rio Grande do Norte (SEAD/RN) e delega competência administrativa ao Secretário de Estado Adjunto da Administração.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
             </div>
 
             <div class="legislation-content" data-category="federal">
                 <h2 class="legislation-category-title">Legislação Federal</h2>
                 <h3 class="legislation-subcategory-title">Leis Complementares</h3>
                 <!-- Lista completa de Leis Complementares Federais -->
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Complementar Federal N.º 182, de 1º de junho de 2021</h4><p class="legislation-description">Institui o marco legal das startups e do empreendedorismo inovador; e altera a Lei nº 6.404, de 15 de dezembro de 1976, e a Lei Complementar nº 123, de 14 de dezembro de 2006.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Complementar Federal N.º 147, de 07 de agosto de 2014</h4><p class="legislation-description">Altera a Lei Complementar no 123/2006, e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Complementar Federal N.º 123, de 14 de dezembro de 2006</h4><p class="legislation-description">Institui o Estatuto Nacional da Microempresa e da Empresa de Pequeno Porte. Esta Lei Complementar estabelece normas gerais relativas ao tratamento diferenciado e favorecido a ser dispensado às microempresas e empresas de pequeno porte no âmbito dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Complementar Federal N.º 182, de 1º de junho de 2021</h4><p class="legislation-description">Institui o marco legal das startups e do empreendedorismo inovador; e altera a Lei nº 6.404, de 15 de dezembro de 1976, e a Lei Complementar nº 123, de 14 de dezembro de 2006.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Complementar Federal N.º 147, de 07 de agosto de 2014</h4><p class="legislation-description">Altera a Lei Complementar no 123/2006, e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Complementar Federal N.º 123, de 14 de dezembro de 2006</h4><p class="legislation-description">Institui o Estatuto Nacional da Microempresa e da Empresa de Pequeno Porte. Esta Lei Complementar estabelece normas gerais relativas ao tratamento diferenciado e favorecido a ser dispensado às microempresas e empresas de pequeno porte no âmbito dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
 
                 <h3 class="legislation-subcategory-title">Leis Ordinárias</h3>
                 <!-- Lista completa de Leis Ordinárias Federais -->
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Federal n.º 14.133, de 31 de março de 2021</h4><p class="legislation-description">Lei de Licitações e Contratos Administrativos.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Federal N.º 13.303, de 30 de junho de 2016</h4><p class="legislation-description">Dispõe sobre o estatuto jurídico da empresa pública, da sociedade de economia mista e de suas subsidiárias, no âmbito da União, dos Estados, do Distrito Federal e dos Municípios.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Federal N.º 12.462, de 04 de agosto de 2011</h4><p class="legislation-description">Institui o Regime Diferenciado de Contratações Públicas - RDC.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Federal N.º 10.520, de 17 de julho de 2002</h4><p class="legislation-description">Institui, no âmbito da União, Estados, Distrito Federal e Municípios, nos termos do art. 37, inciso XXI, da Constituição Federal, modalidade de licitação denominada pregão, para aquisição de bens e serviços comuns, e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Federal N.º 8.666, de 21 de junho de 1993</h4><p class="legislation-description">Lei Geral de Licitações. Regulamenta o art. 37, inciso XXI, da Constituição Federal, institui normas para licitações e contratos da Administração Pública e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Federal n.º 14.133, de 31 de março de 2021</h4><p class="legislation-description">Lei de Licitações e Contratos Administrativos.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Federal N.º 13.303, de 30 de junho de 2016</h4><p class="legislation-description">Dispõe sobre o estatuto jurídico da empresa pública, da sociedade de economia mista e de suas subsidiárias, no âmbito da União, dos Estados, do Distrito Federal e dos Municípios.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Federal N.º 12.462, de 04 de agosto de 2011</h4><p class="legislation-description">Institui o Regime Diferenciado de Contratações Públicas - RDC.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Federal N.º 10.520, de 17 de julho de 2002</h4><p class="legislation-description">Institui, no âmbito da União, Estados, Distrito Federal e Municípios, nos termos do art. 37, inciso XXI, da Constituição Federal, modalidade de licitação denominada pregão, para aquisição de bens e serviços comuns, e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Lei Federal N.º 8.666, de 21 de junho de 1993</h4><p class="legislation-description">Lei Geral de Licitações. Regulamenta o art. 37, inciso XXI, da Constituição Federal, institui normas para licitações e contratos da Administração Pública e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
                 
                 <h3 class="legislation-subcategory-title">Decretos Federais</h3>
                 <!-- Lista completa de Decretos Federais -->
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 10.024, de 20 de setembro de 2019</h4><p class="legislation-description">Regulamenta a licitação, na modalidade pregão, na forma eletrônica, para a aquisição de bens e a contratação de serviços comuns, incluídos os serviços comuns de engenharia, e dispõe sobre o uso da dispensa eletrônica, no âmbito da administração pública federal.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 5.450, de 31 de maio de 2005</h4><p class="legislation-description">Regulamenta o pregão, na forma eletrônica, para aquisição de bens e serviços comuns, e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 9.412, de 18 de junho de 2018</h4><p class="legislation-description">Atualiza os valores das modalidades de licitação de que trata o art. 23 da Lei nº 8.666, de 21 de junho de 1993.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 8.251, de 23 de maio de 2014</h4><p class="legislation-description">Altera o Decreto nº 7.581, de 11 de outubro de 2011, que regulamenta o Regime Diferenciado de Contratações Públicas - RDC, de que trata a Lei nº 12.462, de 4 de agosto de 2011.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 7.581, de 11 de outubro de 2011</h4><p class="legislation-description">Regulamenta o Regime Diferenciado de Contratações Públicas - RDC, de que trata a Lei nº 12.462, de 4 de agosto de 2011. (Redação dada pelo Decreto nº 8.251, de 2014).</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 7.724, de 16 de maio de 2012</h4><p class="legislation-description">Regula o acesso a informações previsto no inciso XXXIII do art. 5º, no inciso II do § 3º do art. 37 e no § 2º do art. 216 da Constituição Federal; altera a Lei nº 8.112, de 11 de dezembro de 1990; revoga a Lei nº 11.111, de 5 de maio de 2005, e dispositivos da Lei nº 8.159, de 8 de janeiro de 1991; e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 5.504, de 05 de agosto de 2005</h4><p class="legislation-description">Estabelece a exigência de utilização do pregão, preferencialmente na forma eletrônica, para entes públicos ou privados, nas contratações de bens e serviços comuns, realizadas em decorrência de transferências voluntárias de recursos públicos da União, decorrentes de convênios ou instrumentos congêneres, ou consórcios públicos.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 3.555, de 08 de agosto de 2000</h4><p class="legislation-description">Aprova o Regulamento para a modalidade de licitação denominada pregão, para aquisição de bens e serviços comuns.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 10.024, de 20 de setembro de 2019</h4><p class="legislation-description">Regulamenta a licitação, na modalidade pregão, na forma eletrônica, para a aquisição de bens e a contratação de serviços comuns, incluídos os serviços comuns de engenharia, e dispõe sobre o uso da dispensa eletrônica, no âmbito da administração pública federal.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 5.450, de 31 de maio de 2005</h4><p class="legislation-description">Regulamenta o pregão, na forma eletrônica, para aquisição de bens e serviços comuns, e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 9.412, de 18 de junho de 2018</h4><p class="legislation-description">Atualiza os valores das modalidades de licitação de que trata o art. 23 da Lei nº 8.666, de 21 de junho de 1993.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 8.251, de 23 de maio de 2014</h4><p class="legislation-description">Altera o Decreto nº 7.581, de 11 de outubro de 2011, que regulamenta o Regime Diferenciado de Contratações Públicas - RDC, de que trata a Lei nº 12.462, de 4 de agosto de 2011.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 7.581, de 11 de outubro de 2011</h4><p class="legislation-description">Regulamenta o Regime Diferenciado de Contratações Públicas - RDC, de que trata a Lei nº 12.462, de 4 de agosto de 2011. (Redação dada pelo Decreto nº 8.251, de 2014).</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 7.724, de 16 de maio de 2012</h4><p class="legislation-description">Regula o acesso a informações previsto no inciso XXXIII do art. 5º, no inciso II do § 3º do art. 37 e no § 2º do art. 216 da Constituição Federal; altera a Lei nº 8.112, de 11 de dezembro de 1990; revoga a Lei nº 11.111, de 5 de maio de 2005, e dispositivos da Lei nº 8.159, de 8 de janeiro de 1991; e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 5.504, de 05 de agosto de 2005</h4><p class="legislation-description">Estabelece a exigência de utilização do pregão, preferencialmente na forma eletrônica, para entes públicos ou privados, nas contratações de bens e serviços comuns, realizadas em decorrência de transferências voluntárias de recursos públicos da União, decorrentes de convênios ou instrumentos congêneres, ou consórcios públicos.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item"><div><h4 class="legislation-title">Decreto Federal N.º 3.555, de 08 de agosto de 2000</h4><p class="legislation-description">Aprova o Regulamento para a modalidade de licitação denominada pregão, para aquisição de bens e serviços comuns.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
             </div>
             
             <div class="legislation-content" data-category="revogados">
                 <h2 class="legislation-category-title" style="border-color: #c0392b;">Revogados</h2>
                 <!-- Lista completa de Revogados -->
-                <div class="legislation-list-item" style="border-left-color: #c0392b;"><div><h4 class="legislation-title">Decreto N.º 27.814, de 27 de março de 2018</h4><p class="legislation-description">Altera o Decreto Estadual nº 21.008, de 12 de janeiro de 2009, que regulamenta, no âmbito da Administração Pública Estadual, o Sistema de Registro de Preços.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item" style="border-left-color: #c0392b;"><div><h4 class="legislation-title">Decreto N.º 21.008, de 12 de janeiro de 2009</h4><p class="legislation-description">Regulamenta, no âmbito da Administração Pública Estadual, o Sistema de Registro de Preços previsto no art. 15 da Lei Federal n.°8.666, de 21 de junho de 1993, e no artigo 11 da Lei Federal n° 10.520, de 17 de julho de 2002, e da outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item" style="border-left-color: #c0392b;"><div><h4 class="legislation-title">Decreto N.º 20.103, de 19 de outubro de 2007</h4><p class="legislation-description">Regulamenta a aplicação do pregão na forma eletrônica, para aquisição de bens e serviços comuns, no âmbito das licitações realizadas pelo Poder Executivo do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
-                <div class="legislation-list-item" style="border-left-color: #c0392b;"><div><h4 class="legislation-title">Decreto N.º 18.100, de 28 de fevereiro de 2005</h4><p class="legislation-description">Regulamenta, no âmbito da Administração Estadual, o Sistema de Registro de Preços previsto no art. 15 da Lei nº 8.666, de 21 de junho de 1993, em sua atual redação, e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1"></i></a></div>
+                <div class="legislation-list-item" style="border-left-color: #c0392b;"><div><h4 class="legislation-title">Decreto N.º 27.814, de 27 de março de 2018</h4><p class="legislation-description">Altera o Decreto Estadual nº 21.008, de 12 de janeiro de 2009, que regulamenta, no âmbito da Administração Pública Estadual, o Sistema de Registro de Preços.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item" style="border-left-color: #c0392b;"><div><h4 class="legislation-title">Decreto N.º 21.008, de 12 de janeiro de 2009</h4><p class="legislation-description">Regulamenta, no âmbito da Administração Pública Estadual, o Sistema de Registro de Preços previsto no art. 15 da Lei Federal n.°8.666, de 21 de junho de 1993, e no artigo 11 da Lei Federal n° 10.520, de 17 de julho de 2002, e da outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item" style="border-left-color: #c0392b;"><div><h4 class="legislation-title">Decreto N.º 20.103, de 19 de outubro de 2007</h4><p class="legislation-description">Regulamenta a aplicação do pregão na forma eletrônica, para aquisição de bens e serviços comuns, no âmbito das licitações realizadas pelo Poder Executivo do Estado do Rio Grande do Norte.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
+                <div class="legislation-list-item" style="border-left-color: #c0392b;"><div><h4 class="legislation-title">Decreto N.º 18.100, de 28 de fevereiro de 2005</h4><p class="legislation-description">Regulamenta, no âmbito da Administração Estadual, o Sistema de Registro de Preços previsto no art. 15 da Lei nº 8.666, de 21 de junho de 1993, em sua atual redação, e dá outras providências.</p></div><a href="#" class="legislation-link">Ver Detalhes <i class="fas fa-arrow-right text-xs ml-1" aria-hidden="true"></i></a></div>
             </div>
         </div>
     </section>
@@ -267,28 +291,28 @@
             <h2 class="section-title text-center">Links Úteis</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <a href="https://www.sead.rn.gov.br/" class="useful-link-card">
-                    <i class="fas fa-landmark"></i>
+                    <i class="fas fa-landmark" aria-hidden="true"></i>
                     <div>
                         <h3>SEAD</h3>
                         <p>Acesse o site institucional</p>
                     </div>
                 </a>
                 <a href="fornecedor.html" class="useful-link-card">
-                    <i class="fas fa-gavel"></i>
+                    <i class="fas fa-gavel" aria-hidden="true"></i>
                     <div>
                         <h3>Fornecedor</h3>
                         <p>Trabalhe conosco</p>
                     </div>
                 </a>
                 <a href="forum.html" class="useful-link-card">
-                    <i class="fas fa-comments"></i>
+                    <i class="fas fa-comments" aria-hidden="true"></i>
                     <div>
                         <h3>Fórum</h3>
                         <p>Discussões e dúvidas</p>
                     </div>
                 </a>
                 <a href="capacite-se.html" class="useful-link-card">
-                    <i class="fas fa-graduation-cap"></i>
+                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                     <div>
                         <h3>Capacite-se</h3>
                         <p>Cursos e treinamentos</p>
@@ -308,19 +332,19 @@
                         <h3 class="text-xl font-semibold mb-4 text-gray-800">Precisa de Ajuda?</h3>
                         <div class="space-y-4">
                             <div class="flex items-center space-x-3">
-                                <i class="fas fa-phone text-blue-600"></i>
+                                <i class="fas fa-phone text-blue-600" aria-hidden="true"></i>
                                 <span class="text-gray-700">(84) 3232-1234</span>
                             </div>
                             <div class="flex items-center space-x-3">
-                                <i class="fab fa-whatsapp fa-lg text-blue-600"></i>
+                                <i class="fab fa-whatsapp fa-lg text-blue-600" aria-hidden="true"></i>
                                 <span class="text-gray-700">(84) 98127-6028</span>
                             </div>
                             <div class="flex items-center space-x-3">
-                                <i class="fas fa-envelope text-blue-600"></i>
+                                <i class="fas fa-envelope text-blue-600" aria-hidden="true"></i>
                                 <span class="text-gray-700">comprrn@gmail.com</span>
                             </div>
                             <div class="flex items-center space-x-3">
-                                <i class="fas fa-clock text-blue-600"></i>
+                                <i class="fas fa-clock text-blue-600" aria-hidden="true"></i>
                                 <span class="text-gray-700">Seg-Sex: 8h às 17h</span>
                             </div>
                         </div>
@@ -329,16 +353,16 @@
                         <h3 class="text-xl font-semibold mb-4 text-gray-800">Links Úteis</h3>
                         <div class="space-y-3">
                             <a href="manuais.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
-                                <i class="fas fa-book mr-2"></i>Manual do Usuário
+                                <i class="fas fa-book mr-2" aria-hidden="true"></i>Manual do Usuário
                             </a>
                             <a href="forum.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
-                                <i class="fas fa-comments mr-2"></i>Fórum de Discussão
+                                <i class="fas fa-comments mr-2" aria-hidden="true"></i>Fórum de Discussão
                             </a>
-                            <a href="#" class="block text-blue-600 hover:text-blue-800 transition-colors">
-                                <i class="fas fa-video mr-2"></i>Tutoriais em Vídeo
+                            <a href="capacite-se.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-video mr-2" aria-hidden="true"></i>Tutoriais em Vídeo
                             </a>
                             <a href="faqs-perguntas.html" class="block text-blue-600 hover:text-blue-800 transition-colors">
-                                <i class="fas fa-question-circle mr-2"></i>FAQ
+                                <i class="fas fa-question-circle mr-2" aria-hidden="true"></i>FAQ
                             </a>
                         </div>
                     </div>
@@ -349,9 +373,8 @@
   <!-- Footer -->
   <footer class="footer py-6 px-4">
     <div class="container mx-auto">
-        <div class="flex flex-col md:flex-row md:items-start md:justify-between items-start mb-8" style="padding-top: 4rem;">
-            <!-- Logo no canto superior esquerdo -->
-            <img src="../images/logos/NEGATIVO.png" alt="Governo do Rio Grande do Norte" class="h-14 w-auto mb-2" style="height: 101px; transform: translate(0px, -45px);" data-selected="true" data-label-id="0">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between items-start mb-6 pt-4">
+            <img src="../images/logos/NEGATIVO.png" alt="Governo do Rio Grande do Norte" class="h-16 w-auto mb-2">
         </div>
         <!-- Seções do mapa do site -->
         <div class="w-full flex justify-center mt-[-16px] mb-2">
@@ -390,7 +413,7 @@
                         <li><a href="legislacao.html" class="text-gray-300 hover:text-white">Legislação</a></li>
                         <li><a href="manuais.html" class="text-gray-300 hover:text-white">Manuais e Tutoriais</a></li>
                         <li><a href="compr-ia.html" class="text-gray-300 hover:text-white">COMPR IA</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Vídeos</a></li>
+                        <li><a href="capacite-se.html" class="text-gray-300 hover:text-white">Vídeos</a></li>
                     </ul>
                 </div>
                 <div class="sitemap-section">
@@ -406,27 +429,27 @@
             </div>
         </div>
         <hr class="border-white my-4">
-        <div class="flex flex-row justify-between items-start max-w-4xl mx-auto gap-16 mb-6">
+        <div class="flex flex-col md:flex-row justify-between items-start max-w-4xl mx-auto gap-8 md:gap-16 mb-6">
             <!-- Informações de contato -->
-            <div class="text-white text-sm space-y-1 w-1/2 pr-8">
+            <div class="text-white text-sm space-y-1 w-full md:w-1/2 md:pr-8">
                 <div class="font-bold text-base mb-1">Contato</div>
                 <div>Centro Administrativo do Estado</div>
                 <div>Av. Senador Salgado Filho, s/n, Lagoa Nova - Natal/RN.</div>
                 <div>CEP: 59064-901</div>
-                <div><i class="fas fa-phone-alt mr-2"></i>+55 (84) 3232-5240</div>
-                <div><i class="fas fa-envelope mr-2"></i>contato@rn.gov.br</div>
+                <div><i class="fas fa-phone-alt mr-2" aria-hidden="true"></i>+55 (84) 3232-5240</div>
+                <div><i class="fas fa-envelope mr-2" aria-hidden="true"></i>contato@rn.gov.br</div>
             </div>
             <!-- Redes sociais -->
-            <div class="flex flex-col items-end w-1/2 pl-8">
+            <div class="flex flex-col items-start md:items-end w-full md:w-1/2 md:pl-8">
                 <div class="font-bold text-base mb-2 text-white">REDES SOCIAIS</div>
                 <div class="flex items-center gap-4 justify-center">
-                    <a href="https://twitter.com/" target="_blank" class="text-gray-300 hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
-                    <a href="https://facebook.com/" target="_blank" class="text-gray-300 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
-                    <a href="https://instagram.com/" target="_blank" class="text-gray-300 hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="https://youtube.com/" target="_blank" class="text-gray-300 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
-                    <a href="https://wa.me/5584999999999" target="_blank" class="text-gray-300 hover:text-green-500" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    <a href="https://x.com/GovernoDoRN" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/GovernodoRN" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/seadrn/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com/@governodorn" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i></a>
+                    <a href="https://wa.me/5584981276028" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-green-500" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg" aria-hidden="true"></i></a>
                 </div>
-                <a href="https://www.sic.rn.gov.br/" target="_blank" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-lg font-semibold mt-4 ml-auto" aria-label="Acesso à Informação">
+                <a href="https://www.sic.rn.gov.br/" target="_blank" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-lg font-semibold mt-4 md:ml-auto" aria-label="Acesso à Informação">
                     <span class="text-white text-base font-bold">Acesso à Informação</span>
                 </a>
             </div>

@@ -1,7 +1,7 @@
 /* Estilos básicos para corresponder ao Design System Gov.br e Tailwind */
 body {
-    font-family: 'Inter', sans-serif; /* Fonte padrão do Design System Gov.br ou similar */
-    color: #333;
+    font-family: 'Rawline', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #212529;
     background-color: #f0f2f5; /* Fundo mais suave */
     display: flex;
     justify-content: center;
